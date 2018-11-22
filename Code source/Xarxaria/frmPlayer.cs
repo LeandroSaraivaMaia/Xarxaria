@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Xarxaria
 {
-    public partial class Form1 : Form
+    public partial class frmPlayer : Form
     {
-        public Form1()
+        public frmPlayer()
         {
             InitializeComponent();
+        }
+
+        private void cmdPlayerContinue_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
