@@ -32,8 +32,8 @@
             this.cmdPlayer = new System.Windows.Forms.Button();
             this.lblPageID = new System.Windows.Forms.Label();
             this.lblPageTitle = new System.Windows.Forms.Label();
-            this.txtPage = new System.Windows.Forms.RichTextBox();
             this.picPage = new System.Windows.Forms.PictureBox();
+            this.txtPage = new Xarxaria.RichTextBoxExtension();
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +75,6 @@
             this.lblPageTitle.TabIndex = 8;
             this.lblPageTitle.Text = "Titre de la page";
             // 
-            // txtPage
-            // 
-            this.txtPage.Location = new System.Drawing.Point(12, 209);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(538, 366);
-            this.txtPage.TabIndex = 6;
-            this.txtPage.Text = "Contenue de la page\ndfgfdg\n<bold>T\'es gros<bold>";
-            // 
             // picPage
             // 
             this.picPage.Location = new System.Drawing.Point(12, 55);
@@ -90,6 +82,18 @@
             this.picPage.Size = new System.Drawing.Size(538, 148);
             this.picPage.TabIndex = 4;
             this.picPage.TabStop = false;
+            // 
+            // txtPage
+            // 
+            this.txtPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPage.Location = new System.Drawing.Point(12, 222);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(538, 345);
+            this.txtPage.TabIndex = 0;
+            this.txtPage.Text = "";
+            this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);
             // 
             // frmMain
             // 
@@ -100,8 +104,8 @@
             this.Controls.Add(this.cmdPlayer);
             this.Controls.Add(this.lblPageID);
             this.Controls.Add(this.lblPageTitle);
-            this.Controls.Add(this.txtPage);
             this.Controls.Add(this.picPage);
+            this.Controls.Add(this.txtPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmMain";
             this.Text = "Xarxaria v1.0";
@@ -117,7 +121,7 @@
         private System.Windows.Forms.Button cmdPlayer;
         private System.Windows.Forms.Label lblPageID;
         private System.Windows.Forms.Label lblPageTitle;
-        private System.Windows.Forms.RichTextBox txtPage;
+        private RichTextBoxExtension txtPage;
         private System.Windows.Forms.PictureBox picPage;
     }
 }
