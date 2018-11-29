@@ -10,6 +10,13 @@ namespace Xarxaria
 {
     class ConnectionDB
     {
+        string name = "";
+        int pv = 0;
+        int force = 0;
+        int agility = 0;
+        int chance = 0;
+        int idInventory = 0;
+
         SqlConnection sqlConnection;
 
         /// <summary>
@@ -17,7 +24,8 @@ namespace Xarxaria
         /// </summary>
         public ConnectionDB()
         {
-            string connectionString = @"Network Library=dbmssocn; Data Source=localhost, 1401; database=XarxariaDB; " + @"User id=xarxariaLogin; Password=Pa$$w0rd;";
+            //string connectionString = @"Network Library=dbmssocn; Data Source=localhost, 1401; database=XarxariaDB; " + @"User id=xarxariaLogin; Password=Pa$$w0rd;";
+            string connectionString = "Data Source=localhost; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
             sqlConnection = new SqlConnection(connectionString);
         }
 
@@ -34,10 +42,18 @@ namespace Xarxaria
         /// <param name="idInventory">Inventory id of the player</param>
         public void AddPlayer(string name, int hp, int force, int agility, int chance, int idInventory)
         {
+            // Select data
+            this.name = name;
+            this.pv = hp;
+            this.force = force;
+            this.agility = agility;
+            this.chance = chance;
+            this.idInventory = idInventory;
+
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
 
-            cmd.CommandText = "INSERT";
+            cmd.CommandText = "INSERT INTO Player (pv, force, armor ,agility, name, idActualPage, idInventory) VALUES (pv, force, 1, agility, name, 1, idInventory)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -50,7 +66,32 @@ namespace Xarxaria
 
         #endregion
 
-        #region Selete query
+        #region Select query
+
+        public string ReadPlayer()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = "SELECT * FROM Player";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+
+            string text = "";
+
+            while (reader.Read())
+            {
+                text += " ; "  + reader["name"].ToString();
+            }
+
+            sqlConnection.Close();
+
+            return text;
+        }
 
         #endregion
     }

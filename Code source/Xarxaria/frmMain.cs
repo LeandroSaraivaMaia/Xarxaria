@@ -12,6 +12,7 @@ namespace Xarxaria
 {
     public partial class frmMain : Form
     {
+        ConnectionDB connection = new ConnectionDB();
         public frmMain()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Xarxaria
             txtPage.SelectedText = "links do when AutoDetectUrls is set.\n\n";
             txtPage.SelectedText = "Managing hyperlinks independent of link text is possible as well: ";
             txtPage.InsertLink("Link text", "Hyperlink text");
+            txtPage.SelectedText = connection.ReadPlayer();
         }
 
         #region click events

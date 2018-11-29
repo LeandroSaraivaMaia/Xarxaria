@@ -46,11 +46,3 @@ INSERT INTO Page (title, text) VALUES
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 
 INSERT INTO Player (pv, force, armor, agility, name, idActualPage, idInventory) VALUES (10, 3, 1, 5, 'Godfroyd', 2, 1);
-
-Use XarxariaDB;
-
-
-
-use XarxariaDB
-insert into Player (pv, force, armor, agility, name, idActualPage, idInventory) values (5, 5, 1 ,5, 'UserTest', 2, 1);
-Select * from Player;
