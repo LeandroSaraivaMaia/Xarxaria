@@ -36,7 +36,7 @@ CREATE TABLE Player (
 	idInventory INT FOREIGN KEY REFERENCES Inventory(id)
 )
 
--- Insertion des données
+-- Insertion des données --
 USE XarxariaDB
 
 INSERT INTO Page (title, text) VALUES

@@ -16,6 +16,7 @@ namespace Xarxaria
         int agility = 0;
         int chance = 0;
         int idInventory = 0;
+        int idPage = 0;
 
         SqlConnection sqlConnection;
 
@@ -91,6 +92,36 @@ namespace Xarxaria
             sqlConnection.Close();
 
             return text;
+        }
+
+        // Sélectionner une seule page selon so id
+        public Page ReadPage (int idPage)
+        {
+            Page readedPage = new Page();
+            this.idPage = idPage;
+
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = "SELECT * FROM Page WHERE id = " + idPage;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+
+            string text = "";
+
+            while (reader.Read())
+            {
+                text += " ; " + reader["title"].ToString() + reader["text"].ToString();
+                readedPage = new Page(reader["title"].ToString(), reader["text"].ToString());
+            }
+
+            sqlConnection.Close();
+
+            return readedPage;
         }
 
         #endregion

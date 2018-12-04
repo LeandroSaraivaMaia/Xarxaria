@@ -12,6 +12,9 @@ namespace Xarxaria
 {
     public partial class frmMain : Form
     {
+        int id = 1;
+        Page actualPage;
+
         ConnectionDB connection = new ConnectionDB();
         public frmMain()
         {
@@ -28,6 +31,8 @@ namespace Xarxaria
             txtPage.SelectedText = "Managing hyperlinks independent of link text is possible as well: ";
             txtPage.InsertLink("Link text", "Hyperlink text");
             txtPage.SelectedText = connection.ReadPlayer();
+            actualPage = connection.ReadPage(id);
+            txtPage.SelectedText = actualPage.Text;
         }
 
         #region click events
