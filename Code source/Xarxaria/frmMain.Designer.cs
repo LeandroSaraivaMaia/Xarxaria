@@ -90,6 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPage.Location = new System.Drawing.Point(12, 222);
             this.txtPage.Name = "txtPage";
+            this.txtPage.ReadOnly = true;
             this.txtPage.Size = new System.Drawing.Size(538, 345);
             this.txtPage.TabIndex = 0;
             this.txtPage.Text = "";

@@ -12,29 +12,22 @@ namespace Xarxaria
 {
     public partial class frmMain : Form
     {
+        public string[] testStrings;
+        
         public frmMain()
         {
             InitializeComponent();
 
-            string testText =
-                "Bonsoir !\n" +
-                "tu peux aller à la page <316> stp ?\n" +
-                "Merci aurevoir !";
+            testStrings = new string[] {
+                "<1>Bonsoir !\n" +
+                "tu peux aller à la page <1> stp ?\n" +
+                "Merci aurevoir !",
+                "<0>Bravo tu es à la prochaine page, félicitation !\n" +
+                "Maintenant tu pourrais revenir a la page <0> stp ?\n" +
+                "Ca me ferais plaisir"
+            };
 
-            FormatText(testText);
-
-            /*
-            txtPage.SelectedText = "With this extended RichTextBox you're able to insert\n";
-            txtPage.SelectedText = "your own arbitrary links in the text: ";
-            txtPage.InsertLink("Link with arbitrary text");
-            txtPage.SelectedText = ".\nYou are not limited to the standard protocols any more,\n";
-            txtPage.SelectedText = "but you can still use them, of course: ";
-            txtPage.InsertLink("http://www.codeproject.com");
-            txtPage.SelectedText = "\n\nThe new links fire the LinkClicked event, just like the standard\n";
-            txtPage.SelectedText = "links do when AutoDetectUrls is set.\n\n";
-            txtPage.SelectedText = "Managing hyperlinks independent of link text is possible as well: ";
-            txtPage.InsertLink("Link text", "Hyperlink text");
-            */
+            FormatText(testStrings[0]);
         }
 
         #region Click events
@@ -64,6 +57,15 @@ namespace Xarxaria
 
             MessageBox.Show("shownLink : '" + shownLink + "'");
             MessageBox.Show("actualLink : '" + actualLink + "'");
+
+            //If the link is a page change
+            if (actualLink.Contains('<'))
+            {
+                txtPage.Text = "";
+
+                //temporary text load
+                FormatText(testStrings[int.Parse(shownLink)]);
+            }
         }
 
         #endregion
@@ -72,9 +74,9 @@ namespace Xarxaria
 
         void FormatText(string text)
         {
-            //The text can't start or end with a symbol !!
+            //The text can't end with a symbol !!
 
-            //The text can't have a symbol empty
+            //The text can't have an empty symbol
             //example : blabla <> blabla
 
             //The text can't put a symbol in a symbol !!
@@ -102,6 +104,7 @@ namespace Xarxaria
                 if (text[i] == '>')
                 {
                     if (pageChangedOpen == -1) throw new Exception("Closed \">\" without opening");
+                    if (pageChangedOpen + 1 == i) throw new Exception("Empty symbol data \"<>\"");
 
                     //Add the link text
                     string linkText = text.Substring(pageChangedOpen, i - pageChangedOpen + 1);
