@@ -20,19 +20,9 @@ namespace Xarxaria
         {
             InitializeComponent();
 
-            txtPage.SelectedText = "With this extended RichTextBox you're able to insert\n";
-            txtPage.SelectedText = "your own arbitrary links in the text: ";
-            txtPage.InsertLink("Link with arbitrary text");
-            txtPage.SelectedText = ".\nYou are not limited to the standard protocols any more,\n";
-            txtPage.SelectedText = "but you can still use them, of course: ";
-            txtPage.InsertLink("http://www.codeproject.com");
-            txtPage.SelectedText = "\n\nThe new links fire the LinkClicked event, just like the standard\n";
-            txtPage.SelectedText = "links do when AutoDetectUrls is set.\n\n";
-            txtPage.SelectedText = "Managing hyperlinks independent of link text is possible as well: ";
-            txtPage.InsertLink("Link text", "Hyperlink text");
-            txtPage.SelectedText = connection.ReadPlayer();
             actualPage = connection.ReadPage(id);
-            FormatText(testStrings[0]);
+            ChangeText(actualPage.Text);
+            lblPageTitle.Text = actualPage.Title;
         }
 
         #region Click events
@@ -66,18 +56,24 @@ namespace Xarxaria
             //If the link is a page change
             if (actualLink.Contains('<'))
             {
+                id = int.Parse(shownLink);
+
+                //Get page from database
+                actualPage = connection.ReadPage(id);
+
                 txtPage.Text = "";
 
-                //temporary text load
-                FormatText(testStrings[int.Parse(shownLink)]);
+                lblPageTitle.Text = actualPage.Title;
+
+                //Text load
+                ChangeText(actualPage.Text);
             }
         }
 
         #endregion
 
         #region Private methods
-
-        void FormatText(string text)
+        void ChangeText(string text)
         {
             //The text can't end with a symbol !!
 

@@ -40,8 +40,8 @@ CREATE TABLE Player (
 USE XarxariaDB
 
 INSERT INTO Page (title, text) VALUES
-('Introduction', 'Aller a la page deux ---> <2>'),
-('Désintroduction', 'Aller a la page une ---> <1>');
+('Introduction', 'Aller a la page deux - <2> stp'),
+('Désintroduction', 'Aller a la page une - <1> stp');
 
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 
