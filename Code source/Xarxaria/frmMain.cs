@@ -12,21 +12,26 @@ namespace Xarxaria
 {
     public partial class frmMain : Form
     {
-        public string[] testStrings;
-        
+        int id = 1;
+        Page actualPage;
+
+        ConnectionDB connection = new ConnectionDB();
         public frmMain()
         {
             InitializeComponent();
 
-            testStrings = new string[] {
-                "<1>Bonsoir !\n" +
-                "tu peux aller à la page <1> stp ?\n" +
-                "Merci aurevoir !",
-                "<0>Bravo tu es à la prochaine page, félicitation !\n" +
-                "Maintenant tu pourrais revenir a la page <0> stp ?\n" +
-                "Ca me ferais plaisir"
-            };
-
+            txtPage.SelectedText = "With this extended RichTextBox you're able to insert\n";
+            txtPage.SelectedText = "your own arbitrary links in the text: ";
+            txtPage.InsertLink("Link with arbitrary text");
+            txtPage.SelectedText = ".\nYou are not limited to the standard protocols any more,\n";
+            txtPage.SelectedText = "but you can still use them, of course: ";
+            txtPage.InsertLink("http://www.codeproject.com");
+            txtPage.SelectedText = "\n\nThe new links fire the LinkClicked event, just like the standard\n";
+            txtPage.SelectedText = "links do when AutoDetectUrls is set.\n\n";
+            txtPage.SelectedText = "Managing hyperlinks independent of link text is possible as well: ";
+            txtPage.InsertLink("Link text", "Hyperlink text");
+            txtPage.SelectedText = connection.ReadPlayer();
+            actualPage = connection.ReadPage(id);
             FormatText(testStrings[0]);
         }
 
