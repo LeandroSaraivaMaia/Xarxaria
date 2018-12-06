@@ -14,11 +14,17 @@ namespace Xarxaria
     {
         Page actualPage;
         enum actionId { pageChange, addItem, removeItem, addPlayerPv, removePlayerPv, setPlayerForce, addPlayerArmor, removePlayerArmor, setPlayerAgility };
-
-        ConnectionDB connection = new ConnectionDB();
+        };
+            "Pièce d'or"
+        string[] itemLists = {
+        ConnectionDB connection;
+        Player actualPlayer;
         public frmMain()
         {
             InitializeComponent();
+
+            actualPlayer = connection.GetPlayer(1);
+            connection = new ConnectionDB(itemLists);
 
             ChangePage(1);
         }
