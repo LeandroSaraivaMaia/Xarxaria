@@ -14,13 +14,20 @@ namespace Xarxaria
     {
         int id = 1;
         Page actualPage;
-
-        ConnectionDB connection = new ConnectionDB();
+        Player actualPlayer;
+        ConnectionDB connection;
+        string[] itemLists = {
+            "Pièce d'or"
+        };
         public frmMain()
         {
             InitializeComponent();
 
-            actualPage = connection.ReadPage(id);
+            connection = new ConnectionDB(itemLists);
+
+            actualPlayer = connection.GetPlayer(1);
+
+            actualPage = connection.GetPage(id);
             ChangeText(actualPage.Text);
             lblPageTitle.Text = actualPage.Title;
         }
@@ -59,7 +66,7 @@ namespace Xarxaria
                 id = int.Parse(shownLink);
 
                 //Get page from database
-                actualPage = connection.ReadPage(id);
+                actualPage = connection.GetPage(id);
 
                 txtPage.Text = "";
 
