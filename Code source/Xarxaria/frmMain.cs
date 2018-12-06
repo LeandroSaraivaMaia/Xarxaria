@@ -12,17 +12,15 @@ namespace Xarxaria
 {
     public partial class frmMain : Form
     {
-        int id = 1;
         Page actualPage;
+        enum actionId { pageChange, addItem, removeItem, addPlayerPv, removePlayerPv, setPlayerForce, addPlayerArmor, removePlayerArmor, setPlayerAgility };
 
         ConnectionDB connection = new ConnectionDB();
         public frmMain()
         {
             InitializeComponent();
 
-            actualPage = connection.ReadPage(id);
-            ChangeText(actualPage.Text);
-            lblPageTitle.Text = actualPage.Title;
+            ChangePage(1);
         }
 
         #region Click events
@@ -42,37 +40,75 @@ namespace Xarxaria
 
         void txtPage_LinkClicked(object sender, System.Windows.Forms.LinkClickedEventArgs e)
         {
-            MessageBox.Show("A link has been clicked.\nThe link text is '" + e.LinkText + "'");
-
             //Separate shown text to link text
             int separationIndex = e.LinkText.IndexOf('#');
-
             string shownLink = e.LinkText.Substring(0, separationIndex);
             string actualLink = e.LinkText.Substring(separationIndex + 1);
 
-            MessageBox.Show("shownLink : '" + shownLink + "'");
-            MessageBox.Show("actualLink : '" + actualLink + "'");
+            //Get all content of the actual link
+            string[] contents = actualLink.Split(',');
 
-            //If the link is a page change
-            if (actualLink.Contains('<'))
+            //Contents of action content (separated by ;)
+            string[] actionValuecontents;
+
+            //contents[]
+            //The first value [0] is the action id (see enum actionId)
+            //The second value [1] is the action value
+
+            //Test what action need to be done
+            switch (int.Parse(contents[0]))
             {
-                id = int.Parse(shownLink);
+                case (int)actionId.pageChange:
 
-                //Get page from database
-                actualPage = connection.ReadPage(id);
+                    //Get the page id
+                    int pageId = int.Parse(contents[1]);
 
-                txtPage.Text = "";
+                    //Actually change the page
+                    ChangePage(pageId);
 
-                lblPageTitle.Text = actualPage.Title;
+                    break;
+                case (int)actionId.addItem:
 
-                //Text load
-                ChangeText(actualPage.Text);
+                    //Get the different action values
+                    actionValuecontents = contents[1].Split(';');
+
+                    //temp
+                    MessageBox.Show("Vous ajoutez " + actionValuecontents[1] + " fois l'objet avec l'id " + int.Parse(actionValuecontents[0]));
+
+                    break;
+                case (int)actionId.removeItem:
+
+                    //Get the different action values
+                    actionValuecontents = contents[1].Split(';');
+
+                    break;
+                default : throw new Exception("Action id unknown");
             }
         }
 
         #endregion
 
         #region Private methods
+        /// <summary>
+        /// Change the actual page with a given id
+        /// </summary>
+        /// <param name="pageId"></param>
+        void ChangePage(int pageId)
+        {
+            //Get page from database
+            actualPage = connection.ReadPage(pageId);
+
+            //Change page title
+            lblPageTitle.Text = actualPage.Title;
+
+            //Change page text
+            txtPage.Text = "";
+            ChangeText(actualPage.Text);
+        }
+
+        /// <summary>
+        /// Change the actual page text
+        /// </summary>
         void ChangeText(string text)
         {
             //The text can't end with a symbol !!
@@ -89,32 +125,48 @@ namespace Xarxaria
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (i == text.Length - 1)
-                {
-                    txtPage.SelectedText = text.Substring(lastFreeChar, i - lastFreeChar + 1);
-                }
-
+                //If we open a beacon
                 if (text[i] == '<')
                 {
+                    //If it is the last caracter, throw an exception
+                    if (i == text.Length - 1) throw new Exception("Cannot open \"<\" at the end of the text");
+
                     pageChangedOpen = i;
 
                     //Add the text before the symbol
                     txtPage.SelectedText = text.Substring(lastFreeChar, (i) - lastFreeChar);
                 }
 
+                //If we close a beacon
                 if (text[i] == '>')
                 {
                     if (pageChangedOpen == -1) throw new Exception("Closed \">\" without opening");
                     if (pageChangedOpen + 1 == i) throw new Exception("Empty symbol data \"<>\"");
 
                     //Add the link text
-                    string linkText = text.Substring(pageChangedOpen, i - pageChangedOpen + 1);
-                    string shownText = text.Substring(pageChangedOpen + 1, i - (pageChangedOpen + 1));
-                    txtPage.InsertLink(shownText, linkText);
+                    string linkContent = text.Substring(pageChangedOpen + 1, i - (pageChangedOpen + 1));
+                    string[] contents = linkContent.Split(',');
+
+                    //contents[]
+                    //The first value [0] is the action id (see enum actionId)
+                    //The second value [1] is the shown text
+                    //The third value [2] is the action value
+
+                    txtPage.InsertLink(contents[1], contents[0] + "," + contents[2]);
 
                     lastFreeChar = i + 1;
 
                     pageChangedOpen = -1;
+
+                    //If it is the last caracter, break the for so it doesn't get two time the text
+                    if (i == text.Length - 1) break;
+                }
+
+                //If it is the last caracter
+                if (i == text.Length - 1)
+                {
+                    if (pageChangedOpen == -1)
+                        txtPage.SelectedText = text.Substring(lastFreeChar, i - lastFreeChar + 1);
                 }
             }
         }
