@@ -14,6 +14,7 @@ namespace Xarxaria
     {
         int id = 1;
         Page actualPage;
+        Bitmap myImage;
 
         ConnectionDB connection = new ConnectionDB();
         public frmMain()
@@ -23,6 +24,9 @@ namespace Xarxaria
             actualPage = connection.ReadPage(id);
             ChangeText(actualPage.Text);
             lblPageTitle.Text = actualPage.Title;
+
+            myImage = new Bitmap("P:\\MA\\Projet C#\\Xarxaria\\Code source\\Xarxaria\\DataBase\\images\\paysage_01.jpg");
+            picPage.Image = (Image)myImage;
         }
 
         #region Click events

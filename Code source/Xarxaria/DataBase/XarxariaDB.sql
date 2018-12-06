@@ -22,7 +22,7 @@ CREATE TABLE Page (
 	id INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
 	title VARCHAR(255),
 	text text,
-	image image
+	image VARCHAR(255)
 )
 
 CREATE TABLE Player (
@@ -39,9 +39,9 @@ CREATE TABLE Player (
 -- Insertion des données --
 USE XarxariaDB
 
-INSERT INTO Page (title, text) VALUES
-('Introduction', 'Aller a la page deux - <2> stp'),
-('Désintroduction', 'Aller a la page une - <1> stp');
+INSERT INTO Page (title, text, image) VALUES
+('Introduction', 'Aller a la page deux - <2> stp', '/images/paysage_01.jpg'),
+('Désintroduction', 'Aller a la page une - <1> stp', '/images/paysageAvecPortail_01.jpg');
 
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 

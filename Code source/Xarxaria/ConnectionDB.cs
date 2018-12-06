@@ -69,6 +69,7 @@ namespace Xarxaria
 
         #region Select query
 
+        // sélectionner le nom du joueur
         public string ReadPlayer()
         {
             SqlCommand cmd = new SqlCommand();
@@ -115,8 +116,8 @@ namespace Xarxaria
 
             while (reader.Read())
             {
-                text += " ; " + reader["title"].ToString() + reader["text"].ToString();
-                readedPage = new Page(reader["title"].ToString(), reader["text"].ToString());
+                text += " ; " + reader["title"].ToString() + reader["text"].ToString() + reader["image"].ToString();
+                readedPage = new Page(reader["title"].ToString(), reader["text"].ToString(), reader["image"].ToString());
             }
 
             sqlConnection.Close();
