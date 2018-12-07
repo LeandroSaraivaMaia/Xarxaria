@@ -13,18 +13,15 @@ namespace Xarxaria
     public partial class frmMain : Form
     {
         Page actualPage;
-        enum actionId { pageChange, addItem, removeItem, addPlayerPv, removePlayerPv, setPlayerForce, addPlayerArmor, removePlayerArmor, setPlayerAgility };
-        };
-            "Pièce d'or"
-        string[] itemLists = {
         ConnectionDB connection;
         Player actualPlayer;
         public frmMain()
         {
             InitializeComponent();
 
+            connection = new ConnectionDB();
+
             actualPlayer = connection.GetPlayer(1);
-            connection = new ConnectionDB(itemLists);
 
             ChangePage(1);
         }
@@ -33,7 +30,7 @@ namespace Xarxaria
 
         void cmdPlayer_Click(object sender, EventArgs e)
         {
-            frmPlayer playerForm = new frmPlayer();
+            frmPlayer playerForm = new frmPlayer(actualPlayer);
 
             playerForm.ShowDialog();
         }
@@ -64,7 +61,7 @@ namespace Xarxaria
             //Test what action need to be done
             switch (int.Parse(contents[0]))
             {
-                case (int)actionId.pageChange:
+                case (int)Program.actionId.pageChange:
 
                     //Get the page id
                     int pageId = int.Parse(contents[1]);
@@ -73,16 +70,17 @@ namespace Xarxaria
                     ChangePage(pageId);
 
                     break;
-                case (int)actionId.addItem:
+                case (int)Program.actionId.addItem:
 
                     //Get the different action values
                     actionValuecontents = contents[1].Split(';');
 
+                    actualPlayer.AddItem(int.Parse(actionValuecontents[0]), int.Parse(actionValuecontents[1]));
                     //temp
                     MessageBox.Show("Vous ajoutez " + actionValuecontents[1] + " fois l'objet avec l'id " + int.Parse(actionValuecontents[0]));
 
                     break;
-                case (int)actionId.removeItem:
+                case (int)Program.actionId.removeItem:
 
                     //Get the different action values
                     actionValuecontents = contents[1].Split(';');
@@ -102,7 +100,7 @@ namespace Xarxaria
         void ChangePage(int pageId)
         {
             //Get page from database
-            actualPage = connection.ReadPage(pageId);
+            actualPage = connection.GetPage(pageId);
 
             //Change page title
             lblPageTitle.Text = actualPage.Title;

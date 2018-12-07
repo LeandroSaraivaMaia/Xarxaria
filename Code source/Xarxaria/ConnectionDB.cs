@@ -10,19 +10,16 @@ namespace Xarxaria
 {
     class ConnectionDB
     {
-        string[] itemLists;
         SqlConnection sqlConnection;
 
         /// <summary>
         /// Connection to the DB in the constructor
         /// </summary>
-        public ConnectionDB(string[] itemLists)
+        public ConnectionDB()
         {
             //string connectionString = @"Network Library=dbmssocn; Data Source=localhost, 1401; database=XarxariaDB; " + @"User id=xarxariaLogin; Password=Pa$$w0rd;";
             string connectionString = "Data Source=localhost; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
             sqlConnection = new SqlConnection(connectionString);
-
-            this.itemLists = itemLists;
         }
 
         #region Add query
@@ -58,6 +55,7 @@ namespace Xarxaria
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
             Player selectedPlayer = new Player();
+            Inventory playerInventory = GetInventory(selectedPlayer.IdInventory);
 
             cmd.CommandText = "SELECT * FROM Player WHERE id = " + playerId;
             cmd.CommandType = CommandType.Text;
@@ -66,24 +64,22 @@ namespace Xarxaria
             sqlConnection.Open();
 
             reader = cmd.ExecuteReader();
-
             while (reader.Read())
             {
                 //Get all data of the player
                 int id = int.Parse(reader["id"].ToString());
                 int pv = int.Parse(reader["pv"].ToString());
                 int force = int.Parse(reader["force"].ToString());
+                int agility = int.Parse(reader["agility"].ToString());
                 int armor = int.Parse(reader["armor"].ToString());
+                int luck = int.Parse(reader["luck"].ToString());
                 string name = reader["name"].ToString();
                 int idActualPage = int.Parse(reader["idActualPage"].ToString());
                 int idInventory = int.Parse(reader["idInventory"].ToString());
-                selectedPlayer = new Player(id, pv, force, armor, name, idActualPage, idInventory);
+                selectedPlayer = new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory);
             }
             
             sqlConnection.Close();
-
-            //Get the inventory of the player
-            GetInventory(selectedPlayer.IdInventory);
 
             return selectedPlayer;
         }
@@ -105,14 +101,15 @@ namespace Xarxaria
 
             while (reader.Read())
             {
-                int[] inventoryValues = new int[itemLists.Length];
+                int[] inventoryValues = new int[Program.itemLists.Length];
 
                 //Get all data of the inventroy
-                for (int i = 0; i < itemLists.Length - 1; i++)
+                for (int i = 0; i < Program.itemLists.Length - 1; i++)
                 {
-                    inventoryValues[i] = int.Parse(reader[itemLists[i]].ToString());
+                    inventoryValues[i] = int.Parse(reader[Program.itemLists[i]].ToString());
                 }
 
+                //Create a new inventory and give it the readed values
                 selectedInventory = new Inventory(inventoryValues);
             }
 

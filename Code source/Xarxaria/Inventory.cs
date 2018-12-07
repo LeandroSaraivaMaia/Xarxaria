@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Xarxaria
 {
-    class Inventory
+    public class Inventory
     {
         #region private attributes
-        int goldenPiece = 0;
+        int[] items = new int[Program.itemLists.Length];
+        #endregion
+
+        #region accessors
+        public int[] Items { get { return items; } }
         #endregion
 
         #region constructor
@@ -17,9 +21,26 @@ namespace Xarxaria
         {
 
         }
-        public Inventory(int[] inventoryValues)
+        public Inventory(int[] items)
         {
-            goldenPiece = inventoryValues[0];
+            this.items = items;
+        }
+        #endregion
+
+        #region public methods
+        public void AddItem(int itemId, int numberOfItem)
+        {
+            items[itemId] += numberOfItem;
+        }
+
+        public void RemoveItem(int itemId, int numberOfItem)
+        {
+            items[itemId] -= numberOfItem;
+
+            if (items[itemId] < 0)
+            {
+                items[itemId] = 0;
+            }
         }
         #endregion
     }

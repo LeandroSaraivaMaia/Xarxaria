@@ -1,9 +1,9 @@
--- Création de la base des données
+-- Crï¿½ation de la base des donnï¿½es
 CREATE DATABASE XarxariaDB;
 
 USE XarxariaDB;
 
--- Création des tables
+-- Crï¿½ation des tables
 CREATE TABLE Enemy (
 	id INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
 	pv INT,
@@ -31,17 +31,18 @@ CREATE TABLE Player (
 	force INT,
 	armor INT,
 	agility INT,
+	luck INT,
 	name VARCHAR(255),
 	idActualPage INT FOREIGN KEY REFERENCES Page(id),
 	idInventory INT FOREIGN KEY REFERENCES Inventory(id)
 )
 
--- Insertion des données --
+-- Insertion des donnï¿½es --
 USE XarxariaDB
 
 INSERT INTO Page (title, text) VALUES
 ('Introduction', 'Aller a la page deux - <2> stp'),
-('Désintroduction', 'Aller a la page une - <1> stp');
+('Dï¿½sintroduction', 'Aller a la page une - <1> stp');
 
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 
