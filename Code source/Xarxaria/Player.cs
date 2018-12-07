@@ -57,23 +57,59 @@ namespace Xarxaria
 
         #region public methods
 
-        public void AddPv(int pvNumber)
+        public void SetItem(int itemId, int numberOfItem)
         {
-            pv += pvNumber;
+            inventory.SetItem(itemId, numberOfItem);
         }
 
-        public void RemovePv(int pvNumber)
+        public void SetPv(int val)
         {
-            pv -= pvNumber;
+            pv += val;
+
             if (pv < 0)
             {
                 Console.WriteLine("La partie est terminée, le joueur n'as plus de points de vie");
             };
         }
 
-        public void AddItem(int itemId, int numberOfItem)
+        public void SetArmor(int val)
         {
-            inventory.AddItem(itemId, numberOfItem);
+            armor += val;
+
+            if (armor < 0)
+            {
+                armor = 0;
+            };
+        }
+
+        public void SetForce(int val)
+        {
+            force += val;
+
+            if (force < 0)
+            {
+                force = 0;
+            };
+        }
+
+        public void SetAgility(int val)
+        {
+            agility += val;
+
+            if (agility < 0)
+            {
+                agility = 0;
+            };
+        }
+
+        public void SetLuck(int val)
+        {
+            luck += val;
+
+            if (luck < 0)
+            {
+                luck = 0;
+            };
         }
         #endregion
     }

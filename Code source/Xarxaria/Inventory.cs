@@ -28,14 +28,9 @@ namespace Xarxaria
         #endregion
 
         #region public methods
-        public void AddItem(int itemId, int numberOfItem)
+        public void SetItem(int itemId, int numberOfItem)
         {
             items[itemId] += numberOfItem;
-        }
-
-        public void RemoveItem(int itemId, int numberOfItem)
-        {
-            items[itemId] -= numberOfItem;
 
             if (items[itemId] < 0)
             {

@@ -75,15 +75,45 @@ namespace Xarxaria
                     //Get the different action values
                     actionValuecontents = contents[1].Split(';');
 
-                    actualPlayer.AddItem(int.Parse(actionValuecontents[0]), int.Parse(actionValuecontents[1]));
-                    //temp
-                    MessageBox.Show("Vous ajoutez " + actionValuecontents[1] + " fois l'objet avec l'id " + int.Parse(actionValuecontents[0]));
+                    actualPlayer.SetItem(int.Parse(actionValuecontents[0]), Math.Abs(int.Parse(actionValuecontents[1])));
+                    
+                    MessageBox.Show("Vous obtenez " + actionValuecontents[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValuecontents[0])] + "'", "Ajout d'objet", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
                 case (int)Program.actionId.removeItem:
 
                     //Get the different action values
                     actionValuecontents = contents[1].Split(';');
+
+                    actualPlayer.SetItem(int.Parse(actionValuecontents[0]), - Math.Abs(int.Parse(actionValuecontents[1])));
+
+                    MessageBox.Show("Vous perdez " + actionValuecontents[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValuecontents[0])] + "'", "Supression d'objet",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    break;
+                case (int)Program.actionId.changePlayerHp:
+
+                    actualPlayer.SetPv(int.Parse(contents[1]));
+
+                    break;
+                case (int)Program.actionId.changePlayerForce:
+
+                    actualPlayer.SetForce(int.Parse(contents[1]));
+
+                    break;
+                //The armor works a bit differently, it replace the value of the armor
+                case (int)Program.actionId.changePlayerArmor:
+
+                    actualPlayer.SetArmor(- actualPlayer.Armor + int.Parse(contents[1]));
+
+                    break;
+                case (int)Program.actionId.changePlayerAgility:
+
+                    actualPlayer.SetAgility(int.Parse(contents[1]));
+
+                    break;
+                case (int)Program.actionId.changePlayerLuck:
+
+                    actualPlayer.SetLuck(int.Parse(contents[1]));
 
                     break;
                 default : throw new Exception("Action id unknown");

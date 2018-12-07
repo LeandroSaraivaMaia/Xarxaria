@@ -8,11 +8,11 @@ namespace Xarxaria
 {
     static class Program
     {
-        #region public static cosntant values
+        #region public static constant values
         public static string[] itemLists = {
             "Pièce d'or"
         };
-        public enum actionId { pageChange, addItem, removeItem, addPlayerPv, removePlayerPv, setPlayerForce, addPlayerArmor, removePlayerArmor, setPlayerAgility };
+        public enum actionId { pageChange, addItem, removeItem, changePlayerHp, changePlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
         #endregion
 
         /// <summary>
