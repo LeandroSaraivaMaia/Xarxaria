@@ -201,6 +201,21 @@ namespace Xarxaria
             return GetSelectionStyle(CFM_LINK, CFE_LINK);
         }
 
+        //This code was added by Leandro, it is not contained in the original file.
+        //This method allow us to add a text with a specific style (color & underline)
+        public void AppendText(string text, Color color, bool isUnderline = false)
+        {
+            if (isUnderline)
+                SelectionFont = new Font(SelectionFont, FontStyle.Underline);
+
+            SelectionStart = TextLength;
+            SelectionLength = 0;
+
+            SelectionColor = color;
+            AppendText(text);
+            SelectionColor = ForeColor;
+            SelectionFont = new Font(SelectionFont, FontStyle.Regular);
+        }
 
         private void SetSelectionStyle(UInt32 mask, UInt32 effect)
         {

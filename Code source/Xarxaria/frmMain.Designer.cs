@@ -1,4 +1,4 @@
-﻿namespace Xarxaria
+namespace Xarxaria
 {
     partial class frmMain
     {
@@ -95,6 +95,7 @@
             this.txtPage.TabIndex = 0;
             this.txtPage.Text = "";
             this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);
+            this.txtPage.Enter += new System.EventHandler(this.txtPage_Enter);
             // 
             // frmMain
             // 

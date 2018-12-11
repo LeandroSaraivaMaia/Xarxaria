@@ -8,6 +8,13 @@ namespace Xarxaria
 {
     static class Program
     {
+        #region public static constant values
+        public static string[] itemLists = {
+            "Pièce d'or"
+        };
+        public enum actionId { pageChange, addItem, removeItem, changePlayerHp, changePlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
+        #endregion
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

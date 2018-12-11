@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
@@ -10,14 +10,6 @@ namespace Xarxaria
 {
     class ConnectionDB
     {
-        string name = "";
-        int pv = 0;
-        int force = 0;
-        int agility = 0;
-        int chance = 0;
-        int idInventory = 0;
-        int idPage = 0;
-
         SqlConnection sqlConnection;
 
         /// <summary>
@@ -31,7 +23,6 @@ namespace Xarxaria
         }
 
         #region Add query
-
         /// <summary>
         /// Add a player in the database
         /// </summary>
@@ -43,39 +34,64 @@ namespace Xarxaria
         /// <param name="idInventory">Inventory id of the player</param>
         public void AddPlayer(string name, int hp, int force, int agility, int chance, int idInventory)
         {
-            // Select data
-            this.name = name;
-            this.pv = hp;
-            this.force = force;
-            this.agility = agility;
-            this.chance = chance;
-            this.idInventory = idInventory;
-
             SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
 
-            cmd.CommandText = "INSERT INTO Player (pv, force, armor ,agility, name, idActualPage, idInventory) VALUES (pv, force, 1, agility, name, 1, idInventory)";
+            cmd.CommandText = "INSERT INTO Player (pv, force, armor ,agility, name, idActualPage, idInventory) VALUES ("+hp+", "+force+", "+1+", "+agility+", "+name+", "+1+", "+idInventory+")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
             sqlConnection.Open();
 
-            reader = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
 
             sqlConnection.Close();
         }
-
         #endregion
 
         #region Select query
-
-        // sélectionner le nom du joueur
-        public string ReadPlayer()
+        //Get player according to his id
+        public Player GetPlayer(int playerId)
         {
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
+            Player selectedPlayer = new Player();
+            Inventory playerInventory = GetInventory(selectedPlayer.IdInventory);
 
-            cmd.CommandText = "SELECT * FROM Player";
+            cmd.CommandText = "SELECT * FROM Player WHERE id = " + playerId;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                //Get all data of the player
+                int id = int.Parse(reader["id"].ToString());
+                int pv = int.Parse(reader["pv"].ToString());
+                int force = int.Parse(reader["force"].ToString());
+                int agility = int.Parse(reader["agility"].ToString());
+                int armor = int.Parse(reader["armor"].ToString());
+                int luck = int.Parse(reader["luck"].ToString());
+                string name = reader["name"].ToString();
+                int idActualPage = int.Parse(reader["idActualPage"].ToString());
+                int idInventory = int.Parse(reader["idInventory"].ToString());
+                selectedPlayer = new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory);
+            }
+            
+            sqlConnection.Close();
+
+            return selectedPlayer;
+        }
+
+        //Get an inventory according to his id
+        public Inventory GetInventory(int idInventory)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            Inventory selectedInventory = new Inventory();
+
+            cmd.CommandText = "SELECT * FROM Inventory WHERE id = " + idInventory;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -83,23 +99,29 @@ namespace Xarxaria
 
             reader = cmd.ExecuteReader();
 
-            string text = "";
-
             while (reader.Read())
             {
-                text += " ; "  + reader["name"].ToString();
+                int[] inventoryValues = new int[Program.itemLists.Length];
+
+                //Get all data of the inventroy
+                for (int i = 0; i < Program.itemLists.Length - 1; i++)
+                {
+                    inventoryValues[i] = int.Parse(reader[Program.itemLists[i]].ToString());
+                }
+
+                //Create a new inventory and give it the readed values
+                selectedInventory = new Inventory(inventoryValues);
             }
 
             sqlConnection.Close();
 
-            return text;
+            return selectedInventory;
         }
 
-        // Sélectionner une seule page selon so id
-        public Page ReadPage (int idPage)
+        //Get a page according to his id
+        public Page GetPage (int idPage)
         {
             Page readedPage = new Page();
-            this.idPage = idPage;
 
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
@@ -112,11 +134,8 @@ namespace Xarxaria
 
             reader = cmd.ExecuteReader();
 
-            string text = "";
-
             while (reader.Read())
             {
-                text += " ; " + reader["title"].ToString() + reader["text"].ToString() + reader["image"].ToString();
                 readedPage = new Page(reader["title"].ToString(), reader["text"].ToString(), reader["image"].ToString());
             }
 
@@ -124,7 +143,6 @@ namespace Xarxaria
 
             return readedPage;
         }
-
         #endregion
     }
 }
