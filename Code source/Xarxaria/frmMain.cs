@@ -24,8 +24,7 @@ namespace Xarxaria
             connection = new ConnectionDB();
             actualPlayer = connection.GetPlayer(1);
             ChangePage(1);
-
-
+            
             // Get the path of the image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
             string imagePath = currentDirectory + actualPage.Image;
@@ -99,11 +98,6 @@ namespace Xarxaria
                     break;
                 case (int)Program.actionId.addItem:
 
-                // Change image
-                string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-                string imagePath = currentDirectory + actualPage.Image;
-                myImage = new Bitmap(imagePath);
-                picPage.Image = (Image)myImage;
                     actualPlayer.SetItem(int.Parse(actionValues[0]), Math.Abs(int.Parse(actionValues[1])));
                     
                     MessageBox.Show("Vous obtenez " + actionValues[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValues[0])] + "'", "Ajout d'objet", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -182,6 +176,12 @@ namespace Xarxaria
             //Change page text
             txtPage.Text = "";
             ChangeText(actualPage.Text);
+
+            //Change image
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string imagePath = currentDirectory + actualPage.Image;
+            myImage = new Bitmap(imagePath);
+            picPage.Image = (Image)myImage;
 
             //Reset inactive links list
             inactiveLinks = new List<int>();
