@@ -79,7 +79,7 @@
             // 
             this.picPage.Location = new System.Drawing.Point(12, 55);
             this.picPage.Name = "picPage";
-            this.picPage.Size = new System.Drawing.Size(538, 148);
+            this.picPage.Size = new System.Drawing.Size(538, 234);
             this.picPage.TabIndex = 4;
             this.picPage.TabStop = false;
             // 
@@ -88,10 +88,10 @@
             this.txtPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPage.Location = new System.Drawing.Point(12, 222);
+            this.txtPage.Location = new System.Drawing.Point(12, 295);
             this.txtPage.Name = "txtPage";
             this.txtPage.ReadOnly = true;
-            this.txtPage.Size = new System.Drawing.Size(538, 345);
+            this.txtPage.Size = new System.Drawing.Size(538, 272);
             this.txtPage.TabIndex = 0;
             this.txtPage.Text = "";
             this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);

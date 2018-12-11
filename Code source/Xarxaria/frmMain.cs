@@ -14,6 +14,7 @@ namespace Xarxaria
     {
         int id = 1;
         Page actualPage;
+        Bitmap myImage;
 
         ConnectionDB connection = new ConnectionDB();
         public frmMain()
@@ -23,6 +24,13 @@ namespace Xarxaria
             actualPage = connection.ReadPage(id);
             ChangeText(actualPage.Text);
             lblPageTitle.Text = actualPage.Title;
+
+            // Get the path of the image
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string imagePath = currentDirectory + actualPage.Image;
+
+            myImage = new Bitmap(imagePath);
+            picPage.Image = (Image)myImage;
         }
 
         #region Click events
@@ -64,6 +72,12 @@ namespace Xarxaria
                 txtPage.Text = "";
 
                 lblPageTitle.Text = actualPage.Title;
+
+                // Change image
+                string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+                string imagePath = currentDirectory + actualPage.Image;
+                myImage = new Bitmap(imagePath);
+                picPage.Image = (Image)myImage;
 
                 //Text load
                 ChangeText(actualPage.Text);
