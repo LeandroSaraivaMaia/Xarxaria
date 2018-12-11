@@ -40,9 +40,15 @@ CREATE TABLE Player (
 USE XarxariaDB
 
 INSERT INTO Page (title, text, image) VALUES
-('Introduction', 'Aller a la page deux - <2> stp', '/images/paysage_01.jpg'),
-('Désintroduction', 'Aller a la page une - <1> stp', '/images/paysageAvecPortail_01.jpg');
+('Introduction', 'Aller a la page deux - <2> stp', '\..\..\DataBase\images\paysage_01.jpg'),
+('Désintroduction', 'Aller a la page une - <1> stp', '\..\..\DataBase\images\paysageAvecPortail_01.jpg');
 
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 
 INSERT INTO Player (pv, force, armor, agility, name, idActualPage, idInventory) VALUES (10, 3, 1, 5, 'Godfroyd', 2, 1);
+
+-- Modification des données (temporaire)
+/*use XarxariaDB;
+update Page set image = '\..\..\DataBase\images\paysage_01.jpg' where id = 1;
+update Page set image = '\..\..\DataBase\images\paysageAvecPortail_01.jpg' where id = 2;
+select * from Page;*/

@@ -25,7 +25,11 @@ namespace Xarxaria
             ChangeText(actualPage.Text);
             lblPageTitle.Text = actualPage.Title;
 
-            myImage = new Bitmap("P:\\MA\\Projet C#\\Xarxaria\\Code source\\Xarxaria\\DataBase\\images\\paysage_01.jpg");
+            // Get the path of the image
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string imagePath = currentDirectory + actualPage.Image;
+
+            myImage = new Bitmap(imagePath);
             picPage.Image = (Image)myImage;
         }
 
@@ -68,6 +72,12 @@ namespace Xarxaria
                 txtPage.Text = "";
 
                 lblPageTitle.Text = actualPage.Title;
+
+                // Change image
+                string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+                string imagePath = currentDirectory + actualPage.Image;
+                myImage = new Bitmap(imagePath);
+                picPage.Image = (Image)myImage;
 
                 //Text load
                 ChangeText(actualPage.Text);
