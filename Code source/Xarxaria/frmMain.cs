@@ -15,6 +15,7 @@ namespace Xarxaria
         Page actualPage;
         ConnectionDB connection;
         Player actualPlayer;
+        List<int> inactiveLinks;
         public frmMain()
         {
             InitializeComponent();
@@ -27,7 +28,6 @@ namespace Xarxaria
         }
 
         #region Click events
-
         void cmdPlayer_Click(object sender, EventArgs e)
         {
             frmPlayer playerForm = new frmPlayer(actualPlayer);
@@ -41,6 +41,12 @@ namespace Xarxaria
             menuForm.ShowDialog();
         }
 
+        //Avoid main text to be selected
+        private void txtPage_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = lblPageTitle;
+        }
+
         void txtPage_LinkClicked(object sender, System.Windows.Forms.LinkClickedEventArgs e)
         {
             //Separate shown text to link text
@@ -52,14 +58,27 @@ namespace Xarxaria
             string[] contents = actualLink.Split(',');
 
             //Contents of action content (separated by ;)
-            string[] actionValuecontents;
+            //Get the different action values
+            string[] actionValues = contents[1].Split(';');
+
+            //Get the aciton value (int)
+            int actionValue;
+            int.TryParse(contents[1], out actionValue);
 
             //contents[]
             //The first value [0] is the action id (see enum actionId)
             //The second value [1] is the action value
+            //The third value [2] is the link id
+
+            inactiveLinks.Add(int.Parse(contents[2]));
+
+            txtPage.Text = "";
+            ChangeText(actualPage.Text, inactiveLinks);
 
             //Test what action need to be done
-            switch (int.Parse(contents[0]))
+            int actualActionId = int.Parse(contents[0]);
+
+            switch (actualActionId)
             {
                 case (int)Program.actionId.pageChange:
 
@@ -72,54 +91,66 @@ namespace Xarxaria
                     break;
                 case (int)Program.actionId.addItem:
 
-                    //Get the different action values
-                    actionValuecontents = contents[1].Split(';');
-
-                    actualPlayer.SetItem(int.Parse(actionValuecontents[0]), Math.Abs(int.Parse(actionValuecontents[1])));
+                    actualPlayer.SetItem(int.Parse(actionValues[0]), Math.Abs(int.Parse(actionValues[1])));
                     
-                    MessageBox.Show("Vous obtenez " + actionValuecontents[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValuecontents[0])] + "'", "Ajout d'objet", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vous obtenez " + actionValues[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValues[0])] + "'", "Ajout d'objet", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
                 case (int)Program.actionId.removeItem:
 
-                    //Get the different action values
-                    actionValuecontents = contents[1].Split(';');
+                    actualPlayer.SetItem(int.Parse(actionValues[0]), - Math.Abs(int.Parse(actionValues[1])));
 
-                    actualPlayer.SetItem(int.Parse(actionValuecontents[0]), - Math.Abs(int.Parse(actionValuecontents[1])));
-
-                    MessageBox.Show("Vous perdez " + actionValuecontents[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValuecontents[0])] + "'", "Supression d'objet",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vous perdez " + actionValues[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValues[0])] + "'", "Supression d'objet",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
                 case (int)Program.actionId.changePlayerHp:
 
-                    actualPlayer.SetPv(int.Parse(contents[1]));
+                    actualPlayer.SetPv(actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points de vie", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0){ MessageBox.Show("+" + contents[1] + " points de vie", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 case (int)Program.actionId.changePlayerForce:
 
-                    actualPlayer.SetForce(int.Parse(contents[1]));
+                    actualPlayer.SetForce(actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points de force", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de force", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
-                //The armor works a bit differently, it replace the value of the armor
+                //The armor works a bit differently, it replaces the value of the armor
                 case (int)Program.actionId.changePlayerArmor:
 
-                    actualPlayer.SetArmor(- actualPlayer.Armor + int.Parse(contents[1]));
+                    actualPlayer.SetArmor(- actualPlayer.Armor + actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    MessageBox.Show("Votre armure passe à " + contents[1], "Aah", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
                 case (int)Program.actionId.changePlayerAgility:
 
-                    actualPlayer.SetAgility(int.Parse(contents[1]));
+                    actualPlayer.SetAgility(actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points d'agilité", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points d'agilité", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 case (int)Program.actionId.changePlayerLuck:
 
-                    actualPlayer.SetLuck(int.Parse(contents[1]));
+                    actualPlayer.SetLuck(actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points de chance", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de chance", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 default : throw new Exception("Action id unknown");
             }
         }
-
         #endregion
 
         #region Private methods
@@ -138,24 +169,48 @@ namespace Xarxaria
             //Change page text
             txtPage.Text = "";
             ChangeText(actualPage.Text);
+
+            //Reset inactive links list
+            inactiveLinks = new List<int>();
         }
 
         /// <summary>
-        /// Change the actual page text
+        /// Takes a string and an int list in arguments
+        /// 
+        /// The methods iterate over the string.
+        /// Every time there is a beacon with the symbol greater than and lesser than, the program read inside the beacon values that are formatted.
+        /// 
+        /// The format rules are as follow :
+        /// 
+        ///     There is 3 values in the beacon separated by commas
+        ///     The first value [0] is the action id (Page change, item add, etc, see enum actionId)
+        ///     The second value [1] is the shown text
+        ///     The third value [2] is the action value
+        ///     
+        ///     The third value [2] can have multiple values divided by a semicolon
+        ///     It is used for example in the item add action because it needs multiple values (id of the item and number of item added/removed)
+        /// 
+        /// The int list "selectedLinks" is used to set certain links inactive.
+        /// The values in this list represent the index of the link in order of apparition (Begining to the end)
+        /// If a value in this list is equal to the current iterated link, the link will be inactive otherwise it will be active
+        /// 
+        /// When a link is clicked, see txtPage_LinkClicked event to see what happen
+        /// 
+        /// The text can't end with a symbol !!
+        /// 
+        /// The text can't have an empty symbol
+        /// example : blabla <> blabla
+        /// 
+        /// The text can't have two opening symbol or two closing symbol if they are not opened/closed
         /// </summary>
-        void ChangeText(string text)
+        /// <param name="text"></param>
+        /// <param name="selectedInactiveLinks"></param>
+        /// <returns>Number of links in the string</returns>
+        int ChangeText(string text, List<int> selectedInactiveLinks = null)
         {
-            //The text can't end with a symbol !!
-
-            //The text can't have an empty symbol
-            //example : blabla <> blabla
-
-            //The text can't put a symbol in a symbol !!
-            //example : blabla < arrows value [ brackets value ] arrows value > blabla
-            //correct : blabla < arrows value > blabla [ brackets value ] blabla
-
             int pageChangedOpen = -1;
             int lastFreeChar = 0;
+            int numberOfLinks = 1;
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -186,7 +241,36 @@ namespace Xarxaria
                     //The second value [1] is the shown text
                     //The third value [2] is the action value
 
-                    txtPage.InsertLink(contents[1], contents[0] + "," + contents[2]);
+                    
+                    bool isLinkInactive = false;
+
+                    //If there is inactive links
+                    if (selectedInactiveLinks != null)
+                    {
+                        //Check if the iterated link is an inactive link in parameter
+                        foreach (int selectedLink in selectedInactiveLinks)
+                        {
+                            if (selectedLink == numberOfLinks)
+                            {
+                                isLinkInactive = true;
+                            }
+                        }
+                    }
+
+                    if (isLinkInactive)
+                    {
+                        //Add inactive link
+                        txtPage.AppendText(contents[1], SystemColors.ControlDarkDark, true);
+                    }
+                    else
+                    {
+                        //Add active link
+                        //The first argument is the shown text, then the action id, then the action value(s) and the link number
+                        txtPage.InsertLink(contents[1], contents[0] + "," + contents[2] + "," + numberOfLinks);
+                    }
+
+                    //Increment number of links
+                    numberOfLinks++;
 
                     lastFreeChar = i + 1;
 
@@ -203,8 +287,9 @@ namespace Xarxaria
                         txtPage.SelectedText = text.Substring(lastFreeChar, i - lastFreeChar + 1);
                 }
             }
-        }
 
+            return numberOfLinks - 1;
+        }
         #endregion
     }
 }
