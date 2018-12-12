@@ -1,3 +1,14 @@
+/**
+ * \file      ConnectionDB.cs
+ * \author    Johan Voland
+ * \version   1.0
+ * \date      November 28. 2018
+ * \brief     Set of methods to interact with the database
+ *
+ * \details   This file contains all the necessary attributes and methods to interact with the database.
+ */
+
+#region using
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,22 +16,28 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
+#endregion
 
 namespace Xarxaria
 {
     class ConnectionDB
     {
+        #region private attributes
+        //Object needed for database operation
         SqlConnection sqlConnection;
+        #endregion
 
+        #region constructor
         /// <summary>
         /// Connection to the DB in the constructor
+        /// Uses the "xarxariaLogin" user in the "XarxariaDB" database
         /// </summary>
         public ConnectionDB()
         {
-            //string connectionString = @"Network Library=dbmssocn; Data Source=localhost, 1401; database=XarxariaDB; " + @"User id=xarxariaLogin; Password=Pa$$w0rd;";
             string connectionString = "Data Source=localhost; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
             sqlConnection = new SqlConnection(connectionString);
         }
+        #endregion
 
         #region Add query
         /// <summary>
@@ -30,9 +47,9 @@ namespace Xarxaria
         /// <param name="hp">Number of Health Points</param>
         /// <param name="force">Number of force</param>
         /// <param name="agility">Number of force</param>
-        /// <param name="chance">Number of force</param>
+        /// <param name="luck">Number of force</param>
         /// <param name="idInventory">Inventory id of the player</param>
-        public void AddPlayer(string name, int hp, int force, int agility, int chance, int idInventory)
+        public void AddPlayer(string name, int hp, int force, int agility, int luck, int idInventory)
         {
             SqlCommand cmd = new SqlCommand();
 
@@ -49,7 +66,11 @@ namespace Xarxaria
         #endregion
 
         #region Select query
-        //Get player according to his id
+        /// <summary>
+        /// Get all the player values from the database
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns>Player object with the values in the database</returns>
         public Player GetPlayer(int playerId)
         {
             SqlCommand cmd = new SqlCommand();
@@ -84,7 +105,11 @@ namespace Xarxaria
             return selectedPlayer;
         }
 
-        //Get an inventory according to his id
+        /// <summary>
+        /// Get inventory values according to Id
+        /// </summary>
+        /// <param name="idInventory"></param>
+        /// <returns>Inventory object with the value in the database</returns>
         public Inventory GetInventory(int idInventory)
         {
             SqlCommand cmd = new SqlCommand();
@@ -118,7 +143,11 @@ namespace Xarxaria
             return selectedInventory;
         }
 
-        //Get a page according to his id
+        /// <summary>
+        /// Get page values according to Id
+        /// </summary>
+        /// <param name="idPage"></param>
+        /// <returns>Page object with the value in the database</return
         public Page GetPage (int idPage)
         {
             Page readedPage = new Page();

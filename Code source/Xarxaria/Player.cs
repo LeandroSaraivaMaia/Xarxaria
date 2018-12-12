@@ -1,8 +1,21 @@
-﻿using System;
+﻿/**
+ * \file      Player.cs
+ * \author    Johan Voland & Leandro Saraiva Maia
+ * \version   1.0
+ * \date      December 6. 2018
+ * \brief     Player class
+ *
+ * \details   This class represent a player and contains all the value in the database for a player.
+ * There are public methods to interact with the player's inventory and caracteristics.
+ */
+
+#region using
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#endregion
 
 namespace Xarxaria
 {
@@ -56,7 +69,6 @@ namespace Xarxaria
         #endregion
 
         #region public methods
-
         public void SetItem(int itemId, int numberOfItem)
         {
             inventory.SetItem(itemId, numberOfItem);

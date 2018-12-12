@@ -1,10 +1,24 @@
-﻿//https://www.codeproject.com/Articles/9196/Links-with-arbitrary-text-in-a-RichTextBox
+﻿/**
+ * \file      RichTextBoxExtension.cs
+ * \author    Leandro Saraiva Maia
+ * \version   1.0
+ * \date      November 22. 2018
+ * \brief     Extension for the RichTextBox of .NET
+ *
+ * \details   This extension permit to add links in the RichTextBox in .NET.
+ * It allow us to personalize links value and link shown text.
+ * 
+ * The original code is available here :
+ * https://www.codeproject.com/Articles/9196/Links-with-arbitrary-text-in-a-RichTextBox
+ */
 
+#region using
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+#endregion
 
 namespace Xarxaria
 {

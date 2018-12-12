@@ -1,4 +1,16 @@
-﻿using System;
+﻿/**
+ * \file      frmMain.cs
+ * \author    Johan Voland & Leandro Saraiva Maia
+ * \version   1.0
+ * \date      November 21. 2018
+ * \brief     Main form of the game
+ *
+ * \details   This form will represent a page in our interactive digital book.
+ * It contains the main text, an image, option button, player caracteristics button and usable link in the text.
+ */
+
+#region using
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,34 +19,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+#endregion
 
 namespace Xarxaria
 {
     public partial class frmMain : Form
     {
+        #region private attributes
         Page actualPage;
         Bitmap myImage;
         ConnectionDB connection;
         Player actualPlayer;
         List<int> inactiveLinks;
+        #endregion
+
+        #region constructor
+        /// <summary>
+        /// Main form constructor
+        /// </summary>
         public frmMain()
         {
             InitializeComponent();
 
+            //Initialize database connection
             connection = new ConnectionDB();
+
+
+            //TODO Load player save
+
+            //Get the first player entry in the database
+            //TODO Player selection
             actualPlayer = connection.GetPlayer(1);
+
+            //Get the first page entry in the database
+            //TODO Page of the player
             ChangePage(1);
-            
-            // Get the path of the image
-            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            string imagePath = currentDirectory + actualPage.Image;
-
-            picPage.Image = (Image)myImage;
-            myImage = new Bitmap(imagePath);
-
         }
+        #endregion
 
-        #region Click events
+        #region click events
+        /// <summary>
+        /// Click on the button "Feuille de personnage"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void cmdPlayer_Click(object sender, EventArgs e)
         {
             frmPlayer playerForm = new frmPlayer(actualPlayer);
@@ -42,18 +70,35 @@ namespace Xarxaria
             playerForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Click on the button "Menu"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void cmdMenu_Click(object sender, EventArgs e)
         {
             frmMenu menuForm = new frmMenu();
             menuForm.ShowDialog();
         }
 
-        //Avoid main text to be selected
+        /// <summary>
+        /// Event when with have any contact with the main text (Selection or click)
+        /// 
+        /// The active control is redirected to the titleLabel,
+        /// this avoid the main text to be selected not look good
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPage_Enter(object sender, EventArgs e)
         {
             ActiveControl = lblPageTitle;
         }
 
+        /// <summary>
+        /// Event when a link in the main text is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void txtPage_LinkClicked(object sender, System.Windows.Forms.LinkClickedEventArgs e)
         {
             //Separate shown text to link text
@@ -77,14 +122,17 @@ namespace Xarxaria
             //The second value [1] is the action value
             //The third value [2] is the link id
 
+            //Add the link index to the inactive Links list
+            //This list determines what link will be inactive
             inactiveLinks.Add(int.Parse(contents[2]));
 
             txtPage.Text = "";
             ChangeText(actualPage.Text, inactiveLinks);
 
-            //Test what action need to be done
+            //Get what action need to be done
             int actualActionId = int.Parse(contents[0]);
 
+            //Test what action need to be done
             switch (actualActionId)
             {
                 case (int)Program.actionId.pageChange:
@@ -182,7 +230,7 @@ namespace Xarxaria
             string imagePath = currentDirectory + actualPage.Image;
             myImage = new Bitmap(imagePath);
             picPage.Image = (Image)myImage;
-
+            
             //Reset inactive links list
             inactiveLinks = new List<int>();
         }
@@ -208,8 +256,6 @@ namespace Xarxaria
         /// If a value in this list is equal to the current iterated link, the link will be inactive otherwise it will be active
         /// 
         /// When a link is clicked, see txtPage_LinkClicked event to see what happen
-        /// 
-        /// The text can't end with a symbol !!
         /// 
         /// The text can't have an empty symbol
         /// example : blabla <> blabla
@@ -253,7 +299,6 @@ namespace Xarxaria
                     //The first value [0] is the action id (see enum actionId)
                     //The second value [1] is the shown text
                     //The third value [2] is the action value
-
                     
                     bool isLinkInactive = false;
 

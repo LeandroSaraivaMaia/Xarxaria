@@ -1,8 +1,23 @@
-﻿using System;
+﻿/**
+* \file      Program.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   1.0
+* \date      November 11. 2018
+* \brief     Main entry of the program
+*
+* \details   This is the main entry of the program.
+* It contains useful contstants like item's name and action id.
+* 
+* In a possible futur update the item's name may be stocked in the database
+*/
+
+#region using
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+#endregion
 
 namespace Xarxaria
 {
