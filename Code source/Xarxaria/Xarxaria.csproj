@@ -47,22 +47,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionDB.cs" />
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmCombat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmCombat.Designer.cs">
+      <DependentUpon>frmCombat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIntroduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIntroduction.Designer.cs">
+      <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="Forms\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
+    <Compile Include="Forms\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlayer.cs">
+    <Compile Include="Forms\frmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlayer.Designer.cs">
+    <Compile Include="Forms\frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPlayer.Designer.cs">
       <DependentUpon>frmPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
@@ -73,13 +91,22 @@
     <Compile Include="RichTextBoxExtension.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmCombat.resx">
+      <DependentUpon>frmCombat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIntroduction.resx">
+      <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlayer.resx">
+    <EmbeddedResource Include="Forms\frmOptions.resx">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPlayer.resx">
       <DependentUpon>frmPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
