@@ -84,6 +84,12 @@
       <DependentUpon>frmPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
+    <Compile Include="Forms\frmLoadPlayerSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLoadPlayerSelection.Designer.cs">
+      <DependentUpon>frmLoadPlayerSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -91,11 +97,20 @@
     <Compile Include="RichTextBoxExtension.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStart.Designer.cs">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\frmCombat.resx">
       <DependentUpon>frmCombat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmIntroduction.resx">
       <DependentUpon>frmIntroduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLoadPlayerSelection.resx">
+      <DependentUpon>frmLoadPlayerSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -117,7 +132,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\frmStart.resx">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

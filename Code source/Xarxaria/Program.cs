@@ -42,7 +42,7 @@ namespace Xarxaria
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIntroduction());
+            Application.Run(new frmStart());
         }
     }
 }

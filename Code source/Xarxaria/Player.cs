@@ -44,7 +44,7 @@ namespace Xarxaria
         public int Pv { get { return pv; } }
         public int IdInventory { get { return idInventory; } }
         public int IdActualPage { get { return idActualPage; } }
-        public Inventory getInventory { get { return inventory; } }
+        public Inventory GetInventory { get { return inventory; } }
         #endregion
 
         #region constructor
@@ -71,6 +71,11 @@ namespace Xarxaria
         #endregion
 
         #region public methods
+        public void LoadInventory()
+        {
+            inventory = Program.connection.GetInventory(idInventory);
+        }
+
         public void SetItem(int itemId, int numberOfItem)
         {
             inventory.SetItem(itemId, numberOfItem);
@@ -124,6 +129,11 @@ namespace Xarxaria
             {
                 luck = 0;
             };
+        }
+
+        public override string ToString()
+        {
+            return Name + ", " + Program.connection.GetPage(IdActualPage).Title;
         }
         #endregion
     }

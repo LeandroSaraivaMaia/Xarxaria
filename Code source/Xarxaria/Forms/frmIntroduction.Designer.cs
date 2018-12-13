@@ -180,6 +180,7 @@
             this.Controls.Add(this.lblHealth);
             this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.lblIntroduction);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmIntroduction";
             this.Text = "Xarxaria v1.0 - Introduction";
             ((System.ComponentModel.ISupportInitialize)(this.numHealth)).EndInit();

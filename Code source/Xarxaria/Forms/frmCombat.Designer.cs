@@ -145,6 +145,7 @@
             this.Controls.Add(this.lblPlayerHealth);
             this.Controls.Add(this.lblPlayer);
             this.Controls.Add(this.picEnemy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCombat";
             this.Text = "Xarxaria v1.0 - Combat";
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();

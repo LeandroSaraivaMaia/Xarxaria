@@ -5,8 +5,7 @@
 * \date      December 13. 2018
 * \brief     Introduction form of the game
 *
-* \details   This form is the first thing shown to the player when the application launch.
-* Its purpose is to create a player with personal caracteristics.
+* \details   The form create a player with personal caracteristics.
 */
 
 #region using
@@ -204,6 +203,8 @@ namespace Xarxaria
                 numHealth.Value = defaultHealth;
                 numAgility.Value = defaultAgility;
                 numLuck.Value = defaultLuck;
+
+                cmdStartAventure.Enabled = false;
             }
             else if (pointsToDistribute == 0)
             {

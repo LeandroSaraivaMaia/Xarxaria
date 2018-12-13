@@ -109,6 +109,7 @@
             this.Controls.Add(this.lblPoliceName);
             this.Controls.Add(this.lblPoliceSize);
             this.Controls.Add(this.cmdContinue);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmOptions";
             this.Text = "Xarxaria v1.0 - Options";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceSize)).EndInit();

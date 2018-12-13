@@ -121,6 +121,63 @@ namespace Xarxaria
 
         #region Select query
         /// <summary>
+        /// Get all the players in the database
+        /// </summary>
+        /// <returns>A list of all the players</returns>
+        public List<Player> GetPlayers()
+        {
+            //List that will contain all the players
+            List<Player> players = new List<Player>();
+
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = "SELECT * FROM Player";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+
+            int id, pv, force, agility, armor, luck, idActualPage, idInventory;
+            string name;
+
+            while (reader.Read())
+            {
+                //Create empty player
+                Player selectedPlayer = new Player();
+
+                //Create empty inventory
+                Inventory playerInventory = new Inventory();
+
+                //Get all data of the player
+                id = int.Parse(reader["id"].ToString());
+                pv = int.Parse(reader["pv"].ToString());
+                force = int.Parse(reader["force"].ToString());
+                agility = int.Parse(reader["agility"].ToString());
+                armor = int.Parse(reader["armor"].ToString());
+                luck = int.Parse(reader["luck"].ToString());
+                name = reader["name"].ToString();
+                idActualPage = int.Parse(reader["idActualPage"].ToString());
+                idInventory = int.Parse(reader["idInventory"].ToString());
+
+                //Add the player to the list of players
+                players.Add(new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory));
+            }
+
+            sqlConnection.Close();
+
+            //Get all the inventories
+            foreach (Player player in players)
+            {
+                player.LoadInventory();
+            }
+
+            return players;
+        }
+        
+        /// <summary>
         /// Get the number of player in the database
         /// </summary>
         /// <returns>Number of player in the database</returns>

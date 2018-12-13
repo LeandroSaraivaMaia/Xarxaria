@@ -49,7 +49,7 @@ namespace Xarxaria
             //Change item list text
             for (int itemId = 0; itemId < Program.itemLists.Length; itemId++)
             {
-                int numberOfItems = player.getInventory.Items[itemId];
+                int numberOfItems = player.GetInventory.Items[itemId];
                 if (numberOfItems != 0)
                     lstItems.Items.Add(Program.itemLists[itemId] + "\t" + numberOfItems);
             }

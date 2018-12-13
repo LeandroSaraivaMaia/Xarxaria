@@ -110,7 +110,7 @@ namespace Xarxaria
             this.Controls.Add(this.txtPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmMain";
-            this.Text = "Xarxaria v1.0";
+            this.Text = "Xarxaria v1.0 - Main";
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
