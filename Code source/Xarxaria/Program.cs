@@ -21,13 +21,14 @@ using System.Windows.Forms;
 
 namespace Xarxaria
 {
-    static class Program
+    class Program
     {
-        #region public static constant values
+        #region public static values
         public static string[] itemLists = {
-            "Pièce d'or"
+            "goldenCoin"
         };
         public enum actionId { pageChange, addItem, removeItem, changePlayerHp, changePlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
+        public static ConnectionDB connection;
         #endregion
 
         /// <summary>
@@ -36,9 +37,12 @@ namespace Xarxaria
         [STAThread]
         static void Main()
         {
+            //Instanciate new connection
+            connection = new ConnectionDB();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmIntroduction());
         }
     }
 }

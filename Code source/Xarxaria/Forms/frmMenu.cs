@@ -34,7 +34,6 @@ namespace Xarxaria
         }
         #endregion
 
-
         #region click events
         /// <summary>
         /// Continue button :

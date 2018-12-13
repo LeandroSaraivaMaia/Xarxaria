@@ -28,32 +28,23 @@ namespace Xarxaria
         #region private attributes
         Page actualPage;
         Bitmap myImage;
-        ConnectionDB connection;
         Player actualPlayer;
         List<int> inactiveLinks;
         #endregion
 
         #region constructor
         /// <summary>
-        /// Main form constructor
+        /// Main form constructor that load a player
         /// </summary>
-        public frmMain()
+        public frmMain(int playerId)
         {
             InitializeComponent();
 
-            //Initialize database connection
-            connection = new ConnectionDB();
+            //Get the selected player in the database
+            actualPlayer = Program.connection.GetPlayerById(playerId);
 
-
-            //TODO Load player save
-
-            //Get the first player entry in the database
-            //TODO Player selection
-            actualPlayer = connection.GetPlayer(1);
-
-            //Get the first page entry in the database
-            //TODO Page of the player
-            ChangePage(1);
+            //Load the page of the player
+            ChangePage(actualPlayer.IdActualPage);
         }
         #endregion
 
@@ -216,7 +207,7 @@ namespace Xarxaria
         void ChangePage(int pageId)
         {
             //Get page from database
-            actualPage = connection.GetPage(pageId);
+            actualPage = Program.connection.GetPage(pageId);
 
             //Change page title
             lblPageTitle.Text = actualPage.Title;

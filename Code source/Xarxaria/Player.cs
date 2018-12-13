@@ -35,6 +35,7 @@ namespace Xarxaria
         #endregion
 
         #region accessors
+        public int Id { get { return id; } }
         public string Name { get { return name; } }
         public int Force { get { return force; } }
         public int Agility { get { return agility; } }
@@ -42,6 +43,7 @@ namespace Xarxaria
         public int Luck { get { return luck; } }
         public int Pv { get { return pv; } }
         public int IdInventory { get { return idInventory; } }
+        public int IdActualPage { get { return idActualPage; } }
         public Inventory getInventory { get { return inventory; } }
         #endregion
 

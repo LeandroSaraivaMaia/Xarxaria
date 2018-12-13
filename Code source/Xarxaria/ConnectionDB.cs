@@ -46,14 +46,68 @@ namespace Xarxaria
         /// <param name="name">Name of the player</param>
         /// <param name="hp">Number of Health Points</param>
         /// <param name="force">Number of force</param>
+        /// <param name="armor">Number of armor</param>
         /// <param name="agility">Number of force</param>
         /// <param name="luck">Number of force</param>
+        /// <param name="idActualPage">Id of the actual page</param>
         /// <param name="idInventory">Inventory id of the player</param>
-        public void AddPlayer(string name, int hp, int force, int agility, int luck, int idInventory)
+        public void AddPlayer(string name, int hp, int force, int armor, int agility, int luck, int idActualPage, int idInventory)
         {
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Player (pv, force, armor ,agility, name, idActualPage, idInventory) VALUES ("+hp+", "+force+", "+1+", "+agility+", "+name+", "+1+", "+idInventory+")";
+            cmd.CommandText = "INSERT INTO Player (pv, force, armor , agility, luck, name, idActualPage, idInventory) VALUES ("+hp+", "+force+", "+armor+", "+agility+", "+luck+", '"+name+"', "+idActualPage+", "+idInventory+")";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
+        /// <summary>
+        /// Adds an empty inventory
+        /// </summary>
+        public void AddEmptyInventory()
+        {
+            //Generate a query ot insert an empty inventory
+            string query = "INSERT INTO Inventory (";
+
+            for (int i = 0; i < Program.itemLists.Length; i++)
+            {
+                //Add the name of the item in the query
+                query += Program.itemLists[i];
+
+                //If it is the last item, don't add a comma
+                if (i != Program.itemLists.Length - 1)
+                {
+                    query += ",";
+                }
+            }
+
+            //Open values parenthesis
+            query += ") VALUES (";
+
+            //Add actual item value (which is 0 because the inventory is empty)
+            for (int i = 0; i < Program.itemLists.Length; i++)
+            {
+                //Add the value of the item in the query
+                query += "0";
+
+                //If it is the last item, don't add a comma
+                if (i != Program.itemLists.Length - 1)
+                {
+                    query += ",";
+                }
+            }
+
+            //Close the query
+            query += ")";
+
+            //Those lines create the query, execute it and close the connection
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = query;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -67,11 +121,65 @@ namespace Xarxaria
 
         #region Select query
         /// <summary>
+        /// Get the number of player in the database
+        /// </summary>
+        /// <returns>Number of player in the database</returns>
+        public int GetNumberOfPlayer()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            int numberOfPlayer = 0;
+
+            cmd.CommandText = "SELECT * FROM Player";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numberOfPlayer++;
+            }
+
+            sqlConnection.Close();
+
+            return numberOfPlayer;
+        }
+
+        /// <summary>
+        /// Get the number of player in the database
+        /// </summary>
+        /// <returns>Number of player in the database</returns>
+        public int GetNumberOfInventory()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            int numberOfInventory = 0;
+
+            cmd.CommandText = "SELECT * FROM Inventory";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numberOfInventory++;
+            }
+
+            sqlConnection.Close();
+
+            return numberOfInventory;
+        }
+
+        /// <summary>
         /// Get all the player values from the database
         /// </summary>
         /// <param name="playerId"></param>
         /// <returns>Player object with the values in the database</returns>
-        public Player GetPlayer(int playerId)
+        public Player GetPlayerById(int playerId)
         {
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
@@ -85,8 +193,13 @@ namespace Xarxaria
             sqlConnection.Open();
 
             reader = cmd.ExecuteReader();
+
+            //Check if player was found
+            bool isPlayerFound = false;
+
             while (reader.Read())
             {
+                isPlayerFound = true;
                 //Get all data of the player
                 int id = int.Parse(reader["id"].ToString());
                 int pv = int.Parse(reader["pv"].ToString());
@@ -99,6 +212,9 @@ namespace Xarxaria
                 int idInventory = int.Parse(reader["idInventory"].ToString());
                 selectedPlayer = new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory);
             }
+
+            if (!isPlayerFound)
+                throw new Exception("Player with id " + playerId + " not found in database");
             
             sqlConnection.Close();
 
