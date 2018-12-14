@@ -32,7 +32,7 @@
             this.cmdContinue = new System.Windows.Forms.Button();
             this.cmdSave = new System.Windows.Forms.Button();
             this.cmdOptions = new System.Windows.Forms.Button();
-            this.cmdQuit = new System.Windows.Forms.Button();
+            this.cmdGoToStartScreen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMenu
@@ -74,22 +74,22 @@
             this.cmdOptions.UseVisualStyleBackColor = true;
             this.cmdOptions.Click += new System.EventHandler(this.cmdOptions_Click);
             // 
-            // cmdQuit
+            // cmdGoToStartScreen
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(59, 171);
-            this.cmdQuit.Name = "cmdQuit";
-            this.cmdQuit.Size = new System.Drawing.Size(121, 34);
-            this.cmdQuit.TabIndex = 4;
-            this.cmdQuit.Text = "Quitter";
-            this.cmdQuit.UseVisualStyleBackColor = true;
-            this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
+            this.cmdGoToStartScreen.Location = new System.Drawing.Point(59, 171);
+            this.cmdGoToStartScreen.Name = "cmdGoToStartScreen";
+            this.cmdGoToStartScreen.Size = new System.Drawing.Size(121, 34);
+            this.cmdGoToStartScreen.TabIndex = 4;
+            this.cmdGoToStartScreen.Text = "Retour à l\'écran titre";
+            this.cmdGoToStartScreen.UseVisualStyleBackColor = true;
+            this.cmdGoToStartScreen.Click += new System.EventHandler(this.cmdGoToStartScreen_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(243, 217);
-            this.Controls.Add(this.cmdQuit);
+            this.Controls.Add(this.cmdGoToStartScreen);
             this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdSave);
             this.Controls.Add(this.cmdContinue);
@@ -108,6 +108,6 @@
         private System.Windows.Forms.Button cmdContinue;
         private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.Button cmdOptions;
-        private System.Windows.Forms.Button cmdQuit;
+        private System.Windows.Forms.Button cmdGoToStartScreen;
     }
 }

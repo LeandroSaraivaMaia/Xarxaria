@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,7 +45,7 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdContinue_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -75,13 +76,19 @@ namespace Xarxaria
         /// <summary>
         /// Quit button :
         /// 
-        /// Quit the application
+        /// Return to the start screen
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cmdQuit_Click(object sender, EventArgs e)
+        private void cmdGoToStartScreen_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Ask the user if he is sure to go back to the start screen
+            if (MessageBox.Show("Vous êtes sûr de vouloir revenir à l'écran titre ?\nToute progression non sauvegardée sera perdue.", "Retour à l'écran titre", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                //Close this menu form and put the dialogResult to inform frmMain to go back to start screen
+                DialogResult = DialogResult.Abort;
+                Close();
+            }
         }
         #endregion
     }

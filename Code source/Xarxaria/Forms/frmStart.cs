@@ -95,8 +95,9 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdQuit_Click(object sender, EventArgs e)
         {
-            //Quit the game
-            this.Close();
+            //Ask the user if he is sure to quit the game
+            if (MessageBox.Show("Vous êtes sûr de vouloir quitter le jeu ?", "Quitter le jeu", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                Close();
         }
 
         /// <summary>

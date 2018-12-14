@@ -82,7 +82,22 @@ namespace Xarxaria
         void cmdMenu_Click(object sender, EventArgs e)
         {
             frmMenu menuForm = new frmMenu();
-            menuForm.ShowDialog();
+
+            //If the menu form is closed and sent a message to go back to title screen, open start screen and close main form
+            if (menuForm.ShowDialog() == DialogResult.Abort)
+            {
+                //Open the start screen
+                void StartScreenThreadProc()
+                {
+                    Application.Run(new frmStart());
+                }
+
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(StartScreenThreadProc));
+
+                t.Start();
+
+                Close();
+            }
         }
 
         /// <summary>
