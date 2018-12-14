@@ -21,9 +21,11 @@ using System.Windows.Forms;
 
 namespace Xarxaria
 {
-    class Program
+    static class Program
     {
         #region public static values
+        public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
+        public static float textZoom = 1;
         public static string[] itemLists = {
             "goldenCoin"
         };

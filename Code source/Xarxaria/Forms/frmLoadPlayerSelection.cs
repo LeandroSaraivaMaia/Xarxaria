@@ -86,7 +86,10 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void lstSaveFile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmdChooseSave.Enabled = true;
+            if (lstSaveFile.SelectedItem != null)
+            {
+                cmdChooseSave.Enabled = true;
+            }
         }
         #endregion
     }

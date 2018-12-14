@@ -53,7 +53,7 @@
             this.lblHealth.Location = new System.Drawing.Point(50, 93);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(68, 13);
-            this.lblHealth.TabIndex = 1;
+            this.lblHealth.TabIndex = 0;
             this.lblHealth.Text = "Points de vie";
             // 
             // lblForce
@@ -62,7 +62,7 @@
             this.lblForce.Location = new System.Drawing.Point(50, 106);
             this.lblForce.Name = "lblForce";
             this.lblForce.Size = new System.Drawing.Size(34, 13);
-            this.lblForce.TabIndex = 2;
+            this.lblForce.TabIndex = 0;
             this.lblForce.Text = "Force";
             // 
             // lblArmor
@@ -71,7 +71,7 @@
             this.lblArmor.Location = new System.Drawing.Point(50, 134);
             this.lblArmor.Name = "lblArmor";
             this.lblArmor.Size = new System.Drawing.Size(40, 13);
-            this.lblArmor.TabIndex = 3;
+            this.lblArmor.TabIndex = 0;
             this.lblArmor.Text = "Armure";
             // 
             // lblLuck
@@ -80,7 +80,7 @@
             this.lblLuck.Location = new System.Drawing.Point(50, 148);
             this.lblLuck.Name = "lblLuck";
             this.lblLuck.Size = new System.Drawing.Size(44, 13);
-            this.lblLuck.TabIndex = 4;
+            this.lblLuck.TabIndex = 0;
             this.lblLuck.Text = "Chance";
             // 
             // lstItems
@@ -107,7 +107,7 @@
             this.lblAgility.Location = new System.Drawing.Point(50, 120);
             this.lblAgility.Name = "lblAgility";
             this.lblAgility.Size = new System.Drawing.Size(35, 13);
-            this.lblAgility.TabIndex = 5;
+            this.lblAgility.TabIndex = 0;
             this.lblAgility.Text = "Agilité";
             // 
             // frmPlayer

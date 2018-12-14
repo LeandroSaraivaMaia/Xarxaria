@@ -32,6 +32,15 @@ namespace Xarxaria
         List<int> inactiveLinks;
         #endregion
 
+        #region public accessor
+        public float ZoomFactor { get { return txtPage.ZoomFactor; } set { txtPage.ZoomFactor = value; } }
+        public HorizontalAlignment TextAlign { get { return txtPage.SelectionAlignment; } set {
+                //When the change alignement change, select all the text to change alignement
+                txtPage.SelectAll();
+                txtPage.SelectionAlignment = value;
+            } }
+        #endregion
+
         #region constructor
         /// <summary>
         /// Main form constructor that load a player
@@ -39,6 +48,10 @@ namespace Xarxaria
         public frmMain(int playerId)
         {
             InitializeComponent();
+
+            //Load the text display options
+            txtPage.ZoomFactor = Program.textZoom;
+            txtPage.SelectionAlignment = Program.horizontalAlignment;
 
             //Get the selected player in the database
             actualPlayer = Program.connection.GetPlayerById(playerId);

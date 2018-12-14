@@ -42,7 +42,7 @@ namespace Xarxaria
             this.cmdMenu.Location = new System.Drawing.Point(411, 584);
             this.cmdMenu.Name = "cmdMenu";
             this.cmdMenu.Size = new System.Drawing.Size(139, 36);
-            this.cmdMenu.TabIndex = 7;
+            this.cmdMenu.TabIndex = 2;
             this.cmdMenu.Text = "Menu";
             this.cmdMenu.UseVisualStyleBackColor = true;
             this.cmdMenu.Click += new System.EventHandler(this.cmdMenu_Click);
@@ -52,7 +52,7 @@ namespace Xarxaria
             this.cmdPlayer.Location = new System.Drawing.Point(12, 584);
             this.cmdPlayer.Name = "cmdPlayer";
             this.cmdPlayer.Size = new System.Drawing.Size(139, 36);
-            this.cmdPlayer.TabIndex = 5;
+            this.cmdPlayer.TabIndex = 1;
             this.cmdPlayer.Text = "Feuille de personnage";
             this.cmdPlayer.UseVisualStyleBackColor = true;
             this.cmdPlayer.Click += new System.EventHandler(this.cmdPlayer_Click);
@@ -63,7 +63,7 @@ namespace Xarxaria
             this.lblPageID.Location = new System.Drawing.Point(261, 593);
             this.lblPageID.Name = "lblPageID";
             this.lblPageID.Size = new System.Drawing.Size(69, 13);
-            this.lblPageID.TabIndex = 9;
+            this.lblPageID.TabIndex = 0;
             this.lblPageID.Text = "Id de la page";
             // 
             // lblPageTitle
@@ -72,7 +72,7 @@ namespace Xarxaria
             this.lblPageTitle.Location = new System.Drawing.Point(249, 19);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Size = new System.Drawing.Size(81, 13);
-            this.lblPageTitle.TabIndex = 8;
+            this.lblPageTitle.TabIndex = 0;
             this.lblPageTitle.Text = "Titre de la page";
             // 
             // picPage
@@ -93,6 +93,7 @@ namespace Xarxaria
             this.txtPage.ReadOnly = true;
             this.txtPage.Size = new System.Drawing.Size(538, 272);
             this.txtPage.TabIndex = 0;
+            this.txtPage.TabStop = false;
             this.txtPage.Text = "";
             this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);
             this.txtPage.Enter += new System.EventHandler(this.txtPage_Enter);

@@ -98,6 +98,19 @@ namespace Xarxaria
             //Quit the game
             this.Close();
         }
+
+        /// <summary>
+        /// Click on the options button :
+        /// 
+        /// Open the form option
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmdOptions_Click(object sender, EventArgs e)
+        {
+            frmOptions frmOptions = new frmOptions();
+            frmOptions.ShowDialog();
+        }
         #endregion
     }
 }

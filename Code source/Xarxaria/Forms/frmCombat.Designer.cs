@@ -55,7 +55,7 @@
             this.lblPlayer.Location = new System.Drawing.Point(77, 234);
             this.lblPlayer.Name = "lblPlayer";
             this.lblPlayer.Size = new System.Drawing.Size(31, 13);
-            this.lblPlayer.TabIndex = 1;
+            this.lblPlayer.TabIndex = 0;
             this.lblPlayer.Text = "Vous";
             // 
             // lblPlayerHealth
@@ -64,7 +64,7 @@
             this.lblPlayerHealth.Location = new System.Drawing.Point(77, 261);
             this.lblPlayerHealth.Name = "lblPlayerHealth";
             this.lblPlayerHealth.Size = new System.Drawing.Size(44, 13);
-            this.lblPlayerHealth.TabIndex = 2;
+            this.lblPlayerHealth.TabIndex = 0;
             this.lblPlayerHealth.Text = "PV : XX";
             // 
             // lblPlayerForce
@@ -73,7 +73,7 @@
             this.lblPlayerForce.Location = new System.Drawing.Point(77, 288);
             this.lblPlayerForce.Name = "lblPlayerForce";
             this.lblPlayerForce.Size = new System.Drawing.Size(57, 13);
-            this.lblPlayerForce.TabIndex = 3;
+            this.lblPlayerForce.TabIndex = 0;
             this.lblPlayerForce.Text = "Force : XX";
             // 
             // lblPlayerArmor
@@ -82,7 +82,7 @@
             this.lblPlayerArmor.Location = new System.Drawing.Point(77, 315);
             this.lblPlayerArmor.Name = "lblPlayerArmor";
             this.lblPlayerArmor.Size = new System.Drawing.Size(63, 13);
-            this.lblPlayerArmor.TabIndex = 4;
+            this.lblPlayerArmor.TabIndex = 0;
             this.lblPlayerArmor.Text = "Armure : XX";
             // 
             // lblEnemy
@@ -91,7 +91,7 @@
             this.lblEnemy.Location = new System.Drawing.Point(250, 234);
             this.lblEnemy.Name = "lblEnemy";
             this.lblEnemy.Size = new System.Drawing.Size(42, 13);
-            this.lblEnemy.TabIndex = 5;
+            this.lblEnemy.TabIndex = 0;
             this.lblEnemy.Text = "Ennemi";
             // 
             // lblEnemyHealth
@@ -100,7 +100,7 @@
             this.lblEnemyHealth.Location = new System.Drawing.Point(250, 261);
             this.lblEnemyHealth.Name = "lblEnemyHealth";
             this.lblEnemyHealth.Size = new System.Drawing.Size(44, 13);
-            this.lblEnemyHealth.TabIndex = 6;
+            this.lblEnemyHealth.TabIndex = 0;
             this.lblEnemyHealth.Text = "PV : XX";
             // 
             // lblEnemyForce
@@ -109,7 +109,7 @@
             this.lblEnemyForce.Location = new System.Drawing.Point(250, 288);
             this.lblEnemyForce.Name = "lblEnemyForce";
             this.lblEnemyForce.Size = new System.Drawing.Size(57, 13);
-            this.lblEnemyForce.TabIndex = 7;
+            this.lblEnemyForce.TabIndex = 0;
             this.lblEnemyForce.Text = "Force : XX";
             // 
             // lblEnemyArmor
@@ -118,7 +118,7 @@
             this.lblEnemyArmor.Location = new System.Drawing.Point(250, 315);
             this.lblEnemyArmor.Name = "lblEnemyArmor";
             this.lblEnemyArmor.Size = new System.Drawing.Size(63, 13);
-            this.lblEnemyArmor.TabIndex = 8;
+            this.lblEnemyArmor.TabIndex = 0;
             this.lblEnemyArmor.Text = "Armure : XX";
             // 
             // cmdNextTurn
@@ -126,7 +126,7 @@
             this.cmdNextTurn.Location = new System.Drawing.Point(146, 362);
             this.cmdNextTurn.Name = "cmdNextTurn";
             this.cmdNextTurn.Size = new System.Drawing.Size(102, 35);
-            this.cmdNextTurn.TabIndex = 9;
+            this.cmdNextTurn.TabIndex = 1;
             this.cmdNextTurn.Text = "Prochain tour";
             this.cmdNextTurn.UseVisualStyleBackColor = true;
             // 

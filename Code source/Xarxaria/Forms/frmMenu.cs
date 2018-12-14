@@ -62,13 +62,14 @@ namespace Xarxaria
         /// <summary>
         /// Options button :
         /// 
-        /// TODO Open another form to change options
+        /// Open the options form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cmdOptions_Click(object sender, EventArgs e)
         {
-
+            frmOptions form = new frmOptions();
+            form.ShowDialog();
         }
 
         /// <summary>

@@ -60,7 +60,7 @@
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(121, 34);
             this.cmdSave.TabIndex = 2;
-            this.cmdSave.Text = "Sauvegarde";
+            this.cmdSave.Text = "Sauvegarder";
             this.cmdSave.UseVisualStyleBackColor = true;
             this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 

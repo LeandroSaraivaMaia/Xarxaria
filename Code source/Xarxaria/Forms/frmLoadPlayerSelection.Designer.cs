@@ -40,7 +40,7 @@
             this.lstSaveFile.Location = new System.Drawing.Point(30, 54);
             this.lstSaveFile.Name = "lstSaveFile";
             this.lstSaveFile.Size = new System.Drawing.Size(252, 147);
-            this.lstSaveFile.TabIndex = 0;
+            this.lstSaveFile.TabIndex = 1;
             this.lstSaveFile.SelectedIndexChanged += new System.EventHandler(this.lstSaveFile_SelectedIndexChanged);
             // 
             // cmdChooseSave
@@ -48,7 +48,7 @@
             this.cmdChooseSave.Location = new System.Drawing.Point(117, 207);
             this.cmdChooseSave.Name = "cmdChooseSave";
             this.cmdChooseSave.Size = new System.Drawing.Size(165, 33);
-            this.cmdChooseSave.TabIndex = 1;
+            this.cmdChooseSave.TabIndex = 3;
             this.cmdChooseSave.Text = "Sélectionner cette sauvegarde";
             this.cmdChooseSave.UseVisualStyleBackColor = true;
             this.cmdChooseSave.Click += new System.EventHandler(this.cmdChooseSave_Click);
@@ -59,7 +59,7 @@
             this.lblChooseSave.Location = new System.Drawing.Point(27, 22);
             this.lblChooseSave.Name = "lblChooseSave";
             this.lblChooseSave.Size = new System.Drawing.Size(136, 13);
-            this.lblChooseSave.TabIndex = 2;
+            this.lblChooseSave.TabIndex = 0;
             this.lblChooseSave.Text = "Choissisez une sauvegarde";
             // 
             // cmdGoBack
@@ -67,7 +67,7 @@
             this.cmdGoBack.Location = new System.Drawing.Point(30, 207);
             this.cmdGoBack.Name = "cmdGoBack";
             this.cmdGoBack.Size = new System.Drawing.Size(81, 33);
-            this.cmdGoBack.TabIndex = 3;
+            this.cmdGoBack.TabIndex = 2;
             this.cmdGoBack.Text = "Retour";
             this.cmdGoBack.UseVisualStyleBackColor = true;
             this.cmdGoBack.Click += new System.EventHandler(this.cmdGoBack_Click);

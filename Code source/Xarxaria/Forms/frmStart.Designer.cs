@@ -31,11 +31,12 @@
             this.cmdNewGame = new System.Windows.Forms.Button();
             this.cmdLoad = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
+            this.cmdOptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdNewGame
             // 
-            this.cmdNewGame.Location = new System.Drawing.Point(165, 407);
+            this.cmdNewGame.Location = new System.Drawing.Point(114, 407);
             this.cmdNewGame.Name = "cmdNewGame";
             this.cmdNewGame.Size = new System.Drawing.Size(139, 31);
             this.cmdNewGame.TabIndex = 1;
@@ -45,7 +46,7 @@
             // 
             // cmdLoad
             // 
-            this.cmdLoad.Location = new System.Drawing.Point(310, 407);
+            this.cmdLoad.Location = new System.Drawing.Point(264, 407);
             this.cmdLoad.Name = "cmdLoad";
             this.cmdLoad.Size = new System.Drawing.Size(139, 31);
             this.cmdLoad.TabIndex = 2;
@@ -55,19 +56,30 @@
             // 
             // cmdQuit
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(455, 407);
+            this.cmdQuit.Location = new System.Drawing.Point(563, 407);
             this.cmdQuit.Name = "cmdQuit";
             this.cmdQuit.Size = new System.Drawing.Size(139, 31);
-            this.cmdQuit.TabIndex = 3;
+            this.cmdQuit.TabIndex = 4;
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
             this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
+            // 
+            // cmdOptions
+            // 
+            this.cmdOptions.Location = new System.Drawing.Point(414, 407);
+            this.cmdOptions.Name = "cmdOptions";
+            this.cmdOptions.Size = new System.Drawing.Size(139, 31);
+            this.cmdOptions.TabIndex = 3;
+            this.cmdOptions.Text = "Options";
+            this.cmdOptions.UseVisualStyleBackColor = true;
+            this.cmdOptions.Click += new System.EventHandler(this.cmdOptions_Click);
             // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdLoad);
             this.Controls.Add(this.cmdNewGame);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button cmdNewGame;
         private System.Windows.Forms.Button cmdLoad;
         private System.Windows.Forms.Button cmdQuit;
+        private System.Windows.Forms.Button cmdOptions;
     }
 }

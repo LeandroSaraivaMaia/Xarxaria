@@ -62,7 +62,7 @@
             this.lblPlayerName.Location = new System.Drawing.Point(40, 236);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(76, 13);
-            this.lblPlayerName.TabIndex = 1;
+            this.lblPlayerName.TabIndex = 0;
             this.lblPlayerName.Text = "Nom du joueur";
             // 
             // lblHealth
@@ -71,7 +71,7 @@
             this.lblHealth.Location = new System.Drawing.Point(40, 259);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(68, 13);
-            this.lblHealth.TabIndex = 2;
+            this.lblHealth.TabIndex = 0;
             this.lblHealth.Text = "Points de vie";
             // 
             // lblAgility
@@ -80,7 +80,7 @@
             this.lblAgility.Location = new System.Drawing.Point(40, 283);
             this.lblAgility.Name = "lblAgility";
             this.lblAgility.Size = new System.Drawing.Size(35, 13);
-            this.lblAgility.TabIndex = 5;
+            this.lblAgility.TabIndex = 0;
             this.lblAgility.Text = "Agilité";
             // 
             // richTextBox1
@@ -90,7 +90,8 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(285, 140);
-            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // cmdStartAventure
@@ -98,7 +99,7 @@
             this.cmdStartAventure.Location = new System.Drawing.Point(71, 337);
             this.cmdStartAventure.Name = "cmdStartAventure";
             this.cmdStartAventure.Size = new System.Drawing.Size(179, 37);
-            this.cmdStartAventure.TabIndex = 7;
+            this.cmdStartAventure.TabIndex = 5;
             this.cmdStartAventure.Text = "Commencer l\'aventure";
             this.cmdStartAventure.UseVisualStyleBackColor = true;
             this.cmdStartAventure.Click += new System.EventHandler(this.cmdStartAventure_Click);
@@ -108,7 +109,7 @@
             this.numHealth.Location = new System.Drawing.Point(118, 257);
             this.numHealth.Name = "numHealth";
             this.numHealth.Size = new System.Drawing.Size(37, 20);
-            this.numHealth.TabIndex = 8;
+            this.numHealth.TabIndex = 2;
             this.numHealth.ValueChanged += new System.EventHandler(this.numHealth_ValueChanged);
             // 
             // numLuck
@@ -116,7 +117,7 @@
             this.numLuck.Location = new System.Drawing.Point(118, 305);
             this.numLuck.Name = "numLuck";
             this.numLuck.Size = new System.Drawing.Size(37, 20);
-            this.numLuck.TabIndex = 11;
+            this.numLuck.TabIndex = 4;
             this.numLuck.ValueChanged += new System.EventHandler(this.numLuck_ValueChanged);
             // 
             // txtPlayerName
@@ -124,7 +125,7 @@
             this.txtPlayerName.Location = new System.Drawing.Point(118, 233);
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.Size = new System.Drawing.Size(132, 20);
-            this.txtPlayerName.TabIndex = 12;
+            this.txtPlayerName.TabIndex = 1;
             this.txtPlayerName.TextChanged += new System.EventHandler(this.txtPlayerName_TextChanged);
             // 
             // numAgility
@@ -132,7 +133,7 @@
             this.numAgility.Location = new System.Drawing.Point(118, 281);
             this.numAgility.Name = "numAgility";
             this.numAgility.Size = new System.Drawing.Size(37, 20);
-            this.numAgility.TabIndex = 13;
+            this.numAgility.TabIndex = 3;
             this.numAgility.ValueChanged += new System.EventHandler(this.numAgility_ValueChanged);
             // 
             // lblLuck
@@ -141,7 +142,7 @@
             this.lblLuck.Location = new System.Drawing.Point(40, 307);
             this.lblLuck.Name = "lblLuck";
             this.lblLuck.Size = new System.Drawing.Size(44, 13);
-            this.lblLuck.TabIndex = 14;
+            this.lblLuck.TabIndex = 0;
             this.lblLuck.Text = "Chance";
             // 
             // lblDistributePoints
@@ -150,7 +151,7 @@
             this.lblDistributePoints.Location = new System.Drawing.Point(40, 202);
             this.lblDistributePoints.Name = "lblDistributePoints";
             this.lblDistributePoints.Size = new System.Drawing.Size(134, 13);
-            this.lblDistributePoints.TabIndex = 15;
+            this.lblDistributePoints.TabIndex = 0;
             this.lblDistributePoints.Text = "Points restant à distribuer : ";
             // 
             // lblDistributePointsValue
@@ -159,7 +160,7 @@
             this.lblDistributePointsValue.Location = new System.Drawing.Point(180, 202);
             this.lblDistributePointsValue.Name = "lblDistributePointsValue";
             this.lblDistributePointsValue.Size = new System.Drawing.Size(13, 13);
-            this.lblDistributePointsValue.TabIndex = 16;
+            this.lblDistributePointsValue.TabIndex = 0;
             this.lblDistributePointsValue.Text = "0";
             // 
             // frmIntroduction

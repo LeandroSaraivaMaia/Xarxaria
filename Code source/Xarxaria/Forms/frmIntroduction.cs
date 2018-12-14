@@ -206,6 +206,10 @@ namespace Xarxaria
 
                 cmdStartAventure.Enabled = false;
             }
+            else if (pointsToDistribute > 0)
+            {
+                cmdStartAventure.Enabled = false;
+            }
             else if (pointsToDistribute == 0)
             {
                 cmdStartAventure.Enabled = true;
