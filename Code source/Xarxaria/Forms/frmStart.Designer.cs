@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStart));
             this.cmdNewGame = new System.Windows.Forms.Button();
             this.cmdLoad = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
@@ -36,48 +37,85 @@
             // 
             // cmdNewGame
             // 
-            this.cmdNewGame.Location = new System.Drawing.Point(114, 407);
+            this.cmdNewGame.BackColor = System.Drawing.Color.Transparent;
+            this.cmdNewGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdNewGame.BackgroundImage")));
+            this.cmdNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdNewGame.FlatAppearance.BorderSize = 0;
+            this.cmdNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdNewGame.Font = new System.Drawing.Font("Algerian", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNewGame.ForeColor = System.Drawing.Color.Gold;
+            this.cmdNewGame.Location = new System.Drawing.Point(71, 386);
             this.cmdNewGame.Name = "cmdNewGame";
-            this.cmdNewGame.Size = new System.Drawing.Size(139, 31);
+            this.cmdNewGame.Size = new System.Drawing.Size(162, 52);
             this.cmdNewGame.TabIndex = 1;
             this.cmdNewGame.Text = "Nouvelle partie";
-            this.cmdNewGame.UseVisualStyleBackColor = true;
+            this.cmdNewGame.UseVisualStyleBackColor = false;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
+            this.cmdNewGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdNewGame_MouseDown);
+            this.cmdNewGame.MouseLeave += new System.EventHandler(this.cmdNewGame_MouseLeave);
             // 
             // cmdLoad
             // 
-            this.cmdLoad.Location = new System.Drawing.Point(264, 407);
+            this.cmdLoad.BackColor = System.Drawing.Color.Transparent;
+            this.cmdLoad.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdLoad.FlatAppearance.BorderSize = 0;
+            this.cmdLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdLoad.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.cmdLoad.ForeColor = System.Drawing.Color.Gold;
+            this.cmdLoad.Location = new System.Drawing.Point(239, 386);
             this.cmdLoad.Name = "cmdLoad";
-            this.cmdLoad.Size = new System.Drawing.Size(139, 31);
+            this.cmdLoad.Size = new System.Drawing.Size(162, 52);
             this.cmdLoad.TabIndex = 2;
             this.cmdLoad.Text = "Chargement d\'une partie";
-            this.cmdLoad.UseVisualStyleBackColor = true;
+            this.cmdLoad.UseVisualStyleBackColor = false;
             this.cmdLoad.Click += new System.EventHandler(this.cmdLoad_Click);
+            this.cmdLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdLoad_MouseDown);
+            this.cmdLoad.MouseLeave += new System.EventHandler(this.cmdLoad_MouseLeave);
             // 
             // cmdQuit
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(563, 407);
+            this.cmdQuit.BackColor = System.Drawing.Color.Transparent;
+            this.cmdQuit.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdQuit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdQuit.FlatAppearance.BorderSize = 0;
+            this.cmdQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdQuit.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.cmdQuit.ForeColor = System.Drawing.Color.Gold;
+            this.cmdQuit.Location = new System.Drawing.Point(575, 386);
             this.cmdQuit.Name = "cmdQuit";
-            this.cmdQuit.Size = new System.Drawing.Size(139, 31);
+            this.cmdQuit.Size = new System.Drawing.Size(162, 52);
             this.cmdQuit.TabIndex = 4;
             this.cmdQuit.Text = "Quitter";
-            this.cmdQuit.UseVisualStyleBackColor = true;
+            this.cmdQuit.UseVisualStyleBackColor = false;
             this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
+            this.cmdQuit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdQuit_MouseDown);
+            this.cmdQuit.MouseLeave += new System.EventHandler(this.cmdQuit_MouseLeave);
             // 
             // cmdOptions
             // 
-            this.cmdOptions.Location = new System.Drawing.Point(414, 407);
+            this.cmdOptions.BackColor = System.Drawing.Color.Transparent;
+            this.cmdOptions.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdOptions.FlatAppearance.BorderSize = 0;
+            this.cmdOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdOptions.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.cmdOptions.ForeColor = System.Drawing.Color.Gold;
+            this.cmdOptions.Location = new System.Drawing.Point(407, 386);
             this.cmdOptions.Name = "cmdOptions";
-            this.cmdOptions.Size = new System.Drawing.Size(139, 31);
+            this.cmdOptions.Size = new System.Drawing.Size(162, 52);
             this.cmdOptions.TabIndex = 3;
             this.cmdOptions.Text = "Options";
-            this.cmdOptions.UseVisualStyleBackColor = true;
+            this.cmdOptions.UseVisualStyleBackColor = false;
             this.cmdOptions.Click += new System.EventHandler(this.cmdOptions_Click);
+            this.cmdOptions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdOptions_MouseDown);
+            this.cmdOptions.MouseLeave += new System.EventHandler(this.cmdOptions_MouseLeave);
             // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.StartScreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdQuit);

@@ -157,5 +157,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple_Button_Pressed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -113,5 +113,63 @@ namespace Xarxaria
             frmOptions.ShowDialog();
         }
         #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+
+        private void cmdNewGame_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdNewGame.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdNewGame_MouseLeave(object sender, EventArgs e)
+        {
+            cmdNewGame.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        private void cmdLoad_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdLoad.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdLoad_MouseLeave(object sender, EventArgs e)
+        {
+            cmdLoad.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdOptions_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdOptions.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdOptions_MouseLeave(object sender, EventArgs e)
+        {
+            cmdOptions.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdQuit_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdQuit.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdQuit_MouseLeave(object sender, EventArgs e)
+        {
+            cmdQuit.BackgroundImage = Properties.Resources.Simple_Button;
+        }
     }
 }
