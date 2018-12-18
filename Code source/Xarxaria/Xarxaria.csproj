@@ -166,5 +166,53 @@
   <ItemGroup>
     <None Include="Resources\Simple_Button_Pressed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_sans_fond_min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parchemin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parchemin2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond_parchemin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parchemin_rouleau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parchemin3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parchemin4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventaire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_sans_fond_min_V2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parchemin2_v2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rose_des_vents.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rose_des_vents_V2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rose_des_vents_V3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple_Button_V2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

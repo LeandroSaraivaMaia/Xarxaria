@@ -33,6 +33,8 @@
             this.cmdLoad = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
             this.cmdOptions = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdNewGame
@@ -41,6 +43,8 @@
             this.cmdNewGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdNewGame.BackgroundImage")));
             this.cmdNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cmdNewGame.FlatAppearance.BorderSize = 0;
+            this.cmdNewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdNewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.cmdNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdNewGame.Font = new System.Drawing.Font("Algerian", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdNewGame.ForeColor = System.Drawing.Color.Gold;
@@ -57,9 +61,11 @@
             // cmdLoad
             // 
             this.cmdLoad.BackColor = System.Drawing.Color.Transparent;
-            this.cmdLoad.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdLoad.BackgroundImage")));
             this.cmdLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cmdLoad.FlatAppearance.BorderSize = 0;
+            this.cmdLoad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.cmdLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdLoad.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdLoad.ForeColor = System.Drawing.Color.Gold;
@@ -76,9 +82,11 @@
             // cmdQuit
             // 
             this.cmdQuit.BackColor = System.Drawing.Color.Transparent;
-            this.cmdQuit.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdQuit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdQuit.BackgroundImage")));
             this.cmdQuit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cmdQuit.FlatAppearance.BorderSize = 0;
+            this.cmdQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.cmdQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdQuit.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdQuit.ForeColor = System.Drawing.Color.Gold;
@@ -95,9 +103,11 @@
             // cmdOptions
             // 
             this.cmdOptions.BackColor = System.Drawing.Color.Transparent;
-            this.cmdOptions.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdOptions.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdOptions.BackgroundImage")));
             this.cmdOptions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cmdOptions.FlatAppearance.BorderSize = 0;
+            this.cmdOptions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdOptions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
             this.cmdOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdOptions.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdOptions.ForeColor = System.Drawing.Color.Gold;
@@ -111,19 +121,32 @@
             this.cmdOptions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdOptions_MouseDown);
             this.cmdOptions.MouseLeave += new System.EventHandler(this.cmdOptions_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Xarxaria.Properties.Resources.logo_sans_fond_min_V2;
+            this.pictureBox1.Location = new System.Drawing.Point(277, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(260, 312);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Xarxaria.Properties.Resources.StartScreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdLoad);
             this.Controls.Add(this.cmdNewGame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStart";
             this.Text = "Xarxaria v1.0";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +157,6 @@
         private System.Windows.Forms.Button cmdLoad;
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.Button cmdOptions;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

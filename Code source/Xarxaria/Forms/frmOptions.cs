@@ -154,5 +154,23 @@ namespace Xarxaria
             txtExample.SelectionAlignment = (HorizontalAlignment)cmbTextAlign.SelectedIndex;
         }
         #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+        private void cmdContinue_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdContinue_MouseLeave(object sender, EventArgs e)
+        {
+            cmdContinue.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
     }
 }

@@ -55,6 +55,7 @@ namespace Xarxaria
 
             //Disable the continue button because no validation check
             cmdStartAventure.Enabled = false;
+            cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
         }
         #endregion
 
@@ -205,15 +206,36 @@ namespace Xarxaria
                 numLuck.Value = defaultLuck;
 
                 cmdStartAventure.Enabled = false;
+                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
             }
             else if (pointsToDistribute > 0)
             {
                 cmdStartAventure.Enabled = false;
+                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
             }
             else if (pointsToDistribute == 0)
             {
                 cmdStartAventure.Enabled = true;
+                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button;
             }
+        }
+        #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+        private void cmdStartAventure_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdStartAventure_MouseLeave(object sender, EventArgs e)
+        {
+            cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button;
         }
         #endregion
     }

@@ -131,7 +131,6 @@ namespace Xarxaria
         {
             cmdNewGame.BackgroundImage = Properties.Resources.Simple_Button;
         }
-        #endregion
 
         private void cmdLoad_MouseDown(object sender, MouseEventArgs e)
         {
@@ -171,5 +170,6 @@ namespace Xarxaria
         {
             cmdQuit.BackgroundImage = Properties.Resources.Simple_Button;
         }
+        #endregion
     }
 }

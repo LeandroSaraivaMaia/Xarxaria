@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombat));
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.lblPlayer = new System.Windows.Forms.Label();
             this.lblPlayerHealth = new System.Windows.Forms.Label();
@@ -146,6 +147,7 @@
             this.Controls.Add(this.lblPlayer);
             this.Controls.Add(this.picEnemy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCombat";
             this.Text = "Xarxaria v1.0 - Combat";
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();

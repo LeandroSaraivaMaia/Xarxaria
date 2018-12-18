@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOptions));
             this.cmdContinue = new System.Windows.Forms.Button();
             this.lblPoliceSize = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,20 +42,33 @@
             // 
             // cmdContinue
             // 
-            this.cmdContinue.Location = new System.Drawing.Point(45, 42);
+            this.cmdContinue.BackColor = System.Drawing.Color.Transparent;
+            this.cmdContinue.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdContinue.FlatAppearance.BorderSize = 0;
+            this.cmdContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.cmdContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdContinue.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.cmdContinue.ForeColor = System.Drawing.Color.Gold;
+            this.cmdContinue.Location = new System.Drawing.Point(72, 28);
             this.cmdContinue.Name = "cmdContinue";
-            this.cmdContinue.Size = new System.Drawing.Size(122, 34);
+            this.cmdContinue.Size = new System.Drawing.Size(122, 50);
             this.cmdContinue.TabIndex = 1;
             this.cmdContinue.Text = "Continuer";
-            this.cmdContinue.UseVisualStyleBackColor = true;
+            this.cmdContinue.UseVisualStyleBackColor = false;
             this.cmdContinue.Click += new System.EventHandler(this.cmdContinue_Click);
+            this.cmdContinue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdContinue_MouseDown);
+            this.cmdContinue.MouseLeave += new System.EventHandler(this.cmdContinue_MouseLeave);
             // 
             // lblPoliceSize
             // 
             this.lblPoliceSize.AutoSize = true;
-            this.lblPoliceSize.Location = new System.Drawing.Point(15, 134);
+            this.lblPoliceSize.BackColor = System.Drawing.Color.Transparent;
+            this.lblPoliceSize.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblPoliceSize.Location = new System.Drawing.Point(10, 134);
             this.lblPoliceSize.Name = "lblPoliceSize";
-            this.lblPoliceSize.Size = new System.Drawing.Size(73, 13);
+            this.lblPoliceSize.Size = new System.Drawing.Size(130, 16);
             this.lblPoliceSize.TabIndex = 0;
             this.lblPoliceSize.Text = "Taille du texte";
             // 
@@ -68,13 +82,14 @@
             // 
             // numPoliceZoom
             // 
+            this.numPoliceZoom.BackColor = System.Drawing.Color.AntiqueWhite;
             this.numPoliceZoom.DecimalPlaces = 2;
             this.numPoliceZoom.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numPoliceZoom.Location = new System.Drawing.Point(121, 132);
+            this.numPoliceZoom.Location = new System.Drawing.Point(147, 134);
             this.numPoliceZoom.Name = "numPoliceZoom";
             this.numPoliceZoom.Size = new System.Drawing.Size(54, 20);
             this.numPoliceZoom.TabIndex = 3;
@@ -83,19 +98,22 @@
             // lblOptions
             // 
             this.lblOptions.AutoSize = true;
-            this.lblOptions.Location = new System.Drawing.Point(85, 9);
+            this.lblOptions.BackColor = System.Drawing.Color.Transparent;
+            this.lblOptions.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblOptions.Location = new System.Drawing.Point(95, 9);
             this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(43, 13);
+            this.lblOptions.Size = new System.Drawing.Size(66, 16);
             this.lblOptions.TabIndex = 0;
             this.lblOptions.Text = "Options";
             // 
             // txtExample
             // 
+            this.txtExample.BackColor = System.Drawing.Color.AntiqueWhite;
             this.txtExample.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtExample.Location = new System.Drawing.Point(12, 161);
             this.txtExample.Name = "txtExample";
             this.txtExample.ReadOnly = true;
-            this.txtExample.Size = new System.Drawing.Size(202, 131);
+            this.txtExample.Size = new System.Drawing.Size(228, 131);
             this.txtExample.TabIndex = 0;
             this.txtExample.TabStop = false;
             this.txtExample.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque urna velit, pret" +
@@ -104,13 +122,14 @@
             // 
             // cmbTextAlign
             // 
+            this.cmbTextAlign.BackColor = System.Drawing.Color.AntiqueWhite;
             this.cmbTextAlign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTextAlign.FormattingEnabled = true;
             this.cmbTextAlign.Items.AddRange(new object[] {
             "Gauche",
             "Droite",
             "Centré"});
-            this.cmbTextAlign.Location = new System.Drawing.Point(121, 101);
+            this.cmbTextAlign.Location = new System.Drawing.Point(147, 94);
             this.cmbTextAlign.Name = "cmbTextAlign";
             this.cmbTextAlign.Size = new System.Drawing.Size(93, 21);
             this.cmbTextAlign.TabIndex = 2;
@@ -119,17 +138,21 @@
             // lblTextAlign
             // 
             this.lblTextAlign.AutoSize = true;
-            this.lblTextAlign.Location = new System.Drawing.Point(15, 104);
+            this.lblTextAlign.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextAlign.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblTextAlign.Location = new System.Drawing.Point(9, 95);
             this.lblTextAlign.Name = "lblTextAlign";
-            this.lblTextAlign.Size = new System.Drawing.Size(100, 13);
+            this.lblTextAlign.Size = new System.Drawing.Size(120, 32);
             this.lblTextAlign.TabIndex = 0;
-            this.lblTextAlign.Text = "Alignement du texte";
+            this.lblTextAlign.Text = "Alignement du\r\ntexte";
             // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 304);
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.parchemin2_v2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(252, 304);
             this.Controls.Add(this.lblTextAlign);
             this.Controls.Add(this.cmbTextAlign);
             this.Controls.Add(this.txtExample);
@@ -139,6 +162,7 @@
             this.Controls.Add(this.lblPoliceSize);
             this.Controls.Add(this.cmdContinue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOptions";
             this.Text = "Xarxaria v1.0 - Options";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceZoom)).EndInit();

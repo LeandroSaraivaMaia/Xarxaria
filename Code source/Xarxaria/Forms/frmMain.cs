@@ -227,7 +227,7 @@ namespace Xarxaria
         }
         #endregion
 
-        #region Private methods
+        #region private methods
         /// <summary>
         /// Change the actual page with a given id
         /// </summary>
@@ -366,6 +366,37 @@ namespace Xarxaria
             }
 
             return numberOfLinks - 1;
+        }
+        #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+        private void cmdMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdMenu.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdMenu_MouseLeave(object sender, EventArgs e)
+        {
+            cmdMenu.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdPlayer_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdPlayer_MouseLeave(object sender, EventArgs e)
+        {
+            cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button;
         }
         #endregion
     }

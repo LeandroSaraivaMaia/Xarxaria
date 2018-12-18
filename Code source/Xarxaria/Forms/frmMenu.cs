@@ -91,5 +91,63 @@ namespace Xarxaria
             }
         }
         #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+
+        private void cmdContinue_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdContinue_MouseLeave(object sender, EventArgs e)
+        {
+            cmdContinue.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdSave_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdSave_MouseLeave(object sender, EventArgs e)
+        {
+            cmdSave.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdOptions_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdOptions.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdOptions_MouseLeave(object sender, EventArgs e)
+        {
+            cmdOptions.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdGoToStartScreen_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdGoToStartScreen.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdGoToStartScreen_MouseLeave(object sender, EventArgs e)
+        {
+            cmdGoToStartScreen.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
     }
 }

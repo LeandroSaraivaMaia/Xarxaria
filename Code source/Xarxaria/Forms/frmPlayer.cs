@@ -69,5 +69,23 @@ namespace Xarxaria
             this.Close();
         }
         #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+        private void cmdPlayerContinue_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdPlayerContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdPlayerContinue_MouseLeave(object sender, EventArgs e)
+        {
+            cmdPlayerContinue.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
     }
 }

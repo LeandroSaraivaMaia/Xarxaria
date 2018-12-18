@@ -39,6 +39,7 @@ namespace Xarxaria
 
             //Set the select save button to inactive (it wiil be active when a list is selected)
             cmdChooseSave.Enabled = false;
+            cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
         }
         #endregion
 
@@ -89,7 +90,39 @@ namespace Xarxaria
             if (lstSaveFile.SelectedItem != null)
             {
                 cmdChooseSave.Enabled = true;
+                cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button;
             }
+        }
+        #endregion
+
+        #region graphic events
+        //There is not a doxagen commentary for each events, these are really repetitive
+        //When there is a left mouse click on a button, put the pressed image
+        //When the mouse leave the button and the left mouse click is released, put the normal button image
+        private void cmdGoBack_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdGoBack.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdGoBack_MouseLeave(object sender, EventArgs e)
+        {
+            cmdGoBack.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdChooseSave_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+            }
+        }
+
+        private void cmdChooseSave_MouseLeave(object sender, EventArgs e)
+        {
+            cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button;
         }
         #endregion
     }
