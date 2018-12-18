@@ -1,5 +1,6 @@
 ﻿-- Création de la base des donn�es
 CREATE DATABASE XarxariaDB;
+GO
 
 USE XarxariaDB;
 
