@@ -27,7 +27,7 @@ namespace Xarxaria
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1;
         public static string[] itemLists = {
-            "goldenCoin"
+            "goldenCoin", "glowingStone", "stoneLantern"
         };
         public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
         public static ConnectionDB connection;

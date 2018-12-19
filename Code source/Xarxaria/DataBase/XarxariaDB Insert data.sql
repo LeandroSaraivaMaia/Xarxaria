@@ -5,28 +5,26 @@ INSERT INTO Page (title, text, image) VALUES
 ('Introduction', 'Test des différents actions <0,Cliquez ici pour change de page,2>
 Liste des actions :
 0 Changement de page
-1 Ajouter un objet
-2 Supprimer un objet
-3 Modifier les pv
-4 Modifier la force
-5 Modifier l armure
-6 Modifier l agilité
-7 Modifier la chance
+1 Modifier un objet
+2 Modifier les pv
+3 Mettre la force
+4 Modifier l armure
+5 Modifier l agilité
+6 Modifier la chance
 
 <1,Ajouter 3 pièces d or,0;3>
-<2,Supprimer 2 pièces d or,0;2>
-<3,Gagner deux pv,2>
-<3,Perdre un pv,-1>
-<4,Gagner deux de force,2>
-<4,Perdre un de force,-1>
-<5,Mettre l armure a 2,2>
-<5,Mettre l armure a 9,9>
-<6,Gagner deux d agilité,2>
-<6,Perdre un d agilité,-1>
-<7,Gagner deux de chance,2>
-<7,Perdre un de chance,-1>
-<0,Allez à la page 3,3>
-', '\..\..\DataBase\images\paysage_01.jpg'),
+<1,Supprimer 2 pièces d or,0;-2>
+<2,Gagner deux pv,2>
+<2,Perdre un pv,-1>
+<3,Mettre la force à deux,2>
+<4,Ajouter 2 d''armure,2>
+<4,Enlever 1 d''armure,-1>
+<5,Gagner deux d agilité,2>
+<5,Perdre un d agilité,-1>
+<6,Gagner deux de chance,2>
+<6,Perdre un de chance,-1>
+<0,Allez à la page 3 (Le commencement,3>
+', '\..\..\DataBase\images\paysage.jpg'),
 
 
 ('Liste des pages', 'Test si il y a des sauts de ligne
@@ -36,14 +34,14 @@ Liste des actions :
 4
 5
 
-Super tout ça <0,Vous pouvez retourner vers la première page ici,1>', '\..\..\DataBase\images\paysageAvecPortail_01.jpg'),
+Super tout ça <0,Vous pouvez retourner vers la première page ici,1>', '\..\..\DataBase\images\paysageAvecPortail.jpg'),
 
 -- Page 3 --
 ('Le commencement', 'Vous vous relevez avec le peu de dignité qui vous reste. Pendant une seconde vous pensez retournez au château pour retrouver de l''équipement. Mais vous vous ravisez, avec une telle dégaine, vous ne passerez jamais les grilles du château.
 Et revenir voir le Roi à peine 1 heure après être sortit pour sauver sa fille, quel honte !
 De toute façon vous arriverez à trouver du nouvel équipement, après-tout vous êtes le meilleur chevalier du pays !
 A présent il vous faut du matériel, que voulez-vous faire ?
-<0,Continuer vers le village, à la sortie du château,11> ou <0,oublier son honneur et aller au château,4>', '\..\..\DataBase\images\villageEtChateau_01.jpg'),
+<0,Continuer vers le village,11>, à la sortie du château ou <0,oublier son honneur et aller au château,4>', '\..\..\DataBase\images\villageEtChateau.jpg'),
 
 -- Page 4 --
 ('Oublier son honneur et aller au château', 'Finalement vous vous résignez à retourner au château. Combattre un drake avec uniquement de l''équipement trouvé sur la route est une mauvaise idée.
@@ -52,7 +50,7 @@ Le ponts levis est abaissé et vous pourriez vous approcher des gardes et espér
 Ce mur du château est mal entretenu et de solides lianes ont investi la paroi. Vous connaissez l''endroit et vous savez que le Roi n''entretient que les murs les plus visible pour ne pas montrer que le royaume est ruiné. Vous pouvez tenter d''escalader le mur en vous aidant des lianes mais c''est plutôt risqué car la muraille doit bien faire 5 m de haut.
 Après quelques minutes supplémentaires, aucun autre moyen d''entrer dans le château ne vous vient à l''esprit.
 Vous devez choisir entre <0,passer par l''entrée principale,8> en espérant que les gardes vous reconnaissent ou <0,escalader le mur,5> en espérant que les lianes ne lâchent pas.
-Vous pouvez aussi choisir de <0,rebrousser chemin(continuer au village),11>', '\..\..\DataBase\images\chateau_01.jpg'),
+Vous pouvez aussi choisir de <0,rebrousser chemin(continuer au village),11>', '\..\..\DataBase\images\chateau.jpg'),
 
 -- Page 5 --
 ('Escalader le mur du château', 'Vous faîtes un grand détour pour ne pas que les gardes vous voient et vous vous approchez discrètement de la muraille.
@@ -61,12 +59,12 @@ Vous vous échauffez les articulations en appréhendant la monté qui vous atten
 Après avoir choisi le parcours avec les plus grosses lianes, vous entamez l''escalade avec énergie. Vous aviez déjà eu affaire à des parois escarpées auparavant et cette grimpette ne vous semble pas si difficile.
 Soudain, vous sentez que vous perdez prise.
 Si vous êtes assez agile pour vous rattraper (4 points d''agilité ou plus), rendez-vous <0,ici,7>. Si vous êtes un peu plus pataud, alors allez <0,ici,6>.
-', '\..\..\DataBase\images\murailleAvecLierre_01.jpg'),
+', '\..\..\DataBase\images\murailleAvecLierre.jpg'),
 
 -- Page 6 --
 ('Vous n''arrivez pas à escalader le mur', 'Vous vous accrochez de toute vos forces aux lianes.
 Cependant vous semblez quand même tomber, ce ne sont pas les lianes qui vous lâchent mais la brique !
-Vous chutez inévitablement et essayez de trouver une position pour moins morfler à l''atterrissage. Vous vous ramassez par terre en tombant sur les fesses et <3,perdez 2 points de vie,-2>.
+Vous chutez inévitablement et essayez de trouver une position pour moins morfler à l''atterrissage. Vous vous ramassez par terre en tombant sur les fesses et <2,perdez 2 points de vie,-2>.
 Par chance la brique qui a chuté avec vous retombe un mètre sur votre gauche et non sur votre tête. Par contre elle cause un bruit très fort et soudain qui a à coup sûr alerté les gardes.
 Vous vous relevez péniblement et vous entendez des cris. Les gardes vous ont repérés. Ils sortent leurs armes et vous ordonne de vous rendre.
 Vous courez à toute allure en direction du village sans parvenir à semer les gardes.
@@ -74,7 +72,7 @@ Décidé à leurs échapper, vous sautez dans ce qui vous semble être la meille
 Vous bondissez dans la rigole et vous vous tapissez au fond en ayant presque de l''eau jusqu''à la bouche. Vous apercevez les gardes en haut depuis votre planque. Votre cachette fonctionne à merveille, vous êtes invisible pour eux.
 Après quelques minutes les deux gardes abandonnent la poursuite, ça tombe bien vous commenciez à avoir froid. Vous sortez du caniveau après être sûr que les gardes soient partie et vous vous nettoyer du mieux que vous pouvez avec la végétation alentoure.
 Vous ne pouvez décemment pas retentez d''entrer dans le château en passant par la grille principale car les gardes vous reconnaîtront et vous chasserons.
-Vous devez donc <0,continuer votre route en direction du village,11> pour dénicher des informations sur le drake.', '\..\..\DataBase\images\chuteDuMur_01.jpg'),
+Vous devez donc <0,continuer votre route en direction du village,11> pour dénicher des informations sur le drake.', '\..\..\DataBase\images\chuteDuMur.jpg'),
 
 -- Page 7 --
 ('Vous réussissez à grimper le mur', 'In extremis, vous lâchez la prise de votre main droite et bondissez en forçant sur vos jambes pour atteindre le sommet de la muraille. Il s''en est fallu de peu, car ce n''est pas les lianes qui vous ont lâchées mais une brique de la muraille. Vous craignez que le bruit est attiré les gardes alors vous devez faire vite.
@@ -94,9 +92,9 @@ Après d''autres acclamations, vous expliquez la situation et Amélia vous répo
 - “Notre père est occupé avec ses bibelots, c''est à croire qu''il se souci plus de son armure que de nous…”
 Toutes les princesses prennent une mine triste et, après un court silence, Anastasia reprends la conversation :
 - “Il ne vous donnera pas d''équipement de qualité, cependant nous pouvons vous donner ceci :”
-Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <4,une hache d''armes en acier trempé (Passe votre attaque a 5),5>
+Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <3,une hache d''armes en acier trempé (Passe votre attaque a 5),5>
 Après de chaleureuses salutations Agatha vous montre un passage secret qui mène directement à l''extérieur du château.
-Vous repartez en <0,direction du village,11> bien décidé à sauver Anabella.', '\..\..\DataBase\images\courDuChateau_01.jpg'),
+Vous repartez en <0,direction du village,11> bien décidé à sauver Anabella.', '\..\..\DataBase\images\courDuChateau.jpg'),
 
 -- Page 8 --
 ('Passer par l''entrée principale', 'Vous décidez d''aller directement vers la porte principale en espérant que les gardes vous laissent entrer, ils reconnaîtront sûrement le meilleur chevalier du royaume.
@@ -108,7 +106,7 @@ Vous appréhender moins bien la situation et une fois à la hauteur des gardes l
 Vous rétorquez en étant faussement sûr de vous :
 - “Je suis Sir Godfroy de Monaco, je vous ordonne de me laisser passer !”
 Si vous avez plus de 4 points de chance, rendez-vous <0,ici,9> et si vous êtes malchanceux, rendez-vous à cette <0,page,10>.
-', '\..\..\DataBase\images\garde_01.jpg'),
+', '\..\..\DataBase\images\garde.jpg'),
 
 -- Page 9 --
 ('Les gardes vous reconnaissent', 'Immédiatement, les gardes se raidissent et le plus maigre vous dit :
@@ -128,7 +126,7 @@ Il se remet à astiquer son casque et prend un air désintéressé.
 - “Oui, je vois mais... Tu sais que le royaume n''a pas au top niveau finance, je vais voir ce que je peux te prêter”
 Il saisit un vieux coffre sous son lit et en sort un plastron et une arme.
 - “C''est tout ce que je peux me permettre de te prêter, tiens et n''oublie pas de me les rendres hein.”
-Vous recevez <5,un plastron en fer rouillé,3> et <4,une épée d''entrainement,2>. Après de bref salutations vous reprenez votre route <0,vers le village,11> à la sortie du château.', '\..\..\DataBase\images\chambreRoi.jpg'),
+Vous recevez <4,un plastron en fer rouillé (armure + 3),3> et <3,une épée d''entrainement (passe votre force à 2),2>. Après de bref salutations vous reprenez votre route <0,vers le village,11> à la sortie du château.', '\..\..\DataBase\images\chambreRoi.jpg'),
 
 -- Page 10 --
 ('Les gardes ne vous reconnaissent pas', 'Après un long moment gênant, le plus gros des gardes reprend la conversation :
@@ -165,11 +163,11 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concer
 Vous remarquez que toute l''économie locale est basée sur la pierre. Des bijoux aux ustensiles de cuisine, la plupart des articles sont en pierre. Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
 C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
 Les objets suivants sont présentés sur l''étale de la marchande :
-<4,Une massue en pierre,3>(Votre force passe à 3) pour <2,3 pièce d''or,0;3>
-<5,Une casquette de mineur en pierre,1>(Vous gagnez 1 armure) pour <2,1 pièce d''or,0;1>
-<4,Une dague en pierre,2>(Votre force passe à 2) pour <2,1 pièce d''or,0;1>
-<1,Une étrange pierre luisante,1;1> pour <2,1 pièce d''or,0;1>
-<1,Une lanterne en pierre,2;1> pour <2,2 pièce d''or,0;2>
+<3,Une massue en pierre,3>(Votre force passe à 3) pour <1,3 pièce d''or,0;-3>
+<4,Une casquette de mineur en pierre,1>(armure + 1) pour <1,1 pièce d''or,0;-1>
+<3,Une dague en pierre,2>(Votre force passe à 2) pour <1,1 pièce d''or,0;-1>
+<1,Une étrange pierre luisante,1;1> pour <1,1 pièce d''or,0;-1>
+<1,Une lanterne en pierre,2;1> pour <1,2 pièce d''or,0;-2>
 Une fois vos achats effectués, vous pouvez :
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
