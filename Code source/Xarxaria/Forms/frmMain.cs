@@ -404,5 +404,11 @@ namespace Xarxaria
             cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button;
         }
         #endregion
+
+        //Temporary debug
+        private void cmdDebug_Click(object sender, EventArgs e)
+        {
+            ChangePage(int.Parse(txtDebug.Text));
+        }
     }
 }
