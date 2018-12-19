@@ -145,7 +145,7 @@ Vous courrez pendant au moins 3 quart d''heure en direction du village, Finaleme
 Vous reprenez votre souffle. Pas question de retourner au château avec ces deux gardes aux aguets.
 Vous devez donc <0,explorer le village,11> à la recherche d''indice pour savoir où s''est envolé le drake qui vous a attaqué récemment, peut-être que les villageois l''ont vu passer.', '\..\..\DataBase\images\fuite.jpg'),
 
--- */Page 11 --
+-- Page 11 --
 ('Casse-Roc', 'Vous vous dirigez donc vers le village situé à la sortie du château.
 C''est un petit hameau tranquille nommé Casse-Roc où les habitants sont principalement des mineurs. Il y a de grandes carrières de pierre tout autour du village. Non en faite… le village est une carrière de pierre !
 Vous n''avez jamais mis les pieds ici car vous êtes toujours au château ou en croisade dans les pays voisins. Cependant vous avez entendu des rumeurs sur cette endroit. Un jour petit un feu s''est déclaré et la quasi-totalité du village s''est embrasé car toutes les maisons étaient en bois à l''époque. La plupart des habitants étaient à la rue. Depuis ce jour les habitants se sont mis à construire leur maison directement dans la roche et maintenant le village vit de l''extraction de la pierre.
@@ -153,10 +153,33 @@ Vous remarquez aussi que l''intégralité du village est abaissé d''une dizaine
 Le village est principalement un terrain vague peuplé de mineurs acharnés. Il y a beaucoup de personnes et beaucoup d''agitation avec les éclats de pierre et les pioches qui volent dans tous les sens. Des rails, en pierre, ont été installés pour faciliter les allées et venues incessantes de wagons remplis de roche.
 Ce qui vous perturbe le plus est l''omniprésence de la roche dans ce village. Les pioches, les wagons, les poteaux, les banderoles, les bâtiments et même les casquettes des habitants sont en pierre ! Vous vous sentez rassuré en voyant un habitant manger des pommes de terre.
 Comme vous aviez prévu initialement, vous devez trouver des informations concernant le drake, vous devez maintenant choisir ce que vous allez faire :
-<0,Aller chez le marchand,12>'
-, '\..\..\DataBase\images\casseRoc.jpg')
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Piller l''église,15>
+<0,Essayer de trouver du travail,16>'
+, '\..\..\DataBase\images\casseRoc.jpg'),
 
-INSERT INTO Inventory(goldenCoin) VALUES (18);
+-- Page 12 --
+('Le forgeron', 'Vous vous promener un peu et vous trouvez un quartier marchand. A pars quelques mineurs à la tâche, le marché est quasiment désert. Il fait encore tôt donc cela ne vous étonne pas trop.
+Vous remarquez que toute l''économie locale est basée sur la pierre. Des bijoux aux ustensiles de cuisine, la plupart des articles sont en pierre. Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
+C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
+Les objets suivants sont présentés sur l''étale de la marchande :
+<4,Une massue en pierre,3>(Votre force passe à 3) pour <2,3 pièce d''or,0;3>
+<5,Une casquette de mineur en pierre,1>(Vous gagnez 1 armure) pour <2,1 pièce d''or,0;1>
+<4,Une dague en pierre,2>(Votre force passe à 2) pour <2,1 pièce d''or,0;1>
+<1,Une étrange pierre luisante,1;1> pour <2,1 pièce d''or,0;1>
+<1,Une lanterne en pierre,2;1> pour <2,2 pièce d''or,0;2>
+Une fois vos achats effectués, vous pouvez :
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Piller l''église,15>
+<0,Essayer de trouver du travail,16>'
+, '\..\..\DataBase\images\forgeron.jpg');
+
+-- Page 13 -- */
+
+INSERT INTO Inventory(goldenCoin, glowingStone, stoneLantern) VALUES (18, 0, 0);
 
 INSERT INTO Player (pv, force, armor, agility, luck, name, idActualPage, idInventory) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 2, 1);
 
@@ -173,5 +196,6 @@ UPDATE Page SET text =
  Page 8 : <0,Passer par l''entrée principale,8>
  Page 9 : <0,Les gardes vous reconnaissent,9>
  Page 10 : <0,Les gardes ne vous reconnaissent pas,10>
- Page 11 : <0,CasseRoc,11>' 
+ Page 11 : <0,CasseRoc,11>
+ Page 12 : <0,Le forgeron,12>' 
 WHERE id = 2;

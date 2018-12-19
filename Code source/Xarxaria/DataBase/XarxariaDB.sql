@@ -17,7 +17,9 @@ CREATE TABLE Enemy (
 
 CREATE TABLE Inventory (
 	id INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
-	goldenCoin INT
+	goldenCoin INT,
+	glowingStone INT,
+	stoneLantern INT
 )
 
 CREATE TABLE Page (
