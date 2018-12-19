@@ -98,7 +98,7 @@ Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphr
 Après de chaleureuses salutations Agatha vous montre un passage secret qui mène directement à l''extérieur du château.
 Vous repartez en <0,direction du village,11> bien décidé à sauver Anabella.', '\..\..\DataBase\images\courDuChateau_01.jpg'),
 
--- Page 8 --*/
+-- Page 8 --
 ('Passer par l''entrée principale', 'Vous décidez d''aller directement vers la porte principale en espérant que les gardes vous laissent entrer, ils reconnaîtront sûrement le meilleur chevalier du royaume.
 Il y en a un tout gros et un tout maigre, le premier pèse sans doute le double du deuxième. 
 Vous vous lancez sur le pont levis d''un pas décidé. Au fur et à mesure de votre avancée, les gardes vous dévisagent de plus en plus.
@@ -108,9 +108,53 @@ Vous appréhender moins bien la situation et une fois à la hauteur des gardes l
 Vous rétorquez en étant faussement sûr de vous :
 - “Je suis Sir Godfroy de Monaco, je vous ordonne de me laisser passer !”
 Si vous avez plus de 4 points de chance, rendez-vous <0,ici,9> et si vous êtes malchanceux, rendez-vous à cette <0,page,10>.
-', '\..\..\DataBase\images\garde_01.jpg');
+', '\..\..\DataBase\images\garde_01.jpg'),
 
 -- Page 9 --
+('Les gardes vous reconnaissent', 'Immédiatement, les gardes se raidissent et le plus maigre vous dit :
+- “Oh, navré Sir je ne vous avais pas reconnu, je vous en pris entrez”
+Soulagé, vous imitez un air de dédain et entrez à grand pas dans la cour.
+Les nobles vous dévisagent pendant que vous vous dirigez rapidement vers la salle du trône. Étonnamment il n''y a aucun autres gardes à l''intérieur et vous pouvez entrer sans problème dans la chambre du Roi.
+Vous frappez contre la porte et vous entendez une voix familière :
+- ”Encore vous ?! Je vous ai dit que je n''étais pas intéressé à vendre le Royaume !”
+Vous ouvrez la porte et entrez.
+- ”Sir Godfroyd ? … Mais que vous ait-il arrivé ? Je croyais que c''était encore ces foutus marchands de Capital +”
+Vous surprenez le Roi en train de polir son casque en or. Sa chambre est extrêmement bien décorée comparée au reste du château. Une immense vitrine ouverte contenant un équipement complet en or trône en face de son lit à baldaquin.
+Il vous regarde d''un air ahuri et vous rétorquez:
+- ”Je me suis fait directement attaqué par le drake à la sortie du château. Il m''a renversé et a utilisé sa magie noire pour faire disparaître tout mon équipement.”
+Il se remet à astiquer son casque et prend un air désintéressé.
+- “Ah ce maudit drake, il attaque de plus en plus près… En quoi puis-je vous être utile ?”
+- ”J''aurais besoin d''équipement pour tuer le drake et sauver votre fille Anabella. Toutes mes économies étaient passé dans mon armure, mon arme et mon cheval”
+- “Oui, je vois mais... Tu sais que le royaume n''a pas au top niveau finance, je vais voir ce que je peux te prêter”
+Il saisit un vieux coffre sous son lit et en sort un plastron et une arme.
+- “C''est tout ce que je peux me permettre de te prêter, tiens et n''oublie pas de me les rendres hein.”
+Vous recevez <5,un plastron en fer rouillé,3> et <4,une épée d''entrainement,2>. Après de bref salutations vous reprenez votre route <0,vers le village,11> à la sortie du château.', '\..\..\DataBase\images\chambreRoi.jpg'),
+
+-- Page 10 --
+('Les gardes ne vous reconnaissent pas', 'Après un long moment gênant, le plus gros des gardes reprend la conversation :
+- “Ordre. Halte. Clodo. ”
+L''autre garde continue :
+- “Vous pouvez pas rester ici m''sieur, partez maintenant”
+Il vous jette <1,une pièce d''or,0;1> au visage et les deux gardes lèvent leurs armes.
+Dans une dernière tentative vous dites :
+- ”Vous ne me reconnaissez pas ?, Godfroyd le meilleur chevalier du royaume, j''ai sauvé un tas de princesse !”
+Vous semblez être la seul distraction de ces deux gardes depuis longtemps, ils vous poussent et vous menace de leurs armes :
+- “Dehors l''ivrogne ! La seul chose que vous pourriez sauver c''est une bouteille de vin”
+Vous commencer à courir quand vous remarquez que les deux gardes se mettent à vous suivre. Non, il vous poursuive !
+Vous courrez pendant au moins 3 quart d''heure en direction du village, Finalement vous parvenez à semer les gardes, ils rebroussent chemin en vous injuriant.
+Vous reprenez votre souffle. Pas question de retourner au château avec ces deux gardes aux aguets.
+Vous devez donc <0,explorer le village,11> à la recherche d''indice pour savoir où s''est envolé le drake qui vous a attaqué récemment, peut-être que les villageois l''ont vu passer.', '\..\..\DataBase\images\fuite.jpg'),
+
+-- */Page 11 --
+('Casse-Roc', 'Vous vous dirigez donc vers le village situé à la sortie du château.
+C''est un petit hameau tranquille nommé Casse-Roc où les habitants sont principalement des mineurs. Il y a de grandes carrières de pierre tout autour du village. Non en faite… le village est une carrière de pierre !
+Vous n''avez jamais mis les pieds ici car vous êtes toujours au château ou en croisade dans les pays voisins. Cependant vous avez entendu des rumeurs sur cette endroit. Un jour petit un feu s''est déclaré et la quasi-totalité du village s''est embrasé car toutes les maisons étaient en bois à l''époque. La plupart des habitants étaient à la rue. Depuis ce jour les habitants se sont mis à construire leur maison directement dans la roche et maintenant le village vit de l''extraction de la pierre.
+Vous remarquez aussi que l''intégralité du village est abaissé d''une dizaine de mètres dans le sol. L''extraction massive de pierre doit en être la cause, en effet pendant que vous marchez, vous croisez des mineurs qui creusent directement sur le sol du village.
+Le village est principalement un terrain vague peuplé de mineurs acharnés. Il y a beaucoup de personnes et beaucoup d''agitation avec les éclats de pierre et les pioches qui volent dans tous les sens. Des rails, en pierre, ont été installés pour faciliter les allées et venues incessantes de wagons remplis de roche.
+Ce qui vous perturbe le plus est l''omniprésence de la roche dans ce village. Les pioches, les wagons, les poteaux, les banderoles, les bâtiments et même les casquettes des habitants sont en pierre ! Vous vous sentez rassuré en voyant un habitant manger des pommes de terre.
+Comme vous aviez prévu initialement, vous devez trouver des informations concernant le drake, vous devez maintenant choisir ce que vous allez faire :
+<0,Aller chez le marchand,12>'
+, '\..\..\DataBase\images\casseRoc.jpg')
 
 INSERT INTO Inventory(goldenCoin) VALUES (18);
 
@@ -126,5 +170,8 @@ UPDATE Page SET text =
  Page 5 : <0,Escalader le mur du château,5>
  Page 6 : <0,Vous n''arrivez pas à escalader le mur,6>
  Page 7 : <0,Vous réussissez à grimper le mur,7>
- Page 8 : <0,Passer par l''entrée principale,8>' 
+ Page 8 : <0,Passer par l''entrée principale,8>
+ Page 9 : <0,Les gardes vous reconnaissent,9>
+ Page 10 : <0,Les gardes ne vous reconnaissent pas,10>
+ Page 11 : <0,CasseRoc,11>' 
 WHERE id = 2;
