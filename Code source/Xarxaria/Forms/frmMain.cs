@@ -49,10 +49,6 @@ namespace Xarxaria
         {
             InitializeComponent();
 
-            //Load the text display options
-            txtPage.ZoomFactor = Program.textZoom;
-            txtPage.SelectionAlignment = Program.horizontalAlignment;
-
             //Get the selected player in the database
             actualPlayer = Program.connection.GetPlayerById(playerId);
 
@@ -145,6 +141,7 @@ namespace Xarxaria
             //This list determines what link will be inactive
             inactiveLinks.Add(int.Parse(contents[2]));
 
+            //Reload text
             txtPage.Text = "";
             ChangeText(actualPage.Text, inactiveLinks);
 
@@ -163,18 +160,15 @@ namespace Xarxaria
                     ChangePage(pageId);
 
                     break;
-                case (int)Program.actionId.addItem:
+                case (int)Program.actionId.changeItem:
 
-                    actualPlayer.SetItem(int.Parse(actionValues[0]), Math.Abs(int.Parse(actionValues[1])));
+                    int itemId = int.Parse(actionValues[0]);
+                    int numberOfItems = int.Parse(actionValues[1]);
+
+                    actualPlayer.SetItem(itemId, numberOfItems);
                     
-                    MessageBox.Show("Vous obtenez " + actionValues[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValues[0])] + "'", "Ajout d'objet", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    break;
-                case (int)Program.actionId.removeItem:
-
-                    actualPlayer.SetItem(int.Parse(actionValues[0]), - Math.Abs(int.Parse(actionValues[1])));
-
-                    MessageBox.Show("Vous perdez " + actionValues[1] + " fois l'objet '" + Program.itemLists[int.Parse(actionValues[0])] + "'", "Supression d'objet",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (numberOfItems < 0) { MessageBox.Show("Vous perdez " + Math.Abs(numberOfItems) + " fois l'objet '" + Program.itemLists[itemId] + "'", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (numberOfItems > 0) { MessageBox.Show("Vous obtenez " + numberOfItems + " fois l'objet '" + Program.itemLists[itemId] + "'", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 case (int)Program.actionId.changePlayerHp:
@@ -186,22 +180,22 @@ namespace Xarxaria
                     else if (actionValue > 0){ MessageBox.Show("+" + contents[1] + " points de vie", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
-                case (int)Program.actionId.changePlayerForce:
+                //The force works a bit differently, it replaces the value of the force and it's not adding or substracting anything
+                case (int)Program.actionId.setPlayerForce:
 
-                    actualPlayer.SetForce(actionValue);
+                    actualPlayer.SetForce(-actualPlayer.Force + actionValue);
 
                     //Will maybe be replaced by a little animation/sound
-                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points de force", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de force", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    MessageBox.Show("Votre force passe à " + contents[1], "Aah", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     break;
-                //The armor works a bit differently, it replaces the value of the armor
                 case (int)Program.actionId.changePlayerArmor:
 
-                    actualPlayer.SetArmor(- actualPlayer.Armor + actionValue);
+                    actualPlayer.SetArmor(actionValue);
 
                     //Will maybe be replaced by a little animation/sound
-                    MessageBox.Show("Votre armure passe à " + contents[1], "Aah", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points d'armure", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points d'armure", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 case (int)Program.actionId.changePlayerAgility:
@@ -242,7 +236,15 @@ namespace Xarxaria
 
             //Change page text
             txtPage.Text = "";
+
+            //trigger the getter of the zoomFactor to apply zoom correctly
+            float dump = txtPage.ZoomFactor;
+
+            //Load the text
             ChangeText(actualPage.Text);
+
+            //Change the ZoomFactor value
+            txtPage.ZoomFactor = Program.textZoom;
 
             //Change image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
@@ -364,6 +366,9 @@ namespace Xarxaria
                         txtPage.SelectedText = text.Substring(lastFreeChar, i - lastFreeChar + 1);
                 }
             }
+
+            //Set text alignement
+            TextAlign = Program.horizontalAlignment;
 
             return numberOfLinks - 1;
         }

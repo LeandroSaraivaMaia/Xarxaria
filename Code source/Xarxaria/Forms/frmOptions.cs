@@ -87,9 +87,6 @@ namespace Xarxaria
             //Change the global value for text size
             Program.textZoom = (float)numPoliceZoom.Value;
 
-            //Get the current assembly
-            Assembly currentAssembly = Assembly.GetExecutingAssembly();
-
             //Get all current open forms
             foreach (Form form in Application.OpenForms)
             {

@@ -29,7 +29,7 @@ namespace Xarxaria
         public static string[] itemLists = {
             "goldenCoin"
         };
-        public enum actionId { pageChange, addItem, removeItem, changePlayerHp, changePlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
+        public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
         public static ConnectionDB connection;
         #endregion
 
