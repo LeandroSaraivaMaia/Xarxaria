@@ -1,6 +1,6 @@
-﻿-- Insertion des donn�es --
-USE XarxariaDB
+﻿USE XarxariaDB;
 
+-- Insertion des données --
 INSERT INTO Page (title, text, image) VALUES
 -- Page 1 --
 ('Introduction', 'C''est l''histoire d''un pays tranquille. Un jour, un vilain drake kidnappe une des princesses du royaume.
@@ -14,7 +14,7 @@ Après avoir repris ses esprits, il aperçoit une bête ailé s’éloigner, le 
 Il a eu beaucoup de chance de s’en réchapper vivant.
 C’est là que votre aventure commence, vous êtes ce chevalier.
 <0,Continuer,3>'
-, '\..\..\DataBase\images\paysage.jpg'),
+, 'paysage.jpg'),
 
 -- Page 2 --
 ('Liste des actions', 'Liste des actions :
@@ -37,14 +37,14 @@ C’est là que votre aventure commence, vous êtes ce chevalier.
 <5,Perdre un d agilité,-1>
 <6,Gagner deux de chance,2>
 <6,Perdre un de chance,-1>
-<0,Allez à la page 3 (Le commencement,3>', '\..\..\DataBase\images\paysageAvecPortail.jpg'),
+<0,Allez à la page 3 (Le commencement,3>', 'paysageAvecPortail.jpg'),
 
 -- Page 3 --
 ('Le commencement', 'Vous vous relevez avec le peu de dignité qui vous reste. Pendant une seconde vous pensez retournez au château pour retrouver de l''équipement. Mais vous vous ravisez, avec une telle dégaine, vous ne passerez jamais les grilles du château.
 Et revenir voir le Roi à peine 1 heure après être sortit pour sauver sa fille, quel honte !
 De toute façon vous arriverez à trouver du nouvel équipement, après-tout vous êtes le meilleur chevalier du pays !
 A présent il vous faut du matériel, que voulez-vous faire ?
-<0,Continuer vers le village,11>, à la sortie du château ou <0,oublier son honneur et aller au château,4>', '\..\..\DataBase\images\villageEtChateau.jpg'),
+<0,Continuer vers le village,11>, à la sortie du château ou <0,oublier son honneur et aller au château,4>', 'villageEtChateau.jpg'),
 
 -- Page 4 --
 ('Oublier son honneur et aller au château', 'Finalement vous vous résignez à retourner au château. Combattre un drake avec uniquement de l''équipement trouvé sur la route est une mauvaise idée.
@@ -53,7 +53,7 @@ Le ponts levis est abaissé et vous pourriez vous approcher des gardes et espér
 Ce mur du château est mal entretenu et de solides lianes ont investi la paroi. Vous connaissez l''endroit et vous savez que le Roi n''entretient que les murs les plus visible pour ne pas montrer que le royaume est ruiné. Vous pouvez tenter d''escalader le mur en vous aidant des lianes mais c''est plutôt risqué car la muraille doit bien faire 5 m de haut.
 Après quelques minutes supplémentaires, aucun autre moyen d''entrer dans le château ne vous vient à l''esprit.
 Vous devez choisir entre <0,passer par l''entrée principale,8> en espérant que les gardes vous reconnaissent ou <0,escalader le mur,5> en espérant que les lianes ne lâchent pas.
-Vous pouvez aussi choisir de <0,rebrousser chemin(continuer au village),11>', '\..\..\DataBase\images\chateau.jpg'),
+Vous pouvez aussi choisir de <0,rebrousser chemin(continuer au village),11>', 'chateau.jpg'),
 
 -- Page 5 --
 ('Escalader le mur du château', 'Vous faîtes un grand détour pour ne pas que les gardes vous voient et vous vous approchez discrètement de la muraille.
@@ -62,7 +62,7 @@ Vous vous échauffez les articulations en appréhendant la monté qui vous atten
 Après avoir choisi le parcours avec les plus grosses lianes, vous entamez l''escalade avec énergie. Vous aviez déjà eu affaire à des parois escarpées auparavant et cette grimpette ne vous semble pas si difficile.
 Soudain, vous sentez que vous perdez prise.
 Si vous êtes assez agile pour vous rattraper (4 points d''agilité ou plus), rendez-vous <0,ici,7>. Si vous êtes un peu plus pataud, alors allez <0,ici,6>.
-', '\..\..\DataBase\images\murailleAvecLierre.jpg'),
+', 'murailleAvecLierre.jpg'),
 
 -- Page 6 --
 ('Vous n''arrivez pas à escalader le mur', 'Vous vous accrochez de toute vos forces aux lianes.
@@ -75,7 +75,7 @@ Décidé à leurs échapper, vous sautez dans ce qui vous semble être la meille
 Vous bondissez dans la rigole et vous vous tapissez au fond en ayant presque de l''eau jusqu''à la bouche. Vous apercevez les gardes en haut depuis votre planque. Votre cachette fonctionne à merveille, vous êtes invisible pour eux.
 Après quelques minutes les deux gardes abandonnent la poursuite, ça tombe bien vous commenciez à avoir froid. Vous sortez du caniveau après être sûr que les gardes soient partie et vous vous nettoyer du mieux que vous pouvez avec la végétation alentoure.
 Vous ne pouvez décemment pas retentez d''entrer dans le château en passant par la grille principale car les gardes vous reconnaîtront et vous chasserons.
-Vous devez donc <0,continuer votre route en direction du village,11> pour dénicher des informations sur le drake.', '\..\..\DataBase\images\chuteDuMur.jpg'),
+Vous devez donc <0,continuer votre route en direction du village,11> pour dénicher des informations sur le drake.', 'chuteDuMur.jpg'),
 
 -- Page 7 --
 ('Vous réussissez à grimper le mur', 'In extremis, vous lâchez la prise de votre main droite et bondissez en forçant sur vos jambes pour atteindre le sommet de la muraille. Il s''en est fallu de peu, car ce n''est pas les lianes qui vous ont lâchées mais une brique de la muraille. Vous craignez que le bruit est attiré les gardes alors vous devez faire vite.
@@ -97,7 +97,7 @@ Toutes les princesses prennent une mine triste et, après un court silence, Anas
 - “Il ne vous donnera pas d''équipement de qualité, cependant nous pouvons vous donner ceci :”
 Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <3,une hache d''armes en acier trempé (Passe votre attaque a 5),5>
 Après de chaleureuses salutations Agatha vous montre un passage secret qui mène directement à l''extérieur du château.
-Vous repartez en <0,direction du village,11> bien décidé à sauver Anabella.', '\..\..\DataBase\images\courDuChateau.jpg'),
+Vous repartez en <0,direction du village,11> bien décidé à sauver Anabella.', 'courDuChateau.jpg'),
 
 -- Page 8 --
 ('Passer par l''entrée principale', 'Vous décidez d''aller directement vers la porte principale en espérant que les gardes vous laissent entrer, ils reconnaîtront sûrement le meilleur chevalier du royaume.
@@ -109,7 +109,7 @@ Vous appréhender moins bien la situation et une fois à la hauteur des gardes l
 Vous rétorquez en étant faussement sûr de vous :
 - “Je suis Sir Godfroy de Monaco, je vous ordonne de me laisser passer !”
 Si vous avez plus de 4 points de chance, rendez-vous <0,ici,9> et si vous êtes malchanceux, rendez-vous à cette <0,page,10>.
-', '\..\..\DataBase\images\garde.jpg'),
+', 'garde.jpg'),
 
 -- Page 9 --
 ('Les gardes vous reconnaissent', 'Immédiatement, les gardes se raidissent et le plus maigre vous dit :
@@ -129,7 +129,7 @@ Il se remet à astiquer son casque et prend un air désintéressé.
 - “Oui, je vois mais... Tu sais que le royaume n''a pas au top niveau finance, je vais voir ce que je peux te prêter”
 Il saisit un vieux coffre sous son lit et en sort un plastron et une arme.
 - “C''est tout ce que je peux me permettre de te prêter, tiens et n''oublie pas de me les rendres hein.”
-Vous recevez <4,un plastron en fer rouillé (armure + 3),3> et <3,une épée d''entrainement (passe votre force à 2),2>. Après de bref salutations vous reprenez votre route <0,vers le village,11> à la sortie du château.', '\..\..\DataBase\images\chambreRoi.jpg'),
+Vous recevez <4,un plastron en fer rouillé (armure + 3),3> et <3,une épée d''entrainement (passe votre force à 2),2>. Après de bref salutations vous reprenez votre route <0,vers le village,11> à la sortie du château.', 'chambreRoi.jpg'),
 
 -- Page 10 --
 ('Les gardes ne vous reconnaissent pas', 'Après un long moment gênant, le plus gros des gardes reprend la conversation :
@@ -144,9 +144,15 @@ Vous semblez être la seul distraction de ces deux gardes depuis longtemps, ils 
 Vous commencer à courir quand vous remarquez que les deux gardes se mettent à vous suivre. Non, il vous poursuive !
 Vous courrez pendant au moins 3 quart d''heure en direction du village, Finalement vous parvenez à semer les gardes, ils rebroussent chemin en vous injuriant.
 Vous reprenez votre souffle. Pas question de retourner au château avec ces deux gardes aux aguets.
-Vous devez donc <0,explorer le village,11> à la recherche d''indice pour savoir où s''est envolé le drake qui vous a attaqué récemment, peut-être que les villageois l''ont vu passer.', '\..\..\DataBase\images\fuite.jpg'),
+Vous devez donc <0,explorer le village,11> à la recherche d''indice pour savoir où s''est envolé le drake qui vous a attaqué récemment, peut-être que les villageois l''ont vu passer.', 'fuite.jpg'),
 
 -- Page 11 --
+-- Page temporaire de fin de version
+('Fin de la démo !', 'Félicitations !
+Vous êtes arrivé à la fin de la version 1.0 !
+Merci d''avoir joué !'
+, 'casseRoc.jpg'),
+/*
 ('Casse-Roc', 'Vous vous dirigez donc vers le village situé à la sortie du château.
 C''est un petit hameau tranquille nommé Casse-Roc où les habitants sont principalement des mineurs. Il y a de grandes carrières de pierre tout autour du village. Non en faite… le village est une carrière de pierre !
 Vous n''avez jamais mis les pieds ici car vous êtes toujours au château ou en croisade dans les pays voisins. Cependant vous avez entendu des rumeurs sur cette endroit. Un jour petit un feu s''est déclaré et la quasi-totalité du village s''est embrasé car toutes les maisons étaient en bois à l''époque. La plupart des habitants étaient à la rue. Depuis ce jour les habitants se sont mis à construire leur maison directement dans la roche et maintenant le village vit de l''extraction de la pierre.
@@ -159,7 +165,8 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concer
 <0,Mendier pour essayer d''obtenir de l''or,14>
 <0,Piller l''église,15>
 <0,Essayer de trouver du travail,16>'
-, '\..\..\DataBase\images\casseRoc.jpg'),
+, 'casseRoc.jpg'),
+*/
 
 -- Page 12 --
 ('Le forgeron', 'Vous vous promener un peu et vous trouvez un quartier marchand. A pars quelques mineurs à la tâche, le marché est quasiment désert. Il fait encore tôt donc cela ne vous étonne pas trop.
@@ -176,27 +183,10 @@ Une fois vos achats effectués, vous pouvez :
 <0,Mendier pour essayer d''obtenir de l''or,14>
 <0,Piller l''église,15>
 <0,Essayer de trouver du travail,16>'
-, '\..\..\DataBase\images\forgeron.jpg');
+, 'forgeron.jpg');
 
--- Page 13 -- */
+-- Inventaire et joueur
 
 INSERT INTO Inventory(goldenCoin, glowingStone, stoneLantern) VALUES (18, 0, 0);
 
-INSERT INTO Player (pv, force, armor, agility, luck, name, idActualPage, idInventory) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 2, 1);
-
--- Updates
-USE XarxariaDB
-
-/*UPDATE Page SET text = 
-'Page 1 : <0,Introduction,1>
- Page 3 : <0,Le commencement,3>
- Page 4 : <0,Oublier son honneur et aller au chateau,4>
- Page 5 : <0,Escalader le mur du château,5>
- Page 6 : <0,Vous n''arrivez pas à escalader le mur,6>
- Page 7 : <0,Vous réussissez à grimper le mur,7>
- Page 8 : <0,Passer par l''entrée principale,8>
- Page 9 : <0,Les gardes vous reconnaissent,9>
- Page 10 : <0,Les gardes ne vous reconnaissent pas,10>
- Page 11 : <0,CasseRoc,11>
- Page 12 : <0,Le forgeron,12>' 
-WHERE id = 2;*/
+INSERT INTO Player (pv, force, armor, agility, luck, name, idActualPage, idInventory) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 3, 1);

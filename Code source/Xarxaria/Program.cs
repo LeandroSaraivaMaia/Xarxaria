@@ -61,12 +61,10 @@ namespace Xarxaria
         [STAThread]
         static void Main()
         {
-            //Get the ressources folder directory
-            string ressourcesDirectory = Path.GetFullPath(Environment.CurrentDirectory + @"\..\..\Resources\");
-
             //Define sounds
-            hoverSound = new WMPLib.WindowsMediaPlayer { URL = ressourcesDirectory + "selection1_short.wav" };
-            clickSound = new WMPLib.WindowsMediaPlayer { URL = ressourcesDirectory + "click1.wav" };
+            hoverSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\selection1_short.wav" };
+            clickSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\click1.wav" };
+            Console.WriteLine(Environment.CurrentDirectory + @"assets\sounds\selection1_short.wav");
 
             //Necessary so the sound doesn't directly play
             hoverSound.controls.stop();

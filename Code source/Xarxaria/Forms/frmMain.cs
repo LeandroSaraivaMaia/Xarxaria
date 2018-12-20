@@ -292,7 +292,7 @@ namespace Xarxaria
 
             //Change image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            string imagePath = currentDirectory + actualPage.Image;
+            string imagePath = currentDirectory + @"\assets\images\" + actualPage.Image;
             try
             {
                 loadedImage = new Bitmap(imagePath);
@@ -471,11 +471,5 @@ namespace Xarxaria
             Program.playHoverSound();
         }
         #endregion
-
-        //Temporary debug
-        private void cmdDebug_Click(object sender, EventArgs e)
-        {
-            ChangePage(int.Parse(txtDebug.Text));
-        }
     }
 }
