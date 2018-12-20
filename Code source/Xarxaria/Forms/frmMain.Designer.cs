@@ -83,14 +83,16 @@ namespace Xarxaria
             // 
             // lblPageTitle
             // 
-            this.lblPageTitle.AutoSize = true;
+            this.lblPageTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPageTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblPageTitle.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblPageTitle.Location = new System.Drawing.Point(224, 18);
+            this.lblPageTitle.Location = new System.Drawing.Point(12, 9);
             this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(138, 16);
+            this.lblPageTitle.Size = new System.Drawing.Size(538, 43);
             this.lblPageTitle.TabIndex = 0;
             this.lblPageTitle.Text = "Titre de la page";
+            this.lblPageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picPage
             // 

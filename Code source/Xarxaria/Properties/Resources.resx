@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Parchemin4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parchemin4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="parchemin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parchemin2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,37 +142,37 @@
   <data name="Inventory2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inventory2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Simple_Button_Pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Simple_Button_Pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rose_des_vents_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rose_des_vents_V2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rose_des_vents" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rose_des_vents.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rose_des_vents_V3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rose_des_vents_V3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fond_parchemin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fond_parchemin.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rose_des_vents_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rose_des_vents_V2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="parchemin2_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\parchemin2_v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="parchemin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parchemin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Parchemin4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parchemin4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Simple_Button_Pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Simple_Button_Pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inventaire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inventaire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="parchemin2_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parchemin2_v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rose_des_vents_V3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rose_des_vents_V3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Simple_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple_Button_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventaire_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inventaire_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

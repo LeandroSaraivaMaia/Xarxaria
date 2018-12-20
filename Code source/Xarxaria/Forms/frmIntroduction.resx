@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Bienvenue dans le monde de Xarxaria
-Cette aventure textuelle vous plongera dans la peau d'un personnage et
-vous aurez des choix tout au long de l'histoire.
-Vous pouvez répartir 5 points dans vos caractéristiques
+    <value>Bienvenue dans le monde de Xarxaria.
+Cette aventure textuelle vous plongera dans la peau d'un personnage dans un monde fantastique.
+Tout au long de l'aventure, vous aurez des choix à faire.
+Ceci est la version 1.0 de Xarxaria, certaines situations vous demanderons de regarder vos statistiques pour voir si vous réussisez des actions.
+C'est à vous d'être fair-play et d'aller sur les pages demandées.
 
-
-TODO Insérer texte d'introduction plus complet</value>
+Créez votre personnage en entrant un nom et en répartissant 5 points dans vos caractéristiques.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

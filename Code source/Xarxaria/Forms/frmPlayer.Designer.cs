@@ -41,21 +41,23 @@
             // 
             // lblPlayerName
             // 
-            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayerName.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblPlayerName.Location = new System.Drawing.Point(89, 9);
+            this.lblPlayerName.Location = new System.Drawing.Point(12, 0);
             this.lblPlayerName.Name = "lblPlayerName";
-            this.lblPlayerName.Size = new System.Drawing.Size(109, 16);
+            this.lblPlayerName.Size = new System.Drawing.Size(270, 54);
             this.lblPlayerName.TabIndex = 0;
             this.lblPlayerName.Text = "NomDuJoueur";
+            this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblHealth
             // 
             this.lblHealth.AutoSize = true;
             this.lblHealth.BackColor = System.Drawing.Color.Transparent;
             this.lblHealth.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblHealth.Location = new System.Drawing.Point(38, 93);
+            this.lblHealth.Location = new System.Drawing.Point(12, 113);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(106, 16);
             this.lblHealth.TabIndex = 0;
@@ -66,7 +68,7 @@
             this.lblForce.AutoSize = true;
             this.lblForce.BackColor = System.Drawing.Color.Transparent;
             this.lblForce.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblForce.Location = new System.Drawing.Point(38, 106);
+            this.lblForce.Location = new System.Drawing.Point(12, 129);
             this.lblForce.Name = "lblForce";
             this.lblForce.Size = new System.Drawing.Size(53, 16);
             this.lblForce.TabIndex = 0;
@@ -77,7 +79,7 @@
             this.lblArmor.AutoSize = true;
             this.lblArmor.BackColor = System.Drawing.Color.Transparent;
             this.lblArmor.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblArmor.Location = new System.Drawing.Point(38, 134);
+            this.lblArmor.Location = new System.Drawing.Point(12, 157);
             this.lblArmor.Name = "lblArmor";
             this.lblArmor.Size = new System.Drawing.Size(68, 16);
             this.lblArmor.TabIndex = 0;
@@ -88,7 +90,7 @@
             this.lblLuck.AutoSize = true;
             this.lblLuck.BackColor = System.Drawing.Color.Transparent;
             this.lblLuck.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblLuck.Location = new System.Drawing.Point(38, 148);
+            this.lblLuck.Location = new System.Drawing.Point(12, 173);
             this.lblLuck.Name = "lblLuck";
             this.lblLuck.Size = new System.Drawing.Size(64, 16);
             this.lblLuck.TabIndex = 0;
@@ -101,9 +103,9 @@
             this.lstItems.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lstItems.FormattingEnabled = true;
             this.lstItems.ItemHeight = 16;
-            this.lstItems.Location = new System.Drawing.Point(42, 174);
+            this.lstItems.Location = new System.Drawing.Point(15, 197);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(190, 192);
+            this.lstItems.Size = new System.Drawing.Size(267, 176);
             this.lstItems.TabIndex = 2;
             // 
             // cmdPlayerContinue
@@ -117,7 +119,7 @@
             this.cmdPlayerContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdPlayerContinue.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdPlayerContinue.ForeColor = System.Drawing.Color.Gold;
-            this.cmdPlayerContinue.Location = new System.Drawing.Point(81, 37);
+            this.cmdPlayerContinue.Location = new System.Drawing.Point(29, 57);
             this.cmdPlayerContinue.Name = "cmdPlayerContinue";
             this.cmdPlayerContinue.Size = new System.Drawing.Size(117, 42);
             this.cmdPlayerContinue.TabIndex = 1;
@@ -132,7 +134,7 @@
             this.lblAgility.AutoSize = true;
             this.lblAgility.BackColor = System.Drawing.Color.Transparent;
             this.lblAgility.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblAgility.Location = new System.Drawing.Point(38, 120);
+            this.lblAgility.Location = new System.Drawing.Point(12, 143);
             this.lblAgility.Name = "lblAgility";
             this.lblAgility.Size = new System.Drawing.Size(65, 16);
             this.lblAgility.TabIndex = 0;
@@ -142,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.Inventaire;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.Inventaire_V2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(294, 385);
             this.Controls.Add(this.lblAgility);
@@ -156,15 +158,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPlayer";
-            this.Text = "Xarxaria v1.0 - NomDuJoueur";
+            this.Text = "Xarxaria v1.0 - Personnage";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label lblHealth;
         private System.Windows.Forms.Label lblForce;
         private System.Windows.Forms.Label lblArmor;
@@ -172,5 +172,6 @@
         private System.Windows.Forms.ListBox lstItems;
         private System.Windows.Forms.Button cmdPlayerContinue;
         private System.Windows.Forms.Label lblAgility;
+        private System.Windows.Forms.Label lblPlayerName;
     }
 }

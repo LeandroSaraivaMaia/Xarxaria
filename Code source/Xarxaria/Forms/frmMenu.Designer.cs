@@ -38,14 +38,16 @@
             // 
             // lblMenu
             // 
-            this.lblMenu.AutoSize = true;
+            this.lblMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMenu.BackColor = System.Drawing.Color.Transparent;
             this.lblMenu.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblMenu.Location = new System.Drawing.Point(102, 9);
+            this.lblMenu.Location = new System.Drawing.Point(12, 9);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(46, 16);
+            this.lblMenu.Size = new System.Drawing.Size(226, 25);
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menu";
+            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmdContinue
             // 
@@ -58,7 +60,7 @@
             this.cmdContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdContinue.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdContinue.ForeColor = System.Drawing.Color.Gold;
-            this.cmdContinue.Location = new System.Drawing.Point(46, 34);
+            this.cmdContinue.Location = new System.Drawing.Point(46, 37);
             this.cmdContinue.Name = "cmdContinue";
             this.cmdContinue.Size = new System.Drawing.Size(165, 46);
             this.cmdContinue.TabIndex = 1;
@@ -79,7 +81,7 @@
             this.cmdSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSave.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdSave.ForeColor = System.Drawing.Color.Gold;
-            this.cmdSave.Location = new System.Drawing.Point(46, 86);
+            this.cmdSave.Location = new System.Drawing.Point(46, 89);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(165, 46);
             this.cmdSave.TabIndex = 2;
@@ -100,7 +102,7 @@
             this.cmdOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdOptions.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdOptions.ForeColor = System.Drawing.Color.Gold;
-            this.cmdOptions.Location = new System.Drawing.Point(46, 138);
+            this.cmdOptions.Location = new System.Drawing.Point(46, 141);
             this.cmdOptions.Name = "cmdOptions";
             this.cmdOptions.Size = new System.Drawing.Size(165, 46);
             this.cmdOptions.TabIndex = 3;
@@ -121,7 +123,7 @@
             this.cmdGoToStartScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGoToStartScreen.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdGoToStartScreen.ForeColor = System.Drawing.Color.Gold;
-            this.cmdGoToStartScreen.Location = new System.Drawing.Point(46, 190);
+            this.cmdGoToStartScreen.Location = new System.Drawing.Point(46, 193);
             this.cmdGoToStartScreen.Name = "cmdGoToStartScreen";
             this.cmdGoToStartScreen.Size = new System.Drawing.Size(165, 46);
             this.cmdGoToStartScreen.TabIndex = 4;
@@ -137,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Xarxaria.Properties.Resources.parchemin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(250, 248);
+            this.ClientSize = new System.Drawing.Size(250, 251);
             this.Controls.Add(this.cmdGoToStartScreen);
             this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdSave);
@@ -148,7 +150,6 @@
             this.Name = "frmMenu";
             this.Text = "Xarxaria v1.0 - Menu";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

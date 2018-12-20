@@ -51,9 +51,9 @@
             this.cmdContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdContinue.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdContinue.ForeColor = System.Drawing.Color.Gold;
-            this.cmdContinue.Location = new System.Drawing.Point(72, 28);
+            this.cmdContinue.Location = new System.Drawing.Point(70, 38);
             this.cmdContinue.Name = "cmdContinue";
-            this.cmdContinue.Size = new System.Drawing.Size(122, 50);
+            this.cmdContinue.Size = new System.Drawing.Size(117, 50);
             this.cmdContinue.TabIndex = 1;
             this.cmdContinue.Text = "Continuer";
             this.cmdContinue.UseVisualStyleBackColor = false;
@@ -97,14 +97,16 @@
             // 
             // lblOptions
             // 
-            this.lblOptions.AutoSize = true;
+            this.lblOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOptions.BackColor = System.Drawing.Color.Transparent;
             this.lblOptions.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblOptions.Location = new System.Drawing.Point(95, 9);
+            this.lblOptions.Location = new System.Drawing.Point(13, 9);
             this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(66, 16);
+            this.lblOptions.Size = new System.Drawing.Size(227, 30);
             this.lblOptions.TabIndex = 0;
             this.lblOptions.Text = "Options";
+            this.lblOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtExample
             // 

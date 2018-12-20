@@ -73,7 +73,7 @@
             this.cmdLoad.Name = "cmdLoad";
             this.cmdLoad.Size = new System.Drawing.Size(162, 52);
             this.cmdLoad.TabIndex = 2;
-            this.cmdLoad.Text = "Chargement d\'une partie";
+            this.cmdLoad.Text = "Charger d\'une partie";
             this.cmdLoad.UseVisualStyleBackColor = false;
             this.cmdLoad.Click += new System.EventHandler(this.cmdLoad_Click);
             this.cmdLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdLoad_MouseDown);
