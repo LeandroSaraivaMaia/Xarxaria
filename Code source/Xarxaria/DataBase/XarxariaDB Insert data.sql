@@ -163,9 +163,9 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concer
 Vous remarquez que toute l''économie locale est basée sur la pierre. Des bijoux aux ustensiles de cuisine, la plupart des articles sont en pierre. Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
 C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
 Les objets suivants sont présentés sur l''étale de la marchande :
-<3,Une massue en pierre,3>(Votre force passe à 3) pour <1,3 pièce d''or,0;-3>
-<4,Une casquette de mineur en pierre,1>(armure + 1) pour <1,1 pièce d''or,0;-1>
-<3,Une dague en pierre,2>(Votre force passe à 2) pour <1,1 pièce d''or,0;-1>
+<3,Une massue en pierre,3>(Votre force passe à 3) pour <1,4 pièce d''or,0;-4>
+<4,Une casquette de mineur en pierre,1>(armure + 1) pour <1,2 pièce d''or,0;-2>
+<3,Une dague en pierre,2>(Votre force passe à 2) pour <1,2 pièce d''or,0;-2>
 <1,Une étrange pierre luisante,1;1> pour <1,1 pièce d''or,0;-1>
 <1,Une lanterne en pierre,2;1> pour <1,2 pièce d''or,0;-2>
 Une fois vos achats effectués, vous pouvez :
