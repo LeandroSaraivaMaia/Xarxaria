@@ -2,8 +2,22 @@
 USE XarxariaDB
 
 INSERT INTO Page (title, text, image) VALUES
-('Introduction', 'Test des différents actions <0,Cliquez ici pour change de page,2>
-Liste des actions :
+-- Page 1 --
+('Introduction', 'C''est l''histoire d''un pays tranquille. Un jour, un vilain drake kidnappe une des princesses du royaume.
+Le Roi, furieux, convoque tous ses chevaliers à la table carrée.
+Malheureusement, tous les chevaliers sont en croisade dans le pays voisin.
+Mais il reste un seul chevalier à la cour, le fameux Sir Godfroyd de Monaco. C''est le chevalier le plus valeureux de tout le royaume.
+Il a déjà prouvé sa valeur a de nombreuse reprises en sauvant moultes princesses.
+Le courageux chevalier est très décidé à sauver la princesse du Roi. Il dépense toutes ses économies et achète le meilleur équipement du royaume pour sa quête.
+Quelques lieues après être sorti du château, il est frappé par ce qui lui semble être un éclair. Une grande ombre noire déchirant les cieux à une vitesse vertigineuse le renverse. Il est violemment éjecté de la route et finit dans un caniveau boueux.
+Après avoir repris ses esprits, il aperçoit une bête ailé s’éloigner, le drake. Il se rend compte que son équipement a entièrement disparu. C’est sans doute l’oeuvre de la magie noire du drake.
+Il a eu beaucoup de chance de s’en réchapper vivant.
+C’est là que votre aventure commence, vous êtes ce chevalier.
+<0,Continuer,3>'
+, '\..\..\DataBase\images\paysage.jpg'),
+
+-- Page 2 --
+('Liste des actions', 'Liste des actions :
 0 Changement de page
 1 Modifier un objet
 2 Modifier les pv
@@ -23,18 +37,7 @@ Liste des actions :
 <5,Perdre un d agilité,-1>
 <6,Gagner deux de chance,2>
 <6,Perdre un de chance,-1>
-<0,Allez à la page 3 (Le commencement,3>
-', '\..\..\DataBase\images\paysage.jpg'),
-
-
-('Liste des pages', 'Test si il y a des sauts de ligne
-1
-2
-3
-4
-5
-
-Super tout ça <0,Vous pouvez retourner vers la première page ici,1>', '\..\..\DataBase\images\paysageAvecPortail.jpg'),
+<0,Allez à la page 3 (Le commencement,3>', '\..\..\DataBase\images\paysageAvecPortail.jpg'),
 
 -- Page 3 --
 ('Le commencement', 'Vous vous relevez avec le peu de dignité qui vous reste. Pendant une seconde vous pensez retournez au château pour retrouver de l''équipement. Mais vous vous ravisez, avec une telle dégaine, vous ne passerez jamais les grilles du château.
@@ -184,7 +187,7 @@ INSERT INTO Player (pv, force, armor, agility, luck, name, idActualPage, idInven
 -- Updates
 USE XarxariaDB
 
-UPDATE Page SET text = 
+/*UPDATE Page SET text = 
 'Page 1 : <0,Introduction,1>
  Page 3 : <0,Le commencement,3>
  Page 4 : <0,Oublier son honneur et aller au chateau,4>
@@ -196,4 +199,4 @@ UPDATE Page SET text =
  Page 10 : <0,Les gardes ne vous reconnaissent pas,10>
  Page 11 : <0,CasseRoc,11>
  Page 12 : <0,Le forgeron,12>' 
-WHERE id = 2;
+WHERE id = 2;*/
