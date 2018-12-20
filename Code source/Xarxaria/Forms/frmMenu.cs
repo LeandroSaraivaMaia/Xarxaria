@@ -60,6 +60,7 @@ namespace Xarxaria
         private void cmdSave_Click(object sender, EventArgs e)
         {
             Program.connection.SavePlayer(actualPlayer);
+            MessageBox.Show("Partie sauvegardée.", "Sauvegarde", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
