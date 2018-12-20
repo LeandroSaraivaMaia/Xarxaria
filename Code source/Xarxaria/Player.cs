@@ -131,6 +131,11 @@ namespace Xarxaria
             };
         }
 
+        public void SetActualPage(int id)
+        {
+            idActualPage = id;
+        }
+
         public override string ToString()
         {
             return Name + ", " + Program.connection.GetPage(IdActualPage).Title;

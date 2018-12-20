@@ -77,7 +77,7 @@ namespace Xarxaria
         /// <param name="e"></param>
         void cmdMenu_Click(object sender, EventArgs e)
         {
-            frmMenu menuForm = new frmMenu();
+            frmMenu menuForm = new frmMenu(actualPlayer);
 
             //If the menu form is closed and sent a message to go back to title screen, open start screen and close main form
             if (menuForm.ShowDialog() == DialogResult.Abort)
@@ -233,6 +233,9 @@ namespace Xarxaria
 
             //Change page title
             lblPageTitle.Text = actualPage.Title;
+
+            //Change player idActualPage
+            actualPlayer.SetActualPage(actualPage.Id);
 
             //Change page text
             txtPage.Text = "";
