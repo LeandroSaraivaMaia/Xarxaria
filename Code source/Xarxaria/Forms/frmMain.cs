@@ -27,7 +27,7 @@ namespace Xarxaria
     {
         #region private attributes
         Page actualPage;
-        Bitmap myImage;
+        Bitmap loadedImage;
         Player actualPlayer;
         List<int> inactiveLinks;
         #endregion
@@ -124,11 +124,37 @@ namespace Xarxaria
             //Get all content of the actual link
             string[] contents = actualLink.Split(',');
 
+            //Test the number of values between beacons, there must be 3
+            if (contents.Length > 3)
+            {
+                throw new Exception("Too much values between beacons (needs 3 and there is " + contents.Length + "). Check commas");
+            }
+            else if (contents.Length < 3)
+            {
+                throw new Exception("Not enought values between beacons (needs 3 and there is "+ contents.Length +"). Check commas");
+            }
+
+            //Get what action need to be done
+            int linkActionId = int.Parse(contents[0]);
+
             //Contents of action content (separated by ;)
             //Get the different action values
             string[] actionValues = contents[1].Split(';');
 
-            //Get the aciton value (int)
+            string actionName = Enum.GetName(typeof(Program.actionId), linkActionId);
+
+            //Verify that there is not too much or not enought action values
+            //Note that, for changeItem action, there needs to be 2 action values and for other actions, there needs to be 1 action value
+            if (actionValues.Length > 1 && linkActionId != (int)Program.actionId.changeItem)
+                throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 1 and there is " + actionValues.Length);
+            else if (actionValues.Length > 2 && linkActionId == (int)Program.actionId.changeItem)
+                throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
+            else if (actionValues.Length == 1 && linkActionId == (int)Program.actionId.changeItem)
+                throw new Exception("Not enought action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
+            else if (actionValues.Length == 0)
+                throw new Exception("No action values for action : " + Enum.GetName(typeof(Program.actionId), linkActionId));
+
+            //Get the action value (int)
             int actionValue;
             int.TryParse(contents[1], out actionValue);
 
@@ -145,11 +171,8 @@ namespace Xarxaria
             txtPage.Text = "";
             ChangeText(actualPage.Text, inactiveLinks);
 
-            //Get what action need to be done
-            int actualActionId = int.Parse(contents[0]);
-
             //Test what action need to be done
-            switch (actualActionId)
+            switch (linkActionId)
             {
                 case (int)Program.actionId.pageChange:
 
@@ -218,6 +241,12 @@ namespace Xarxaria
                     break;
                 default : throw new Exception("Action id unknown");
             }
+
+            //Trigger the getter of the zoomFactor to apply zoom correctly
+            float dump = txtPage.ZoomFactor;
+
+            //Change the ZoomFactor value
+            txtPage.ZoomFactor = Program.textZoom;
         }
         #endregion
 
@@ -237,7 +266,7 @@ namespace Xarxaria
             //Change page text
             txtPage.Text = "";
 
-            //trigger the getter of the zoomFactor to apply zoom correctly
+            //Trigger the getter of the zoomFactor to apply zoom correctly
             float dump = txtPage.ZoomFactor;
 
             //Load the text
@@ -249,8 +278,15 @@ namespace Xarxaria
             //Change image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
             string imagePath = currentDirectory + actualPage.Image;
-            myImage = new Bitmap(imagePath);
-            picPage.Image = (Image)myImage;
+            try
+            {
+                loadedImage = new Bitmap(imagePath);
+            }
+            catch
+            {
+                throw new Exception("Image cannot be loaded, may be an access to an unexisting page");
+            }
+            picPage.Image = (Image)loadedImage;
             
             //Reset inactive links list
             inactiveLinks = new List<int>();
