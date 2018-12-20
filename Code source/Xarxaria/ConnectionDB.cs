@@ -39,7 +39,7 @@ namespace Xarxaria
         }
         #endregion
 
-        #region Add query
+        #region Modify query
         /// <summary>
         /// Add a player in the database
         /// </summary>
@@ -108,6 +108,37 @@ namespace Xarxaria
             //Those lines create the query, execute it and close the connection
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = query;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
+        /// <summary>
+        /// Save the player progression
+        /// </summary>
+        /// <param name="player">player's datas</param>
+        public void SavePlayer(Player player)
+        {
+            SqlCommand cmd = new SqlCommand();
+
+            Player actualPlayer = player;
+
+            cmd.CommandText = "UPDATE Player SET " +
+                                "pv = " + actualPlayer.Pv +
+                                ", force = " + actualPlayer.Force +
+                                ", armor = " + actualPlayer.Armor +
+                                ", agility = " + actualPlayer.Agility +
+                                ", luck = " + actualPlayer.Luck +
+                                ", name = " + "'" + actualPlayer.Name +
+                                "', idActualPage = " + actualPlayer.IdActualPage +
+                                ", idInventory = " + actualPlayer.IdInventory +
+                                " WHERE id = " + actualPlayer.Id;
+
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -338,7 +369,7 @@ namespace Xarxaria
 
             while (reader.Read())
             {
-                readedPage = new Page(reader["title"].ToString(), reader["text"].ToString(), reader["image"].ToString());
+                readedPage = new Page(Convert.ToInt32(reader["id"]), reader["title"].ToString(), reader["text"].ToString(), reader["image"].ToString());
             }
 
             sqlConnection.Close();

@@ -24,17 +24,20 @@ namespace Xarxaria
         string title;
         string text;
         string image;
+        int id;
         #endregion
 
-        #region accessor
+        #region public accessor
         public string Title { get { return title; } }
         public string Text { get { return text; } }
         public string Image { get { return image; } }
+        public int Id { get { return id; } }
         #endregion
 
         #region constructor
-        public Page(string title = "", string text = "", string image = "")
+        public Page(int id = 0, string title = "", string text = "", string image = "")
         {
+            this.id = id;
             this.title = title;
             this.text = text;
             this.image = image;

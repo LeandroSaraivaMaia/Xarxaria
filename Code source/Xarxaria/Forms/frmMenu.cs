@@ -25,13 +25,15 @@ namespace Xarxaria
 {
     public partial class frmMenu : Form
     {
+        Player actualPlayer;
         #region constructor
         /// <summary>
         /// Menu form constructor
         /// </summary>
-        public frmMenu()
+        public frmMenu(Player player)
         {
             InitializeComponent();
+            this.actualPlayer = player;
         }
         #endregion
 
@@ -57,7 +59,7 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdSave_Click(object sender, EventArgs e)
         {
-
+            Program.connection.SavePlayer(actualPlayer);
         }
 
         /// <summary>
