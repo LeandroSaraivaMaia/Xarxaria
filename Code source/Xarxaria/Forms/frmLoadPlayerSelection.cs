@@ -40,6 +40,10 @@ namespace Xarxaria
             //Set the select save button to inactive (it wiil be active when a list is selected)
             cmdChooseSave.Enabled = false;
             cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+
+            //Wire mouse enter events for sound effect
+            cmdGoBack.MouseEnter += cmd_MouseEnter;
+            cmdChooseSave.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -104,6 +108,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdGoBack.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -117,12 +122,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdChooseSave_MouseLeave(object sender, EventArgs e)
         {
             cmdChooseSave.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }

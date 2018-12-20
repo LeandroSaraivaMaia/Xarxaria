@@ -54,6 +54,10 @@ namespace Xarxaria
 
             //Load the page of the player
             ChangePage(actualPlayer.IdActualPage);
+
+            //Wire mouse enter events for sound effect
+            cmdPlayer.MouseEnter += cmd_MouseEnter;
+            cmdMenu.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -65,9 +69,17 @@ namespace Xarxaria
         /// <param name="e"></param>
         void cmdPlayer_Click(object sender, EventArgs e)
         {
-            frmPlayer playerForm = new frmPlayer(actualPlayer);
+            using (var form = new frmPlayer(actualPlayer))
+            {
+                void MainThreadProc()
+                {
+                    Application.Run(new frmPlayer(actualPlayer));
+                }
 
-            playerForm.ShowDialog();
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(MainThreadProc));
+
+                t.Start();
+            }
         }
 
         /// <summary>
@@ -422,6 +434,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdMenu.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -435,12 +448,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdPlayer_MouseLeave(object sender, EventArgs e)
         {
             cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
 
