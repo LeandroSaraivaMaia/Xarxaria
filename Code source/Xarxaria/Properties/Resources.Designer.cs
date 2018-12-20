@@ -83,6 +83,16 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Inventaire_V2 {
+            get {
+                object obj = ResourceManager.GetObject("Inventaire_V2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inventory {
             get {
                 object obj = ResourceManager.GetObject("inventory", resourceCulture);
