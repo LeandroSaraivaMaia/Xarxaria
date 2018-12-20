@@ -17,13 +17,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using System.IO;
+using System.Reflection;
 #endregion
 
 namespace Xarxaria
 {
     static class Program
     {
-        #region public static values
+        #region private static attributes
+        static WMPLib.WindowsMediaPlayer hoverSound;
+        static WMPLib.WindowsMediaPlayer clickSound;
+        #endregion
+
+        #region public static attributes
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1;
         public static string[] itemLists = {
@@ -33,12 +41,37 @@ namespace Xarxaria
         public static ConnectionDB connection;
         #endregion
 
+        #region public methods
+        public static void playHoverSound()
+        {
+            hoverSound.controls.stop();
+            hoverSound.controls.play();
+        }
+
+        public static void playClickSound()
+        {
+            clickSound.controls.stop();
+            clickSound.controls.play();
+        }
+        #endregion
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            //Get the ressources folder directory
+            string ressourcesDirectory = Path.GetFullPath(Environment.CurrentDirectory + @"\..\..\Resources\");
+
+            //Define sounds
+            hoverSound = new WMPLib.WindowsMediaPlayer { URL = ressourcesDirectory + "selection1_short.wav" };
+            clickSound = new WMPLib.WindowsMediaPlayer { URL = ressourcesDirectory + "click1.wav" };
+
+            //Necessary so the sound doesn't directly play
+            hoverSound.controls.stop();
+            clickSound.controls.stop();
+
             //Instanciate new connection
             connection = new ConnectionDB();
 

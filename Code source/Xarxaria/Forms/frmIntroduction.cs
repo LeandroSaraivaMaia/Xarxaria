@@ -56,6 +56,9 @@ namespace Xarxaria
             //Disable the continue button because no validation check
             cmdStartAventure.Enabled = false;
             cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+
+            //Wire mouse enter events for sound effect
+            cmdStartAventure.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -230,12 +233,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdStartAventure_MouseLeave(object sender, EventArgs e)
         {
             cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }

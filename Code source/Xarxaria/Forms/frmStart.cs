@@ -31,6 +31,12 @@ namespace Xarxaria
         public frmStart()
         {
             InitializeComponent();
+
+            //Wire mouse enter events for sound effect
+            cmdLoad.MouseEnter += cmd_MouseEnter;
+            cmdQuit.MouseEnter += cmd_MouseEnter;
+            cmdOptions.MouseEnter += cmd_MouseEnter;
+            cmdNewGame.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -124,6 +130,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdNewGame.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -137,6 +144,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdLoad.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -150,6 +158,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdOptions.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -163,12 +172,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdQuit.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdQuit_MouseLeave(object sender, EventArgs e)
         {
             cmdQuit.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }
