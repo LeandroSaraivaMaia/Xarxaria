@@ -297,9 +297,6 @@ namespace Xarxaria
             
             //Reset inactive links list
             inactiveLinks = new List<int>();
-
-            txtPage.SelectionStart = txtPage.Text.Length;
-            txtPage.ScrollToCaret();
         }
 
         /// <summary>

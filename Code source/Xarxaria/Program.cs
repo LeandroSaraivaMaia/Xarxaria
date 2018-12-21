@@ -80,7 +80,6 @@ namespace Xarxaria
             //Define sounds
             hoverSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\selection1_short.wav" };
             clickSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\click1.wav" };
-            Console.WriteLine(Environment.CurrentDirectory + @"assets\sounds\selection1_short.wav");
 
             //Necessary so the sound doesn't directly play
             hoverSound.controls.stop();
