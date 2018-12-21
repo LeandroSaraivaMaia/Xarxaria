@@ -107,6 +107,7 @@ namespace Xarxaria
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPage.BackColor = System.Drawing.Color.AntiqueWhite;
             this.txtPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPage.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPage.Location = new System.Drawing.Point(12, 295);
             this.txtPage.Name = "txtPage";
             this.txtPage.ReadOnly = true;
@@ -144,8 +145,8 @@ namespace Xarxaria
         private System.Windows.Forms.Button cmdMenu;
         private System.Windows.Forms.Button cmdPlayer;
         private System.Windows.Forms.Label lblPageTitle;
-        private RichTextBoxExtension txtPage;
         private System.Windows.Forms.PictureBox picPage;
+        private RichTextBoxExtension txtPage;
     }
 }
 

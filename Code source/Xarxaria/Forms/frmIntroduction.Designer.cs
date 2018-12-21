@@ -33,7 +33,7 @@
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblHealth = new System.Windows.Forms.Label();
             this.lblAgility = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtIntroduction = new System.Windows.Forms.RichTextBox();
             this.cmdStartAventure = new System.Windows.Forms.Button();
             this.numHealth = new System.Windows.Forms.NumericUpDown();
             this.numLuck = new System.Windows.Forms.NumericUpDown();
@@ -97,17 +97,18 @@
             this.lblAgility.TabIndex = 0;
             this.lblAgility.Text = "Agilité";
             // 
-            // richTextBox1
+            // txtIntroduction
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 49);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(285, 195);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.txtIntroduction.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtIntroduction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIntroduction.Location = new System.Drawing.Point(12, 49);
+            this.txtIntroduction.Name = "txtIntroduction";
+            this.txtIntroduction.ReadOnly = true;
+            this.txtIntroduction.Size = new System.Drawing.Size(285, 195);
+            this.txtIntroduction.TabIndex = 0;
+            this.txtIntroduction.TabStop = false;
+            this.txtIntroduction.Text = resources.GetString("txtIntroduction.Text");
+            this.txtIntroduction.Enter += new System.EventHandler(this.txtIntroduction_Enter);
             // 
             // cmdStartAventure
             // 
@@ -216,7 +217,7 @@
             this.Controls.Add(this.numLuck);
             this.Controls.Add(this.numHealth);
             this.Controls.Add(this.cmdStartAventure);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtIntroduction);
             this.Controls.Add(this.lblAgility);
             this.Controls.Add(this.lblHealth);
             this.Controls.Add(this.lblPlayerName);
@@ -239,7 +240,7 @@
         private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label lblHealth;
         private System.Windows.Forms.Label lblAgility;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtIntroduction;
         private System.Windows.Forms.Button cmdStartAventure;
         private System.Windows.Forms.NumericUpDown numHealth;
         private System.Windows.Forms.NumericUpDown numLuck;

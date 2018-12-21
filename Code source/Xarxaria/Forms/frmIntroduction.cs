@@ -256,5 +256,18 @@ namespace Xarxaria
             Program.playHoverSound();
         }
         #endregion
+
+        /// <summary>
+        /// Event when with have any contact with the introduction text (Selection or click)
+        /// 
+        /// The active control is redirected to the titleLabel,
+        /// this avoid the introduction text to be selected not look good
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIntroduction_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = lblIntroduction;
+        }
     }
 }

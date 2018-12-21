@@ -33,7 +33,7 @@ namespace Xarxaria
 
         #region public static attributes
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
-        public static float textZoom = 1;
+        public static float textZoom = 1.4f;
         public static string[] itemLists = {
             "goldenCoin", "glowingStone", "stoneLantern"
         };
@@ -44,14 +44,30 @@ namespace Xarxaria
         #region public methods
         public static void playHoverSound()
         {
-            hoverSound.controls.stop();
-            hoverSound.controls.play();
+            try
+            {
+                hoverSound.controls.stop();
+                hoverSound.controls.play();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Problem to play hover sound, exception message :\n" + e.Message);
+            }
+            
         }
 
         public static void playClickSound()
         {
-            clickSound.controls.stop();
-            clickSound.controls.play();
+            try
+            {
+                clickSound.controls.stop();
+                clickSound.controls.play();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Problem to play click sound, exception message :\n" + e.Message);
+            }
         }
         #endregion
 

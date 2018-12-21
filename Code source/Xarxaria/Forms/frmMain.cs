@@ -69,17 +69,9 @@ namespace Xarxaria
         /// <param name="e"></param>
         void cmdPlayer_Click(object sender, EventArgs e)
         {
-            using (var form = new frmPlayer(actualPlayer))
-            {
-                void MainThreadProc()
-                {
-                    Application.Run(new frmPlayer(actualPlayer));
-                }
+            frmPlayer playerForm = new frmPlayer(actualPlayer);
 
-                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(MainThreadProc));
-
-                t.Start();
-            }
+            playerForm.ShowDialog();
         }
 
         /// <summary>
@@ -305,6 +297,9 @@ namespace Xarxaria
             
             //Reset inactive links list
             inactiveLinks = new List<int>();
+
+            txtPage.SelectionStart = txtPage.Text.Length;
+            txtPage.ScrollToCaret();
         }
 
         /// <summary>
