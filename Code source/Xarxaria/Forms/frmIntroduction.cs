@@ -16,6 +16,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 #endregion
@@ -30,6 +31,10 @@ namespace Xarxaria
         int defaultAgility = 2;
         int defaultLuck = 2;
         int defaultPointsToDistribute = 5;
+        int maxNameSize = 50;
+
+        //get points to distrbute
+        int pointsToDistribute => defaultPointsToDistribute - ((int)numHealth.Value - defaultHealth) - ((int)numAgility.Value - defaultAgility) - ((int)numLuck.Value - defaultLuck);
 
         Player player;
         #endregion
@@ -59,10 +64,32 @@ namespace Xarxaria
 
             //Wire mouse enter events for sound effect
             cmdStartAventure.MouseEnter += cmd_MouseEnter;
+            cmdGoBackToStartScreen.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
         #region private methods
+        /// <summary>
+        /// Check if ther is enought points to distribute, if not then show an error and disable the start adventure button
+        /// </summary>
+        /// <param name="points"></param>
+        /// <returns>Whether or not there is enought points</returns>
+        private bool checkIfEnoughtPoints(int points)
+        {
+            //Not enought points to distribute
+            if (pointsToDistribute < 0)
+            {
+                showError("Vous n'avez plus de points à distribuer");
+
+                cmdStartAventure.Enabled = false;
+                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+
+                return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Displays an erorr message box
         /// </summary>
@@ -73,11 +100,19 @@ namespace Xarxaria
         }
         
         /// <summary>
-        /// Run a form (thread)
+        /// Run the main form (thread)
         /// </summary>
-        private void ThreadProc()
+        private void ThreadProc_frmMain()
         {
             Application.Run(new frmMain(player.Id));
+        }
+
+        /// <summary>
+        /// Run the start form (thread)
+        /// </summary>
+        private void ThreadProc_frmStart()
+        {
+            Application.Run(new frmStart());
         }
         #endregion
 
@@ -91,6 +126,13 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdStartAventure_Click(object sender, EventArgs e)
         {
+            //Check if the player name contains at least 1 letter
+            if (Regex.Matches(txtPlayerName.Text, @"[a-zA-Z]").Count < 1)
+            {
+                showError("Le nom du joueur doit au moins contenir une lettre [a - z]");
+                return;
+            }
+
             //Add player's inventory in database
             Program.connection.AddEmptyInventory();
 
@@ -106,8 +148,27 @@ namespace Xarxaria
             player = Program.connection.GetPlayerById(lastPlayerId);
 
             //Creates a new thread for the new form
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmMain));
             
+            //Open the new thread (main form)
+            t.Start();
+
+            //Close the introduction form
+            this.Close();
+        }
+
+        /// <summary>
+        /// Click on the go back t ostart screen menu :
+        /// 
+        /// Close this form and open the start form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmdGoBackToStartScreen_Click(object sender, EventArgs e)
+        {
+            //Creates a new thread for the new form
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
+
             //Open the new thread (main form)
             t.Start();
 
@@ -124,11 +185,11 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void txtPlayerName_TextChanged(object sender, EventArgs e)
         {
-            //If the player name is bigger than the database size, show an error
-            if (txtPlayerName.TextLength > 255)
+            //If the player name is bigger than the arbitrary value for the max name size, displays an error
+            if (txtPlayerName.TextLength > maxNameSize)
             {
-                showError("Le nom du joueur est trop long (pas plus de 255 caractères)");
-                txtPlayerName.Text = defaultName;
+                showError("Le nom du joueur est trop long (pas plus de " + maxNameSize + " caractères)");
+                txtPlayerName.Text = txtPlayerName.Text.Substring(0, maxNameSize);
             }
         }
 
@@ -147,6 +208,12 @@ namespace Xarxaria
                 showError("Vous ne pouvez pas avoir des points de vie inférieur à " + defaultHealth.ToString());
                 numHealth.Value = defaultHealth;
             }
+
+            //If there is not enought points to distribute, decrement health value
+            if (!checkIfEnoughtPoints(pointsToDistribute))
+            {
+                numHealth.Value--;
+            }
         }
 
         /// <summary>
@@ -163,6 +230,12 @@ namespace Xarxaria
             {
                 showError("Vous ne pouvez pas avoir des points d'agilité inférieur à " + defaultAgility.ToString());
                 numAgility.Value = defaultAgility;
+            }
+
+            //If there is not enought points to distribute, decrement agility value
+            if (!checkIfEnoughtPoints(pointsToDistribute))
+            {
+                numAgility.Value--;
             }
         }
 
@@ -181,6 +254,12 @@ namespace Xarxaria
                 showError("Vous ne pouvez pas avoir des points de chance inférieur à " + defaultLuck.ToString());
                 numLuck.Value = defaultLuck;
             }
+
+            //If there is not enought points to distribute, decrement luck value
+            if (!checkIfEnoughtPoints(pointsToDistribute))
+            {
+                numLuck.Value--;
+            }
         }
 
         /// <summary>
@@ -192,26 +271,10 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void num_ValueChanged(object sender, EventArgs e)
         {
-            //Get number of points to distribute
-            int pointsToDistribute = defaultPointsToDistribute - ((int)numHealth.Value - defaultHealth) - ((int)numAgility.Value - defaultAgility) - ((int)numLuck.Value - defaultLuck);
-
             //Display the number of points to distribute
             lblDistributePointsValue.Text = pointsToDistribute.ToString();
 
-            if (pointsToDistribute < 0)
-            {
-                //Not enought points to distribute
-                showError("Vous n'avez plus de points à distribuer");
-
-                //Set values to default
-                numHealth.Value = defaultHealth;
-                numAgility.Value = defaultAgility;
-                numLuck.Value = defaultLuck;
-
-                cmdStartAventure.Enabled = false;
-                cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
-            }
-            else if (pointsToDistribute > 0)
+            if (pointsToDistribute > 0)
             {
                 cmdStartAventure.Enabled = false;
                 cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
@@ -221,6 +284,19 @@ namespace Xarxaria
                 cmdStartAventure.Enabled = true;
                 cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button;
             }
+        }
+
+        /// <summary>
+        /// Event when with have any contact with the introduction text (Selection or click)
+        /// 
+        /// The active control is redirected to the titleLabel,
+        /// this avoid the introduction text to be selected not look good
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIntroduction_Enter(object sender, EventArgs e)
+        {
+            ActiveControl = lblIntroduction;
         }
         #endregion
 
@@ -241,6 +317,20 @@ namespace Xarxaria
         {
             cmdStartAventure.BackgroundImage = Properties.Resources.Simple_Button;
         }
+
+        private void cmdGoBackToStartScreen_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdGoBackToStartScreen.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
+            }
+        }
+
+        private void cmdGoBackToStartScreen_MouseLeave(object sender, EventArgs e)
+        {
+            cmdGoBackToStartScreen.BackgroundImage = Properties.Resources.Simple_Button;
+        }
         #endregion
 
         #region sound events
@@ -256,18 +346,5 @@ namespace Xarxaria
             Program.playHoverSound();
         }
         #endregion
-
-        /// <summary>
-        /// Event when with have any contact with the introduction text (Selection or click)
-        /// 
-        /// The active control is redirected to the titleLabel,
-        /// this avoid the introduction text to be selected not look good
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtIntroduction_Enter(object sender, EventArgs e)
-        {
-            ActiveControl = lblIntroduction;
-        }
     }
 }

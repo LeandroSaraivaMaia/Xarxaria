@@ -33,7 +33,11 @@ namespace Xarxaria
         #endregion
 
         #region public accessor
-        public float ZoomFactor { get { return txtPage.ZoomFactor; } set { txtPage.ZoomFactor = value; } }
+        public float ZoomFactor { get { return txtPage.ZoomFactor; } set {
+                txtPage.ZoomFactor = value;
+                txtPage.oldZoomFactor = value;
+            }
+        }
         public HorizontalAlignment TextAlign { get { return txtPage.SelectionAlignment; } set {
                 //When the change alignement change, select all the text to change alignement
                 txtPage.SelectAll();
@@ -87,12 +91,12 @@ namespace Xarxaria
             if (menuForm.ShowDialog() == DialogResult.Abort)
             {
                 //Open the start screen
-                void StartScreenThreadProc()
+                void ThreadProc_frmStart()
                 {
                     Application.Run(new frmStart());
                 }
 
-                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(StartScreenThreadProc));
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
 
                 t.Start();
 
@@ -255,6 +259,7 @@ namespace Xarxaria
         #endregion
 
         #region private methods
+
         /// <summary>
         /// Change the actual page with a given id
         /// </summary>
@@ -297,6 +302,8 @@ namespace Xarxaria
             
             //Reset inactive links list
             inactiveLinks = new List<int>();
+
+            txtPage.ScrollToTop();
         }
 
         /// <summary>
