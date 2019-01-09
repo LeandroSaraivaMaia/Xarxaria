@@ -53,9 +53,9 @@ Mais il reste un seul chevalier à la cour, le fameux Sir Godfroyd de Monaco. C''
 Il a déjà prouvé sa valeur a de nombreuse reprises en sauvant moultes princesses.
 Le courageux chevalier est très décidé à sauver la princesse du Roi. Il dépense toutes ses économies et achète le meilleur équipement du royaume pour sa quête.
 Quelques lieues après être sorti du château, il est frappé par ce qui lui semble être un éclair. Une grande ombre noire déchirant les cieux à une vitesse vertigineuse le renverse. Il est violemment éjecté de la route et finit dans un caniveau boueux.
-Après avoir repris ses esprits, il aperçoit une bête ailé s’éloigner, le drake. Il se rend compte que son équipement a entièrement disparu. C’est sans doute l’oeuvre de la magie noire du drake.
-Il a eu beaucoup de chance de s’en réchapper vivant.
-C’est là que votre aventure commence, vous êtes ce chevalier.
+Après avoir repris ses esprits, il aperçoit une bête ailé s''éloigner, le drake. Il se rend compte que son équipement a entièrement disparu. C''est sans doute l''oeuvre de la magie noire du drake.
+Il a eu beaucoup de chance de s''en réchapper vivant.
+C''est là que votre aventure commence, vous êtes ce chevalier.
 <0,Continuer,3>'
 , '\..\..\DataBase\images\paysage.jpg'),
 
@@ -207,7 +207,7 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concern
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
 <0,Piller l''église,15>
-<0,Essayer de trouver du travail,16>'
+<0,Essayer de trouver du travail,20>'
 , '\..\..\DataBase\images\casseRoc.jpg'),
 */
 
@@ -225,10 +225,116 @@ Une fois vos achats effectués, vous pouvez :
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
 <0,Piller l''église,15>
-<0,Essayer de trouver du travail,16>'
-, '\..\..\DataBase\images\forgeron.jpg');
+<0,Essayer de trouver du travail,20>'
+, '\..\..\DataBase\images\forgeron.jpg'),
 
--- Page 13 -- */
+-- Page 13 --
+('La Taverne du mineur assoifé', 'Vous savez que le meilleur moyen d''obtenir des informations se trouve dans les tavernes.
+Sans attendre un instant de plus vous vous dirigez vers un bâtiment nommé selon la banderole placée devant “La taverne du mineur assoiffé”.
+Vous êtes accueilli par la douce chaleur d''un feu de cheminée ainsi que par le brouhaha si commun à un lieu de ce genre. Vous vous frayez difficilement un chemin à travers les client pour finalement vous asseoir devant le comptoire et interpeller le tavernier.
+Un chauve de grande taille s''approche de vous, une chope en pierre à la main et vous dit :
+- ”Que puis je faire pour vous mon brave ?”
+Vous lui répondez :
+- “Un drake est passé par ici ce matin, sauriez-vous dans quelle direction est-il parti ?”
+- “Ma femme a remarqué une bête ailée s''éloigner vers l''est.”
+- “Auriez vous une idée d''ou elle aurait put aller ?”
+- “Il n''y qu''un seul endroit en ce monde qui puisse accueillir un tel monstre : L''Antre des Ténèbres.”
+Vous réprimez un frissonnement, vous avez entendu tant de choses sur cet endroit, on dit que le soleil ne perce jamais ses nuages, que de la lave en fusion coule en permanence des collines et que seul les damnés osent entrer dans les tours sombres qui hantent ce lieu.
+Mais après tout n''êtes-vous pas Sir Godfroy de Monaco, le champion du roi, le pourfendeur de démons, ce n''est pas un volcan ou un gros lézard qui vous fera douter de votre mission.
+Vous remerciez le barman et quittez la taverne. ,Vous pouvez désormais reprendre votre chasse au drake en <0,quittant le village,23> ou continuer de vagabonder dans Casse-Roc :
+<0,Aller dans le quartier marchand,12>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Piller l''église,15>
+<0,Essayer de trouver du travail,20>
+', '\..\..\DataBase\images\taverne.jpg'),
+
+-- Page 14 --
+('Mendiant', 'Vous devez trouver de l''or mais vous savez que vous n''arriverez pas à trouver un travail, il ne vous reste plus qu''une solution : mendier.
+C''est avec honte que vous vous vêtissez d''un haillon en pierre gisant sur le sol et que vous rejoignez un groupe de sans-abris.
+Durant plusieurs jours vous vous traînez dans les rues suppliant la générosité des passants.
+Votre errance vous rapporte <1,3 pièces d''or,0;3>, une grande quantitée de cailloux au visage et vous fait perdre <2,2 PV,-2> à cause de la fatigue.
+Vous devez désormais continuer :
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Piller l''église,15>
+<0,Essayer de trouver du travail,20>
+', '\..\..\DataBase\images\mendiant.jpg'),
+
+-- Page 15 --
+('L''église', 'Vous savez que l''église de casse roc est connue pour entreposer des richesses extraites des mines. En voler une partie vous permettrai de vous racheter un équipement.
+Vous inspectez le bâtiment et repérez le grand vitrail à l''arrière. Il a l''air très ancien au vu de l''agglomération de verre en bas du cadre. Vous examinez les alentours pour vérifier qu''il n''y ait pas de témoins éventuels, l''endroit est isolé et vous pourrez agir en toute discrétion. Après un rapide coup d''oeil vous remarquez sous l''autel un panier en osier qui doit certainement servir pour les donations. Il est vide mais une porte surveillé par un garde à moitié endormi se trouve au fond de l''église, les biens précieux doivent sûrement se trouver à l''abri des regards.
+Une fois la nuit tombée, vous prenez une pierre et brisez la fenêtre pour vous infiltrez. L''impact fait moins de bruit que prévu, vous entrez lentement à l''intérieur de l''église quand vous entendez soudainement des bruits de pas.
+Malgré l''heure tardive, vous apercevez des prêtres et des chevalier déambuler à travers les couloirs.
+Si vous avez plus de 4 d''agilité et plus de 3 de chance rendez-vous <0,ici,16>, si malheureusement vous êtes un piètre voleur, rendez vous <0,ici,17>.', '\..\..\DataBase\images\eglise.jpg'),
+
+-- Page 16 --
+('Voleur d''églises', 'C''est avec l''agilité du serpent que vous vous glissez derrière une statue et évitez les occupants.
+Plaqué contre le mur, vous traversez les différents couloirs de l''église jusqu''à atteindre la porte du coffre. Malheureusement un garde est posté devant et il serait impossible de l''affronter sans alerter les chevaliers et les prêtres. 
+Cela ne vous décourage pas, vous prenez une coupe en pierre qui traînait par là et la lancez dans un couloir à côté.
+La garde sursaute et se précipite dans le couloir en se lançant à lui-même :
+- “Eh...Y''a quelqu''un ?”
+Vous profitez de l''opportunité pour sprinter dans la caverne d''ali baba.
+Vous n''êtes pas déçu, la salle est remplie de diverses richesses : des croix serties de pierres précieuses, des épées faites de diamant, des coffres débordant d''or, etc.
+Vous êtes tellement obnubilé par ce trésor que vous ne remarquez pas votre pied butter contre un fil tendu.
+Soudainement vous entendez le bruit d''un mécanisme se mettre en marche suivi du lourd son d''une cloche, toute l''église doit être désormais au courant qu''il y à un voleur.
+Vous vous précipitez vers la fenêtre précédemment détruite, emportant avec vous la seul bourse que vous avez eu le réflexe de prendre dans votre fuite.
+Par chance vous ne rencontrez personne durant votre escapade et vous parvenez à quitter l''église en un seul morceau, emportant avec vous <1,20 pièces d''or,0;20>, une somme rondelette.
+Vous devez faire profile-bas maintenant, que choisissez vous de faire ?
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Essayer de trouver du travail,20>
+', '\..\..\DataBase\images\tasDOr.png'),
+
+-- Page 17 --
+('Piètre voleur', 'Vous tentez de vous glisser vers une statue mais c''est un échec. Sans attendre un moment, les paladins se jettent sur vous et vous immobilisent.
+Ils vous emmènent sans plus tarder et vous balancent dans une cellule de la prison de Casse-Roc.
+Tenter de piller une église est un crime grave mais heureusement un prêtre arrive près de votre cellule. Il est prêt à vous pardonner mais ce ne sera pas gratuit. Il demande 8 pièces d''or. Souhaitez-vous <0,accepter,19> et <1,payer les pièces d''or,0;-8> ou <0,refuser,18> ?'
+, '\..\..\DataBase\images\prison.jpg'),
+
+-- Page 18 --
+('Prison à vie', 'Le prêtre vous lance un regard de mépris et quitte votre cellule. Vous êtes un chevalier du roi, vous ne tarderez pas à être libéré.
+Vous attendez des heures puis des jours, puis des mois. C''est à ce moment que vous vous rendez compte que le prêtre était votre seule chance de sortie, personne d''autre ne viendra.
+C''est ainsi que fini votre espoir d''être libéré ainsi que votre vie.
+', '\..\..\DataBase\images\mortEnPrison.jpg'),
+
+-- Page 19 --
+('Libéré, délivré', '- “Vous avez fait le bon choix Sir Godfroy.”
+Dit le prêtre non sans un sourire de satisfaction sur le visage.
+Les gardes vous emmène dans une salle avec toutes vos affaires hormis les 8 pièces d''or prisent par le prêtre. Vous exprimez un soupire de soulagement en voyant la lumière du jour et les toits de pierre du village.
+Maintenant que vous êtes libre, que faites-vous ?
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Essayer de trouver du travail,20>
+', '\..\..\DataBase\images\libre.jpg'),
+
+-- Page 20 --
+('A la recherche d''un emploi', 'Si vous voulez avoir de l''or, pas le choix, il faut travailler.
+Vous rejoignez la grande place et consultez le panneau des annonces à la recherche d''une offre intéressante.
+Le gros du panneau est occupé par les offres des deux grande factions marchandes : Capital + et La Faucille Rouge.
+Si vous avez plus de 4 de chance, allez <0,ici,22>, sinon allez <0,ici,21>.', '\..\..\DataBase\images\annonces.png'),
+
+-- Page 21 --
+('Chômage', 'Vous parcourez le village pendant des heures en espérant trouver du labeur. Malgré toutes vos recherches vous ne trouvez aucun habitant qui aurait besoin d''aide. Il semblerait que tous les travaux manuels soient occupés, le business de la pierre est décidément florissant.
+Malheureusement vous n''avez pas réussi à trouver une quelqu''on offre qui pourrait vous aider.
+Que faites-vous maintenant ?
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Piller l''église,15>
+', '\..\..\DataBase\images\sansTravail.png'),
+
+-- Page 22 --
+('Un dur labeur', 'Au milieu de tous ces papiers vous apercevez dans le coin une affiche proposant un travail dans un atelier de tailleur de pierre.
+Vous travaillez durant quelques jours au milieu des pierres et des statues , votre rôle est surtout de créer et transporter des briques nécessaires à la construction c''est un travail particulièrement éprouvant car les briques sont très lourdes et les horaires sont épouvantables.
+Finalement vos efforts s''avèrent être payant : vous obtenez <1,10 pièces d''or,0;10>.
+Maintenant que vous avez de l''argent que faites vous ?
+<0,Aller dans le quartier marchand,12>
+<0,Interroger les villageois,13>
+<0,Mendier pour essayer d''obtenir de l''or,14>
+<0,Piller l''église,15>
+', '\..\..\DataBase\images\gagnerArgent.png');
 
 INSERT INTO Inventory(goldenCoin, glowingStone, stoneLantern) VALUES (18, 0, 0);
 
