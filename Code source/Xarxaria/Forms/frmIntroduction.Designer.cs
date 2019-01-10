@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.rose_des_vents_V3;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmIntroduction;
             this.ClientSize = new System.Drawing.Size(344, 479);
             this.Controls.Add(this.cmdGoBackToStartScreen);
             this.Controls.Add(this.lblDistributePointsValue);

@@ -106,6 +106,7 @@ namespace Xarxaria
 
             //Change the example value for the text size
             txtExample.ZoomFactor = (float)numPoliceZoom.Value;
+            txtExample.oldZoomFactor = (float)numPoliceZoom.Value;
         }
         
         /// <summary>

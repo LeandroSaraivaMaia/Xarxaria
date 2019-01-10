@@ -124,7 +124,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Xarxaria.Properties.Resources.logo_sans_fond_min_V2;
+            this.pictureBox1.Image = global::Xarxaria.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(277, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 312);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.StartScreen;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmStart;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdOptions);
