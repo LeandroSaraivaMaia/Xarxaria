@@ -200,6 +200,7 @@
             this.cmdNextTurn.TabIndex = 1;
             this.cmdNextTurn.Text = "Prochain tour";
             this.cmdNextTurn.UseVisualStyleBackColor = false;
+            this.cmdNextTurn.Click += new System.EventHandler(this.cmdNextTurn_Click);
             // 
             // picEnemy
             // 
