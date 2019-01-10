@@ -34,9 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numPoliceZoom = new System.Windows.Forms.NumericUpDown();
             this.lblOptions = new System.Windows.Forms.Label();
-            this.txtExample = new System.Windows.Forms.RichTextBox();
             this.cmbTextAlign = new System.Windows.Forms.ComboBox();
             this.lblTextAlign = new System.Windows.Forms.Label();
+            this.txtExample = new Xarxaria.RichTextBoxExtension();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceZoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,20 +108,6 @@
             this.lblOptions.Text = "Options";
             this.lblOptions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtExample
-            // 
-            this.txtExample.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.txtExample.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtExample.Location = new System.Drawing.Point(12, 161);
-            this.txtExample.Name = "txtExample";
-            this.txtExample.ReadOnly = true;
-            this.txtExample.Size = new System.Drawing.Size(228, 131);
-            this.txtExample.TabIndex = 0;
-            this.txtExample.TabStop = false;
-            this.txtExample.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque urna velit, pret" +
-    "ium aliquet erat vitae, pellentesque sodales leo. In volutpat. ";
-            this.txtExample.Enter += new System.EventHandler(this.txtExample_Enter);
-            // 
             // cmbTextAlign
             // 
             this.cmbTextAlign.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -148,16 +134,29 @@
             this.lblTextAlign.TabIndex = 0;
             this.lblTextAlign.Text = "Alignement du\r\ntexte";
             // 
+            // txtExample
+            // 
+            this.txtExample.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtExample.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExample.Location = new System.Drawing.Point(12, 160);
+            this.txtExample.Name = "txtExample";
+            this.txtExample.Size = new System.Drawing.Size(225, 132);
+            this.txtExample.TabIndex = 0;
+            this.txtExample.TabStop = false;
+            this.txtExample.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque urna velit, pret" +
+    "ium aliquet erat vitae, pellentesque sodales leo. In volutpat. ";
+            this.txtExample.Enter += new System.EventHandler(this.txtExample_Enter);
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.parchemin2_v2;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmOptions;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(252, 304);
+            this.Controls.Add(this.txtExample);
             this.Controls.Add(this.lblTextAlign);
             this.Controls.Add(this.cmbTextAlign);
-            this.Controls.Add(this.txtExample);
             this.Controls.Add(this.lblOptions);
             this.Controls.Add(this.numPoliceZoom);
             this.Controls.Add(this.label3);
@@ -180,8 +179,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numPoliceZoom;
         private System.Windows.Forms.Label lblOptions;
-        private System.Windows.Forms.RichTextBox txtExample;
         private System.Windows.Forms.ComboBox cmbTextAlign;
         private System.Windows.Forms.Label lblTextAlign;
+        private RichTextBoxExtension txtExample;
     }
 }

@@ -99,9 +99,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fond_parchemin {
+        internal static System.Drawing.Bitmap frmCombat {
             get {
-                object obj = ResourceManager.GetObject("fond_parchemin", resourceCulture);
+                object obj = ResourceManager.GetObject("frmCombat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -109,9 +109,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Inventaire {
+        internal static System.Drawing.Bitmap frmIntroduction {
             get {
-                object obj = ResourceManager.GetObject("Inventaire", resourceCulture);
+                object obj = ResourceManager.GetObject("frmIntroduction", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -119,9 +119,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Inventaire_V2 {
+        internal static System.Drawing.Bitmap frmLoadPlayerSelection {
             get {
-                object obj = ResourceManager.GetObject("Inventaire_V2", resourceCulture);
+                object obj = ResourceManager.GetObject("frmLoadPlayerSelection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -129,9 +129,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inventory {
+        internal static System.Drawing.Bitmap frmMain {
             get {
-                object obj = ResourceManager.GetObject("inventory", resourceCulture);
+                object obj = ResourceManager.GetObject("frmMain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -139,9 +139,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Inventory2 {
+        internal static System.Drawing.Bitmap frmMenu {
             get {
-                object obj = ResourceManager.GetObject("Inventory2", resourceCulture);
+                object obj = ResourceManager.GetObject("frmMenu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -149,9 +149,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_sans_fond_min {
+        internal static System.Drawing.Bitmap frmOptions {
             get {
-                object obj = ResourceManager.GetObject("logo_sans_fond_min", resourceCulture);
+                object obj = ResourceManager.GetObject("frmOptions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -159,9 +159,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_sans_fond_min_V2 {
+        internal static System.Drawing.Bitmap frmPlayer {
             get {
-                object obj = ResourceManager.GetObject("logo_sans_fond_min_V2", resourceCulture);
+                object obj = ResourceManager.GetObject("frmPlayer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -169,9 +169,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap parchemin {
+        internal static System.Drawing.Bitmap frmStart {
             get {
-                object obj = ResourceManager.GetObject("parchemin", resourceCulture);
+                object obj = ResourceManager.GetObject("frmStart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -179,79 +179,9 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap parchemin_rouleau {
+        internal static System.Drawing.Bitmap logo {
             get {
-                object obj = ResourceManager.GetObject("parchemin_rouleau", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap parchemin2 {
-            get {
-                object obj = ResourceManager.GetObject("parchemin2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap parchemin2_v2 {
-            get {
-                object obj = ResourceManager.GetObject("parchemin2_v2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Parchemin3 {
-            get {
-                object obj = ResourceManager.GetObject("Parchemin3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Parchemin4 {
-            get {
-                object obj = ResourceManager.GetObject("Parchemin4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rose_des_vents {
-            get {
-                object obj = ResourceManager.GetObject("rose_des_vents", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rose_des_vents_V2 {
-            get {
-                object obj = ResourceManager.GetObject("rose_des_vents_V2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rose_des_vents_V3 {
-            get {
-                object obj = ResourceManager.GetObject("rose_des_vents_V3", resourceCulture);
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -290,16 +220,6 @@ namespace Xarxaria.Properties {
         internal static System.Drawing.Bitmap Simple_Button_Pressed {
             get {
                 object obj = ResourceManager.GetObject("Simple_Button_Pressed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StartScreen {
-            get {
-                object obj = ResourceManager.GetObject("StartScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
