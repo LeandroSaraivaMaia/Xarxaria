@@ -1,12 +1,11 @@
 ﻿/**
- * \file      Player.cs
+ * \file      Enemy.cs
  * \author    Johan Voland & Leandro Saraiva Maia
  * \version   1.0
- * \date      December 6. 2018
- * \brief     Player class
+ * \date      Jannuary 10. 2019
+ * \brief     Enemy class
  *
- * \details   This class represent a player and contains all the value in the database for a player.
- * There are public methods to interact with the player's inventory and caracteristics.
+ * \details   This class represent an enemy. An enemy has the same caracteristic that the player (Health, armor, force, agility, luck)
  */
 
 #region using
@@ -19,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace Xarxaria
 {
-    public class Player
+    class Enemy
     {
         #region private attributes
         int id;
@@ -29,9 +28,6 @@ namespace Xarxaria
         int armor;
         int luck;
         string name;
-        int idActualPage;
-        int idInventory;
-        Inventory inventory;
         #endregion
 
         #region public accessors
@@ -42,20 +38,17 @@ namespace Xarxaria
         public int Armor { get { return armor; } }
         public int Luck { get { return luck; } }
         public int Hp { get { return hp; } }
-        public int IdInventory { get { return idInventory; } }
-        public int IdActualPage { get { return idActualPage; } }
-        public Inventory GetInventory { get { return inventory; } }
         #endregion
 
         #region constructor
-        //Empty player constructor to compile
-        public Player()
+        //Empty enemy constructor to compile
+        public Enemy()
         {
-            
+
         }
 
-        //Player constructor
-        public Player(int id, int hp, int force, int agility, int armor, int luck, string name, int idActualPage, int idInventory, Inventory inventory)
+        //Enemy constructor
+        public Enemy(int id, int hp, int force, int agility, int armor, int luck, string name)
         {
             this.id = id;
             this.hp = hp;
@@ -64,22 +57,10 @@ namespace Xarxaria
             this.armor = armor;
             this.luck = luck;
             this.name = name;
-            this.idActualPage = idActualPage;
-            this.idInventory = idInventory;
-            this.inventory = inventory;
         }
         #endregion
 
         #region public methods
-        public void LoadInventory()
-        {
-            inventory = Program.connection.GetInventory(idInventory);
-        }
-
-        public void SetItem(int itemId, int numberOfItem)
-        {
-            inventory.SetItem(itemId, numberOfItem);
-        }
 
         public void SetHp(int val)
         {
@@ -88,7 +69,7 @@ namespace Xarxaria
             if (hp < 0)
             {
                 hp = 0;
-                Console.WriteLine("La partie est terminée, le joueur n'as plus de points de vie");
+                Console.WriteLine("l'ennemi \"" + Name + "\" est mort");
             };
         }
 
@@ -130,16 +111,6 @@ namespace Xarxaria
             {
                 luck = 0;
             };
-        }
-
-        public void SetActualPage(int id)
-        {
-            idActualPage = id;
-        }
-
-        public override string ToString()
-        {
-            return Name + ", " + Program.connection.GetPage(IdActualPage).Title;
         }
         #endregion
     }

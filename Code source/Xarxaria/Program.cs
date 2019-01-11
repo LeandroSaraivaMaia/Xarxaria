@@ -50,9 +50,9 @@ namespace Xarxaria
                 hoverSound.controls.play();
 
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine("Problem to play hover sound, exception message :\n" + e.Message);
+                Console.WriteLine("Unknown error to play hover sound");
             }
             
         }
@@ -64,9 +64,37 @@ namespace Xarxaria
                 clickSound.controls.stop();
                 clickSound.controls.play();
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine("Problem to play click sound, exception message :\n" + e.Message);
+                Console.WriteLine("Unknown error to play click sound");
+            }
+        }
+
+        public static void GameOver()
+        {
+            MessageBox.Show("La partie est terminée car vous êtes mort, retour à l'écran principale");
+
+            //Open Start screen form
+            frmStart startForm = new frmStart();
+
+            //Create a new independant frmStart Thread
+            void ThreadProc_frmStart()
+            {
+                Application.Run(new frmStart());
+            }
+
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
+
+            t.Start();
+
+            //Close all other form
+            foreach (Form form in Application.OpenForms)
+            {
+                //If the iterated form is not the start form, close it
+                if (form.Name != "frmStart")
+                {
+                    form.Close();
+                }
             }
         }
         #endregion

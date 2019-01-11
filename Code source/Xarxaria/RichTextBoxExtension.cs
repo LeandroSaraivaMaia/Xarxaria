@@ -66,6 +66,7 @@ namespace Xarxaria
         public float oldZoomFactor = Program.textZoom;//Set the default zoom value
         private const int WM_VSCROLL = 0x115;
         private const int SB_TOP = 0x6;
+        private const int SB_BOTTOM = 0x7;
         private const int EM_SETZOOM = 0x04E1;
         const int WM_MOUSEWHEEL = 0x020A;
         //-------------------------------------------------------------------
@@ -142,6 +143,14 @@ namespace Xarxaria
         }
 
         /// <summary>
+        /// Scroll the scroll bar to the top
+        /// </summary>
+        public void ScrollToBottom()
+        {
+            SendMessage(Handle, WM_VSCROLL, (IntPtr)SB_BOTTOM, IntPtr.Zero);
+        }
+
+        /// <summary>
         /// Deactivate ctrl + mouse wheel zoom
         /// </summary>
         /// <param name="m"></param>
@@ -163,6 +172,21 @@ namespace Xarxaria
                     oldZoomFactor = ZoomFactor;
                 }
             }
+        }
+
+        //This method allow us to add a text with a specific style (color & underline)
+        public void AppendText(string text, Color color, bool isUnderline = false)
+        {
+            if (isUnderline)
+                SelectionFont = new Font(SelectionFont, FontStyle.Underline);
+
+            SelectionStart = TextLength;
+            SelectionLength = 0;
+
+            SelectionColor = color;
+            AppendText(text);
+            SelectionColor = ForeColor;
+            SelectionFont = new Font(SelectionFont, FontStyle.Regular);
         }
         //-------------------------------------------------------------------
 
@@ -255,22 +279,6 @@ namespace Xarxaria
         public int GetSelectionLink()
         {
             return GetSelectionStyle(CFM_LINK, CFE_LINK);
-        }
-
-        //This code was added by Leandro, it is not contained in the original file.
-        //This method allow us to add a text with a specific style (color & underline)
-        public void AppendText(string text, Color color, bool isUnderline = false)
-        {
-            if (isUnderline)
-                SelectionFont = new Font(SelectionFont, FontStyle.Underline);
-
-            SelectionStart = TextLength;
-            SelectionLength = 0;
-
-            SelectionColor = color;
-            AppendText(text);
-            SelectionColor = ForeColor;
-            SelectionFont = new Font(SelectionFont, FontStyle.Regular);
         }
 
         private void SetSelectionStyle(UInt32 mask, UInt32 effect)

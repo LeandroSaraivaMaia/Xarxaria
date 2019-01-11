@@ -108,7 +108,7 @@ namespace Xarxaria
         /// Event when with have any contact with the main text (Selection or click)
         /// 
         /// The active control is redirected to the titleLabel,
-        /// this avoid the main text to be selected not look good
+        /// this avoid the main text to be selected and not looking good
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -204,7 +204,7 @@ namespace Xarxaria
                     break;
                 case (int)Program.actionId.changePlayerHp:
 
-                    actualPlayer.SetPv(actionValue);
+                    actualPlayer.SetHp(actionValue);
 
                     //Will maybe be replaced by a little animation/sound
                     if (actionValue < 0) { MessageBox.Show(contents[1] + " points de vie", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }

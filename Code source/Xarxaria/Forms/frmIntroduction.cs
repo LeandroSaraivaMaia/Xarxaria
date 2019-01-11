@@ -27,9 +27,11 @@ namespace Xarxaria
     {
         #region private attributes
         string defaultName = "Sir Godfroyd de Monaco";
-        int defaultHealth = 10;
+        int defaultHealth = 20;
         int defaultAgility = 2;
         int defaultLuck = 2;
+        int defaultForce = 1;
+        int defaultArmor = 0;
         int defaultPointsToDistribute = 5;
         int maxNameSize = 50;
 
@@ -140,7 +142,7 @@ namespace Xarxaria
             int inventoryId = Program.connection.GetNumberOfInventory();
 
             //Add player in database
-            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, 0, 0, (int)numAgility.Value, (int)numLuck.Value, 1, inventoryId);
+            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, defaultForce, defaultArmor, (int)numAgility.Value, (int)numLuck.Value, 1, inventoryId);
 
             //Get the last player in the database
             int lastPlayerId = Program.connection.GetNumberOfPlayer();

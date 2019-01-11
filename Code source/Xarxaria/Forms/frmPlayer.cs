@@ -39,7 +39,7 @@ namespace Xarxaria
             this.player = player;
 
             //Change caracteristic text
-            lblHealth.Text = "Points de vie : " + player.Pv.ToString();
+            lblHealth.Text = "Points de vie : " + player.Hp.ToString();
             lblForce.Text = "Force : " + player.Force.ToString();
             lblAgility.Text = "Agilité : " + player.Agility.ToString();
             lblArmor.Text = "Armure : " + player.Armor.ToString();

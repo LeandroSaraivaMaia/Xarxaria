@@ -129,7 +129,7 @@ namespace Xarxaria
             Player actualPlayer = player;
 
             cmd.CommandText = "UPDATE Player SET " +
-                                "pv = " + actualPlayer.Pv +
+                                "pv = " + actualPlayer.Hp +
                                 ", force = " + actualPlayer.Force +
                                 ", armor = " + actualPlayer.Armor +
                                 ", agility = " + actualPlayer.Agility +

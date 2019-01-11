@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCombat));
-            this.lblPlayer = new System.Windows.Forms.Label();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblPlayerHealth = new System.Windows.Forms.Label();
             this.lblPlayerForce = new System.Windows.Forms.Label();
             this.lblPlayerArmor = new System.Windows.Forms.Label();
-            this.lblEnemy = new System.Windows.Forms.Label();
+            this.lblEnemyName = new System.Windows.Forms.Label();
             this.lblEnemyHealth = new System.Windows.Forms.Label();
             this.lblEnemyForce = new System.Windows.Forms.Label();
             this.lblEnemyArmor = new System.Windows.Forms.Label();
@@ -43,22 +43,23 @@
             this.lblEnemyLuck = new System.Windows.Forms.Label();
             this.cmdNextTurn = new System.Windows.Forms.Button();
             this.picEnemy = new System.Windows.Forms.PictureBox();
-            this.richTextBoxExtension1 = new Xarxaria.RichTextBoxExtension();
+            this.cmdHelp = new System.Windows.Forms.Button();
+            this.txtFightLog = new Xarxaria.RichTextBoxExtension();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblPlayer
+            // lblPlayerName
             // 
-            this.lblPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayer.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblPlayer.Location = new System.Drawing.Point(41, 276);
-            this.lblPlayer.Name = "lblPlayer";
-            this.lblPlayer.Size = new System.Drawing.Size(167, 51);
-            this.lblPlayer.TabIndex = 0;
-            this.lblPlayer.Text = "Vous";
-            this.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblPlayerName.Location = new System.Drawing.Point(41, 276);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(167, 51);
+            this.lblPlayerName.TabIndex = 0;
+            this.lblPlayerName.Text = "Vous";
+            this.lblPlayerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlayerHealth
             // 
@@ -93,18 +94,18 @@
             this.lblPlayerArmor.TabIndex = 0;
             this.lblPlayerArmor.Text = "Armure : XX";
             // 
-            // lblEnemy
+            // lblEnemyName
             // 
-            this.lblEnemy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblEnemyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.lblEnemy.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblEnemy.Location = new System.Drawing.Point(239, 276);
-            this.lblEnemy.Name = "lblEnemy";
-            this.lblEnemy.Size = new System.Drawing.Size(114, 51);
-            this.lblEnemy.TabIndex = 0;
-            this.lblEnemy.Text = "Ennemi";
-            this.lblEnemy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEnemyName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnemyName.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblEnemyName.Location = new System.Drawing.Point(239, 276);
+            this.lblEnemyName.Name = "lblEnemyName";
+            this.lblEnemyName.Size = new System.Drawing.Size(114, 51);
+            this.lblEnemyName.TabIndex = 0;
+            this.lblEnemyName.Text = "Ennemi";
+            this.lblEnemyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblEnemyHealth
             // 
@@ -201,6 +202,7 @@
             this.cmdNextTurn.Text = "Prochain tour";
             this.cmdNextTurn.UseVisualStyleBackColor = false;
             this.cmdNextTurn.Click += new System.EventHandler(this.cmdNextTurn_Click);
+            this.cmdNextTurn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdNextTurn_MouseDown);
             // 
             // picEnemy
             // 
@@ -211,16 +213,29 @@
             this.picEnemy.TabIndex = 0;
             this.picEnemy.TabStop = false;
             // 
-            // richTextBoxExtension1
+            // cmdHelp
             // 
-            this.richTextBoxExtension1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.richTextBoxExtension1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxExtension1.Location = new System.Drawing.Point(41, 180);
-            this.richTextBoxExtension1.Name = "richTextBoxExtension1";
-            this.richTextBoxExtension1.Size = new System.Drawing.Size(312, 93);
-            this.richTextBoxExtension1.TabIndex = 2;
-            this.richTextBoxExtension1.Text = "log de combat";
-            this.richTextBoxExtension1.ZoomFactor = 1.3F;
+            this.cmdHelp.Location = new System.Drawing.Point(310, 470);
+            this.cmdHelp.Name = "cmdHelp";
+            this.cmdHelp.Size = new System.Drawing.Size(75, 23);
+            this.cmdHelp.TabIndex = 2;
+            this.cmdHelp.Text = "?";
+            this.cmdHelp.UseVisualStyleBackColor = true;
+            this.cmdHelp.Click += new System.EventHandler(this.cmdHelp_Click);
+            // 
+            // txtFightLog
+            // 
+            this.txtFightLog.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtFightLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFightLog.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFightLog.Location = new System.Drawing.Point(41, 180);
+            this.txtFightLog.Name = "txtFightLog";
+            this.txtFightLog.ReadOnly = true;
+            this.txtFightLog.Size = new System.Drawing.Size(312, 93);
+            this.txtFightLog.TabIndex = 2;
+            this.txtFightLog.Text = "";
+            this.txtFightLog.ZoomFactor = 1.2F;
+            this.txtFightLog.Enter += new System.EventHandler(this.txtFightLog_Enter);
             // 
             // frmCombat
             // 
@@ -228,7 +243,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Xarxaria.Properties.Resources.frmCombat;
             this.ClientSize = new System.Drawing.Size(397, 502);
-            this.Controls.Add(this.richTextBoxExtension1);
+            this.Controls.Add(this.cmdHelp);
+            this.Controls.Add(this.txtFightLog);
             this.Controls.Add(this.lblEnemyLuck);
             this.Controls.Add(this.lblEnemyAgility);
             this.Controls.Add(this.lblPlayerLuck);
@@ -237,16 +253,17 @@
             this.Controls.Add(this.lblEnemyArmor);
             this.Controls.Add(this.lblEnemyForce);
             this.Controls.Add(this.lblEnemyHealth);
-            this.Controls.Add(this.lblEnemy);
+            this.Controls.Add(this.lblEnemyName);
             this.Controls.Add(this.lblPlayerArmor);
             this.Controls.Add(this.lblPlayerForce);
             this.Controls.Add(this.lblPlayerHealth);
-            this.Controls.Add(this.lblPlayer);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.picEnemy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCombat";
             this.Text = "Xarxaria v1.0 - Combat";
+            this.Load += new System.EventHandler(this.frmCombat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,11 +273,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picEnemy;
-        private System.Windows.Forms.Label lblPlayer;
+        private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label lblPlayerHealth;
         private System.Windows.Forms.Label lblPlayerForce;
         private System.Windows.Forms.Label lblPlayerArmor;
-        private System.Windows.Forms.Label lblEnemy;
+        private System.Windows.Forms.Label lblEnemyName;
         private System.Windows.Forms.Label lblEnemyHealth;
         private System.Windows.Forms.Label lblEnemyForce;
         private System.Windows.Forms.Label lblEnemyArmor;
@@ -269,6 +286,7 @@
         private System.Windows.Forms.Label lblPlayerLuck;
         private System.Windows.Forms.Label lblEnemyAgility;
         private System.Windows.Forms.Label lblEnemyLuck;
-        private RichTextBoxExtension richTextBoxExtension1;
+        private RichTextBoxExtension txtFightLog;
+        private System.Windows.Forms.Button cmdHelp;
     }
 }
