@@ -126,18 +126,16 @@ namespace Xarxaria
         {
             SqlCommand cmd = new SqlCommand();
 
-            Player actualPlayer = player;
-
+            //Update player caracteristics
             cmd.CommandText = "UPDATE Player SET " +
-                                "pv = " + actualPlayer.Pv +
-                                ", force = " + actualPlayer.Force +
-                                ", armor = " + actualPlayer.Armor +
-                                ", agility = " + actualPlayer.Agility +
-                                ", luck = " + actualPlayer.Luck +
-                                ", name = " + "'" + actualPlayer.Name +
-                                "', idActualPage = " + actualPlayer.IdActualPage +
-                                ", idInventory = " + actualPlayer.IdInventory +
-                                " WHERE id = " + actualPlayer.Id;
+                                "pv = " + player.Pv +
+                                ", force = " + player.Force +
+                                ", armor = " + player.Armor +
+                                ", agility = " + player.Agility +
+                                ", luck = " + player.Luck +
+                                ", name = " + "'" + player.Name +
+                                "', idActualPage = " + player.IdActualPage +
+                                " WHERE id = " + player.Id;
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
@@ -147,6 +145,23 @@ namespace Xarxaria
             cmd.ExecuteNonQuery();
 
             sqlConnection.Close();
+
+            //Get player inventory
+            Inventory playerInventory = player.GetInventory;
+
+            for (int i = 0; i < playerInventory.Items.Count(); i++)
+            {
+                //Update player's inventory
+                cmd.CommandText = "UPDATE Player SET " +
+                                    "quantity = " + playerInventory.Items[i] +
+                                    " WHERE id = " + i;
+
+                sqlConnection.Open();
+
+                cmd.ExecuteNonQuery();
+
+                sqlConnection.Close();
+            }
         }
         #endregion
 
@@ -157,6 +172,9 @@ namespace Xarxaria
         /// <returns>A list of all the players</returns>
         public List<Player> GetPlayers()
         {
+            //Create empty inventory
+            Inventory playerInventory = new Inventory(GetNumberOfItems());
+
             //List that will contain all the players
             List<Player> players = new List<Player>();
 
@@ -171,16 +189,13 @@ namespace Xarxaria
 
             reader = cmd.ExecuteReader();
 
-            int id, pv, force, agility, armor, luck, idActualPage, idInventory;
+            int id, pv, force, agility, armor, luck, idActualPage;
             string name;
 
             while (reader.Read())
             {
                 //Create empty player
                 Player selectedPlayer = new Player();
-
-                //Create empty inventory
-                Inventory playerInventory = new Inventory();
 
                 //Get all data of the player
                 id = int.Parse(reader["id"].ToString());
@@ -191,10 +206,9 @@ namespace Xarxaria
                 luck = int.Parse(reader["luck"].ToString());
                 name = reader["name"].ToString();
                 idActualPage = int.Parse(reader["idActualPage"].ToString());
-                idInventory = int.Parse(reader["idInventory"].ToString());
 
                 //Add the player to the list of players
-                players.Add(new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory));
+                players.Add(new Player(id, pv, force, agility, armor, luck, name, idActualPage, playerInventory));
             }
 
             sqlConnection.Close();
@@ -206,6 +220,33 @@ namespace Xarxaria
             }
 
             return players;
+        }
+
+        /// <summary>
+        /// Get the number of different items
+        /// </summary>
+        /// <returns>Number of different items</returns>
+        public int GetNumberOfItems()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+            int numberOfItems = 0;
+
+            cmd.CommandText = "SELECT * FROM Item";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                numberOfItems++;
+            }
+
+            sqlConnection.Close();
+
+            return numberOfItems;
         }
         
         /// <summary>
@@ -272,7 +313,7 @@ namespace Xarxaria
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
             Player selectedPlayer = new Player();
-            Inventory playerInventory = GetInventory(selectedPlayer.IdInventory);
+            Inventory playerInventory = GetInventoryByPlayerId(selectedPlayer.Id);
 
             cmd.CommandText = "SELECT * FROM Player WHERE id = " + playerId;
             cmd.CommandType = CommandType.Text;
@@ -297,8 +338,7 @@ namespace Xarxaria
                 int luck = int.Parse(reader["luck"].ToString());
                 string name = reader["name"].ToString();
                 int idActualPage = int.Parse(reader["idActualPage"].ToString());
-                int idInventory = int.Parse(reader["idInventory"].ToString());
-                selectedPlayer = new Player(id, pv, force, agility, armor, luck, name, idActualPage, idInventory, playerInventory);
+                selectedPlayer = new Player(id, pv, force, agility, armor, luck, name, idActualPage, playerInventory);
             }
 
             if (!isPlayerFound)
@@ -310,17 +350,18 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Get inventory values according to Id
+        /// Get inventory values according to player id
         /// </summary>
-        /// <param name="idInventory"></param>
-        /// <returns>Inventory object with the value in the database</returns>
-        public Inventory GetInventory(int idInventory)
+        /// <param name="playerId"></param>
+        /// <returns>Inventory object</returns>
+        public Inventory GetInventoryByPlayerId(int playerId)
         {
+            Inventory selectedInventory = new Inventory(GetNumberOfItems());
+
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
-            Inventory selectedInventory = new Inventory();
 
-            cmd.CommandText = "SELECT * FROM Inventory WHERE id = " + idInventory;
+            cmd.CommandText = "SELECT * FROM Player_Item WHERE idPlayer = " + playerId;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -330,16 +371,7 @@ namespace Xarxaria
 
             while (reader.Read())
             {
-                int[] inventoryValues = new int[Program.itemLists.Length];
-
-                //Get all data of the inventroy
-                for (int i = 0; i < Program.itemLists.Length - 1; i++)
-                {
-                    inventoryValues[i] = int.Parse(reader[Program.itemLists[i]].ToString());
-                }
-
-                //Create a new inventory and give it the readed values
-                selectedInventory = new Inventory(inventoryValues);
+                selectedInventory.SetItem(int.Parse(reader["idItem"].ToString()), int.Parse(reader["quantity"].ToString()));
             }
 
             sqlConnection.Close();

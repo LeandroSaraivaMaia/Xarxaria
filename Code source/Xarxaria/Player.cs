@@ -30,7 +30,6 @@ namespace Xarxaria
         int luck;
         string name;
         int idActualPage;
-        int idInventory;
         Inventory inventory;
         #endregion
 
@@ -42,7 +41,6 @@ namespace Xarxaria
         public int Armor { get { return armor; } }
         public int Luck { get { return luck; } }
         public int Pv { get { return pv; } }
-        public int IdInventory { get { return idInventory; } }
         public int IdActualPage { get { return idActualPage; } }
         public Inventory GetInventory { get { return inventory; } }
         #endregion
@@ -55,7 +53,7 @@ namespace Xarxaria
         }
 
         //Player constructor
-        public Player(int id, int pv, int force, int agility, int armor, int luck, string name, int idActualPage, int idInventory, Inventory inventory)
+        public Player(int id, int pv, int force, int agility, int armor, int luck, string name, int idActualPage, Inventory inventory)
         {
             this.id = id;
             this.pv = pv;
@@ -65,7 +63,6 @@ namespace Xarxaria
             this.luck = luck;
             this.name = name;
             this.idActualPage = idActualPage;
-            this.idInventory = idInventory;
             this.inventory = inventory;
         }
         #endregion
@@ -73,7 +70,7 @@ namespace Xarxaria
         #region public methods
         public void LoadInventory()
         {
-            inventory = Program.connection.GetInventory(idInventory);
+            inventory = Program.connection.GetInventoryByPlayerId(Id);
         }
 
         public void SetItem(int itemId, int numberOfItem)

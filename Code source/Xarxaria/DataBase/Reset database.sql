@@ -54,6 +54,8 @@ CREATE TABLE Player_Item (
 	quantity INT
 )
 
+GO
+
 -- Insertion des données --
 INSERT INTO Page (title, text, image) VALUES
 -- Page 1 --
