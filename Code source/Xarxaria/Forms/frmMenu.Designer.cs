@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.parchemin;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmMenu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(250, 251);
             this.Controls.Add(this.cmdGoToStartScreen);

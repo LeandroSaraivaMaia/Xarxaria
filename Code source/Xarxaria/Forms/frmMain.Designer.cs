@@ -34,8 +34,6 @@ namespace Xarxaria
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.picPage = new System.Windows.Forms.PictureBox();
             this.txtPage = new Xarxaria.RichTextBoxExtension();
-            this.cmdDebug = new System.Windows.Forms.Button();
-            this.txtDebug = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +107,7 @@ namespace Xarxaria
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPage.BackColor = System.Drawing.Color.AntiqueWhite;
             this.txtPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPage.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPage.Location = new System.Drawing.Point(12, 295);
             this.txtPage.Name = "txtPage";
             this.txtPage.ReadOnly = true;
@@ -119,32 +118,13 @@ namespace Xarxaria
             this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);
             this.txtPage.Enter += new System.EventHandler(this.txtPage_Enter);
             // 
-            // cmdDebug
-            // 
-            this.cmdDebug.Location = new System.Drawing.Point(12, 11);
-            this.cmdDebug.Name = "cmdDebug";
-            this.cmdDebug.Size = new System.Drawing.Size(75, 23);
-            this.cmdDebug.TabIndex = 5;
-            this.cmdDebug.Text = "debug";
-            this.cmdDebug.UseVisualStyleBackColor = true;
-            this.cmdDebug.Click += new System.EventHandler(this.cmdDebug_Click);
-            // 
-            // txtDebug
-            // 
-            this.txtDebug.Location = new System.Drawing.Point(93, 13);
-            this.txtDebug.Name = "txtDebug";
-            this.txtDebug.Size = new System.Drawing.Size(100, 20);
-            this.txtDebug.TabIndex = 6;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.Parchemin4;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmMain;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(562, 632);
-            this.Controls.Add(this.txtDebug);
-            this.Controls.Add(this.cmdDebug);
             this.Controls.Add(this.cmdMenu);
             this.Controls.Add(this.cmdPlayer);
             this.Controls.Add(this.lblPageTitle);
@@ -157,7 +137,6 @@ namespace Xarxaria
             this.Text = "Xarxaria v1.0 - Main";
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -166,10 +145,8 @@ namespace Xarxaria
         private System.Windows.Forms.Button cmdMenu;
         private System.Windows.Forms.Button cmdPlayer;
         private System.Windows.Forms.Label lblPageTitle;
-        private RichTextBoxExtension txtPage;
         private System.Windows.Forms.PictureBox picPage;
-        private System.Windows.Forms.Button cmdDebug;
-        private System.Windows.Forms.TextBox txtDebug;
+        private RichTextBoxExtension txtPage;
     }
 }
 

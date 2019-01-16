@@ -39,7 +39,7 @@ namespace Xarxaria
             this.player = player;
 
             //Change caracteristic text
-            lblHealth.Text = "Points de vie : " + player.Pv.ToString();
+            lblHealth.Text = "Points de vie : " + player.Hp.ToString();
             lblForce.Text = "Force : " + player.Force.ToString();
             lblAgility.Text = "Agilité : " + player.Agility.ToString();
             lblArmor.Text = "Armure : " + player.Armor.ToString();
@@ -53,6 +53,9 @@ namespace Xarxaria
                 if (numberOfItems != 0)
                     lstItems.Items.Add(Program.itemLists[itemId] + "\t" + numberOfItems);
             }
+
+            //Wire mouse enter events for sound effect
+            cmdPlayerContinue.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -79,12 +82,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdPlayerContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdPlayerContinue_MouseLeave(object sender, EventArgs e)
         {
             cmdPlayerContinue.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }

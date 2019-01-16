@@ -118,61 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Parchemin4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parchemin4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="parchemin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parchemin2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="parchemin_rouleau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parchemin_rouleau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_sans_fond_min_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_sans_fond_min_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_sans_fond_min" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_sans_fond_min.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Parchemin3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Parchemin3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StartScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StartScreen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Inventory2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inventory2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rose_des_vents_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rose_des_vents_V2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rose_des_vents" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rose_des_vents.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rose_des_vents_V3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rose_des_vents_V3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fond_parchemin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fond_parchemin.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="parchemin2_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parchemin2_v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="parchemin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\parchemin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Simple_Button_Pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple_Button_Pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inventaire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inventaire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="click1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\click1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="click2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\click2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="click3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\click3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="click4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\click4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\selection1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selection1_short" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\selection1_short.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="frmIntroduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmIntroduction.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmLoadPlayerSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmLoadPlayerSelection.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmMain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmMenu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmOptions.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmPlayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmStart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmCombat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmCombat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Simple_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Simple_Button_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Inventaire_V2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inventaire_V2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Simple_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

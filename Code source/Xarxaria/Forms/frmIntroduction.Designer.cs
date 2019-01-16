@@ -33,7 +33,7 @@
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblHealth = new System.Windows.Forms.Label();
             this.lblAgility = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtIntroduction = new System.Windows.Forms.RichTextBox();
             this.cmdStartAventure = new System.Windows.Forms.Button();
             this.numHealth = new System.Windows.Forms.NumericUpDown();
             this.numLuck = new System.Windows.Forms.NumericUpDown();
@@ -42,6 +42,7 @@
             this.lblLuck = new System.Windows.Forms.Label();
             this.lblDistributePoints = new System.Windows.Forms.Label();
             this.lblDistributePointsValue = new System.Windows.Forms.Label();
+            this.cmdGoBackToStartScreen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numHealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLuck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAgility)).BeginInit();
@@ -56,7 +57,7 @@
             this.lblIntroduction.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblIntroduction.Location = new System.Drawing.Point(12, 9);
             this.lblIntroduction.Name = "lblIntroduction";
-            this.lblIntroduction.Size = new System.Drawing.Size(285, 37);
+            this.lblIntroduction.Size = new System.Drawing.Size(320, 29);
             this.lblIntroduction.TabIndex = 0;
             this.lblIntroduction.Text = "Introduction";
             this.lblIntroduction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,7 +68,7 @@
             this.lblPlayerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.lblPlayerName.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lblPlayerName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPlayerName.Location = new System.Drawing.Point(32, 286);
+            this.lblPlayerName.Location = new System.Drawing.Point(54, 321);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(117, 16);
             this.lblPlayerName.TabIndex = 0;
@@ -79,7 +80,7 @@
             this.lblHealth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.lblHealth.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lblHealth.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblHealth.Location = new System.Drawing.Point(32, 309);
+            this.lblHealth.Location = new System.Drawing.Point(54, 344);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(106, 16);
             this.lblHealth.TabIndex = 0;
@@ -91,23 +92,25 @@
             this.lblAgility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.lblAgility.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lblAgility.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAgility.Location = new System.Drawing.Point(32, 333);
+            this.lblAgility.Location = new System.Drawing.Point(54, 368);
             this.lblAgility.Name = "lblAgility";
             this.lblAgility.Size = new System.Drawing.Size(65, 16);
             this.lblAgility.TabIndex = 0;
             this.lblAgility.Text = "Agilité";
             // 
-            // richTextBox1
+            // txtIntroduction
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 49);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(285, 195);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.txtIntroduction.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtIntroduction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIntroduction.Location = new System.Drawing.Point(12, 41);
+            this.txtIntroduction.Name = "txtIntroduction";
+            this.txtIntroduction.ReadOnly = true;
+            this.txtIntroduction.Size = new System.Drawing.Size(320, 224);
+            this.txtIntroduction.TabIndex = 0;
+            this.txtIntroduction.TabStop = false;
+            this.txtIntroduction.Text = resources.GetString("txtIntroduction.Text");
+            this.txtIntroduction.ZoomFactor = 1.15F;
+            this.txtIntroduction.Enter += new System.EventHandler(this.txtIntroduction_Enter);
             // 
             // cmdStartAventure
             // 
@@ -120,9 +123,9 @@
             this.cmdStartAventure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdStartAventure.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.cmdStartAventure.ForeColor = System.Drawing.Color.Gold;
-            this.cmdStartAventure.Location = new System.Drawing.Point(71, 386);
+            this.cmdStartAventure.Location = new System.Drawing.Point(180, 421);
             this.cmdStartAventure.Name = "cmdStartAventure";
-            this.cmdStartAventure.Size = new System.Drawing.Size(179, 46);
+            this.cmdStartAventure.Size = new System.Drawing.Size(152, 46);
             this.cmdStartAventure.TabIndex = 5;
             this.cmdStartAventure.Text = "Commencer l\'aventure";
             this.cmdStartAventure.UseVisualStyleBackColor = false;
@@ -133,8 +136,9 @@
             // numHealth
             // 
             this.numHealth.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.numHealth.Location = new System.Drawing.Point(158, 306);
+            this.numHealth.Location = new System.Drawing.Point(180, 341);
             this.numHealth.Name = "numHealth";
+            this.numHealth.ReadOnly = true;
             this.numHealth.Size = new System.Drawing.Size(37, 20);
             this.numHealth.TabIndex = 2;
             this.numHealth.ValueChanged += new System.EventHandler(this.numHealth_ValueChanged);
@@ -142,8 +146,9 @@
             // numLuck
             // 
             this.numLuck.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.numLuck.Location = new System.Drawing.Point(158, 354);
+            this.numLuck.Location = new System.Drawing.Point(180, 389);
             this.numLuck.Name = "numLuck";
+            this.numLuck.ReadOnly = true;
             this.numLuck.Size = new System.Drawing.Size(37, 20);
             this.numLuck.TabIndex = 4;
             this.numLuck.ValueChanged += new System.EventHandler(this.numLuck_ValueChanged);
@@ -151,7 +156,7 @@
             // txtPlayerName
             // 
             this.txtPlayerName.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.txtPlayerName.Location = new System.Drawing.Point(158, 282);
+            this.txtPlayerName.Location = new System.Drawing.Point(180, 317);
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.Size = new System.Drawing.Size(132, 20);
             this.txtPlayerName.TabIndex = 1;
@@ -160,8 +165,9 @@
             // numAgility
             // 
             this.numAgility.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.numAgility.Location = new System.Drawing.Point(158, 330);
+            this.numAgility.Location = new System.Drawing.Point(180, 365);
             this.numAgility.Name = "numAgility";
+            this.numAgility.ReadOnly = true;
             this.numAgility.Size = new System.Drawing.Size(37, 20);
             this.numAgility.TabIndex = 3;
             this.numAgility.ValueChanged += new System.EventHandler(this.numAgility_ValueChanged);
@@ -172,7 +178,7 @@
             this.lblLuck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.lblLuck.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lblLuck.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblLuck.Location = new System.Drawing.Point(32, 357);
+            this.lblLuck.Location = new System.Drawing.Point(54, 392);
             this.lblLuck.Name = "lblLuck";
             this.lblLuck.Size = new System.Drawing.Size(64, 16);
             this.lblLuck.TabIndex = 0;
@@ -184,7 +190,7 @@
             this.lblDistributePoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
             this.lblDistributePoints.Font = new System.Drawing.Font("Algerian", 11.25F);
             this.lblDistributePoints.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDistributePoints.Location = new System.Drawing.Point(9, 252);
+            this.lblDistributePoints.Location = new System.Drawing.Point(31, 287);
             this.lblDistributePoints.Name = "lblDistributePoints";
             this.lblDistributePoints.Size = new System.Drawing.Size(249, 16);
             this.lblDistributePoints.TabIndex = 0;
@@ -194,20 +200,42 @@
             // 
             this.lblDistributePointsValue.AutoSize = true;
             this.lblDistributePointsValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(215)))));
-            this.lblDistributePointsValue.Font = new System.Drawing.Font("Algerian", 15F);
+            this.lblDistributePointsValue.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDistributePointsValue.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDistributePointsValue.Location = new System.Drawing.Point(253, 247);
+            this.lblDistributePointsValue.Location = new System.Drawing.Point(276, 268);
             this.lblDistributePointsValue.Name = "lblDistributePointsValue";
-            this.lblDistributePointsValue.Size = new System.Drawing.Size(22, 22);
+            this.lblDistributePointsValue.Size = new System.Drawing.Size(36, 42);
             this.lblDistributePointsValue.TabIndex = 0;
             this.lblDistributePointsValue.Text = "0";
+            // 
+            // cmdGoBackToStartScreen
+            // 
+            this.cmdGoBackToStartScreen.BackColor = System.Drawing.Color.Transparent;
+            this.cmdGoBackToStartScreen.BackgroundImage = global::Xarxaria.Properties.Resources.Simple_Button;
+            this.cmdGoBackToStartScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdGoBackToStartScreen.FlatAppearance.BorderSize = 0;
+            this.cmdGoBackToStartScreen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdGoBackToStartScreen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.cmdGoBackToStartScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdGoBackToStartScreen.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.cmdGoBackToStartScreen.ForeColor = System.Drawing.Color.Gold;
+            this.cmdGoBackToStartScreen.Location = new System.Drawing.Point(12, 421);
+            this.cmdGoBackToStartScreen.Name = "cmdGoBackToStartScreen";
+            this.cmdGoBackToStartScreen.Size = new System.Drawing.Size(135, 46);
+            this.cmdGoBackToStartScreen.TabIndex = 6;
+            this.cmdGoBackToStartScreen.Text = "Retour à l\'écran titre";
+            this.cmdGoBackToStartScreen.UseVisualStyleBackColor = false;
+            this.cmdGoBackToStartScreen.Click += new System.EventHandler(this.cmdGoBackToStartScreen_Click);
+            this.cmdGoBackToStartScreen.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdGoBackToStartScreen_MouseDown);
+            this.cmdGoBackToStartScreen.MouseLeave += new System.EventHandler(this.cmdGoBackToStartScreen_MouseLeave);
             // 
             // frmIntroduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.rose_des_vents_V3;
-            this.ClientSize = new System.Drawing.Size(309, 444);
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmIntroduction;
+            this.ClientSize = new System.Drawing.Size(344, 479);
+            this.Controls.Add(this.cmdGoBackToStartScreen);
             this.Controls.Add(this.lblDistributePointsValue);
             this.Controls.Add(this.lblDistributePoints);
             this.Controls.Add(this.lblLuck);
@@ -216,7 +244,7 @@
             this.Controls.Add(this.numLuck);
             this.Controls.Add(this.numHealth);
             this.Controls.Add(this.cmdStartAventure);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtIntroduction);
             this.Controls.Add(this.lblAgility);
             this.Controls.Add(this.lblHealth);
             this.Controls.Add(this.lblPlayerName);
@@ -239,7 +267,7 @@
         private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label lblHealth;
         private System.Windows.Forms.Label lblAgility;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtIntroduction;
         private System.Windows.Forms.Button cmdStartAventure;
         private System.Windows.Forms.NumericUpDown numHealth;
         private System.Windows.Forms.NumericUpDown numLuck;
@@ -248,5 +276,6 @@
         private System.Windows.Forms.Label lblLuck;
         private System.Windows.Forms.Label lblDistributePoints;
         private System.Windows.Forms.Label lblDistributePointsValue;
+        private System.Windows.Forms.Button cmdGoBackToStartScreen;
     }
 }

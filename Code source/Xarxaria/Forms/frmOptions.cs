@@ -45,6 +45,9 @@ namespace Xarxaria
             //Set the numerical zoom value to the actual zoom
             numPoliceZoom.Value = (decimal)Program.textZoom;
             txtExample.ZoomFactor = Program.textZoom;
+
+            //Wire mouse enter events for sound effect
+            cmdContinue.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -103,6 +106,7 @@ namespace Xarxaria
 
             //Change the example value for the text size
             txtExample.ZoomFactor = (float)numPoliceZoom.Value;
+            txtExample.oldZoomFactor = (float)numPoliceZoom.Value;
         }
         
         /// <summary>
@@ -161,12 +165,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdContinue_MouseLeave(object sender, EventArgs e)
         {
             cmdContinue.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file      RichTextBoxExtension.cs
  * \author    Leandro Saraiva Maia
  * \version   1.0
@@ -62,6 +62,15 @@ namespace Xarxaria
         private const int SCF_WORD = 0x0002;
         private const int SCF_ALL = 0x0004;
 
+        //------------------------Not here by default------------------------
+        public float oldZoomFactor = Program.textZoom;//Set the default zoom value
+        private const int WM_VSCROLL = 0x115;
+        private const int SB_TOP = 0x6;
+        private const int SB_BOTTOM = 0x7;
+        private const int EM_SETZOOM = 0x04E1;
+        const int WM_MOUSEWHEEL = 0x020A;
+        //-------------------------------------------------------------------
+
         #region CHARFORMAT2 Flags
         private const UInt32 CFE_BOLD = 0x0001;
         private const UInt32 CFE_ITALIC = 0x0002;
@@ -123,6 +132,63 @@ namespace Xarxaria
         #endregion
 
         #endregion
+
+        //------------------------Not here by default------------------------
+        /// <summary>
+        /// Scroll the scroll bar to the top
+        /// </summary>
+        public void ScrollToTop()
+        {
+            SendMessage(Handle, WM_VSCROLL, (IntPtr)SB_TOP, IntPtr.Zero);
+        }
+
+        /// <summary>
+        /// Scroll the scroll bar to the top
+        /// </summary>
+        public void ScrollToBottom()
+        {
+            SendMessage(Handle, WM_VSCROLL, (IntPtr)SB_BOTTOM, IntPtr.Zero);
+        }
+
+        /// <summary>
+        /// Deactivate ctrl + mouse wheel zoom
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+
+            if (m.Msg == WM_MOUSEWHEEL)
+            {
+                if (Control.ModifierKeys == Keys.Control)
+                {
+                    //Calculate the difference between zoomfactor
+                    float deltaZoomFactor = oldZoomFactor - ZoomFactor;
+
+                    //Change zoom factor
+                    SendMessage(this.Handle, EM_SETZOOM, new IntPtr((int)((ZoomFactor + deltaZoomFactor) * 100)), new IntPtr(100));
+
+                    //Set actual zoom to old zoom factor
+                    oldZoomFactor = ZoomFactor;
+                }
+            }
+        }
+
+        //This method allow us to add a text with a specific style (color & underline)
+        public void AppendText(string text, Color color, bool isUnderline = false)
+        {
+            if (isUnderline)
+                SelectionFont = new Font(SelectionFont, FontStyle.Underline);
+
+            SelectionStart = TextLength;
+            SelectionLength = 0;
+
+            SelectionColor = color;
+            AppendText(text);
+            SelectionColor = ForeColor;
+            SelectionFont = new Font(SelectionFont, FontStyle.Regular);
+        }
+        //-------------------------------------------------------------------
 
         public RichTextBoxExtension()
         {
@@ -213,22 +279,6 @@ namespace Xarxaria
         public int GetSelectionLink()
         {
             return GetSelectionStyle(CFM_LINK, CFE_LINK);
-        }
-
-        //This code was added by Leandro, it is not contained in the original file.
-        //This method allow us to add a text with a specific style (color & underline)
-        public void AppendText(string text, Color color, bool isUnderline = false)
-        {
-            if (isUnderline)
-                SelectionFont = new Font(SelectionFont, FontStyle.Underline);
-
-            SelectionStart = TextLength;
-            SelectionLength = 0;
-
-            SelectionColor = color;
-            AppendText(text);
-            SelectionColor = ForeColor;
-            SelectionFont = new Font(SelectionFont, FontStyle.Regular);
         }
 
         private void SetSelectionStyle(UInt32 mask, UInt32 effect)

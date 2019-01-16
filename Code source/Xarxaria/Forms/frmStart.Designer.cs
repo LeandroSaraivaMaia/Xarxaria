@@ -34,6 +34,7 @@
             this.cmdQuit = new System.Windows.Forms.Button();
             this.cmdOptions = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.temp_testcombat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,19 +125,30 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Xarxaria.Properties.Resources.logo_sans_fond_min_V2;
+            this.pictureBox1.Image = global::Xarxaria.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(277, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 312);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // temp_testcombat
+            // 
+            this.temp_testcombat.Location = new System.Drawing.Point(682, 335);
+            this.temp_testcombat.Name = "temp_testcombat";
+            this.temp_testcombat.Size = new System.Drawing.Size(75, 23);
+            this.temp_testcombat.TabIndex = 6;
+            this.temp_testcombat.Text = "test combat";
+            this.temp_testcombat.UseVisualStyleBackColor = true;
+            this.temp_testcombat.Click += new System.EventHandler(this.temp_testcombat_Click);
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Xarxaria.Properties.Resources.StartScreen;
+            this.BackgroundImage = global::Xarxaria.Properties.Resources.frmStart;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.temp_testcombat);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdOptions);
             this.Controls.Add(this.cmdQuit);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.Button cmdOptions;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button temp_testcombat;
     }
 }

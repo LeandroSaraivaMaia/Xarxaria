@@ -23,7 +23,7 @@ namespace Xarxaria
     {
         #region private attributes
         int id;
-        int pv;
+        int hp;
         int force;
         int agility;
         int armor;
@@ -33,7 +33,7 @@ namespace Xarxaria
         Inventory inventory;
         #endregion
 
-        #region accessors
+        #region public accessors
         public int Id { get { return id; } }
         public string Name { get { return name; } }
         public int Force { get { return force; } }
@@ -56,7 +56,7 @@ namespace Xarxaria
         public Player(int id, int pv, int force, int agility, int armor, int luck, string name, int idActualPage, Inventory inventory)
         {
             this.id = id;
-            this.pv = pv;
+            this.hp = hp;
             this.force = force;
             this.agility = agility;
             this.armor = armor;
@@ -78,12 +78,13 @@ namespace Xarxaria
             inventory.SetItem(itemId, numberOfItem);
         }
 
-        public void SetPv(int val)
+        public void SetHp(int val)
         {
-            pv += val;
+            hp += val;
 
-            if (pv < 0)
+            if (hp < 0)
             {
+                hp = 0;
                 Console.WriteLine("La partie est terminée, le joueur n'as plus de points de vie");
             };
         }

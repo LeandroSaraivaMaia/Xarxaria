@@ -33,7 +33,11 @@ namespace Xarxaria
         #endregion
 
         #region public accessor
-        public float ZoomFactor { get { return txtPage.ZoomFactor; } set { txtPage.ZoomFactor = value; } }
+        public float ZoomFactor { get { return txtPage.ZoomFactor; } set {
+                txtPage.ZoomFactor = value;
+                txtPage.oldZoomFactor = value;
+            }
+        }
         public HorizontalAlignment TextAlign { get { return txtPage.SelectionAlignment; } set {
                 //When the change alignement change, select all the text to change alignement
                 txtPage.SelectAll();
@@ -54,6 +58,10 @@ namespace Xarxaria
 
             //Load the page of the player
             ChangePage(actualPlayer.IdActualPage);
+
+            //Wire mouse enter events for sound effect
+            cmdPlayer.MouseEnter += cmd_MouseEnter;
+            cmdMenu.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -83,12 +91,12 @@ namespace Xarxaria
             if (menuForm.ShowDialog() == DialogResult.Abort)
             {
                 //Open the start screen
-                void StartScreenThreadProc()
+                void ThreadProc_frmStart()
                 {
                     Application.Run(new frmStart());
                 }
 
-                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(StartScreenThreadProc));
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
 
                 t.Start();
 
@@ -100,7 +108,7 @@ namespace Xarxaria
         /// Event when with have any contact with the main text (Selection or click)
         /// 
         /// The active control is redirected to the titleLabel,
-        /// this avoid the main text to be selected not look good
+        /// this avoid the main text to be selected and not looking good
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -196,7 +204,7 @@ namespace Xarxaria
                     break;
                 case (int)Program.actionId.changePlayerHp:
 
-                    actualPlayer.SetPv(actionValue);
+                    actualPlayer.SetHp(actionValue);
 
                     //Will maybe be replaced by a little animation/sound
                     if (actionValue < 0) { MessageBox.Show(contents[1] + " points de vie", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
@@ -251,6 +259,7 @@ namespace Xarxaria
         #endregion
 
         #region private methods
+
         /// <summary>
         /// Change the actual page with a given id
         /// </summary>
@@ -280,7 +289,7 @@ namespace Xarxaria
 
             //Change image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            string imagePath = currentDirectory + actualPage.Image;
+            string imagePath = currentDirectory + @"\assets\images\" + actualPage.Image;
             try
             {
                 loadedImage = new Bitmap(imagePath);
@@ -293,6 +302,8 @@ namespace Xarxaria
             
             //Reset inactive links list
             inactiveLinks = new List<int>();
+
+            txtPage.ScrollToTop();
         }
 
         /// <summary>
@@ -422,6 +433,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdMenu.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -435,6 +447,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -444,10 +457,18 @@ namespace Xarxaria
         }
         #endregion
 
-        //Temporary debug
-        private void cmdDebug_Click(object sender, EventArgs e)
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
         {
-            ChangePage(int.Parse(txtDebug.Text));
+            Program.playHoverSound();
         }
+        #endregion
     }
 }

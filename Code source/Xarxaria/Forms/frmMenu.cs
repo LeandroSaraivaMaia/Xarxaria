@@ -33,7 +33,13 @@ namespace Xarxaria
         public frmMenu(Player player)
         {
             InitializeComponent();
-            this.actualPlayer = player;
+
+            //Wire mouse enter events for sound effect
+            cmdContinue.MouseEnter += cmd_MouseEnter;
+            cmdGoToStartScreen.MouseEnter += cmd_MouseEnter;
+            cmdOptions.MouseEnter += cmd_MouseEnter;
+            cmdSave.MouseEnter += cmd_MouseEnter;
+            actualPlayer = player;
         }
         #endregion
 
@@ -105,6 +111,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdContinue.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -118,6 +125,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdSave.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -131,6 +139,7 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdOptions.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
@@ -144,12 +153,27 @@ namespace Xarxaria
             if (e.Button == MouseButtons.Left)
             {
                 cmdGoToStartScreen.BackgroundImage = Properties.Resources.Simple_Button_Pressed;
+                Program.playClickSound();
             }
         }
 
         private void cmdGoToStartScreen_MouseLeave(object sender, EventArgs e)
         {
             cmdGoToStartScreen.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+        #endregion
+
+        #region sound events
+        /// <summary>
+        /// The mouse enter in a button :
+        /// 
+        /// Play hover sound
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmd_MouseEnter(object sender, EventArgs e)
+        {
+            Program.playHoverSound();
         }
         #endregion
     }

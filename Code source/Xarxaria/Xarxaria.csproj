@@ -33,14 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionDB.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Forms\frmCombat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +95,11 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RichTextBoxExtension.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,18 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Forms\frmStart.resx">
       <DependentUpon>frmStart.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -194,28 +188,75 @@
     <None Include="Resources\Inventory2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Inventaire.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo_sans_fond_min_V2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\parchemin2_v2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rose_des_vents.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rose_des_vents_V2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rose_des_vents_V3.jpg" />
+    <None Include="Resources\frmIntroduction.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Simple_Button_V2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Inventaire_V2.png" />
+    <None Include="Resources\frmPlayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selection1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selection1_short.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmStart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmOptions.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmMain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmLoadPlayerSelection.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmCombat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple_Button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
