@@ -44,6 +44,8 @@ namespace Xarxaria
         #region public methods
         public static void playHoverSound()
         {
+            //Disabled sound system
+            /*
             try
             {
                 hoverSound.controls.stop();
@@ -53,12 +55,13 @@ namespace Xarxaria
             catch
             {
                 Console.WriteLine("Unknown error to play hover sound");
-            }
-            
+            }*/
         }
 
         public static void playClickSound()
         {
+            //Disabled sound system
+            /*
             try
             {
                 clickSound.controls.stop();
@@ -68,6 +71,7 @@ namespace Xarxaria
             {
                 Console.WriteLine("Unknown error to play click sound");
             }
+            */
         }
 
         public static void GameOver()
