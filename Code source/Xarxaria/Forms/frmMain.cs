@@ -65,7 +65,7 @@ namespace Xarxaria
         }
         #endregion
 
-        #region click events
+        #region events
         /// <summary>
         /// Click on the button "Feuille de personnage"
         /// </summary>
@@ -197,9 +197,12 @@ namespace Xarxaria
                     int numberOfItems = int.Parse(actionValues[1]);
 
                     actualPlayer.SetItem(itemId, numberOfItems);
+
+                    //Get name
+                    Item item = Program.connection.GetItemById(itemId + 1);
                     
-                    if (numberOfItems < 0) { MessageBox.Show("Vous perdez " + Math.Abs(numberOfItems) + " fois l'objet '" + Program.itemLists[itemId] + "'", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else if (numberOfItems > 0) { MessageBox.Show("Vous obtenez " + numberOfItems + " fois l'objet '" + Program.itemLists[itemId] + "'", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    if (numberOfItems < 0) { MessageBox.Show("Vous perdez " + Math.Abs(numberOfItems) + " fois l'objet '" + item.Name + "'", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (numberOfItems > 0) { MessageBox.Show("Vous obtenez " + numberOfItems + " fois l'objet '" + item.Name + "'", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
                 case (int)Program.actionId.changePlayerHp:

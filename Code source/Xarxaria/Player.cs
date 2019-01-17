@@ -40,7 +40,7 @@ namespace Xarxaria
         public int Agility { get { return agility; } }
         public int Armor { get { return armor; } }
         public int Luck { get { return luck; } }
-        public int Pv { get { return pv; } }
+        public int Hp { get { return hp; } }
         public int IdActualPage { get { return idActualPage; } }
         public Inventory GetInventory { get { return inventory; } }
         #endregion
@@ -53,7 +53,7 @@ namespace Xarxaria
         }
 
         //Player constructor
-        public Player(int id, int pv, int force, int agility, int armor, int luck, string name, int idActualPage, Inventory inventory)
+        public Player(int id, int hp, int force, int agility, int armor, int luck, string name, int idActualPage, Inventory inventory)
         {
             this.id = id;
             this.hp = hp;

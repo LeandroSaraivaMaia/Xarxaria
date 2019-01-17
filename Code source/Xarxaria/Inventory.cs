@@ -5,7 +5,7 @@
  * \date      December 6. 2018
  * \brief     Inventory class
  *
- * \details   This class represent contains the an int array containing indexing all the item of the game by id.
+ * \details   This class contains an int array containing indexing all the item of the game by id (- 1).
  * There are public methods to interract with the inventory.
  */
 
@@ -59,7 +59,6 @@ namespace Xarxaria
                 //Fill the array with 0
                 for (int i = 0; i < numberOfItems - 1; i++)
                     items[i] = 0;
-                
             }
         }
         
@@ -68,6 +67,7 @@ namespace Xarxaria
         #region public methods
         public void SetItem(int itemId, int numberOfItem)
         {
+
             items[itemId] += numberOfItem;
 
             if (items[itemId] < 0)
