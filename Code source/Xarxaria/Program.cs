@@ -6,9 +6,7 @@
 * \brief     Main entry of the program
 *
 * \details   This is the main entry of the program.
-* It contains useful contstants like item's name and action id.
-* 
-* In a possible futur update the item's name may be stocked in the database
+* It contains useful variable like action id and connection DB.
 */
 
 #region using
@@ -34,9 +32,6 @@ namespace Xarxaria
         #region public static attributes
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1.4f;
-        public static string[] itemLists = {
-            "goldenCoin", "glowingStone", "stoneLantern"
-        };
         public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
         public static ConnectionDB connection;
         #endregion

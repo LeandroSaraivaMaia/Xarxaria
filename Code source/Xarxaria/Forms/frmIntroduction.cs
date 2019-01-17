@@ -135,14 +135,8 @@ namespace Xarxaria
                 return;
             }
 
-            //Add player's inventory in database
-            Program.connection.AddEmptyInventory();
-
-            //Get the id of the created inventory
-            int inventoryId = Program.connection.GetNumberOfInventory();
-
             //Add player in database
-            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, defaultForce, defaultArmor, (int)numAgility.Value, (int)numLuck.Value, 1, inventoryId);
+            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, defaultForce, defaultArmor, (int)numAgility.Value, (int)numLuck.Value, 1);
 
             //Get the last player in the database
             int lastPlayerId = Program.connection.GetNumberOfPlayer();

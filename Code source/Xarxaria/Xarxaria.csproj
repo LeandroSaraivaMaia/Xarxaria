@@ -91,6 +91,7 @@
     <Compile Include="Forms\frmLoadPlayerSelection.Designer.cs">
       <DependentUpon>frmLoadPlayerSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

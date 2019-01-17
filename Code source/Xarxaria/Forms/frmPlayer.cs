@@ -46,12 +46,15 @@ namespace Xarxaria
             lblLuck.Text = "Chance : " + player.Luck.ToString();
             lblPlayerName.Text = player.Name.ToString();
 
-            //Change item list text
-            for (int itemId = 0; itemId < Program.itemLists.Length; itemId++)
+            //Load player inventory in list
+            int itemId = 1;
+            foreach (int numberOfItems in player.GetInventory.Items)
             {
-                int numberOfItems = player.GetInventory.Items[itemId];
                 if (numberOfItems != 0)
-                    lstItems.Items.Add(Program.itemLists[itemId] + "\t" + numberOfItems);
+                {
+                    lstItems.Items.Add(Program.connection.GetItemById(itemId).Name + "\t" + numberOfItems);
+                }
+                itemId++;
             }
 
             //Wire mouse enter events for sound effect
