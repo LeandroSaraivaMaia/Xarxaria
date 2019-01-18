@@ -149,6 +149,16 @@ namespace Xarxaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frmMessage {
+            get {
+                object obj = ResourceManager.GetObject("frmMessage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap frmOptions {
             get {
                 object obj = ResourceManager.GetObject("frmOptions", resourceCulture);
@@ -172,6 +182,26 @@ namespace Xarxaria.Properties {
         internal static System.Drawing.Bitmap frmStart {
             get {
                 object obj = ResourceManager.GetObject("frmStart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Help_Button {
+            get {
+                object obj = ResourceManager.GetObject("Help_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Help_Button_Pressed {
+            get {
+                object obj = ResourceManager.GetObject("Help_Button_Pressed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -169,4 +169,13 @@
   <data name="Simple_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Help_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_Button_Pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_Button_Pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\frmMessage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

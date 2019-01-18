@@ -34,6 +34,7 @@ namespace Xarxaria
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.picPage = new System.Windows.Forms.PictureBox();
             this.txtPage = new Xarxaria.RichTextBoxExtension();
+            this.cmdHelp = new System.Windows.Forms.Button();
             this.txtDebug = new System.Windows.Forms.TextBox();
             this.cmdDebug = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).BeginInit();
@@ -133,9 +134,30 @@ namespace Xarxaria
             this.cmdDebug.Name = "cmdDebug";
             this.cmdDebug.Size = new System.Drawing.Size(112, 23);
             this.cmdDebug.TabIndex = 6;
-            this.cmdDebug.Text = "Aller à cette page";
+            this.cmdDebug.Text = "Aller ï¿½ cette page";
             this.cmdDebug.UseVisualStyleBackColor = true;
             this.cmdDebug.Click += new System.EventHandler(this.cmdDebug_Click);
+            // 
+            // cmdHelp
+            // 
+            this.cmdHelp.BackColor = System.Drawing.Color.Transparent;
+            this.cmdHelp.BackgroundImage = global::Xarxaria.Properties.Resources.Help_Button;
+            this.cmdHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdHelp.FlatAppearance.BorderSize = 0;
+            this.cmdHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.cmdHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdHelp.Font = new System.Drawing.Font("Algerian", 21F);
+            this.cmdHelp.ForeColor = System.Drawing.Color.Yellow;
+            this.cmdHelp.Location = new System.Drawing.Point(352, 580);
+            this.cmdHelp.Name = "cmdHelp";
+            this.cmdHelp.Size = new System.Drawing.Size(40, 40);
+            this.cmdHelp.TabIndex = 5;
+            this.cmdHelp.Text = "?";
+            this.cmdHelp.UseVisualStyleBackColor = false;
+            this.cmdHelp.Click += new System.EventHandler(this.cmdHelp_Click);
+            this.cmdHelp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdHelp_MouseDown);
+            this.cmdHelp.MouseLeave += new System.EventHandler(this.cmdHelp_MouseLeave);
             // 
             // frmMain
             // 
@@ -144,6 +166,7 @@ namespace Xarxaria
             this.BackgroundImage = global::Xarxaria.Properties.Resources.frmMain;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(562, 632);
+            this.Controls.Add(this.cmdHelp);
             this.Controls.Add(this.cmdDebug);
             this.Controls.Add(this.txtDebug);
             this.Controls.Add(this.cmdMenu);
@@ -169,6 +192,7 @@ namespace Xarxaria
         private System.Windows.Forms.Label lblPageTitle;
         private System.Windows.Forms.PictureBox picPage;
         private RichTextBoxExtension txtPage;
+        private System.Windows.Forms.Button cmdHelp;
         private System.Windows.Forms.TextBox txtDebug;
         private System.Windows.Forms.Button cmdDebug;
     }

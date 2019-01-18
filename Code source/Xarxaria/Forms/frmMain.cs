@@ -70,6 +70,7 @@ namespace Xarxaria
             //Wire mouse enter events for sound effect
             cmdPlayer.MouseEnter += cmd_MouseEnter;
             cmdMenu.MouseEnter += cmd_MouseEnter;
+            cmdHelp.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
@@ -91,6 +92,26 @@ namespace Xarxaria
         #endregion
 
         #region events
+        /// <summary>
+        /// Click on the help button :
+        /// 
+        /// Display informations to play Xarxaria
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmdHelp_Click(object sender, EventArgs e)
+        {
+            Program.showMessage("Tout au long de l'aventure, des pages se succèdent.\n\n" +
+                "Le texte contient des choix représentés par un lien en bleu cliquable.\n\n" +
+                "Chaque choix a les actions possibles suivantes :\n" +
+               "\tChanger de page\n" +
+               "\tObtenir/Perdre un objet dans l'inventaire\n" +
+               "\tCombattre un ennemi\n" +
+               "\tModifier une caractéristique\n\t(pv, force, armure, agilité, chance)\n\n" +
+               "L'inventaire et les caractéristiques sont disponibles en cliquant sur \"Feuille de personnage\"\n\n" +
+               "Le bouton \"Menu\" permet de quitter la partie, modifier les options et sauvegarder la partie", "Informations");
+        }
+
         /// <summary>
         /// Click on the button "Feuille de personnage"
         /// </summary>
@@ -542,6 +563,20 @@ namespace Xarxaria
         private void cmdPlayer_MouseLeave(object sender, EventArgs e)
         {
             cmdPlayer.BackgroundImage = Properties.Resources.Simple_Button;
+        }
+
+        private void cmdHelp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdHelp.BackgroundImage = Properties.Resources.Help_Button_Pressed;
+                Program.playClickSound();
+            }
+        }
+
+        private void cmdHelp_MouseLeave(object sender, EventArgs e)
+        {
+            cmdHelp.BackgroundImage = Properties.Resources.Help_Button;
         }
         #endregion
 

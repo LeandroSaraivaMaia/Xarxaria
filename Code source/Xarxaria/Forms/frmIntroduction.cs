@@ -283,7 +283,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Event when with have any contact with the introduction text (Selection or click)
+        /// Event when there is any contact with the introduction text (Selection or click)
         /// 
         /// The active control is redirected to the titleLabel,
         /// this avoid the introduction text to be selected not look good

@@ -215,13 +215,24 @@
             // 
             // cmdHelp
             // 
-            this.cmdHelp.Location = new System.Drawing.Point(310, 470);
+            this.cmdHelp.BackColor = System.Drawing.Color.Transparent;
+            this.cmdHelp.BackgroundImage = global::Xarxaria.Properties.Resources.Help_Button;
+            this.cmdHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdHelp.FlatAppearance.BorderSize = 0;
+            this.cmdHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.cmdHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.cmdHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdHelp.Font = new System.Drawing.Font("Algerian", 21F);
+            this.cmdHelp.ForeColor = System.Drawing.Color.Yellow;
+            this.cmdHelp.Location = new System.Drawing.Point(340, 448);
             this.cmdHelp.Name = "cmdHelp";
-            this.cmdHelp.Size = new System.Drawing.Size(75, 23);
+            this.cmdHelp.Size = new System.Drawing.Size(40, 40);
             this.cmdHelp.TabIndex = 2;
             this.cmdHelp.Text = "?";
-            this.cmdHelp.UseVisualStyleBackColor = true;
+            this.cmdHelp.UseVisualStyleBackColor = false;
             this.cmdHelp.Click += new System.EventHandler(this.cmdHelp_Click);
+            this.cmdHelp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdHelp_MouseDown);
+            this.cmdHelp.MouseLeave += new System.EventHandler(this.cmdHelp_MouseLeave);
             // 
             // txtFightLog
             // 
