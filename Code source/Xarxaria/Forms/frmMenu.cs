@@ -25,7 +25,15 @@ namespace Xarxaria
 {
     public partial class frmMenu : Form
     {
+        #region private attributes
         Player actualPlayer;
+        bool returnToStartScreen;
+        #endregion
+
+        #region public accessor
+        public bool ReturnToStartScreen { get { return returnToStartScreen; } }
+        #endregion
+
         #region constructor
         /// <summary>
         /// Menu form constructor
@@ -33,6 +41,9 @@ namespace Xarxaria
         public frmMenu(Player player)
         {
             InitializeComponent();
+
+            //Set the variable to tell the main form to not return to menu
+            returnToStartScreen = false;
 
             //Wire mouse enter events for sound effect
             cmdContinue.MouseEnter += cmd_MouseEnter;
@@ -94,8 +105,8 @@ namespace Xarxaria
             //Ask the user if he is sure to go back to the start screen
             if (MessageBox.Show("Vous êtes sûr de vouloir revenir à l'écran titre ?\nToute progression non sauvegardée sera perdue.", "Retour à l'écran titre", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                //Close this menu form and put the dialogResult to inform frmMain to go back to start screen
-                DialogResult = DialogResult.Abort;
+                //Close this menu form and change the returnToMenu variable to inform frmMain to go back to start screen
+                returnToStartScreen = true;
                 Close();
             }
         }

@@ -32,15 +32,13 @@ namespace Xarxaria
         #region public static attributes
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1.4f;
-        public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck};
+        public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck, displayMessage, enemyFight};
         public static ConnectionDB connection;
         #endregion
 
         #region public methods
         public static void playHoverSound()
         {
-            //Disabled sound system
-            /*
             try
             {
                 hoverSound.controls.stop();
@@ -50,13 +48,11 @@ namespace Xarxaria
             catch
             {
                 Console.WriteLine("Unknown error to play hover sound");
-            }*/
+            }
         }
 
         public static void playClickSound()
         {
-            //Disabled sound system
-            /*
             try
             {
                 clickSound.controls.stop();
@@ -65,35 +61,6 @@ namespace Xarxaria
             catch
             {
                 Console.WriteLine("Unknown error to play click sound");
-            }
-            */
-        }
-
-        public static void GameOver()
-        {
-            MessageBox.Show("La partie est terminée car vous êtes mort, retour à l'écran principale");
-
-            //Open Start screen form
-            frmStart startForm = new frmStart();
-
-            //Create a new independant frmStart Thread
-            void ThreadProc_frmStart()
-            {
-                Application.Run(new frmStart());
-            }
-
-            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
-
-            t.Start();
-
-            //Close all other form
-            foreach (Form form in Application.OpenForms)
-            {
-                //If the iterated form is not the start form, close it
-                if (form.Name != "frmStart")
-                {
-                    form.Close();
-                }
             }
         }
         #endregion

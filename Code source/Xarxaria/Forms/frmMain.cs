@@ -30,6 +30,8 @@ namespace Xarxaria
         Bitmap loadedImage;
         Player actualPlayer;
         List<int> inactiveLinks;
+        bool returnToStartScreen;
+        int infiniteLoopRedreshDelay = 10;
         #endregion
 
         #region public accessor
@@ -59,9 +61,32 @@ namespace Xarxaria
             //Load the page of the player
             ChangePage(actualPlayer.IdActualPage);
 
+            //Set the variable returnToStartScreen to not return to start screen
+            returnToStartScreen = false;
+
+            //Initialize infinte loop
+            infiniteLoop();
+
             //Wire mouse enter events for sound effect
             cmdPlayer.MouseEnter += cmd_MouseEnter;
             cmdMenu.MouseEnter += cmd_MouseEnter;
+        }
+        #endregion
+
+        #region infinite loop
+        /// <summary>
+        /// Check if the forms needs to be closed
+        /// </summary>
+        public async void infiniteLoop()
+        {
+            while (true)
+            {
+                await Task.Delay(infiniteLoopRedreshDelay);
+                if (returnToStartScreen)
+                {
+                    Close();
+                }
+            }
         }
         #endregion
 
@@ -87,8 +112,10 @@ namespace Xarxaria
         {
             frmMenu menuForm = new frmMenu(actualPlayer);
 
+            menuForm.ShowDialog();
+
             //If the menu form is closed and sent a message to go back to title screen, open start screen and close main form
-            if (menuForm.ShowDialog() == DialogResult.Abort)
+            if (menuForm.ReturnToStartScreen)
             {
                 //Open the start screen
                 void ThreadProc_frmStart()
@@ -100,7 +127,7 @@ namespace Xarxaria
 
                 t.Start();
 
-                Close();
+                returnToStartScreen = true;
             }
         }
 
@@ -152,15 +179,19 @@ namespace Xarxaria
             string actionName = Enum.GetName(typeof(Program.actionId), linkActionId);
 
             //Verify that there is not too much or not enought action values
-            //Note that, for changeItem action, there needs to be 2 action values and for other actions, there needs to be 1 action value
-            if (actionValues.Length > 1 && linkActionId != (int)Program.actionId.changeItem)
-                throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 1 and there is " + actionValues.Length);
-            else if (actionValues.Length > 2 && linkActionId == (int)Program.actionId.changeItem)
-                throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
-            else if (actionValues.Length == 1 && linkActionId == (int)Program.actionId.changeItem)
-                throw new Exception("Not enought action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
-            else if (actionValues.Length == 0)
+            //Note that, for changeItem and displayMessage action, there needs to be 2 action values and for other actions, there needs to be 1 action value
+            if (actionValues.Length == 0)
                 throw new Exception("No action values for action : " + Enum.GetName(typeof(Program.actionId), linkActionId));
+
+            if (linkActionId != (int)Program.actionId.changeItem && linkActionId != (int)Program.actionId.displayMessage)
+            {
+                if (actionValues.Length > 1)
+                    throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 1 and there is " + actionValues.Length);
+            }
+            else if (actionValues.Length > 2)
+                throw new Exception("Too much action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
+            else if (actionValues.Length == 1)
+                throw new Exception("Not enought action values for action : " + actionName + "\nThere needs to be 2 and there is " + actionValues.Length);
 
             //Get the action value (int)
             int actionValue;
@@ -250,6 +281,38 @@ namespace Xarxaria
                     else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de chance", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     break;
+                case (int)Program.actionId.displayMessage:
+
+                    //Show message
+                    MessageBox.Show(actionValues[0], actionValues[1]);
+
+                    break;
+                case (int)Program.actionId.enemyFight:
+                    frmCombat combatForm = new frmCombat(actualPlayer.Id, actionValue);
+
+                    combatForm.ShowDialog();
+
+                    //If the combat form is closed and sent a message to go back to title screen, open start screen and close main form
+                    if (!combatForm.DoesPlayerWin)
+                    {
+                        MessageBox.Show("La partie est terminée car vous êtes mort, retour à l'écran principale", "Vous êtes mort", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        //Open the start screen
+                        void ThreadProc_frmStart()
+                        {
+                            Application.Run(new frmStart());
+                        }
+
+                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
+
+                        t.Start();
+
+                        returnToStartScreen = true;
+                    }
+
+                    actualPlayer = combatForm.GetPlayer;
+
+                    break;
                 default : throw new Exception("Action id unknown");
             }
 
@@ -262,7 +325,6 @@ namespace Xarxaria
         #endregion
 
         #region private methods
-
         /// <summary>
         /// Change the actual page with a given id
         /// </summary>
@@ -344,9 +406,29 @@ namespace Xarxaria
             int pageChangedOpen = -1;
             int lastFreeChar = 0;
             int numberOfLinks = 1;
+            bool textIsHighlighted = false;
 
             for (int i = 0; i < text.Length; i++)
             {
+                //If there is a highlight beacon
+                if (text[i] == '*')
+                {
+                    if (textIsHighlighted)
+                    {
+                        textIsHighlighted = false;
+                        txtPage.AppendText(text.Substring(lastFreeChar, i - lastFreeChar), SystemColors.WindowText, false, true);
+                        lastFreeChar = i + 1;
+                        i++;
+                    }
+                    else
+                    {
+                        textIsHighlighted = true;
+                        txtPage.AppendText(text.Substring(lastFreeChar, i - lastFreeChar));
+                        lastFreeChar = i + 1;
+                        i++;
+                    }
+                }
+
                 //If we open a beacon
                 if (text[i] == '<')
                 {
@@ -416,7 +498,10 @@ namespace Xarxaria
                 if (i == text.Length - 1)
                 {
                     if (pageChangedOpen == -1)
+                    {
+                        //Add the text before the symbol
                         txtPage.SelectedText = text.Substring(lastFreeChar, i - lastFreeChar + 1);
+                    }
                 }
             }
 
@@ -473,5 +558,11 @@ namespace Xarxaria
             Program.playHoverSound();
         }
         #endregion
+
+        //Temp
+        private void cmdDebug_Click(object sender, EventArgs e)
+        {
+            ChangePage(int.Parse(txtDebug.Text));
+        }
     }
 }

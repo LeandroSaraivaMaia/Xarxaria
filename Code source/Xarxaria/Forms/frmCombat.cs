@@ -30,13 +30,19 @@ namespace Xarxaria
         int initStep; //0 = init finished; 1 = Welcome message; 2 = Agility test; 3 = Luck test; 4 = Random
         int delayBetweenMessages = 2500; //ms
         bool isPlayerTurn;
+        bool doesPlayerWin;
         Color playerColorLog, enemyColorLog, infoColorLog;
         Random rnd;
         int damageGiven;
         int agilityEvadeChancePercentage = 5; //agilityEvadeChancePercentage * agility_score = %evade chance
         #endregion
 
-        #region accessor
+        #region public accessors
+        public Player GetPlayer { get { return player; } }
+        public bool DoesPlayerWin { get { return doesPlayerWin; } }
+        #endregion
+
+        #region private accessor
         int DamageGiven { get { return damageGiven; }
             set {
                 //If the given value is below 0, put it to 0
@@ -56,10 +62,10 @@ namespace Xarxaria
         {
             InitializeComponent();
             
-            //Get enemy from database
+            //Get player from database
             player = Program.connection.GetPlayerById(playerId);
 
-            //Get player from database
+            //Get enemy from database
             //enemy = Program.connection.GetEnemyById(enemyId);
 
             //temp
@@ -78,6 +84,9 @@ namespace Xarxaria
 
             //Update player and enemy labels with caracteristics
             RefreshDisplay();
+
+            //Set the enemy as the winner of the fight (In case the user close the form, he looses)
+            doesPlayerWin = false;
 
             //Wire mouse enter events for sound effect
             cmdNextTurn.MouseEnter += cmd_MouseEnter;
@@ -218,15 +227,20 @@ namespace Xarxaria
             //Test if the player is dead
             if (player.Hp <= 0)
             {
-                Program.GameOver();
+                //End the fight
+                AddLog("\n\nVous avez été vaincu par l'ennemi \"" + enemy.Name + "\"", enemyColorLog, true);
+                MessageBox.Show("Vous avez été vaincu par l'ennemi \"" + enemy.Name + "\"");
+                doesPlayerWin = false;
+                Close();
             }
 
-            //Test id the enemy is dead
+            //Test if the enemy is dead
             if (enemy.Hp <= 0)
             {
                 //End the fight
                 AddLog("\n\nVous avez vaincu l'ennemi \"" + enemy.Name + "\"", playerColorLog, true);
                 MessageBox.Show("Vous avez vaincu l'ennemi \"" + enemy.Name + "\"");
+                doesPlayerWin = true;
                 Close();
             }
 

@@ -1,4 +1,4 @@
-﻿USE XarxariaDB;
+USE XarxariaDB;
 
 -- Suppression des tables
 DROP TABLE IF EXISTS Enemy;

@@ -175,10 +175,13 @@ namespace Xarxaria
         }
 
         //This method allow us to add a text with a specific style (color & underline)
-        public void AppendText(string text, Color color, bool isUnderline = false)
+        public void AppendText(string text, Color color, bool isUnderline = false, bool isBold = false)
         {
             if (isUnderline)
                 SelectionFont = new Font(SelectionFont, FontStyle.Underline);
+
+            if (isBold)
+                SelectionFont = new Font(SelectionFont, FontStyle.Bold);
 
             SelectionStart = TextLength;
             SelectionLength = 0;
