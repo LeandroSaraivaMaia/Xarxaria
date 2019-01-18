@@ -28,6 +28,7 @@ namespace Xarxaria
         int armor;
         int luck;
         string name;
+        string image;
         #endregion
 
         #region public accessors
@@ -38,6 +39,7 @@ namespace Xarxaria
         public int Armor { get { return armor; } }
         public int Luck { get { return luck; } }
         public int Hp { get { return hp; } }
+        public string Image { get { return image; } }
         #endregion
 
         #region constructor
@@ -48,7 +50,7 @@ namespace Xarxaria
         }
 
         //Enemy constructor
-        public Enemy(int id, int hp, int force, int agility, int armor, int luck, string name)
+        public Enemy(int id, int hp, int force, int agility, int armor, int luck, string name, string image)
         {
             this.id = id;
             this.hp = hp;
@@ -57,6 +59,7 @@ namespace Xarxaria
             this.armor = armor;
             this.luck = luck;
             this.name = name;
+            this.image = image;
         }
         #endregion
 

@@ -354,7 +354,7 @@ namespace Xarxaria
 
             //Change image
             string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-            string imagePath = currentDirectory + @"\assets\images\" + actualPage.Image;
+            string imagePath = currentDirectory + @"\assets\images\pages\" + actualPage.Image;
             try
             {
                 loadedImage = new Bitmap(imagePath);

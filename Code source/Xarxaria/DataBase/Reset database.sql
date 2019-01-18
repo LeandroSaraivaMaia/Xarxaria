@@ -115,7 +115,7 @@ Vous regardez le haut du mur que vous vous êtes décidé à grimper. De là il 
 Vous vous échauffez les articulations en appréhendant la monté qui vous attend, vous ne percevez aucun garde patrouillant le long du mur.
 Après avoir choisi le parcours avec les plus grosses lianes, vous entamez l''escalade avec énergie. Vous aviez déjà eu affaire à des parois escarpées auparavant et cette grimpette ne vous semble pas si difficile.
 Soudain, vous sentez que vous perdez prise.
-Si vous êtes assez agile pour vous rattraper (4 points d''agilité ou plus), rendez-vous <0,ici,7>. Si vous êtes un peu plus pataud, alors allez <0,ici,6>.
+Si vous êtes assez agile pour vous rattraper *(4 points d''agilité ou plus)*, rendez-vous <0,ici,7>. Si vous êtes un peu plus pataud, alors allez <0,ici,6>.
 ', 'murailleAvecLierre.jpg'),
 
 -- Page 6 --
@@ -162,7 +162,7 @@ Vous appréhender moins bien la situation et une fois à la hauteur des gardes l
 - "Z''êtes qui et qu''est-ce que vous faite là ?, c''est pas pour les mendiants ici"
 Vous rétorquez en étant faussement sûr de vous :
 - "Je suis Sir Godfroy de Monaco, je vous ordonne de me laisser passer !"
-Si vous avez plus de 4 points de chance, rendez-vous <0,ici,9> et si vous êtes malchanceux, rendez-vous à cette <0,page,10>.
+Si vous avez *plus de 4 points de chance*, rendez-vous <0,ici,9> et si vous êtes malchanceux, rendez-vous à cette <0,page,10>.
 ', 'garde.jpg'),
 
 -- Page 9 --
@@ -188,7 +188,6 @@ Vous recevez <4,un plastron en fer rouillé (armure + 3),3> et <3,une épée d''
 -- Page 10 --
 ('Les gardes ne vous reconnaissent pas', 'Après un long moment gênant, le plus gros des gardes reprend la conversation :
 - "Ordre. Halte. Clodo."
-CECI EST UN TEST : ...
 L''autre garde continue :
 - "Vous pouvez pas rester ici m''sieur, partez maintenant"
 Il vous jette <1,une pièce d''or,14;1> au visage et les deux gardes lèvent leurs armes.
@@ -210,7 +209,7 @@ Vous remarquez aussi que l''intégralité du village est abaissé d''une dizaine
 Le village est principalement un terrain vague peuplé de mineurs acharnés. Il y a beaucoup de personnes et beaucoup d''agitation avec les éclats de pierre et les pioches qui volent dans tous les sens. Des rails, en pierre, ont été installés pour faciliter les allées et venues incessantes de wagons remplis de roche.
 Ce qui vous perturbe le plus est l''omniprésence de la roche dans ce village. Les pioches, les wagons, les poteaux, les banderoles, les bâtiments et même les casquettes des habitants sont en pierre ! Vous vous sentez rassuré en voyant un habitant manger des pommes de terre.
 Comme vous aviez prévu initialement, vous devez trouver des informations concernant le drake, vous devez maintenant choisir ce que vous allez faire :
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -248,7 +247,7 @@ Vous lui répondez :
 Vous réprimez un frissonnement, vous avez entendu tant de choses sur cet endroit, on dit que le soleil ne perce jamais ses nuages, que de la lave en fusion coule en permanence des collines et que seul les damnés osent entrer dans les tours sombres qui hantent ce lieu.
 Mais après tout n''êtes-vous pas Sir Godfroy de Monaco, le champion du roi, le pourfendeur de démons, ce n''est pas un volcan ou un gros lézard qui vous fera douter de votre mission.
 Vous remerciez le barman et quittez la taverne. ,Vous pouvez désormais reprendre votre chasse au drake en <0,quittant le village,23> ou continuer de vagabonder dans Casse-Roc :
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Mendier pour essayer d''obtenir de l''or,14>
 <0,Piller l''église,15>
@@ -261,7 +260,7 @@ C''est avec honte que vous vous vêtissez d''un haillon en pierre gisant sur le 
 Durant plusieurs jours vous vous traînez dans les rues suppliant la générosité des passants.
 Votre errance vous rapporte <1,3 pièces d''or,14;3>, une grande quantitée de cailloux au visage et vous fait perdre <2,2 PV,-2> à cause de la fatigue.
 Vous devez désormais continuer :
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Piller l''église,15>
@@ -273,7 +272,7 @@ Vous devez désormais continuer :
 Vous inspectez le bâtiment et repérez le grand vitrail à l''arrière. Il a l''air très ancien au vu de l''agglomération de verre en bas du cadre. Vous examinez les alentours pour vérifier qu''il n''y ait pas de témoins éventuels, l''endroit est isolé et vous pourrez agir en toute discrétion. Après un rapide coup d''oeil vous remarquez sous l''autel un panier en osier qui doit certainement servir pour les donations. Il est vide mais une porte surveillé par un garde à moitié endormi se trouve au fond de l''église, les biens précieux doivent sûrement se trouver à l''abri des regards.
 Une fois la nuit tombée, vous prenez une pierre et brisez la fenêtre pour vous infiltrez. L''impact fait moins de bruit que prévu, vous entrez lentement à l''intérieur de l''église quand vous entendez soudainement des bruits de pas.
 Malgré l''heure tardive, vous apercevez des prêtres et des chevalier déambuler à travers les couloirs.
-Si vous avez plus de 4 d''agilité et plus de 3 de chance rendez-vous <0,ici,16>, si malheureusement vous êtes un piètre voleur, rendez vous <0,ici,17>.', 'eglise.jpg'),
+Si vous avez *plus de 4 d''agilité* et *plus de 3 de chance* rendez-vous <0,ici,16>, si malheureusement vous êtes un piètre voleur, rendez vous <0,ici,17>.', 'eglise.jpg'),
 
 -- Page 16 --
 ('Voleur d''églises', 'C''est avec l''agilité du serpent que vous vous glissez derrière une statue et évitez les occupants.
@@ -288,7 +287,7 @@ Soudainement vous entendez le bruit d''un mécanisme se mettre en marche suivi d
 Vous vous précipitez vers la fenêtre précédemment détruite, emportant avec vous la seul bourse que vous avez eu le réflexe de prendre dans votre fuite.
 Par chance vous ne rencontrez personne durant votre escapade et vous parvenez à quitter l''église en un seul morceau, emportant avec vous <1,20 pièces d''or,14;20>, une somme rondelette.
 Vous devez faire profile-bas maintenant, que choisissez vous de faire ?
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -298,7 +297,7 @@ Vous devez faire profile-bas maintenant, que choisissez vous de faire ?
 -- Page 17 --
 ('Piètre voleur', 'Vous tentez de vous glisser vers une statue mais c''est un échec. Sans attendre un moment, les paladins se jettent sur vous et vous immobilisent.
 Ils vous emmènent sans plus tarder et vous balancent dans une cellule de la prison de Casse-Roc.
-Tenter de piller une église est un crime grave mais heureusement un prêtre arrive près de votre cellule. Il est prêt à vous pardonner mais ce ne sera pas gratuit. Il demande 8 pièces d''or. Souhaitez-vous <1,payer les 8 pièces d''or,14;-8> et <0,être libéré,19> ou <0,refuser,18> ?'
+Tenter de piller une église est un crime grave mais heureusement un prêtre arrive près de votre cellule. Il est prêt à vous pardonner mais ce ne sera pas gratuit. Il demande *8 pièces d''or*. Souhaitez-vous <1,payer les 8 pièces d''or,14;-8> pour <0,être libéré,19> ou <0,refuser,18> ?'
 , 'prison.jpg'),
 
 -- Page 18 --
@@ -312,7 +311,7 @@ C''est ainsi que fini votre espoir d''être libéré ainsi que votre vie.'
 Dit le prêtre non sans un sourire de satisfaction sur le visage.
 Les gardes vous emmène dans une salle avec toutes vos affaires hormis les 8 pièces d''or prisent par le prêtre. Vous exprimez un soupire de soulagement en voyant la lumière du jour et les toits de pierre du village.
 Maintenant que vous êtes libre, que faites-vous ?
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -323,13 +322,13 @@ Maintenant que vous êtes libre, que faites-vous ?
 ('A la recherche d''un emploi', 'Si vous voulez avoir de l''or, pas le choix, il faut travailler.
 Vous rejoignez la grande place et consultez le panneau des annonces à la recherche d''une offre intéressante.
 Le gros du panneau est occupé par les offres des deux grande factions marchandes : Capital + et La Faucille Rouge.
-Si vous avez plus de 4 de chance, allez <0,ici,22>, sinon allez <0,ici,21>.', 'annonces.png'),
+Si vous avez *plus de 4 de chance*, allez <0,ici,22>, sinon allez <0,ici,21>.', 'annonces.png'),
 
 -- Page 21 --
 ('Chômage', 'Vous parcourez le village pendant des heures en espérant trouver du labeur. Malgré toutes vos recherches vous ne trouvez aucun habitant qui aurait besoin d''aide. Il semblerait que tous les travaux manuels soient occupés, le business de la pierre est décidément florissant.
 Malheureusement vous n''avez pas réussi à trouver une quelqu''on offre qui pourrait vous aider.
 Que faites-vous maintenant ?
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -341,7 +340,7 @@ Que faites-vous maintenant ?
 Vous travaillez durant quelques jours au milieu des pierres et des statues , votre rôle est surtout de créer et transporter des briques nécessaires à la construction c''est un travail particulièrement éprouvant car les briques sont très lourdes et les horaires sont épouvantables.
 Finalement vos efforts s''avèrent être payant : vous obtenez <1,10 pièces d''or,14;10>.
 Maintenant que vous avez de l''argent que faites vous ?
-(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchant)
+(Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
