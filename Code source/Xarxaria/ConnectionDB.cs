@@ -157,6 +157,49 @@ namespace Xarxaria
         #endregion
 
         #region Select query
+        public Enemy GetEnemyById(int enemyId)
+        {
+            Enemy enemy = new Enemy();
+
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = "SELECT * FROM Enemy WHERE id = " + enemyId;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+
+            reader = cmd.ExecuteReader();
+
+            bool enemyFound = false;
+
+            while (reader.Read())
+            {
+                enemyFound = true;
+
+                enemy = new Enemy(int.Parse(reader["id"].ToString()),
+                    int.Parse(reader["hp"].ToString()),
+                    int.Parse(reader["force"].ToString()),
+                    int.Parse(reader["agility"].ToString()),
+                    int.Parse(reader["armor"].ToString()),
+                    int.Parse(reader["luck"].ToString()),
+                    reader["name"].ToString(),
+                    reader["image"].ToString());
+            }
+
+            sqlConnection.Close();
+
+            if (enemyFound)
+            {
+                return enemy;
+            }
+            else
+            {
+                throw new Exception("Enemy with id " + enemyId + " not found in database");
+            }
+        }
+
         public Item GetItemById(int itemId)
         {
             Item item = new Item();
@@ -177,12 +220,12 @@ namespace Xarxaria
             while (reader.Read())
             {
                 itemFound = true;
-
+                
                 item = new Item(int.Parse(reader["id"].ToString()),
                     int.Parse(reader["hp"].ToString()),
                     int.Parse(reader["force"].ToString()),
-                    int.Parse(reader["armor"].ToString()),
                     int.Parse(reader["agility"].ToString()),
+                    int.Parse(reader["armor"].ToString()),
                     int.Parse(reader["luck"].ToString()),
                     reader["name"].ToString());
             }

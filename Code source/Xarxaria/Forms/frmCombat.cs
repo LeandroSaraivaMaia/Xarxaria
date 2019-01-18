@@ -25,6 +25,7 @@ namespace Xarxaria
     public partial class frmCombat : Form
     {
         #region private attributes
+        Bitmap loadedImage;
         Player player;
         Enemy enemy;
         int initStep; //0 = init finished; 1 = Welcome message; 2 = Agility test; 3 = Luck test; 4 = Random
@@ -60,10 +61,7 @@ namespace Xarxaria
             player = Program.connection.GetPlayerById(playerId);
 
             //Get player from database
-            //enemy = Program.connection.GetEnemyById(enemyId);
-
-            //temp
-            enemy = new Enemy(0, 11, 2, 5, 1, 3, "Gobelin de test");
+            enemy = Program.connection.GetEnemyById(enemyId);
 
             //Disable next turn button (The program needs to define which charcater attacks first)
             cmdNextTurn.Enabled = false;
@@ -78,6 +76,19 @@ namespace Xarxaria
 
             //Update player and enemy labels with caracteristics
             RefreshDisplay();
+
+            //Load enemy image
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string imagePath = currentDirectory + @"\assets\images\ennemis\" + enemy.Image;
+            try
+            {
+                loadedImage = new Bitmap(imagePath);
+            }
+            catch
+            {
+                throw new Exception("Image cannot be loaded, may be an access to an unexisting enemy");
+            }
+            picEnemy.Image = (Image)loadedImage;
 
             //Wire mouse enter events for sound effect
             cmdNextTurn.MouseEnter += cmd_MouseEnter;
