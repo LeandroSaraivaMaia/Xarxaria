@@ -189,10 +189,10 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Un combat se déroule au tour par tour. Le personnage qui a le plus grand score d’agilité commence.\n" +
-                "A chaque tour, un personnage attaque l’autre avec le calcul suivant : points attaque - points armures de l’ennemi = pv retiré.\n" +
-                "Si les deux personnages ont les mêmes points d’agilité, le personnage avec le plus de points de chance commence.\n" +
-                "Si les deux personnages ont le même score de chance, le personnage qui commence est choisi aléatoirement.", "Informations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Program.showMessage("Un combat se déroule au tour par tour. Le personnage qui a le plus grand score d'agilité commence.\n\n" +
+                "A chaque tour, un personnage attaque l'autre avec le calcul suivant :\nforce - armure de l'ennemi = pv retirés à l'ennemi.\n\n" +
+                "Si les deux personnages ont le même score d'agilité, le personnage avec le plus de points de chance commence.\n\n" +
+                "Si les deux personnages ont le même score de chance, le personnage qui commence est choisi aléatoirement.", "Informations");
         }
 
         /// <summary>
@@ -392,6 +392,21 @@ namespace Xarxaria
         {
             cmdNextTurn.BackgroundImage = Properties.Resources.Simple_Button;
         }
+
+        private void cmdHelp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cmdHelp.BackgroundImage = Properties.Resources.Help_Button_Pressed;
+                Program.playClickSound();
+            }
+        }
+
+        private void cmdHelp_MouseLeave(object sender, EventArgs e)
+        {
+            cmdHelp.BackgroundImage = Properties.Resources.Help_Button;
+        }
+
         #endregion
 
         #region sound events

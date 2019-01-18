@@ -42,6 +42,12 @@ namespace Xarxaria
         #endregion
 
         #region public methods
+        public static void showMessage(string message, string title)
+        {
+            frmMessageBox messageForm = new frmMessageBox(message, title);
+
+            messageForm.ShowDialog();
+        }
         public static void playHoverSound()
         {
             //Disabled sound system
