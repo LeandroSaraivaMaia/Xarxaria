@@ -36,6 +36,7 @@ namespace Xarxaria
         Random rnd;
         int damageGiven;
         int agilityEvadeChancePercentage = 5; //agilityEvadeChancePercentage * agility_score = %evade chance
+        int luckCriticalStrikeChancePercentage = 5; //luckCriticalStrikeChancePercentage * luck_score = %critical strike chance
         #endregion
 
         #region public accessors
@@ -141,19 +142,24 @@ namespace Xarxaria
         {
             //Test if the enemy avoid the attack
             int enemyEvadeChance = enemy.Agility * agilityEvadeChancePercentage;
-
             if (enemyEvadeChance >= rnd.Next(1, 100))
             {
                 AddLog("\n\nL'ennemi a esquivé votre attaque.", enemyColorLog);
                 return;
             }
 
-            //Calculate damage given
-            DamageGiven = player.Force - enemy.Armor;
+            //Test if the player does a critical attack
+            int criticalStrike = 0;
+            int playerCriticalChance = player.Luck * luckCriticalStrikeChancePercentage;
+            if (playerCriticalChance >= rnd.Next(1, 100))
+                criticalStrike = 1;
 
-            enemy.SetHp(- DamageGiven);
-
-            AddLog("\n\nVous avez infligé " + DamageGiven + " points de dégâts à l'ennemi.", playerColorLog);
+            //Apply damage
+            DamageGiven = player.Force + criticalStrike - enemy.Armor;
+            enemy.SetHp(-DamageGiven);
+            AddLog("\n\n", playerColorLog);
+            if (criticalStrike != 0) AddLog("Coup critique !\n", playerColorLog);
+            AddLog("Vous avez infligé " + DamageGiven + " points de dégâts à l'ennemi.", playerColorLog);
         }
 
         /// <summary>
@@ -163,19 +169,24 @@ namespace Xarxaria
         {
             //Test if the player avoid the attack
             int playerEvadeChance = player.Agility * agilityEvadeChancePercentage;
-
             if (playerEvadeChance >= rnd.Next(1, 100))
             {
                 AddLog("\n\nVous avez esquivé l'attaque de l'ennemi.", playerColorLog);
                 return;
             }
 
-            //Calculate damage given
-            DamageGiven = enemy.Force - player.Armor;
-
+            //Test if the enemy does a critical attack
+            int criticalStrike = 0;
+            int enemyCriticalChance = enemy.Luck * luckCriticalStrikeChancePercentage;
+            if (enemyCriticalChance >= rnd.Next(1, 100))
+                criticalStrike = 1;
+            
+            //Apply damage
+            DamageGiven = enemy.Force + criticalStrike - player.Armor;
             player.SetHp(- DamageGiven);
-
-            AddLog("\n\nL'ennemi vous inflige " + DamageGiven + " points de dégâts.", enemyColorLog);
+            AddLog("\n\n", enemyColorLog);
+            if (criticalStrike != 0) AddLog("Coup critique !\n", enemyColorLog);
+            AddLog("L'ennemi vous inflige " + DamageGiven + " points de dégâts.", enemyColorLog);
         }
 
         /// <summary>
@@ -209,10 +220,10 @@ namespace Xarxaria
         /// <param name="e"></param>
         private void cmdHelp_Click(object sender, EventArgs e)
         {
-            Program.showMessage("Un combat se déroule au tour par tour. Le personnage qui a le plus grand score d'agilité commence.\n\n" +
-                "A chaque tour, un personnage attaque l'autre avec le calcul suivant :\nforce - armure de l'ennemi = pv retirés à l'ennemi.\n\n" +
-                "Si les deux personnages ont le même score d'agilité, le personnage avec le plus de points de chance commence.\n\n" +
-                "Si les deux personnages ont le même score de chance, le personnage qui commence est choisi aléatoirement.", "Informations");
+            Program.showMessage("Un combat se déroule au tour par tour.\nLe personnage qui a le plus grand score d’agilité commence. Si les deux personnages ont les mêmes points d’agilité, le personnage avec le plus de points de chance commence. Si les deux personnages ont le même score de chance, le personnage qui commence est choisi aléatoirement.\n\n" +
+            "A chaque tour, un personnage attaque l’autre avec le calcul suivant: points attaque - points armures de l’ennemi = pv retiré.\n" +
+            "Chaque personnage a une chance de faire un coup critique et d’infliger un point de dégât supplémentaire (1 point de chance = 5% de chance de coup critique).\n\n" +
+            "Chance d'esquiver des attaques (1 point d'agilité = 5% de chance d'esquive)", "Informations");
         }
 
         /// <summary>
