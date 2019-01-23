@@ -55,7 +55,7 @@ namespace Xarxaria
         }
 
         //Player constructor
-        public Player(int id, int hp, int force, int agility, int armor, int luck, string name, int idActualPage, Inventory inventory, uint InactiveLinksInActualPage = 0)
+        public Player(int id, int hp, int force, int agility, int armor, int luck, string name, int idActualPage, uint InactiveLinksInActualPage, Inventory inventory)
         {
             this.id = id;
             this.hp = hp;

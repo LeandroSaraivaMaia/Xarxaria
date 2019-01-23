@@ -58,7 +58,7 @@ namespace Xarxaria
             actualPlayer = Program.connection.GetPlayerById(playerId);
 
             //Load the page of the player
-            ChangePage(actualPlayer.IdActualPage);
+            ChangePage(actualPlayer.IdActualPage, actualPlayer.InactiveLinksInActualPage);
 
             //Set the variable returnToStartScreen to not return to start screen
             returnToStartScreen = false;
@@ -360,7 +360,7 @@ namespace Xarxaria
         /// Change the actual page with a given id
         /// </summary>
         /// <param name="pageId"></param>
-        void ChangePage(int pageId)
+        void ChangePage(int pageId, uint inactiveLinks = 0)
         {
             //Get page from database
             actualPage = Program.connection.GetPage(pageId);
@@ -378,7 +378,7 @@ namespace Xarxaria
             float dump = txtPage.ZoomFactor;
 
             //Load the text
-            ChangeText(actualPage.Text);
+            ChangeText(actualPage.Text, inactiveLinks);
 
             //Change the ZoomFactor value
             txtPage.ZoomFactor = Program.textZoom;
@@ -397,7 +397,8 @@ namespace Xarxaria
             picPage.Image = (Image)loadedImage;
 
             //Reset inactive links
-            actualPlayer.InactiveLinksInActualPage = 0;
+            if (inactiveLinks == 0)
+                actualPlayer.InactiveLinksInActualPage = 0;
 
             txtPage.ScrollToTop();
         }
