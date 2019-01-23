@@ -121,23 +121,6 @@ namespace Xarxaria
             this.txtPage.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtPage_LinkClicked);
             this.txtPage.Enter += new System.EventHandler(this.txtPage_Enter);
             // 
-            // txtDebug
-            // 
-            this.txtDebug.Location = new System.Drawing.Point(13, 21);
-            this.txtDebug.Name = "txtDebug";
-            this.txtDebug.Size = new System.Drawing.Size(66, 20);
-            this.txtDebug.TabIndex = 5;
-            // 
-            // cmdDebug
-            // 
-            this.cmdDebug.Location = new System.Drawing.Point(85, 19);
-            this.cmdDebug.Name = "cmdDebug";
-            this.cmdDebug.Size = new System.Drawing.Size(112, 23);
-            this.cmdDebug.TabIndex = 6;
-            this.cmdDebug.Text = "Aller � cette page";
-            this.cmdDebug.UseVisualStyleBackColor = true;
-            this.cmdDebug.Click += new System.EventHandler(this.cmdDebug_Click);
-            // 
             // cmdHelp
             // 
             this.cmdHelp.BackColor = System.Drawing.Color.Transparent;
@@ -158,6 +141,23 @@ namespace Xarxaria
             this.cmdHelp.Click += new System.EventHandler(this.cmdHelp_Click);
             this.cmdHelp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdHelp_MouseDown);
             this.cmdHelp.MouseLeave += new System.EventHandler(this.cmdHelp_MouseLeave);
+            // 
+            // txtDebug
+            // 
+            this.txtDebug.Location = new System.Drawing.Point(13, 21);
+            this.txtDebug.Name = "txtDebug";
+            this.txtDebug.Size = new System.Drawing.Size(66, 20);
+            this.txtDebug.TabIndex = 5;
+            // 
+            // cmdDebug
+            // 
+            this.cmdDebug.Location = new System.Drawing.Point(85, 19);
+            this.cmdDebug.Name = "cmdDebug";
+            this.cmdDebug.Size = new System.Drawing.Size(112, 23);
+            this.cmdDebug.TabIndex = 6;
+            this.cmdDebug.Text = "Aller à cette page";
+            this.cmdDebug.UseVisualStyleBackColor = true;
+            this.cmdDebug.Click += new System.EventHandler(this.cmdDebug_Click);
             // 
             // frmMain
             // 
