@@ -147,7 +147,7 @@ Vous semblez avoir interrompu les princesses pendant qu''elles se coiffaient mut
 - "Vous allez sauver notre soeur pas vrai ?", s''inquiéta Alessandra.
 - "Encore merci de m''avoir sauvée de cette ogre l''autre fois !", s''exclama Adelinda.
 Après d''autres acclamations, vous expliquez la situation et Amélia vous réponds :
-- "Notre père est occupé avec ses bibelots, c''est à croire qu''il se soucie plus de son armure que de nous …"
+- "Notre père est occupé avec ses bibelots, c''est à croire qu''il se soucie plus de son armure que de nous ..."
 Toutes les princesses prennent une mine triste et, après un court silence, Anastasia reprends la conversation :
 - "Il ne vous donnera pas d''équipement de qualité, cependant nous pouvons vous donner ceci :"
 Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <3,une hache d''armes en acier trempé (Passe votre attaque a 8),8>.
@@ -223,14 +223,14 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concer
 ('Le quartier marchand', 'Vous vous promener un peu et vous trouvez un quartier marchand. A pars quelques mineurs à la tâche, le marché est quasiment désert. Il fait encore tôt donc cela ne vous étonne pas trop.
 Vous remarquez que toute l''économie locale est basée sur la pierre. Des bijoux aux ustensiles de cuisine, la plupart des articles sont en pierre. 
 Vous passez devant un marchand itinérant qui semble proposer du matériel intéressant :
-<1,Une étrange perle luisant en bleu,16;1> pour <1,1 pièce d''or,15;-1>
-<1,De l''eau bénite,17;1> pour <1,1 pièce d''or,15;-1>
+<1,Une étrange perle luisant en bleu,15;1> pour <1,1 pièce d''or,14;-1>
+<1,De l''eau bénite,16;1> pour <1,1 pièce d''or,14;-1>
 Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
 C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
-Les objets suivants sont présentés sur l''étale de la marchande :
-<3,Une massue en pierre(Votre force passe à 6),6> pour <1,4 pièces d''or,15;-4>
-<4,Une casquette de mineur en pierre(Vous gagnez 1 armure),4> pour <1,2 pièces d''or,15;-2>
-<3,Une dague en pierre(Votre force passe à 4),4> pour 1,2 pièces d''or,15;-2>
+Les objets suivants sont présentés sur l''étale du marchand :
+<3,Une massue en pierre(Votre force passe à 6),6> pour <1,4 pièces d''or,14;-4>
+<4,Une casquette de mineur en pierre(Vous gagnez 1 armure),4> pour <1,2 pièces d''or,14;-2>
+<3,Une dague en pierre(Votre force passe à 4),4> pour <1,2 pièces d''or,14;-2>
 Une fois vos achats effectués, vous pouvez :
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -262,7 +262,7 @@ Vous remerciez le barman et quittez la taverne. ,Vous pouvez désormais reprendr
 ('Mendiant', 'Vous devez trouver de l''or mais vous savez que vous n''arriverez pas à trouver un travail, il ne vous reste plus qu''une solution : mendier.
 C''est avec honte que vous vous vêtissez d''un haillon en pierre gisant sur le sol et que vous rejoignez un groupe de sans-abris.
 Durant plusieurs jours vous vous traînez dans les rues suppliant la générosité des passants.
-Votre errance vous rapporte <1,3 pièces d''or,15;3>, une grande quantitée de cailloux au visage et vous fait perdre <2,2 PV,-2> à cause de la fatigue.
+Votre errance vous rapporte <1,3 pièces d''or,14;3>, une grande quantitée de cailloux au visage et vous fait perdre <2,2 PV,-2> à cause de la fatigue.
 Vous devez désormais continuer :
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
@@ -288,7 +288,7 @@ Vous n''êtes pas déçu, la salle est remplie de diverses richesses : des croix
 Vous êtes tellement obnubilé par ce trésor que vous ne remarquez pas votre pied butter contre un fil tendu.
 Soudainement vous entendez le bruit d''un mécanisme se mettre en marche suivi du lourd son d''une cloche, toute l''église doit être désormais au courant qu''il y à un voleur.
 Vous vous précipitez vers la fenêtre précédemment détruite, emportant avec vous la seul bourse que vous avez eu le réflexe de prendre dans votre fuite.
-Par chance vous ne rencontrez personne durant votre escapade et vous parvenez à quitter l''église en un seul morceau, emportant avec vous <1,20 pièces d''or,15;20>, une somme rondelette.
+Par chance vous ne rencontrez personne durant votre escapade et vous parvenez à quitter l''église en un seul morceau, emportant avec vous <1,20 pièces d''or,14;20>, une somme rondelette.
 Vous devez faire profile-bas maintenant, que choisissez vous de faire ?
 (Toutes les actions ne sont possibles qu''une seul fois à part le quartier marchand)
 <0,Aller dans le quartier marchand,12>
@@ -300,7 +300,7 @@ Vous devez faire profile-bas maintenant, que choisissez vous de faire ?
 -- Page 17 --
 ('Piètre voleur', 'Vous tentez de vous glisser vers une statue mais c''est un échec. Sans attendre un moment, les paladins se jettent sur vous et vous immobilisent.
 Ils vous emmènent sans plus tarder et vous balancent dans une cellule de la prison de Casse-Roc.
-Tenter de piller une église est un crime grave mais heureusement un prêtre arrive près de votre cellule. Il est prêt à vous pardonner mais ce ne sera pas gratuit. Il demande *8 pièces d''or*. Souhaitez-vous <1,payer les 8 pièces d''or,15;-8> pour <0,être libéré,19> ou <0,refuser,18> ?'
+Tenter de piller une église est un crime grave mais heureusement un prêtre arrive près de votre cellule. Il est prêt à vous pardonner mais ce ne sera pas gratuit. Il demande *8 pièces d''or*. Souhaitez-vous <1,payer les 8 pièces d''or,14;-8> pour <0,être libéré,19> ou <0,refuser,18> ?'
 , 'prison.jpg'),
 
 -- Page 18 --
@@ -339,7 +339,7 @@ Que faites-vous maintenant ?
 -- Page 22 --
 ('Un dur labeur', 'Au milieu de tous ces papiers vous apercevez dans le coin une affiche proposant un travail dans un atelier de tailleur de pierre.
 Vous travaillez durant quelques jours au milieu des pierres et des statues , votre rôle est surtout de créer et transporter des briques nécessaires à la construction c''est un travail particulièrement éprouvant car les briques sont très lourdes et les horaires sont épouvantables.
-Finalement vos efforts s''avèrent être payant : vous obtenez <1,10 pièces d''or,15;10>.
+Finalement vos efforts s''avèrent être payant : vous obtenez <1,10 pièces d''or,14;10>.
 Maintenant que vous avez de l''argent que faites vous ?
 <0,Aller dans le quartier marchand,12>
 <0,Interroger les villageois,13>
@@ -380,8 +380,8 @@ Sans attendre une seconde de plus les gobelins se ruent sur vous, il faut vous d
 <8,Combat contre gobelins N°1,1>
 <8,Combat contre gobelin N°2,1>
 <8,Combat contre chef gobelin,2>
-<7,Combat contre gobelin N°3,Suite à la mort de ses compagnions le dernier gobelin prend la fuite.>
-Une fois les gobelins défaits, vous fouiller leur corps et ne découvrez rien de spécial hormis un bon petit butin de <1,11 pièces d''or,15;11>.
+<7,Combat contre gobelin N°3,Suite à la mort de ses compagnions le dernier gobelin prend la fuite.;Gobelin N°3.>
+Une fois les gobelins défaits, vous fouiller leur corps et ne découvrez rien de spécial hormis un bon petit butin de <1,11 pièces d''or,14;11>.
 Vous pouvez désormais <0,continuer votre route,26>.'
 , 'foretJolieInside.jpg'),
 
@@ -468,7 +468,7 @@ Si au contraire vous ne souhaitez pas prendre le risque de l''affronter et préf
 
 -- Page 33 --
 ('Le crime ne paie pas',
-'L''affrontement avec ce brigand est une mauvaise idée, <1,vous donnez votre bourse,15;-50> au bandit non sans lui avoir jeté un regard mauvais.
+'L''affrontement avec ce brigand est une mauvaise idée, <1,vous donnez votre bourse,14;-50> au bandit non sans lui avoir jeté un regard mauvais.
 Même si vous ne voyez pas son visage, vous imaginez bien son sourire sous ce masque.
 - "Merci bien, Monseigneur." dit-il d''un air moqueur avant de déguerpir.
 Vous tentez de vous consoler en vous disant qu''au moins il n''a pas voulu prendre le reste de votre équipement.
@@ -487,7 +487,7 @@ Une fois le combat terminé, vous décidez de <0,le fouiller,35>.',
 -- Page 35 --
 ('Fouiller le bandit',
 'Il est presque étonnant qu''une telle masse s''effondre devant vous. Le bruit de son poids au contact du sol semble être le seul son que vous percevez après lui avoir porté le coup de grâce.
-Vous ne trouvez rien d''important sur le bandit hormis <1,un anneau en argent,18;1> ainsi qu''<4,un manteau de fourrure (augmente votre armure de 1),1> qui, à défaut d''être en bon état vous permettra de résister au froid.
+Vous ne trouvez rien d''important sur le bandit hormis <1,un anneau en argent,17;1> ainsi qu''<4,un manteau de fourrure (augmente votre armure de 1),1> qui, à défaut d''être en bon état vous permettra de résister au froid.
 Après votre fouille, vous décidez de <0,continuer votre route,41>.',
 'manteauFourrure.png'),
 
@@ -509,7 +509,7 @@ Vous calmez votre peur et cherchez une solution, si vous avez de *l''eau bénite
 'Vous vous souvenez que vous avez de l''eau bénite sur vous. Vous savez que ce genre de liquide est réputé pour son efficacité contre les créatures impies mais vous ne savez pas si ce sera suffisant.
 Vous fouillez dans votre sac, prenez la fiole et attendez d''être à portée.
 La créature s''approche de vous dans un effrayant craquement d''os.
-Sans perdre un instant de plus, <1,vous lancez l''eau bénite,17;-1> sur le monstre et espérez que cela fonctionne.
+Sans perdre un instant de plus, <1,vous lancez l''eau bénite,16;-1> sur le monstre et espérez que cela fonctionne.
 Au contact de la substance divine, la chose se met soudainement à trembler de tout son corps squelettique en poussant un cri terrifiant avant de s''effondrer lourdement dans la vase.
 Vous poussez un soupire de soulagement et décidez de <0,vous diriger vers la cabane,39>.',
 'eauBenite.jpg'),
@@ -543,10 +543,10 @@ C''est une vieille dame, trapue et plutôt grosse. Sa peau est couverte de ride 
 L''intérieur est bien plus propre que l''aspect extérieur et bizarrement il y a beaucoup plus de place que vous ne le pensiez. Des potions soigneusement étiquetées aux couleurs variées sont rangées dans des étagères qui couvrent la quasi-intégralité des murs. On y trouve aussi des livres, des ustensiles de cuisine et beaucoup de bibelots que vous pensez magiques. Un four artisanal est contre le mur, vous remarquez qu''il brûle d''un intense et mystérieux feu violet. Il y a aussi des marmites et des casseroles posées aux pied des murs.
 Vous discutez brièvement avec la vieille dame. Elle raconte être une magicienne avant-gardiste qui a été rejeté par tout le monde. Vous vous doutez bien que cette vieille dame à "l''apparence innocente" pratique une magie défendue.
 Votre hôte propose de vous vendre ces différents objets à "moitié prix" vous dit-elle :
-- <2,Une potion de vitalité(+6 points de vie),6> pour <1,3 pièces d''or,15;-3>
-- <5,Une potion du serpent(+1 d''agilité),1> pour <1,2 pièces d''or,15;-2>
-- <6,Une potion de trèfle à quatre feuille(+1 chance),1> pour <1,2 pièces d''or,15;-2>
-Elle vous propose également <10,d''enchanter votre arme (+2 de force),2> pour la modique somme de <1,5 pièces d''or,15;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
+- <2,Une potion de vitalité(+6 points de vie),6> pour <1,3 pièces d''or,14;-3>
+- <5,Une potion du serpent(+1 d''agilité),1> pour <1,2 pièces d''or,14;-2>
+- <6,Une potion de trèfle à quatre feuille(+1 chance),1> pour <1,2 pièces d''or,14;-2>
+Elle vous propose également <10,d''enchanter votre arme (+2 de force),2> pour la modique somme de <1,5 pièces d''or,14;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
 La vieille femme vous informe qu''il n''y a pas de sentier dans ces marais, il faudra donc continuer dans la boue. La boisson qu''elle vous a offerte est revigorante et vous sentez <2,vos forces revenir(+1 PV),1>
 Une fois votre marchandage terminée et votre thé bu, <0,vous reprenez votre route,41>, bien décidé à terrasser le drake.',
 'sorciere.jpg'),
@@ -581,7 +581,7 @@ Que souhaitez-vous faire :
 
 -- Page 43 --
 ('Un repos bien mérité',
-'Après avoir <1,payé le prix (2 pièces d''or),15;-2>, vous vous dirigez sans plus attendre vers votre chambre.
+'Après avoir <1,payé le prix (2 pièces d''or),14;-2>, vous vous dirigez sans plus attendre vers votre chambre.
 Elle est petite mais confortable et chaleureuse. Vous vous glissez confortablement dans le lit couvert de fourrures et sombrez dans un profond sommeil.
 Vous ne savez pas combien de temps vous avez dormi, mais <2,vous êtes en pleine forme (vous récupérez 10 pv),10>. Vous examinez une carte sur le mur et constatez avec joie que vous approchez de l''Antre des ténèbres, il ne vous reste plus qu''à traverser cette région gelée pour arriver à votre destination et défier le Drake pour sauver Annabella des griffes de la bête.
 Que souhaitez-vous faire maintenant ? :
@@ -637,8 +637,8 @@ Que faites-vous maintenant ? :
 
 -- Page 47 --
 ('Amulette magique',
-'Vous acceptez son offre en <1,lui donnant la perle,16;-1> et vous le regardez se mettre à l''ouvrage avec une habileté déconcertante.
-Après une dizaine de minutes, il vous tends <1,une amulette dorée sertie de la perles luisantes,7;1>.
+'Vous acceptez son offre en <1,lui donnant la perle,15;-1> et vous le regardez se mettre à l''ouvrage avec une habileté déconcertante.
+Après une dizaine de minutes, il vous tends <1,une amulette dorée sertie de la perles luisantes,6;1>.
 Vous remerciez l''homme et retournez au centre de la pièce.
 Que faites-vous ? :
 <0,Chercher un endroit pour se reposer,42>
@@ -653,11 +653,11 @@ Que faites-vous ? :
 Grâce aux yeux bridés du marchand, vous devinez qu''il est originaire des pays de l''Orient. Vous ne connaissez que très peu de choses sur ces peuples, en vérité, il n''y a quasiment que des marchands qui quittent leur pays, le reste préfère rester chez soi.
 Vous admirez ses articles, on y trouve des épices, des pierres précieuses ainsi que certains équipements dignes d''intérêts.
 Parmis ces objets certains ont attirés votre attention :
-- Jambières encombrantes (<4,+2 armure,2> , <5-1 agilité,-1>) pour <1,4 pièces d''or,15;-4>
-- <5,Bottes de Pégase (+2 agilité),2> pour <1,2 pièces d''or,15;-2>
-- <4,Vieux foulard (+1 chance et permet de résister au froid),1> pour <1,1 pièces d''or,15;-1>
-- <3,Lance du Champion en argent (force = 9),9> pour <1,6 pièces d''or,15;-6>
-- <3,Épée en acier (force = 7),7> pour <1,5 pièces d''or,15;-5>
+- Jambières encombrantes (<4,+2 armure,2> , <5,-1 agilité,-1>) pour <1,4 pièces d''or,14;-4>
+- <5,Bottes de Pégase (+2 agilité),2> pour <1,2 pièces d''or,14;-2>
+- <4,Vieux foulard (+1 chance et permet de résister au froid),1> pour <1,1 pièces d''or,14;-1>
+- <3,Lance du Champion en argent (force = 9),9> pour <1,6 pièces d''or,14;-6>
+- <3,Épée en acier (force = 7),7> pour <1,5 pièces d''or,14;-5>
 Une fois vos achats terminés, vous remerciez le marchand et retournez au centre de l''auberge. Que faites-vous ?
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
@@ -686,7 +686,7 @@ Si vous avez *au moins 3 de chance*, <0,la fortune vous sourit,51> sinon vous ê
 -- Page 51 --
 ('La chance vous souris',
 'Vous êtes chanceux car tours après tours, vous obtenez de bonnes mains vous faisant remporter la mise.
-Vous saluez vos nouveaux amis tout en emportant avec vous <1,5 pièces d''or,15;5>.
+Vous saluez vos nouveaux amis tout en emportant avec vous <1,5 pièces d''or,14;5>.
 Que faites-vous maintenant ?
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
@@ -696,7 +696,7 @@ Que faites-vous maintenant ?
 
 -- Page 52 --
 ('Maudit',
-'Malgré toute votre bonne volonté, vous ne parvenez pas à obtenir une seule bonne main. Vous tentez tant bien que mal de remonter mais pas moyen, vous pensez presque que vos adversaires trichent. Vous perdez <1,5 pièces d''or,15;-5> et décidez de quitter cette partie maudite avant de perdre beaucoup plus.
+'Malgré toute votre bonne volonté, vous ne parvenez pas à obtenir une seule bonne main. Vous tentez tant bien que mal de remonter mais pas moyen, vous pensez presque que vos adversaires trichent. Vous perdez <1,5 pièces d''or,14;-5> et décidez de quitter cette partie maudite avant de perdre beaucoup plus.
 Que souhaitez-vous faire maintenant ?
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
@@ -841,7 +841,7 @@ C''est dans le ventre du Drake que se <2,termine tragiquement votre aventure (vo
 Vous pouvez voir à la mine étonnée du Drake que vous avez contré son arme principale. Néanmoins, il reste un adversaire dangereux : ces griffes sont puissantes, ses écailles résistantes et vous ne voulez pas vraiment tester l''effet de sa gueule garnie de croc sur votre corps.
 C''est en faisant le vide dans votre tête que vous vous ruez le monstre pour profiter de votre avantage.
 <8,Combat contre le Drake,7>
-Une fois votre ennemi juré vaincu, vous <0,vous ruez vers une porte située tout au bout de la salle,67>.',
+Une fois votre ennemi juré vaincu, vous vous ruez vers une <0,porte située tout au bout de la salle,67>.',
 'drake.jpg'),
 
 -- Page 67 --
@@ -852,10 +852,9 @@ Soudainement, vous repérez avec joie celle que vous devez sauver. Annabella est
 Sans perdre un instant de plus, vous trouvez les clés de la cellule et libérez la princesse.
 Heureusement, la route jusqu''au château du Roi se fait sans encombre, comme si désormais, les créatures des ténèbres vous craignaient.
 Vous êtes accueilli par tout Casse-Roc ainsi que par le Roi. Pour l''occasion, ce dernier porte son armure dorée.
-Une fête est organisée pour célébrer votre victoire.
+Une fête est organisée pour célébrer votre victoire !
 C''est ainsi que se termine l''épopée de Sir Godfroy, Votre épopée !
-Merci beaucoup d''avoir joué à ce jeu !
-*Johan et Leandro*',
+<7,FIN,Merci beaucoup d''avoir joué à ce jeux! Nous espérons que vous avez apprécié. Johan et Leandro;fin>',
 'victoire.png');
 
 INSERT INTO Player (hp, force, armor, agility, luck, name, idActualPage, inactiveLinks) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 3, 0);
