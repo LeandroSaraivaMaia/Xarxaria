@@ -199,7 +199,7 @@ namespace Xarxaria
         //temp
         private void temp_testcombat_Click(object sender, EventArgs e)
         {
-            frmCombat combatForm = new frmCombat(1, 1);
+            frmCombat combatForm = new frmCombat(1, 4);
 
             combatForm.ShowDialog();
         }

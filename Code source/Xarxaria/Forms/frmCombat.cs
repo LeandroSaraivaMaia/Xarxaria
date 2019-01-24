@@ -100,6 +100,20 @@ namespace Xarxaria
             //Set the enemy as the winner of the fight (In case the user close the form, he looses)
             doesPlayerWin = false;
 
+            //Set enemy's music HARD CODE
+            if (enemy.Id == 7)//Drake
+            {
+                Program.changeMusic(Program.musicId.drake);
+            }
+            else if (enemy.Id == 2 || enemy.Id == 5)//Chef gobelin or Wendigo(not weakened)
+            {
+                Program.changeMusic(Program.musicId.boss);
+            }
+            else
+            {
+                Program.changeMusic(Program.musicId.battle);
+            }
+
             //Wire mouse enter events for sound effect
             cmdNextTurn.MouseEnter += cmd_MouseEnter;
 
@@ -446,6 +460,18 @@ namespace Xarxaria
         #endregion
 
         #region sound events
+        /// <summary>
+        /// The form is closing :
+        /// 
+        /// Change the music to the ambiance music
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmCombat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.changeMusic(Program.musicId.ambiance);
+        }
+
         /// <summary>
         /// The mouse enter in a button :
         /// 

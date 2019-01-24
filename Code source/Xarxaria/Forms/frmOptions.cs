@@ -25,7 +25,7 @@ namespace Xarxaria
 {
     public partial class frmOptions : Form
     {
-        #region privateAttributes
+        #region private attributes
         float minimumFontSize = 0.7f;
         float maximumFontSize = 3f;
         #endregion
@@ -46,12 +46,27 @@ namespace Xarxaria
             numPoliceZoom.Value = (decimal)Program.textZoom;
             txtExample.ZoomFactor = Program.textZoom;
 
+            //Set volume bar
+            barVolume.Value = Program.volume/10;
+
             //Wire mouse enter events for sound effect
             cmdContinue.MouseEnter += cmd_MouseEnter;
         }
         #endregion
 
         #region events
+        /// <summary>
+        /// The volume value is changed :
+        /// 
+        /// Apply volume change to all audio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void barVolume_Scroll(object sender, EventArgs e)
+        {
+            Program.SetVolume(barVolume.Value*10);
+        }
+
         /// <summary>
         /// Click on the continue button :
         /// 

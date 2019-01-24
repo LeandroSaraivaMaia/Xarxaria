@@ -37,7 +37,10 @@
             this.cmbTextAlign = new System.Windows.Forms.ComboBox();
             this.lblTextAlign = new System.Windows.Forms.Label();
             this.txtExample = new Xarxaria.RichTextBoxExtension();
+            this.lblVolume = new System.Windows.Forms.Label();
+            this.barVolume = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceZoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdContinue
@@ -138,7 +141,7 @@
             // 
             this.txtExample.BackColor = System.Drawing.Color.AntiqueWhite;
             this.txtExample.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtExample.Location = new System.Drawing.Point(12, 160);
+            this.txtExample.Location = new System.Drawing.Point(13, 210);
             this.txtExample.Name = "txtExample";
             this.txtExample.Size = new System.Drawing.Size(225, 132);
             this.txtExample.TabIndex = 0;
@@ -147,13 +150,35 @@
     "ium aliquet erat vitae, pellentesque sodales leo. In volutpat. ";
             this.txtExample.Enter += new System.EventHandler(this.txtExample_Enter);
             // 
+            // lblVolume
+            // 
+            this.lblVolume.AutoSize = true;
+            this.lblVolume.BackColor = System.Drawing.Color.Transparent;
+            this.lblVolume.Font = new System.Drawing.Font("Algerian", 11.25F);
+            this.lblVolume.Location = new System.Drawing.Point(41, 172);
+            this.lblVolume.Name = "lblVolume";
+            this.lblVolume.Size = new System.Drawing.Size(63, 16);
+            this.lblVolume.TabIndex = 8;
+            this.lblVolume.Text = "Volume";
+            // 
+            // barVolume
+            // 
+            this.barVolume.Location = new System.Drawing.Point(114, 159);
+            this.barVolume.Name = "barVolume";
+            this.barVolume.Size = new System.Drawing.Size(104, 45);
+            this.barVolume.TabIndex = 4;
+            this.barVolume.Value = 5;
+            this.barVolume.Scroll += new System.EventHandler(this.barVolume_Scroll);
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Xarxaria.Properties.Resources.frmOptions;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(252, 304);
+            this.ClientSize = new System.Drawing.Size(252, 354);
+            this.Controls.Add(this.barVolume);
+            this.Controls.Add(this.lblVolume);
             this.Controls.Add(this.txtExample);
             this.Controls.Add(this.lblTextAlign);
             this.Controls.Add(this.cmbTextAlign);
@@ -167,6 +192,7 @@
             this.Name = "frmOptions";
             this.Text = "Xarxaria v1.0 - Options";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceZoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barVolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +208,7 @@
         private System.Windows.Forms.ComboBox cmbTextAlign;
         private System.Windows.Forms.Label lblTextAlign;
         private RichTextBoxExtension txtExample;
+        private System.Windows.Forms.Label lblVolume;
+        private System.Windows.Forms.TrackBar barVolume;
     }
 }
