@@ -287,7 +287,15 @@ namespace Xarxaria
                         GameOver();
 
                     break;
-                //The force works a bit differently, it replaces the value of the force and it's not adding or substracting anything
+                case (int)Program.actionId.changePlayerForce:
+                    actualPlayer.SetForce(actionValue);
+
+                    //Will maybe be replaced by a little animation/sound
+                    if (actionValue < 0) { MessageBox.Show(contents[1] + " points de force", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de force", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                    break;
+                //The force works a bit differently, it replaces the value of the force and it's not adding or substracting anything. But we can also change the force like other caracteristic (enum changePlayerForce)
                 case (int)Program.actionId.setPlayerForce:
 
                     actualPlayer.SetForce(-actualPlayer.Force + actionValue);
@@ -604,11 +612,5 @@ namespace Xarxaria
             Program.playHoverSound();
         }
         #endregion
-
-        //Temp
-        private void cmdDebug_Click(object sender, EventArgs e)
-        {
-            ChangePage(int.Parse(txtDebug.Text));
-        }
     }
 }

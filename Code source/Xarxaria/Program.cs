@@ -38,7 +38,7 @@ namespace Xarxaria
         public static int effectsVolume = 100;
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1.4f;
-        public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck, displayMessage, enemyFight};
+        public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck, displayMessage, enemyFight, changePlayerForce};
         public enum musicId { ambiance, battle, boss, drake};
         public static ConnectionDB connection;
         #endregion

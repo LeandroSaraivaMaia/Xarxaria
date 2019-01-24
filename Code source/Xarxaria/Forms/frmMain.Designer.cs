@@ -35,8 +35,6 @@ namespace Xarxaria
             this.picPage = new System.Windows.Forms.PictureBox();
             this.txtPage = new Xarxaria.RichTextBoxExtension();
             this.cmdHelp = new System.Windows.Forms.Button();
-            this.txtDebug = new System.Windows.Forms.TextBox();
-            this.cmdDebug = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,23 +140,6 @@ namespace Xarxaria
             this.cmdHelp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdHelp_MouseDown);
             this.cmdHelp.MouseLeave += new System.EventHandler(this.cmdHelp_MouseLeave);
             // 
-            // txtDebug
-            // 
-            this.txtDebug.Location = new System.Drawing.Point(13, 21);
-            this.txtDebug.Name = "txtDebug";
-            this.txtDebug.Size = new System.Drawing.Size(66, 20);
-            this.txtDebug.TabIndex = 5;
-            // 
-            // cmdDebug
-            // 
-            this.cmdDebug.Location = new System.Drawing.Point(85, 19);
-            this.cmdDebug.Name = "cmdDebug";
-            this.cmdDebug.Size = new System.Drawing.Size(112, 23);
-            this.cmdDebug.TabIndex = 6;
-            this.cmdDebug.Text = "Aller à cette page";
-            this.cmdDebug.UseVisualStyleBackColor = true;
-            this.cmdDebug.Click += new System.EventHandler(this.cmdDebug_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,8 +148,6 @@ namespace Xarxaria
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(562, 632);
             this.Controls.Add(this.cmdHelp);
-            this.Controls.Add(this.cmdDebug);
-            this.Controls.Add(this.txtDebug);
             this.Controls.Add(this.cmdMenu);
             this.Controls.Add(this.cmdPlayer);
             this.Controls.Add(this.lblPageTitle);
@@ -181,7 +160,6 @@ namespace Xarxaria
             this.Text = "Xarxaria v1.0 - Main";
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -193,8 +171,6 @@ namespace Xarxaria
         private System.Windows.Forms.PictureBox picPage;
         private RichTextBoxExtension txtPage;
         private System.Windows.Forms.Button cmdHelp;
-        private System.Windows.Forms.TextBox txtDebug;
-        private System.Windows.Forms.Button cmdDebug;
     }
 }
 
