@@ -34,7 +34,8 @@ namespace Xarxaria
         #endregion
 
         #region public static attributes
-        public static int volume = 100;
+        public static int musicsVolume = 100;
+        public static int effectsVolume = 100;
         public static HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
         public static float textZoom = 1.4f;
         public enum actionId { pageChange, changeItem, changePlayerHp, setPlayerForce, changePlayerArmor, changePlayerAgility, changePlayerLuck, displayMessage, enemyFight};
@@ -43,18 +44,31 @@ namespace Xarxaria
         #endregion
 
         #region public methods
-        public static void SetVolume(int volumeValue)
+        /// <summary>
+        /// Set the volume of the musics
+        /// </summary>
+        /// <param name="volumeValue"></param>
+        public static void SetMusicsVolume(int volumeValue)
         {
-            volume = volumeValue;
+            musicsVolume = volumeValue;
 
             ambianceMusic.settings.volume = volumeValue;
             battleMusic.settings.volume = volumeValue;
             bossMusic.settings.volume = volumeValue;
             drakeMusic.settings.volume = volumeValue;
+        }
+
+        /// <summary>
+        /// Set the volume of the effects
+        /// </summary>
+        /// <param name="volumeValue"></param>
+        public static void SetEffectsVolume(int volumeValue)
+        {
+            effectsVolume = volumeValue;
+
             clickSound.settings.volume = volumeValue;
             hoverSound.settings.volume = volumeValue;
         }
-
 
         /// <summary>
         /// Change the music by stopping the old music and playing a new music

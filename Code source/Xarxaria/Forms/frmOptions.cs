@@ -47,7 +47,8 @@ namespace Xarxaria
             txtExample.ZoomFactor = Program.textZoom;
 
             //Set volume bar
-            barVolume.Value = Program.volume/10;
+            barVolumeMusic.Value = Program.musicsVolume / 10;
+            barVolumeEffect.Value = Program.effectsVolume / 10;
 
             //Wire mouse enter events for sound effect
             cmdContinue.MouseEnter += cmd_MouseEnter;
@@ -56,15 +57,27 @@ namespace Xarxaria
 
         #region events
         /// <summary>
-        /// The volume value is changed :
+        /// The music volume value is changed :
         /// 
-        /// Apply volume change to all audio
+        /// Apply volume change to all musics
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void barVolume_Scroll(object sender, EventArgs e)
+        private void barVolumeMusic_Scroll(object sender, EventArgs e)
         {
-            Program.SetVolume(barVolume.Value*10);
+            Program.SetMusicsVolume(barVolumeMusic.Value*10);
+        }
+
+        /// <summary>
+        /// The volume value is changed :
+        /// 
+        /// Apply sound volume change to all sounds
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void barVolumeEffect_Scroll(object sender, EventArgs e)
+        {
+            Program.SetEffectsVolume(barVolumeEffect.Value * 10);
         }
 
         /// <summary>
