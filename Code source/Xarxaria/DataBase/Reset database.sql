@@ -35,6 +35,7 @@ CREATE TABLE Player (
 	agility INT,
 	luck INT,
 	name VARCHAR(255),
+	inactiveLinks INT,
 	idActualPage INT FOREIGN KEY REFERENCES Page(id),
 )
 
@@ -857,7 +858,7 @@ Merci beaucoup d''avoir joué à ce jeu !
 *Johan et Leandro*',
 'victoire.png');
 
-INSERT INTO Player (hp, force, armor, agility, luck, name, idActualPage) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 3);
+INSERT INTO Player (hp, force, armor, agility, luck, name, idActualPage, inactiveLinks) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 3, 0);
 
 INSERT INTO Item (name, hp, force, armor, agility, luck) VALUES
 ('Plastron rouillé', 0, 0, 2, 0, 0),

@@ -50,11 +50,11 @@ namespace Xarxaria
         /// <param name="agility">Number of force</param>
         /// <param name="luck">Number of force</param>
         /// <param name="idActualPage">Id of the actual page</param>
-        public void AddPlayer(string name, int hp, int force, int armor, int agility, int luck, int idActualPage)
+        public void AddPlayer(string name, int hp, int force, int armor, int agility, int luck, int idActualPage, int inactiveLinks)
         {
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Player (hp, force, armor , agility, luck, name, idActualPage) VALUES ("+hp+", "+force+", "+armor+", "+agility+", "+luck+", '"+name+"', "+idActualPage+")";
+            cmd.CommandText = "INSERT INTO Player (hp, force, armor , agility, luck, name, inactiveLinks, idActualPage) VALUES (" + hp+", "+force+", "+armor+", "+agility+", "+luck+", '"+name+"', "+ inactiveLinks+", "+idActualPage+")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -83,8 +83,9 @@ namespace Xarxaria
                                 ", armor = " + player.Armor +
                                 ", agility = " + player.Agility +
                                 ", luck = " + player.Luck +
-                                ", name = " + "'" + player.Name +
-                                "', idActualPage = " + player.IdActualPage +
+                                ", name = '" + player.Name +
+                                "', inactiveLinks = " + player.InactiveLinksInActualPage +
+                                ", idActualPage = " + player.IdActualPage +
                                 " WHERE id = " + player.Id;
 
             cmd.CommandType = CommandType.Text;
@@ -375,7 +376,8 @@ namespace Xarxaria
                 int luck = int.Parse(reader["luck"].ToString());
                 string name = reader["name"].ToString();
                 int idActualPage = int.Parse(reader["idActualPage"].ToString());
-                selectedPlayer = new Player(id, hp, force, agility, armor, luck, name, idActualPage, playerInventory);
+                int inactiveLinks = int.Parse(reader["inactiveLinks"].ToString());
+                selectedPlayer = new Player(id, hp, force, agility, armor, luck, name, idActualPage, (uint)inactiveLinks, playerInventory);
             }
 
             if (!isPlayerFound)

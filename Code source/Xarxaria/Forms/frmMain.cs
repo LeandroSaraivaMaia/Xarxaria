@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file      frmMain.cs
  * \author    Johan Voland & Leandro Saraiva Maia
  * \version   1.0
@@ -29,7 +29,6 @@ namespace Xarxaria
         Page actualPage;
         Bitmap loadedImage;
         Player actualPlayer;
-        List<int> inactiveLinks;
         bool returnToStartScreen;
         int infiniteLoopRedreshDelay = 10;
         #endregion
@@ -59,7 +58,7 @@ namespace Xarxaria
             actualPlayer = Program.connection.GetPlayerById(playerId);
 
             //Load the page of the player
-            ChangePage(actualPlayer.IdActualPage);
+            ChangePage(actualPlayer.IdActualPage, actualPlayer.InactiveLinksInActualPage);
 
             //Set the variable returnToStartScreen to not return to start screen
             returnToStartScreen = false;
@@ -224,12 +223,30 @@ namespace Xarxaria
             //The third value [2] is the link id
 
             //Add the link index to the inactive Links list
-            //This list determines what link will be inactive
-            inactiveLinks.Add(int.Parse(contents[2]));
+            //This UINT determines what link will be inactive
+            actualPlayer.InactiveLinksInActualPage |= uint.Parse(contents[2]);
 
             //Reload text
             txtPage.Text = "";
-            ChangeText(actualPage.Text, inactiveLinks);
+            ChangeText(actualPage.Text, actualPlayer.InactiveLinksInActualPage);
+
+            //If the player is dead, use this function
+            void GameOver()
+            {
+                MessageBox.Show("La partie est terminée car vous êtes mort, retour à l'écran principale", "Vous êtes mort", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //Open the start screen
+                void ThreadProc_frmStart()
+                {
+                    Application.Run(new frmStart());
+                }
+
+                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
+
+                t.Start();
+
+                returnToStartScreen = true;
+            }
 
             //Test what action need to be done
             switch (linkActionId)
@@ -264,6 +281,10 @@ namespace Xarxaria
                     //Will maybe be replaced by a little animation/sound
                     if (actionValue < 0) { MessageBox.Show(contents[1] + " points de vie", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                     else if (actionValue > 0){ MessageBox.Show("+" + contents[1] + " points de vie", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                    //Test if the player die
+                    if (actualPlayer.Hp <= 0)
+                        GameOver();
 
                     break;
                 //The force works a bit differently, it replaces the value of the force and it's not adding or substracting anything
@@ -313,25 +334,14 @@ namespace Xarxaria
 
                     combatForm.ShowDialog();
 
+                    //Actualize player's caracteristics (HP)
+                    actualPlayer = combatForm.GetPlayer;
+
                     //If the combat form is closed and sent a message to go back to title screen, open start screen and close main form
                     if (!combatForm.DoesPlayerWin)
                     {
-                        MessageBox.Show("La partie est terminée car vous êtes mort, retour à l'écran principale", "Vous êtes mort", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        //Open the start screen
-                        void ThreadProc_frmStart()
-                        {
-                            Application.Run(new frmStart());
-                        }
-
-                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmStart));
-
-                        t.Start();
-
-                        returnToStartScreen = true;
+                        GameOver();
                     }
-
-                    actualPlayer = combatForm.GetPlayer;
 
                     break;
                 default : throw new Exception("Action id unknown");
@@ -350,7 +360,7 @@ namespace Xarxaria
         /// Change the actual page with a given id
         /// </summary>
         /// <param name="pageId"></param>
-        void ChangePage(int pageId)
+        void ChangePage(int pageId, uint inactiveLinks = 0)
         {
             //Get page from database
             actualPage = Program.connection.GetPage(pageId);
@@ -368,7 +378,7 @@ namespace Xarxaria
             float dump = txtPage.ZoomFactor;
 
             //Load the text
-            ChangeText(actualPage.Text);
+            ChangeText(actualPage.Text, inactiveLinks);
 
             //Change the ZoomFactor value
             txtPage.ZoomFactor = Program.textZoom;
@@ -385,9 +395,10 @@ namespace Xarxaria
                 throw new Exception("Image cannot be loaded, may be an access to an unexisting page");
             }
             picPage.Image = (Image)loadedImage;
-            
-            //Reset inactive links list
-            inactiveLinks = new List<int>();
+
+            //Reset inactive links
+            if (inactiveLinks == 0)
+                actualPlayer.InactiveLinksInActualPage = 0;
 
             txtPage.ScrollToTop();
         }
@@ -422,11 +433,13 @@ namespace Xarxaria
         /// <param name="text"></param>
         /// <param name="selectedInactiveLinks"></param>
         /// <returns>Number of links in the string</returns>
-        int ChangeText(string text, List<int> selectedInactiveLinks = null)
+        int ChangeText(string text, uint selectedInactiveLinks = 0)
         {
             int pageChangedOpen = -1;
             int lastFreeChar = 0;
+            uint iteratedLink = 1;
             int numberOfLinks = 1;
+
             bool textIsHighlighted = false;
 
             for (int i = 0; i < text.Length; i++)
@@ -476,19 +489,15 @@ namespace Xarxaria
                     //The first value [0] is the action id (see enum actionId)
                     //The second value [1] is the shown text
                     //The third value [2] is the action value
-                    
+
                     bool isLinkInactive = false;
 
-                    //If there is inactive links
-                    if (selectedInactiveLinks != null)
+                    if (selectedInactiveLinks != 0)
                     {
                         //Check if the iterated link is an inactive link in parameter
-                        foreach (int selectedLink in selectedInactiveLinks)
+                        if ((selectedInactiveLinks & iteratedLink) == iteratedLink)
                         {
-                            if (selectedLink == numberOfLinks)
-                            {
-                                isLinkInactive = true;
-                            }
+                            isLinkInactive = true;
                         }
                     }
 
@@ -501,10 +510,12 @@ namespace Xarxaria
                     {
                         //Add active link
                         //The first argument is the shown text, then the action id, then the action value(s) and the link number
-                        txtPage.InsertLink(contents[1], contents[0] + "," + contents[2] + "," + numberOfLinks);
+                        txtPage.InsertLink(contents[1], contents[0] + "," + contents[2] + "," + iteratedLink);
                     }
 
-                    //Increment number of links
+                    //Shift the bit number of links
+                    iteratedLink = iteratedLink << 1;
+
                     numberOfLinks++;
 
                     lastFreeChar = i + 1;

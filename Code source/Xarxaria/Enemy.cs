@@ -72,7 +72,6 @@ namespace Xarxaria
             if (hp < 0)
             {
                 hp = 0;
-                Console.WriteLine("l'ennemi \"" + Name + "\" est mort");
             };
         }
 

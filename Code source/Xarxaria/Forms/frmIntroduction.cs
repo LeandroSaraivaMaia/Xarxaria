@@ -136,7 +136,7 @@ namespace Xarxaria
             }
 
             //Add player in database
-            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, defaultForce, defaultArmor, (int)numAgility.Value, (int)numLuck.Value, 1);
+            Program.connection.AddPlayer(txtPlayerName.Text, (int)numHealth.Value, defaultForce, defaultArmor, (int)numAgility.Value, (int)numLuck.Value, 1, 0);
 
             //Get the last player in the database
             int lastPlayerId = Program.connection.GetNumberOfPlayer();
