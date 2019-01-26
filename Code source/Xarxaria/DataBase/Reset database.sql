@@ -150,7 +150,7 @@ Après d''autres acclamations, vous expliquez la situation et Amélia vous répo
 - "Notre père est occupé avec ses bibelots, c''est à croire qu''il se soucie plus de son armure que de nous ..."
 Toutes les princesses prennent une mine triste et, après un court silence, Anastasia reprends la conversation :
 - "Il ne vous donnera pas d''équipement de qualité, cependant nous pouvons vous donner ceci :"
-Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <3,une hache d''armes en acier trempé (Passe votre attaque a 8),8>.
+Antonella s''empresse de regarder sous un lit pour y sortir avec l''aide d''Aphrodita <1,une hache d''armes en acier trempé,9;1> (<3,Passe votre attaque a 8,8>).
 Après de chaleureuses salutations, Agatha vous montre un autre passage secret qui mène directement à l''extérieur du château.
 <0,Vous partez en direction du village,11>, bien décidé à sauver Anabella.
 ', 'courDuChateau.jpg'),
@@ -185,7 +185,7 @@ Il se remet à astiquer son casque et prend un air désintéressé.
 - "Oui, je vois mais... Tu sais que le royaume n''est pas au top niveau finances, je vais voir ce que je peux te prêter."
 Il saisit un vieux coffre sous son lit et en sort un plastron et une arme.
 - "C''est tout ce que je peux me permettre de te prêter, tiens et n''oublie pas de me les rendres, hein."
-Vous recevez <4,un plastron en fer rouillé (armure + 2),2> et <3,une épée d''entrainement (passe votre force à 4),4>. Après de brèves salutations, vous reprenez votre route <0,vers le village,11> à la sortie du château.', 'chambreRoi.jpg'),
+Vous recevez <1,un plastron en fer rouillé,0;1> (<4,armure + 2,2>) et <1,une épée d''entrainement,13;1> (<3,passe votre force à 4,4>). Après de brèves salutations, vous reprenez votre route <0,vers le village,11> à la sortie du château.', 'chambreRoi.jpg'),
 
 -- Page 10 --
 ('Les gardes ne vous reconnaissent pas', 'Après un long moment gênant, le plus gros des gardes reprend la conversation :
@@ -228,9 +228,9 @@ Vous passez devant un marchand itinérant qui semble proposer du matériel inté
 Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
 C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
 Les objets suivants sont présentés sur l''étale du marchand :
-<3,Une massue en pierre(Votre force passe à 6),6> pour <1,4 pièces d''or,14;-4>
-<4,Une casquette de mineur en pierre(Vous gagnez 1 armure),4> pour <1,2 pièces d''or,14;-2>
-<3,Une dague en pierre(Votre force passe à 4),4> pour <1,2 pièces d''or,14;-2>
+<1,Une massue en pierre,11;1>(<3,Votre force passe à 6,6>) pour <1,4 pièces d''or,14;-4>
+<1,Une casquette de mineur en pierre,1;1>(<4,Vous gagnez 1 armure,1>) pour <1,2 pièces d''or,14;-2>
+<1,Une dague en pierre,12;1>(<3,Votre force passe à 4,4>) pour <1,2 pièces d''or,14;-2>
 Une fois vos achats effectués, vous pouvez :
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -452,7 +452,7 @@ Il sort une clé de sa barbe et l''insère dans la serrure avant de vous inviter
 L''intérieur de l''arbre est aussi impressionnant que l''extérieur, les étagères de potions et les bibliothèques sont incrustées à même l''écorce, comme si elles avaient toujours été là.
 Au milieu de la salle se tient l''objet de votre quête : la légendaire Épée du Soleil Levant.
 L''épée est posée sur piédestal de bois, imposante et royale, elle semble presque trop lourde et encombrante mais une fois en main, vous constatez avec surprise que son poids correspond parfaitement à vos habitudes.
-C''est avec un sentiment de puissance et d''accomplissement que vous décidez de quitter l''Arbre de la vie en emportant avec vous cette <3,arme légendaire (passe votre force à 10),10>.
+C''est avec un sentiment de puissance et d''accomplissement que vous décidez de quitter l''Arbre de la vie en emportant avec vous cette <1,arme légendaire,7;1> (<3,passe votre force à 10,10>).
 Vous remerciez le vieillard et vous vous enfoncez dans la forêt jolie.
 Alors que vous tentez de retrouver votre chemin, vous voyez au loin ce qui semble être un homme <0,s''approcher de vous.,32>',
 'epeeLegendaire.jpg'),
@@ -487,7 +487,7 @@ Une fois le combat terminé, vous décidez de <0,le fouiller,35>.',
 -- Page 35 --
 ('Fouiller le bandit',
 'Il est presque étonnant qu''une telle masse s''effondre devant vous. Le bruit de son poids au contact du sol semble être le seul son que vous percevez après lui avoir porté le coup de grâce.
-Vous ne trouvez rien d''important sur le bandit hormis <1,un anneau en argent,17;1> ainsi qu''<4,un manteau de fourrure (augmente votre armure de 1),1> qui, à défaut d''être en bon état vous permettra de résister au froid.
+Vous ne trouvez rien d''important sur le bandit hormis <1,un anneau en argent,17;1> ainsi qu''<1,un manteau de fourrure,3;1>(<4,augmente votre armure de 1,1>)  qui, à défaut d''être en bon état vous permettra de résister au froid.
 Après votre fouille, vous décidez de <0,continuer votre route,41>.',
 'manteauFourrure.png'),
 
@@ -546,7 +546,7 @@ Votre hôte propose de vous vendre ces différents objets à "moitié prix" vous
 - <2,Une potion de vitalité(+6 points de vie),6> pour <1,3 pièces d''or,14;-3>
 - <5,Une potion du serpent(+1 d''agilité),1> pour <1,2 pièces d''or,14;-2>
 - <6,Une potion de trèfle à quatre feuille(+1 chance),1> pour <1,2 pièces d''or,14;-2>
-Elle vous propose également <10,d''enchanter votre arme (+2 de force),2> pour la modique somme de <1,5 pièces d''or,14;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
+Elle vous propose également <9,d''enchanter votre arme (+2 de force),2> pour la modique somme de <1,5 pièces d''or,14;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
 La vieille femme vous informe qu''il n''y a pas de sentier dans ces marais, il faudra donc continuer dans la boue. La boisson qu''elle vous a offerte est revigorante et vous sentez <2,vos forces revenir(+1 PV),1>
 Une fois votre marchandage terminée et votre thé bu, <0,vous reprenez votre route,41>, bien décidé à terrasser le drake.',
 'sorciere.jpg'),
@@ -638,7 +638,7 @@ Que faites-vous maintenant ? :
 -- Page 47 --
 ('Amulette magique',
 'Vous acceptez son offre en <1,lui donnant la perle,15;-1> et vous le regardez se mettre à l''ouvrage avec une habileté déconcertante.
-Après une dizaine de minutes, il vous tends <1,une amulette dorée sertie de la perles luisantes,6;1>.
+Après une dizaine de minutes, il vous tends <1,un talisman gravé,6;1>.
 Vous remerciez l''homme et retournez au centre de la pièce.
 Que faites-vous ? :
 <0,Chercher un endroit pour se reposer,42>
@@ -653,11 +653,11 @@ Que faites-vous ? :
 Grâce aux yeux bridés du marchand, vous devinez qu''il est originaire des pays de l''Orient. Vous ne connaissez que très peu de choses sur ces peuples, en vérité, il n''y a quasiment que des marchands qui quittent leur pays, le reste préfère rester chez soi.
 Vous admirez ses articles, on y trouve des épices, des pierres précieuses ainsi que certains équipements dignes d''intérêts.
 Parmis ces objets certains ont attirés votre attention :
-- Jambières encombrantes (<4,+2 armure,2> , <5,-1 agilité,-1>) pour <1,4 pièces d''or,14;-4>
-- <5,Bottes de Pégase (+2 agilité),2> pour <1,2 pièces d''or,14;-2>
-- <4,Vieux foulard (+1 chance et permet de résister au froid),1> pour <1,1 pièces d''or,14;-1>
-- <3,Lance du Champion en argent (force = 9),9> pour <1,6 pièces d''or,14;-6>
-- <3,Épée en acier (force = 7),7> pour <1,5 pièces d''or,14;-5>
+- <1,Jambières encombrantes,2;1> (<4,+2 armure,2> , <5,-1 agilité,-1>) pour <1,4 pièces d''or,14;-4>
+- <1,Bottes de Pégase,4;1> (<5,+2 agilité,2>) pour <1,2 pièces d''or,14;-2>
+- <1,Vieux foulard,5;1> (<6,+1 chance,1> et permet de résister au froid) pour <1,1 pièces d''or,14;-1>
+- <1,Lance du Champion en argent,8;1> (<3,force = 9,9>) pour <1,6 pièces d''or,14;-6>
+- <1,Épée en acier,10;1> (<3,force = 7,7>) pour <1,5 pièces d''or,14;-5>
 Une fois vos achats terminés, vous remerciez le marchand et retournez au centre de l''auberge. Que faites-vous ?
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
@@ -669,7 +669,7 @@ Une fois vos achats terminés, vous remerciez le marchand et retournez au centre
 ('Le zrick',
 'Vous vous dirigez vers le groupe de voyageurs, ils jouent à un jeu de carte hasardeux appelé le Zrick et bien sûr, de l''argent est en jeu.
 - "Souhaitez-vous vous joindre à nous voyageur ?" vous lance un des protagonistes.
-Si vous acceptez, rendez-vous ici, sinon vous refusez poliment et quittez le groupe pour voir ce que vous pourriez faire d''autre.
+Si vous acceptez, rendez-vous <0,ici,50>, sinon vous refusez poliment et quittez le groupe pour voir ce que vous pourriez faire d''autre.
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
 <0,Voir le marchand,48>
@@ -780,7 +780,7 @@ Une fois le wendigo bannit, le froid surnaturel se dissipe et <0,vous continuez 
 -- Page 61 --
 ('Dernier repos',
 'Vous ne savez pas combien de temps vous avez marché dans cet enfer gelé mais vous remarquez avec plaisir que le paysage change.
-Les plaines glacées laissent place à des montagnes de plus en plus abruptes mais en cela vous importe peu car <5,une douce chaleur remplace le froid (+1 agilité),1>.
+Les plaines glacées laissent place à des montagnes de plus en plus abruptes. Si vous n''aviez pas de *manteau de fourrure* ou de *vieux foulard* <5,une douce chaleur remplace le froid (+1 agilité),1>.
 Au fur et à mesure que vous progressez, vous notez que la nuit commence à tomber, il vous faut abri. Heureusement à la différence de la toundra, vous trouvez facilement de quoi manger et faire un feu.
 Vous vous endormez à la chaleur des braises <2,(vous regagnez +6 PV),6>.
 La douce lumière du soleil vous réveille et c''est avec assurance que <0,vous continuez votre voyage,62>.',
@@ -857,11 +857,11 @@ C''est ainsi que se termine l''épopée de Sir Godfroy, Votre épopée !
 <7,FIN,Merci beaucoup d''avoir joué à ce jeux! Nous espérons que vous avez apprécié. Johan et Leandro;fin>',
 'victoire.png');
 
-INSERT INTO Player (hp, force, armor, agility, luck, name, idActualPage, inactiveLinks) VALUES (10, 3, 1, 5, 2, 'Godfroyd', 3, 0);
+INSERT INTO Player (hp, force, armor, agility, luck, name, idActualPage, inactiveLinks) VALUES (22, 1, 0, 5, 2, 'Godfroyd', 3, 0);
 
 INSERT INTO Item (name, hp, force, armor, agility, luck) VALUES
 ('Plastron rouillé', 0, 0, 2, 0, 0),
-('Casque de mineur en pierre', 0, 0, 1, 0, 0),
+('Casquette de mineur', 0, 0, 1, 0, 0),
 ('Jambières encombrantes', 0, 0, 2, -1, 0),
 ('Manteau de fourrure', 0, 0, 1, 0, 0),
 ('Bottes de Pégase', 0, 0, 0, 2, 0),
@@ -869,12 +869,12 @@ INSERT INTO Item (name, hp, force, armor, agility, luck) VALUES
 ('Talisman gravé', 0, 0, 0, 0, 1),
 ('Epée du Soleil Levant', 0, 10, 0, 0, 0),
 ('Lance du champion en argent', 0, 9, 0, 0, 0),
-('Hache d''arme en acier trempé', 0, 8, 0, 0, 0),
+('Hache d''arme en acier', 0, 8, 0, 0, 0),
 ('Epée en acier', 0, 7, 0, 0, 0),
 ('Massue en pierre', 0, 6, 0, 0, 0),
 ('Dague en pierre', 0, 4, 0, 0, 0),
 ('Epée d''entraînement', 0, 4, 0, 0, 0),
-('Pièce d''or', 0, 0, 0, 0, 0),
+('Pièce(s) d''or', 0, 0, 0, 0, 0),
 ('Perle luisante', 0, 0, 0, 0, 0),
 ('Eau bénite', 0, 0, 0, 0 ,0),
 ('Anneau en argent', 0, 0, 0, 0, 0),

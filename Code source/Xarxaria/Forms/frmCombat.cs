@@ -1,4 +1,4 @@
-﻿/**
+/**
 * \file      frmCombat.cs
 * \author    Johan Voland & Leandro Saraiva Maia
 * \version   1.0
@@ -60,12 +60,12 @@ namespace Xarxaria
         /// The combat form constructor
         /// </summary>
         /// <param name="idEnemy"></param>
-        public frmCombat(int playerId, int enemyId)
+        public frmCombat(Player player, int enemyId)
         {
             InitializeComponent();
             
-            //Get player from database
-            player = Program.connection.GetPlayerById(playerId);
+            //Get player
+            this.player = player;
 
             //Get player from database
             enemy = Program.connection.GetEnemyById(enemyId);
@@ -100,12 +100,12 @@ namespace Xarxaria
             //Set the enemy as the winner of the fight (In case the user close the form, he looses)
             doesPlayerWin = false;
 
-            //Set enemy's music HARD CODE
+            //Play correct music
             if (enemy.Id == 7)//Drake
             {
                 Program.changeMusic(Program.musicId.drake);
             }
-            else if (enemy.Id == 2 || enemy.Id == 5)//Chef gobelin or Wendigo(not weakened)
+            else if (enemy.Id == 2 || enemy.Id == 5) //Gobelin chef or Wendigo(not weakened)
             {
                 Program.changeMusic(Program.musicId.boss);
             }

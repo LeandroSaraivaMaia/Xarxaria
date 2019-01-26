@@ -1,4 +1,4 @@
-﻿/**
+/**
 * \file      frmIntroduction.cs
 * \author    Johan Voland & Leandro Saraiva Maia
 * \version   1.0
@@ -28,11 +28,11 @@ namespace Xarxaria
         #region private attributes
         string defaultName = "Sir Godfroyd de Monaco";
         int defaultHealth = 20;
-        int defaultAgility = 2;
-        int defaultLuck = 2;
+        int defaultAgility = 1;
+        int defaultLuck = 1;
         int defaultForce = 1;
         int defaultArmor = 0;
-        int defaultPointsToDistribute = 5;
+        int defaultPointsToDistribute = 7;
         int maxNameSize = 50;
 
         //get points to distrbute

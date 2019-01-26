@@ -52,7 +52,9 @@ namespace Xarxaria
             {
                 if (numberOfItems != 0)
                 {
-                    lstItems.Items.Add(Program.connection.GetItemById(itemId).Name + "\t" + numberOfItems);
+                    string numberDisplay = "";
+                    if (numberOfItems > 1) numberDisplay = numberOfItems.ToString() + " ";
+                    lstItems.Items.Add(numberDisplay + Program.connection.GetItemById(itemId).Name);
                 }
                 itemId++;
             }

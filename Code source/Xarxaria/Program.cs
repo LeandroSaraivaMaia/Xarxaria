@@ -28,9 +28,7 @@ namespace Xarxaria
         static WMPLib.WindowsMediaPlayer hoverSound;
         static WMPLib.WindowsMediaPlayer clickSound;
         static WMPLib.WindowsMediaPlayer ambianceMusic;
-        static WMPLib.WindowsMediaPlayer battleMusic;
-        static WMPLib.WindowsMediaPlayer bossMusic;
-        static WMPLib.WindowsMediaPlayer drakeMusic;
+        static WMPLib.WindowsMediaPlayer actualMusic;
         #endregion
 
         #region public static attributes
@@ -53,9 +51,7 @@ namespace Xarxaria
             musicsVolume = volumeValue;
 
             ambianceMusic.settings.volume = volumeValue;
-            battleMusic.settings.volume = volumeValue;
-            bossMusic.settings.volume = volumeValue;
-            drakeMusic.settings.volume = volumeValue;
+            if (actualMusic != null) actualMusic.settings.volume = volumeValue;
         }
 
         /// <summary>
@@ -76,34 +72,32 @@ namespace Xarxaria
         /// <param name="id"></param>
         public static void changeMusic(musicId id)
         {
-            try
-            {
-                //Stop all music
-                ambianceMusic.controls.stop();
-                battleMusic.controls.stop();
-                bossMusic.controls.stop();
-                drakeMusic.controls.stop();
+            if (actualMusic != null) actualMusic.settings.mute = true;
+            ambianceMusic.settings.mute = true;
 
-                //Play the choosen music
-                switch (id)
-                {
-                    case musicId.ambiance:
-                        ambianceMusic.controls.play();
-                        break;
-                    case musicId.battle:
-                        battleMusic.controls.play();
-                        break;
-                    case musicId.boss:
-                        bossMusic.controls.play();
-                        break;
-                    case musicId.drake:
-                        drakeMusic.controls.play();
-                        break;
-                }
-            }
-            catch
+            //Play the choosen music
+            switch (id)
             {
-                Console.WriteLine("Unknown error to play music with id" + (int)id);
+                case musicId.ambiance:
+                    ambianceMusic.settings.mute = false;
+                    ambianceMusic.settings.setMode("loop", true);
+                    break;
+                case musicId.battle:
+                    actualMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Small_battle.mp3" };
+                    actualMusic.settings.setMode("loop", true);
+                    actualMusic.settings.mute = false;
+                    break;
+                case musicId.boss:
+                    actualMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Boss_battle.mp3" };
+                    actualMusic.settings.setMode("loop", true);
+                    actualMusic.settings.mute = false;
+                    break;
+                case musicId.drake:
+                    actualMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Drake_battle.mp3" };
+                    actualMusic.settings.setMode("loop", true);
+                    actualMusic.settings.mute = false;
+                    break;
+                default: throw new Exception("Unknow musicId");
             }
         }
 
@@ -128,7 +122,6 @@ namespace Xarxaria
             {
                 hoverSound.controls.stop();
                 hoverSound.controls.play();
-
             }
             catch
             {
@@ -159,28 +152,17 @@ namespace Xarxaria
         [STAThread]
         static void Main()
         {
+            //Define ambiance music
+            ambianceMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Ambiance.mp3" };
+            ambianceMusic.settings.setMode("loop", true);
+
             //Define sounds
             hoverSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\hover.wav" };
             clickSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\click.wav" };
 
-            //Define musics
-            ambianceMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Ambiance.mp3" };
-            battleMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Small_battle.mp3" };
-            bossMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Boss_battle.mp3" };
-            drakeMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Drake_battle.mp3" };
-
-            //Set the music to loop
-            ambianceMusic.settings.setMode("loop", true);
-            battleMusic.settings.setMode("loop", true);
-            bossMusic.settings.setMode("loop", true);
-            drakeMusic.settings.setMode("loop", true);
-
             //Stop the sounds so the audio doesn't directly play
             hoverSound.controls.stop();
             clickSound.controls.stop();
-
-            //Set the ambiance music
-            changeMusic(musicId.ambiance);
 
             //Instanciate new connection
             connection = new ConnectionDB();

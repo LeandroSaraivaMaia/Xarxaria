@@ -338,7 +338,8 @@ namespace Xarxaria
 
                     break;
                 case (int)Program.actionId.enemyFight:
-                    frmCombat combatForm = new frmCombat(actualPlayer.Id, actionValue);
+
+                    frmCombat combatForm = new frmCombat(actualPlayer, actionValue);
 
                     combatForm.ShowDialog();
 

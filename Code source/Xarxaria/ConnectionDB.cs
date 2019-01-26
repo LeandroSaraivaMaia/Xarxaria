@@ -34,7 +34,7 @@ namespace Xarxaria
         /// </summary>
         public ConnectionDB()
         {
-            string connectionString = "Data Source=localhost; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
+            string connectionString = "Data Source=xarxariadb.database.windows.net; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
             sqlConnection = new SqlConnection(connectionString);
         }
         #endregion

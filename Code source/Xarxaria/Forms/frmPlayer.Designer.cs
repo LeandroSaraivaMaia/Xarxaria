@@ -79,7 +79,7 @@
             this.lblArmor.AutoSize = true;
             this.lblArmor.BackColor = System.Drawing.Color.Transparent;
             this.lblArmor.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblArmor.Location = new System.Drawing.Point(12, 157);
+            this.lblArmor.Location = new System.Drawing.Point(12, 144);
             this.lblArmor.Name = "lblArmor";
             this.lblArmor.Size = new System.Drawing.Size(68, 16);
             this.lblArmor.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.lblAgility.AutoSize = true;
             this.lblAgility.BackColor = System.Drawing.Color.Transparent;
             this.lblAgility.Font = new System.Drawing.Font("Algerian", 11.25F);
-            this.lblAgility.Location = new System.Drawing.Point(12, 143);
+            this.lblAgility.Location = new System.Drawing.Point(12, 159);
             this.lblAgility.Name = "lblAgility";
             this.lblAgility.Size = new System.Drawing.Size(65, 16);
             this.lblAgility.TabIndex = 0;
