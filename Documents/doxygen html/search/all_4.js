@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['frmcombat',['frmCombat',['../class_xarxaria_1_1frm_combat.html',1,'Xarxaria.frmCombat'],['../class_xarxaria_1_1frm_combat.html#aa0a758b0449c3d6fe3d2ed45e30f31e3',1,'Xarxaria.frmCombat.frmCombat()']]],
+  ['frmcombat_2ecs',['frmCombat.cs',['../frm_combat_8cs.html',1,'']]],
+  ['frmintroduction',['frmIntroduction',['../class_xarxaria_1_1frm_introduction.html',1,'Xarxaria.frmIntroduction'],['../class_xarxaria_1_1frm_introduction.html#a6212eb12ceb217930a9b025619c07236',1,'Xarxaria.frmIntroduction.frmIntroduction()']]],
+  ['frmintroduction_2ecs',['frmIntroduction.cs',['../frm_introduction_8cs.html',1,'']]],
+  ['frmloadplayerselection',['frmLoadPlayerSelection',['../class_xarxaria_1_1frm_load_player_selection.html',1,'Xarxaria.frmLoadPlayerSelection'],['../class_xarxaria_1_1frm_load_player_selection.html#a58073053fb20244b54f43ef674dbc796',1,'Xarxaria.frmLoadPlayerSelection.frmLoadPlayerSelection()']]],
+  ['frmloadplayerselection_2ecs',['frmLoadPlayerSelection.cs',['../frm_load_player_selection_8cs.html',1,'']]],
+  ['frmmain',['frmMain',['../class_xarxaria_1_1frm_main.html',1,'Xarxaria.frmMain'],['../class_xarxaria_1_1frm_main.html#aafbc0391c09101dbd3a479a287bfa7f1',1,'Xarxaria.frmMain.frmMain()']]],
+  ['frmmain_2ecs',['frmMain.cs',['../frm_main_8cs.html',1,'']]],
+  ['frmmenu',['frmMenu',['../class_xarxaria_1_1frm_menu.html',1,'Xarxaria.frmMenu'],['../class_xarxaria_1_1frm_menu.html#aba4d45ab58388b89535fd2eb45cc2eaa',1,'Xarxaria.frmMenu.frmMenu()']]],
+  ['frmmenu_2ecs',['frmMenu.cs',['../frm_menu_8cs.html',1,'']]],
+  ['frmmessagebox',['frmMessageBox',['../class_xarxaria_1_1frm_message_box.html',1,'Xarxaria.frmMessageBox'],['../class_xarxaria_1_1frm_message_box.html#af24539b448f6910c7f4fe9db80ef34c8',1,'Xarxaria.frmMessageBox.frmMessageBox()']]],
+  ['frmmessagebox_2ecs',['frmMessageBox.cs',['../frm_message_box_8cs.html',1,'']]],
+  ['frmoptions',['frmOptions',['../class_xarxaria_1_1frm_options.html',1,'Xarxaria.frmOptions'],['../class_xarxaria_1_1frm_options.html#a2971056d74b2ebc1d5f82c390e5a2652',1,'Xarxaria.frmOptions.frmOptions()']]],
+  ['frmoptions_2ecs',['frmOptions.cs',['../frm_options_8cs.html',1,'']]],
+  ['frmplayer',['frmPlayer',['../class_xarxaria_1_1frm_player.html',1,'Xarxaria.frmPlayer'],['../class_xarxaria_1_1frm_player.html#ad3ad83dd711e0fd73a23134bea3d43fd',1,'Xarxaria.frmPlayer.frmPlayer()']]],
+  ['frmplayer_2ecs',['frmPlayer.cs',['../frm_player_8cs.html',1,'']]],
+  ['frmstart',['frmStart',['../class_xarxaria_1_1frm_start.html',1,'Xarxaria.frmStart'],['../class_xarxaria_1_1frm_start.html#ac747677a5491889158a411f3cf98a837',1,'Xarxaria.frmStart.frmStart()']]],
+  ['frmstart_2ecs',['frmStart.cs',['../frm_start_8cs.html',1,'']]]
+];
