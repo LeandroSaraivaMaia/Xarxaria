@@ -80,7 +80,7 @@ namespace Xarxaria
             {
                 case musicId.ambiance:
                     ambianceMusic.settings.mute = false;
-                    ambianceMusic.settings.setMode("loop", true);
+                    if (actualMusic != null) actualMusic.settings.mute = true;
                     break;
                 case musicId.battle:
                     actualMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Small_battle.mp3" };
@@ -146,6 +146,36 @@ namespace Xarxaria
         }
         #endregion
 
+        #region infinite loop
+        /// <summary>
+        /// Every second :
+        /// 
+        /// Check if the music is looping
+        /// </summary>
+        static async void loop()
+        {
+            while (true) {
+                await Task.Delay(10);
+                try {
+                    if (ambianceMusic.controls.currentPosition == 0) {
+                        ambianceMusic.controls.stop();
+                        ambianceMusic.controls.play();
+                    }
+
+                    if (actualMusic != null)
+                        if (actualMusic.controls.currentPosition >= actualMusic.controls.currentItem.duration) {
+                            actualMusic.controls.stop();
+                            actualMusic.controls.play();
+                        }
+                }
+                catch
+                {
+                    Console.WriteLine("Unknown exception for looping the sound (Program.cs => loop())");
+                }
+            }
+        }
+        #endregion
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -154,7 +184,9 @@ namespace Xarxaria
         {
             //Define ambiance music
             ambianceMusic = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\musics\Ambiance.mp3" };
-            ambianceMusic.settings.setMode("loop", true);
+            //ambianceMusic.settings.setMode("loop", true);
+
+            loop();
 
             //Define sounds
             hoverSound = new WMPLib.WindowsMediaPlayer { URL = Environment.CurrentDirectory + @"\assets\sounds\hover.wav" };
