@@ -273,7 +273,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCombat";
-            this.Text = "Xarxaria v1.0 - Combat";
+            this.Text = "Xarxaria v2.0 - Combat";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCombat_FormClosing);
             this.Load += new System.EventHandler(this.frmCombat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();

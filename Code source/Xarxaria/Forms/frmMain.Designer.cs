@@ -72,9 +72,9 @@ namespace Xarxaria
             this.cmdPlayer.ForeColor = System.Drawing.Color.Gold;
             this.cmdPlayer.Location = new System.Drawing.Point(12, 573);
             this.cmdPlayer.Name = "cmdPlayer";
-            this.cmdPlayer.Size = new System.Drawing.Size(151, 47);
+            this.cmdPlayer.Size = new System.Drawing.Size(157, 47);
             this.cmdPlayer.TabIndex = 1;
-            this.cmdPlayer.Text = "Feuille de personnage";
+            this.cmdPlayer.Text = "Stats et    inventaire";
             this.cmdPlayer.UseVisualStyleBackColor = false;
             this.cmdPlayer.Click += new System.EventHandler(this.cmdPlayer_Click);
             this.cmdPlayer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdPlayer_MouseDown);
@@ -157,7 +157,7 @@ namespace Xarxaria
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.Text = "Xarxaria v1.0 - Main";
+            this.Text = "Xarxaria v2.0 - Main";
             ((System.ComponentModel.ISupportInitialize)(this.picPage)).EndInit();
             this.ResumeLayout(false);
 

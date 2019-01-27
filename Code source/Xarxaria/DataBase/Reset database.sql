@@ -223,14 +223,14 @@ Comme vous aviez prévu initialement, vous devez trouver des informations concer
 ('Le quartier marchand', 'Vous vous promener un peu et vous trouvez un quartier marchand. A pars quelques mineurs à la tâche, le marché est quasiment désert. Il fait encore tôt donc cela ne vous étonne pas trop.
 Vous remarquez que toute l''économie locale est basée sur la pierre. Des bijoux aux ustensiles de cuisine, la plupart des articles sont en pierre. 
 Vous passez devant un marchand itinérant qui semble proposer du matériel intéressant :
-<1,Une étrange perle luisant en bleu,15;1> pour <1,1 pièce d''or,14;-1>
-<1,De l''eau bénite,16;1> pour <1,1 pièce d''or,14;-1>
+<1,Acheter l'' étrange perle luisante en bleu,15;1> en <1,payant 1 pièce d''or,14;-1>
+<1,Acheter de l''eau bénite,16;1> en <1,payant 1 pièce d''or,14;-1>
 Alors que vous pensez reconnaître les briques du château dans une échoppe de maçonnerie, vous trouvez enfin une boutique intéressante, l''armurerie.
 C''est le plus petit magasin du marché avec ce qui semble être le forgeron du village au vue de son tablier et de l''enclume en pierre derrière lui. Vous n''êtes plus surpris que les articles proposés sont exclusivement fait en pierre.
 Les objets suivants sont présentés sur l''étale du marchand :
-<1,Une massue en pierre,11;1>(<3,Votre force passe à 6,6>) pour <1,4 pièces d''or,14;-4>
-<1,Une casquette de mineur en pierre,1;1>(<4,Vous gagnez 1 armure,1>) pour <1,2 pièces d''or,14;-2>
-<1,Une dague en pierre,12;1>(<3,Votre force passe à 4,4>) pour <1,2 pièces d''or,14;-2>
+<1,Acheter une massue en pierre,11;1>(<3,Votre force passe à 6,6>) en <1,payant 4 pièces d''or,14;-4>
+<1,Acheter une casquette de mineur en pierre,1;1>(<4,Vous gagnez 1 armure,1>) en <1,payant 2 pièces d''or,14;-2>
+<1,Acheter une dague en pierre,12;1>(<3,Votre force passe à 4,4>) en <1,payant 2 pièces d''or,14;-2>
 Une fois vos achats effectués, vous pouvez :
 <0,Interroger les villageois,13>
 <0,Mendier pour essayer d''obtenir de l''or,14>
@@ -543,10 +543,10 @@ C''est une vieille dame, trapue et plutôt grosse. Sa peau est couverte de ride 
 L''intérieur est bien plus propre que l''aspect extérieur et bizarrement il y a beaucoup plus de place que vous ne le pensiez. Des potions soigneusement étiquetées aux couleurs variées sont rangées dans des étagères qui couvrent la quasi-intégralité des murs. On y trouve aussi des livres, des ustensiles de cuisine et beaucoup de bibelots que vous pensez magiques. Un four artisanal est contre le mur, vous remarquez qu''il brûle d''un intense et mystérieux feu violet. Il y a aussi des marmites et des casseroles posées aux pied des murs.
 Vous discutez brièvement avec la vieille dame. Elle raconte être une magicienne avant-gardiste qui a été rejeté par tout le monde. Vous vous doutez bien que cette vieille dame à "l''apparence innocente" pratique une magie défendue.
 Votre hôte propose de vous vendre ces différents objets à "moitié prix" vous dit-elle :
-- <2,Une potion de vitalité(+6 points de vie),6> pour <1,3 pièces d''or,14;-3>
-- <5,Une potion du serpent(+1 d''agilité),1> pour <1,2 pièces d''or,14;-2>
-- <6,Une potion de trèfle à quatre feuille(+1 chance),1> pour <1,2 pièces d''or,14;-2>
-Elle vous propose également <9,d''enchanter votre arme (+2 de force),2> pour la modique somme de <1,5 pièces d''or,14;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
+- <2,Acheter une potion de vitalité(+6 points de vie),6> en <1,payant 3 pièces d''or,14;-3>
+- <5,Acheter une potion du serpent(+1 d''agilité),1> en <1,payant 2 pièces d''or,14;-2>
+- <6,Acheter une potion de trèfle à quatre feuille(+1 chance),1> en <1,payant 2 pièces d''or,14;-2>
+Elle vous propose également <9,d''enchanter votre arme (+2 de force),2> en <1,payant la modique somme de 5 pièces d''or,14;-5>. "Une de ces stupides bricoles d''enchanteur de magie bleue" vous a t-elle expliqué.
 La vieille femme vous informe qu''il n''y a pas de sentier dans ces marais, il faudra donc continuer dans la boue. La boisson qu''elle vous a offerte est revigorante et vous sentez <2,vos forces revenir(+1 PV),1>
 Une fois votre marchandage terminée et votre thé bu, <0,vous reprenez votre route,41>, bien décidé à terrasser le drake.',
 'sorciere.jpg'),
@@ -571,7 +571,7 @@ Que souhaitez-vous faire :
 
 -- Page 42 --
 ('Trouver une chambre',
-'Vous vous dirigez vers le comptoir où se tient l''aubergiste, un homme âgé couvert de rides. Il est prêt à vous donner une chambre pour 2 pièces d''or.
+'Vous vous dirigez vers le comptoir où se tient l''aubergiste, un homme âgé couvert de rides. Il est prêt à vous donner une chambre pour *2 pièces d''or*.
 <0,Acceptez-vous cette offre,43> ou au contraire vous éloignez du comptoir et faire quelque chose d''autre :
 <0,Aller vers l''homme dans le coins de la salle,44>
 <0,Se diriger vers le groupe de voyageurs jouant aux cartes,49>
@@ -653,11 +653,11 @@ Que faites-vous ? :
 Grâce aux yeux bridés du marchand, vous devinez qu''il est originaire des pays de l''Orient. Vous ne connaissez que très peu de choses sur ces peuples, en vérité, il n''y a quasiment que des marchands qui quittent leur pays, le reste préfère rester chez soi.
 Vous admirez ses articles, on y trouve des épices, des pierres précieuses ainsi que certains équipements dignes d''intérêts.
 Parmis ces objets certains ont attirés votre attention :
-- <1,Jambières encombrantes,2;1> (<4,+2 armure,2> , <5,-1 agilité,-1>) pour <1,4 pièces d''or,14;-4>
-- <1,Bottes de Pégase,4;1> (<5,+2 agilité,2>) pour <1,2 pièces d''or,14;-2>
-- <1,Vieux foulard,5;1> (<6,+1 chance,1> et permet de résister au froid) pour <1,1 pièces d''or,14;-1>
-- <1,Lance du Champion en argent,8;1> (<3,force = 9,9>) pour <1,6 pièces d''or,14;-6>
-- <1,Épée en acier,10;1> (<3,force = 7,7>) pour <1,5 pièces d''or,14;-5>
+- <1,Acheter des jambières encombrantes,2;1> (<4,+2 armure,2> et <5,-1 agilité,-1>) en <1,payant 4 pièces d''or,14;-4>
+- <1,Acheter des bottes de Pégase,4;1> (<5,+2 agilité,2>) en <1,payant 2 pièces d''or,14;-2>
+- <1,Acheter un vieux foulard,5;1> (<6,+1 chance,1> et permet de résister au froid) pour <1,payant 1 pièces d''or,14;-1>
+- <1,Acheter la lance du Champion en argent,8;1> (<3,force = 9,9>) en <1,payant 6 pièces d''or,14;-6>
+- <1,Acheter l''épée en acier,10;1> (<3,force = 7,7>) en <1,payant 5 pièces d''or,14;-5>
 Une fois vos achats terminés, vous remerciez le marchand et retournez au centre de l''auberge. Que faites-vous ?
 <0,Chercher un endroit pour se reposer,42>
 <0,Aller vers l''homme dans le coin,44>
@@ -886,7 +886,7 @@ INSERT INTO Enemy (hp, force, armor, agility, luck, name, image) VALUES
 (10, 3, 1, 4, 3, 'Gobelin', 'gobelin.jpg'),
 (16, 5, 2, 5, 4, 'Chef gobelin', 'chefGobelin.jpg'),
 (35, 5, 1, 2, 3, 'Bandit', 'bandit.jpg'),
-(25, 4, 3, 3, 0, 'Araignée squelette', 'araigneeSquelette.png'),
+(25, 4, 2, 3, 0, 'Araignée squelette', 'araigneeSquelette.png'),
 (30, 4, 1, 6, 2, 'Wendigo', 'wendigo.jpg'),
 (20, 3, 0, 3, 1, 'Wendigo affaibli', 'wendigoAffaibli.jpg'),
 (50, 7, 3, 4, 0, 'Drake', 'drake.jpg');

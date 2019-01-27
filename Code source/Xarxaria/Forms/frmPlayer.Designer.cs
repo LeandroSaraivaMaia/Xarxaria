@@ -158,7 +158,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPlayer";
-            this.Text = "Xarxaria v1.0 - Personnage";
+            this.Text = "Xarxaria v2.0 - Personnage";
             this.ResumeLayout(false);
             this.PerformLayout();
 

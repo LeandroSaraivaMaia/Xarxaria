@@ -1,13 +1,13 @@
 /**
- * \file      frmMain.cs
- * \author    Johan Voland & Leandro Saraiva Maia
- * \version   1.0
- * \date      November 21. 2018
- * \brief     Main form of the game
- *
- * \details   This form will represent a page in our interactive digital book.
- * It contains the main text, an image, option button, player caracteristics button and usable link in the text.
- */
+* \file      frmMain.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   2.0
+* \date      November 21. 2018
+* \brief     Main form of the game.
+*
+* \details   This form will represent a page in our interactive digital book.
+* It contains the main text, an image, option button, player caracteristics button and usable link in the text.
+*/
 
 #region using
 using System;
@@ -34,21 +34,30 @@ namespace Xarxaria
         #endregion
 
         #region public accessor
-        public float ZoomFactor { get { return txtPage.ZoomFactor; } set {
+        public float ZoomFactor
+        {
+            get { return txtPage.ZoomFactor; }
+            set
+            {
                 txtPage.ZoomFactor = value;
                 txtPage.oldZoomFactor = value;
             }
         }
-        public HorizontalAlignment TextAlign { get { return txtPage.SelectionAlignment; } set {
+        public HorizontalAlignment TextAlign
+        {
+            get { return txtPage.SelectionAlignment; }
+            set
+            {
                 //When the change alignement change, select all the text to change alignement
                 txtPage.SelectAll();
                 txtPage.SelectionAlignment = value;
-            } }
+            }
+        }
         #endregion
 
         #region constructor
         /// <summary>
-        /// Main form constructor that load a player
+        /// Main form constructor that load a player.
         /// </summary>
         public frmMain(int playerId)
         {
@@ -75,7 +84,7 @@ namespace Xarxaria
 
         #region infinite loop
         /// <summary>
-        /// Check if the forms needs to be closed
+        /// Check if the forms needs to be closed.
         /// </summary>
         public async void infiniteLoop()
         {
@@ -94,7 +103,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the help button :
         /// 
-        /// Display informations to play Xarxaria
+        /// Display informations to play Xarxaria.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -112,7 +121,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Click on the button "Feuille de personnage"
+        /// Click on the button "Feuille de personnage".
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,7 +133,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Click on the button "Menu"
+        /// Click on the button "Menu".
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -155,7 +164,7 @@ namespace Xarxaria
         /// Event when with have any contact with the main text (Selection or click)
         /// 
         /// The active control is redirected to the titleLabel,
-        /// this avoid the main text to be selected and not looking good
+        /// this avoid the main text to be selected and not looking good.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -165,7 +174,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Event when a link in the main text is clicked
+        /// Event when a link in the main text is clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -186,7 +195,7 @@ namespace Xarxaria
             }
             else if (contents.Length < 3)
             {
-                throw new Exception("Not enought values between beacons (needs 3 and there is "+ contents.Length +"). Check commas");
+                throw new Exception("Not enought values between beacons (needs 3 and there is " + contents.Length + "). Check commas");
             }
 
             //Get what action need to be done
@@ -269,7 +278,7 @@ namespace Xarxaria
 
                     //Get name
                     Item item = Program.connection.GetItemById(itemId + 1);
-                    
+
                     if (numberOfItems < 0) { MessageBox.Show("Vous perdez " + Math.Abs(numberOfItems) + " fois l'objet '" + item.Name + "'", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                     else if (numberOfItems > 0) { MessageBox.Show("Vous obtenez " + numberOfItems + " fois l'objet '" + item.Name + "'", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
@@ -280,7 +289,7 @@ namespace Xarxaria
 
                     //Will maybe be replaced by a little animation/sound
                     if (actionValue < 0) { MessageBox.Show(contents[1] + " points de vie", "Ouch", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-                    else if (actionValue > 0){ MessageBox.Show("+" + contents[1] + " points de vie", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else if (actionValue > 0) { MessageBox.Show("+" + contents[1] + " points de vie", "Mmmh", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
                     //Test if the player die
                     if (actualPlayer.Hp <= 0)
@@ -353,7 +362,7 @@ namespace Xarxaria
                     }
 
                     break;
-                default : throw new Exception("Action id unknown");
+                default: throw new Exception("Action id unknown");
             }
 
             //Trigger the getter of the zoomFactor to apply zoom correctly
@@ -366,7 +375,7 @@ namespace Xarxaria
 
         #region private methods
         /// <summary>
-        /// Change the actual page with a given id
+        /// Change the actual page with a given id.
         /// </summary>
         /// <param name="pageId"></param>
         void ChangePage(int pageId, uint inactiveLinks = 0)
@@ -413,31 +422,31 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Takes a string and an int list in arguments
+        /// Takes a string and an int list in arguments.
         /// 
         /// The methods iterate over the string.
         /// Every time there is a beacon with the symbol greater than and lesser than, the program read inside the beacon values that are formatted.
         /// 
         /// The format rules are as follow :
         /// 
-        ///     There is 3 values in the beacon separated by commas
-        ///     The first value [0] is the action id (Page change, item add, etc, see enum actionId)
-        ///     The second value [1] is the shown text
-        ///     The third value [2] is the action value
+        ///     There is 3 values in the beacon separated by commas :
+        ///     The first value [0] is the action id (Page change, item add, etc, see enum actionId).
+        ///     The second value [1] is the shown text.
+        ///     The third value [2] is the action value.
         ///     
-        ///     The third value [2] can have multiple values divided by a semicolon
-        ///     It is used for example in the item add action because it needs multiple values (id of the item and number of item added/removed)
+        ///     The third value [2] can have multiple values divided by a semicolon.
+        ///     It is used for example in the item add action because it needs multiple values (id of the item and number of item added/removed).
         /// 
         /// The int list "selectedLinks" is used to set certain links inactive.
-        /// The values in this list represent the index of the link in order of apparition (Begining to the end)
-        /// If a value in this list is equal to the current iterated link, the link will be inactive otherwise it will be active
+        /// The values in this list represent the index of the link in order of apparition (Begining to the end).
+        /// If a value in this list is equal to the current iterated link, the link will be inactive otherwise it will be active.
         /// 
-        /// When a link is clicked, see txtPage_LinkClicked event to see what happen
+        /// When a link is clicked, see txtPage_LinkClicked event to see what happen.
         /// 
-        /// The text can't have an empty symbol
-        /// example : blabla <> blabla
+        /// The text can't have an empty symbol.
+        /// example : blabla <> blabla.
         /// 
-        /// The text can't have two opening symbol or two closing symbol if they are not opened/closed
+        /// The text can't have two opening symbol or two closing symbol if they are not opened/closed.
         /// </summary>
         /// <param name="text"></param>
         /// <param name="selectedInactiveLinks"></param>
@@ -554,7 +563,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdMenu_MouseDown(object sender, MouseEventArgs e)
@@ -604,7 +613,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

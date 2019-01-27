@@ -1,12 +1,12 @@
 ﻿/**
- * \file      Enemy.cs
- * \author    Johan Voland & Leandro Saraiva Maia
- * \version   1.0
- * \date      Jannuary 10. 2019
- * \brief     Enemy class
- *
- * \details   This class represent an enemy. An enemy has the same caracteristic that the player (Health, armor, force, agility, luck)
- */
+* \file      Enemy.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   2.0
+* \date      Jannuary 10. 2019
+* \brief     Enemy class.
+*
+* \details   This class represent an enemy. An enemy has the same caracteristic that the player (Health, armor, force, agility, luck).
+*/
 
 #region using
 using System;
@@ -43,13 +43,26 @@ namespace Xarxaria
         #endregion
 
         #region constructor
-        //Empty enemy constructor to compile
+        /// <summary>
+        /// Empty constructor.
+        /// </summary>
         public Enemy()
         {
 
         }
 
         //Enemy constructor
+        /// <summary>
+        /// Constructor with enemy's caracteristics and image.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="hp"></param>
+        /// <param name="force"></param>
+        /// <param name="agility"></param>
+        /// <param name="armor"></param>
+        /// <param name="luck"></param>
+        /// <param name="name"></param>
+        /// <param name="image"></param>
         public Enemy(int id, int hp, int force, int agility, int armor, int luck, string name, string image)
         {
             this.id = id;
@@ -64,7 +77,10 @@ namespace Xarxaria
         #endregion
 
         #region public methods
-
+        /// <summary>
+        /// Set enemy's hp.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetHp(int val)
         {
             hp += val;
@@ -75,6 +91,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set enemy's armor.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetArmor(int val)
         {
             armor += val;
@@ -85,6 +105,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set enemy's force.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetForce(int val)
         {
             force += val;
@@ -95,6 +119,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set enemy's agility.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetAgility(int val)
         {
             agility += val;
@@ -105,6 +133,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set enemy's luck.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetLuck(int val)
         {
             luck += val;

@@ -1,13 +1,13 @@
 ﻿/**
- * \file      Player.cs
- * \author    Johan Voland & Leandro Saraiva Maia
- * \version   1.0
- * \date      December 6. 2018
- * \brief     Player class
- *
- * \details   This class represent a player and contains all the value in the database for a player.
- * There are public methods to interact with the player's inventory and caracteristics.
- */
+* \file      Player.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   2.0
+* \date      December 6. 2018
+* \brief     Player class.
+*
+* \details   This class represent a player and contains all the value in the database for a player.
+* There are public methods to interact with the player's inventory and caracteristics.
+*/
 
 #region using
 using System;
@@ -48,13 +48,26 @@ namespace Xarxaria
         #endregion
 
         #region constructor
-        //Empty player constructor to compile
+        /// <summary>
+        /// Empty player constructor.
+        /// </summary>
         public Player()
         {
-            
-        }
 
-        //Player constructor
+        }
+        /// <summary>
+        /// Player constructor with caracteristics.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="hp"></param>
+        /// <param name="force"></param>
+        /// <param name="agility"></param>
+        /// <param name="armor"></param>
+        /// <param name="luck"></param>
+        /// <param name="name"></param>
+        /// <param name="idActualPage"></param>
+        /// <param name="InactiveLinksInActualPage"></param>
+        /// <param name="inventory"></param>
         public Player(int id, int hp, int force, int agility, int armor, int luck, string name, int idActualPage, uint InactiveLinksInActualPage, Inventory inventory)
         {
             this.id = id;
@@ -71,16 +84,28 @@ namespace Xarxaria
         #endregion
 
         #region public methods
+        /// <summary>
+        /// Get the player's inventory in database.
+        /// </summary>
         public void LoadInventory()
         {
             inventory = Program.connection.GetInventoryByPlayerId(Id);
         }
 
+        /// <summary>
+        /// Set item in player's inventory.
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <param name="numberOfItem"></param>
         public void SetItem(int itemId, int numberOfItem)
         {
             inventory.SetItem(itemId, numberOfItem);
         }
 
+        /// <summary>
+        /// Set player's hp.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetHp(int val)
         {
             hp += val;
@@ -91,6 +116,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set player's armor.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetArmor(int val)
         {
             armor += val;
@@ -101,6 +130,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set player's force.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetForce(int val)
         {
             force += val;
@@ -111,6 +144,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set player's agility.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetAgility(int val)
         {
             agility += val;
@@ -121,6 +158,10 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set player's luck.
+        /// </summary>
+        /// <param name="val"></param>
         public void SetLuck(int val)
         {
             luck += val;
@@ -131,11 +172,22 @@ namespace Xarxaria
             };
         }
 
+        /// <summary>
+        /// Set player's actual page.
+        /// </summary>
+        /// <param name="id"></param>
         public void SetActualPage(int id)
         {
             idActualPage = id;
         }
 
+        /// <summary>
+        /// Override ToString method.
+        /// In frmLoadSelection, there is a control list containing player object.
+        /// When an object is contained in a control list, the list automatically uses the ToString method of the object to be the string displayed in the list.
+        /// This methods returns the player name and the actual page title, so the user that load the save know where he was.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Name + ", " + Program.connection.GetPage(IdActualPage).Title;

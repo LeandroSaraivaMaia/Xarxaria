@@ -175,13 +175,13 @@
     "ium aliquet erat vitae, pellentesque sodales leo. In volutpat. ";
             this.txtExample.Enter += new System.EventHandler(this.txtExample_Enter);
             // 
-            // barVolumeEffects
+            // barVolumeEffect
             // 
             this.barVolumeEffect.AutoSize = false;
             this.barVolumeEffect.BackColor = System.Drawing.Color.AntiqueWhite;
             this.barVolumeEffect.LargeChange = 1;
             this.barVolumeEffect.Location = new System.Drawing.Point(109, 140);
-            this.barVolumeEffect.Name = "barVolumeEffects";
+            this.barVolumeEffect.Name = "barVolumeEffect";
             this.barVolumeEffect.Size = new System.Drawing.Size(128, 29);
             this.barVolumeEffect.TabIndex = 10;
             this.barVolumeEffect.Value = 5;
@@ -219,7 +219,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOptions";
-            this.Text = "Xarxaria v1.0 - Options";
+            this.Text = "Xarxaria v2.0 - Options";
             ((System.ComponentModel.ISupportInitialize)(this.numPoliceZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barVolumeMusic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barVolumeEffect)).EndInit();

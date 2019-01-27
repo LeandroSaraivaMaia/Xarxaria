@@ -1,11 +1,11 @@
 ﻿/**
 * \file      frmMenu.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      November 22. 2018
-* \brief     Menu form
+* \brief     Menu form.
 *
-* \details   This form contain options and save functionality
+* \details   This form contain options and save functionality.
 */
 
 #region using
@@ -36,7 +36,7 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Menu form constructor
+        /// Menu form constructor.
         /// </summary>
         public frmMenu(Player player)
         {
@@ -58,7 +58,7 @@ namespace Xarxaria
         /// <summary>
         /// Continue button :
         /// 
-        /// Close menu form and go back to main form
+        /// Close menu form and go back to main form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -70,7 +70,7 @@ namespace Xarxaria
         /// <summary>
         /// Save button :
         /// 
-        /// TODO Save the player state
+        /// Save the player state.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +83,7 @@ namespace Xarxaria
         /// <summary>
         /// Options button :
         /// 
-        /// Open the options form
+        /// Open the options form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -96,7 +96,7 @@ namespace Xarxaria
         /// <summary>
         /// Quit button :
         /// 
-        /// Return to the start screen
+        /// Return to the start screen.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -113,7 +113,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
 
@@ -178,7 +178,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

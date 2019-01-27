@@ -1,9 +1,9 @@
 ﻿/**
 * \file      frmMessageBox.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      January 17. 2019
-* \brief     Message box replacement
+* \brief     Message box replacement.
 *
 * \details   This is a new texture for the traditional message box.
 */
@@ -28,6 +28,11 @@ namespace Xarxaria
     public partial class frmMessageBox : Form
     {
         #region constructor
+        /// <summary>
+        /// frmMessage box constructor.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
         public frmMessageBox(string message, string title)
         {
             InitializeComponent();
@@ -43,10 +48,10 @@ namespace Xarxaria
 
         #region events
         /// <summary>
-        /// Event when there is any contact with the message text (Selection or click)
+        /// Event when there is any contact with the message text (Selection or click) :
         /// 
         /// The active control is redirected to the titleLabel,
-        /// this avoid the message text to be selected not look good
+        /// this avoid the message text to be selected not look good.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,7 +63,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the ok button :
         /// 
-        /// Close the form
+        /// Close the form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -69,7 +74,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdOk_MouseDown(object sender, MouseEventArgs e)
@@ -91,7 +96,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

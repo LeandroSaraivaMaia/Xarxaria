@@ -1,13 +1,13 @@
 ﻿/**
- * \file      Inventory.cs
- * \author    Johan Voland & Leandro Saraiva Maia
- * \version   1.0
- * \date      December 6. 2018
- * \brief     Inventory class
- *
- * \details   This class contains an int array containing indexing all the item of the game by id (- 1).
- * There are public methods to interract with the inventory.
- */
+* \file      Inventory.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   2.0
+* \date      December 6. 2018
+* \brief     Inventory class.
+*
+* \details   This class contains an int array containing indexing all the item of the game by id (- 1).
+* There are public methods to interract with the inventory.
+*/
 
 #region using
 using System;
@@ -31,13 +31,23 @@ namespace Xarxaria
         #endregion
 
         #region constructor
-        //Empty inventory constructor to compile
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
+        /// <param name="numberOfItems"></param>
         public Inventory(int numberOfItems)
         {
             InitliaizeItemList(numberOfItems);
         }
 
         //Inventory constructor
+        /// <summary>
+        /// Constructor that take two arguments :
+        /// - The number of items to initialize empty item array.
+        /// - An item array
+        /// </summary>
+        /// <param name="numberOfItems"></param>
+        /// <param name="items"></param>
         public Inventory(int numberOfItems, int[] items)
         {
             InitliaizeItemList(numberOfItems);
@@ -47,7 +57,7 @@ namespace Xarxaria
 
         #region private methods
         /// <summary>
-        /// Initialize number of items if it is not initalized
+        /// Initialize number of items if it is not initalized.
         /// </summary>
         void InitliaizeItemList(int numberOfItems)
         {
@@ -61,13 +71,17 @@ namespace Xarxaria
                     items[i] = 0;
             }
         }
-        
         #endregion
 
         #region public methods
+        /// <summary>
+        /// Change the number of item, indexing by id.
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <param name="numberOfItem"></param>
         public void SetItem(int itemId, int numberOfItem)
         {
-
+            //Apply change on the selected item (by id)
             items[itemId] += numberOfItem;
 
             if (items[itemId] < 0)

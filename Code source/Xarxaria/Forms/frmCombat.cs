@@ -1,9 +1,9 @@
 /**
 * \file      frmCombat.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      December 13. 2018
-* \brief     Combat form of the game
+* \brief     Combat form of the game.
 *
 * \details   This form is opened when a combat is asked. It purpose is to enable the player to fight an enemy.
 */
@@ -45,8 +45,11 @@ namespace Xarxaria
         #endregion
 
         #region private accessor
-        int DamageGiven { get { return damageGiven; }
-            set {
+        int DamageGiven
+        {
+            get { return damageGiven; }
+            set
+            {
                 //If the given value is below 0, put it to 0
                 if (value < 0) value = 0;
 
@@ -57,13 +60,13 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// The combat form constructor
+        /// The combat form constructor.
         /// </summary>
         /// <param name="idEnemy"></param>
         public frmCombat(Player player, int enemyId)
         {
             InitializeComponent();
-            
+
             //Get player
             this.player = player;
 
@@ -126,7 +129,7 @@ namespace Xarxaria
 
         #region private methods
         /// <summary>
-        /// Adds text in the log rich text box
+        /// Adds text in the log rich text box.
         /// </summary>
         /// <param name="text"></param>
         void AddLog(string text)
@@ -137,9 +140,9 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Adds text in the log rich text box
+        /// Adds text in the log rich text box.
         /// 
-        /// This overload allows-us to change the color and to underline the added text
+        /// This overload allows-us to change the color and to underline the added text.
         /// </summary>
         /// <param name="text"></param>
         void AddLog(string text, Color color, bool isUnderline = false)
@@ -150,7 +153,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// The player try to attack the enemy (manages evade and damage given)
+        /// The player try to attack the enemy (manages evade and damage given).
         /// </summary>
         void PlayerAttack()
         {
@@ -177,7 +180,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// The enemy try to attack the player (manages evade and damage given)
+        /// The enemy try to attack the player (manages evade and damage given).
         /// </summary>
         void EnemyAttack()
         {
@@ -194,17 +197,17 @@ namespace Xarxaria
             int enemyCriticalChance = enemy.Luck * luckCriticalStrikeChancePercentage;
             if (enemyCriticalChance >= rnd.Next(1, 100))
                 criticalStrike = 1;
-            
+
             //Apply damage
             DamageGiven = enemy.Force + criticalStrike - player.Armor;
-            player.SetHp(- DamageGiven);
+            player.SetHp(-DamageGiven);
             AddLog("\n\n", enemyColorLog);
             if (criticalStrike != 0) AddLog("Coup critique !\n", enemyColorLog);
             AddLog("L'ennemi vous inflige " + DamageGiven + " points de dégâts.", enemyColorLog);
         }
 
         /// <summary>
-        /// Update the values of the player and the enemy
+        /// Update the values of the player and the enemy.
         /// </summary>
         void RefreshDisplay()
         {
@@ -228,7 +231,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the help button :
         /// 
-        /// Display informations about the fighting systems
+        /// Display informations about the fighting systems.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -243,7 +246,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on next turn button :
         /// 
-        /// Play the next turn where the player and the enemy alternate attack turn
+        /// Play the next turn where the player and the enemy alternate attack turn.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -284,10 +287,10 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Event when with have any contact with the logs (Selection or click)
+        /// Event when with have any contact with the logs (Selection or click) :
         /// 
         /// The active control is redirected to the player label,
-        /// this avoid the logs to be selected and not looking good
+        /// this avoid the logs to be selected and not looking good.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -301,7 +304,7 @@ namespace Xarxaria
         /// 
         /// First test the agility, if the agility score is the same then
         /// test the chance and if the chance score is the same then
-        /// choose a character randomly
+        /// choose a character randomly.
         /// </summary>
         public async void DefineWhoAttackFirst()
         {
@@ -322,14 +325,14 @@ namespace Xarxaria
                 {
                     //Initialization finished
                     case 0: return;
-                    
+
                     //Welcome message
                     case 1:
                         AddLog("\nLe personnage avec le plus "); AddLog("grand score d'agilité", infoColorLog, false); AddLog(" commence à attaquer.");
                         initStep++;
-                        
+
                         break;
-                    
+
                     //Agility test
                     case 2:
                         if (player.Agility > enemy.Agility)
@@ -353,7 +356,7 @@ namespace Xarxaria
                             initStep++;
                         }
                         break;
-                    
+
                     //Luck test
                     case 3:
                         if (player.Luck > enemy.Luck)
@@ -402,7 +405,7 @@ namespace Xarxaria
         /// <summary>
         /// The form load :
         /// 
-        /// Initiate the combat
+        /// Initiate the combat.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -417,7 +420,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdNextTurn_MouseDown(object sender, MouseEventArgs e)
@@ -432,7 +435,7 @@ namespace Xarxaria
         /// <summary>
         /// When the button is "unclicked" (mouse released) or the mouse leave the button :
         /// 
-        /// Put the button "not clicked" image
+        /// Put the button "not clicked" image.
         /// 
         /// This form has a button that doesn't redirect to another form, so we need to change the image when the mouse button is released.
         /// </summary>
@@ -463,7 +466,7 @@ namespace Xarxaria
         /// <summary>
         /// The form is closing :
         /// 
-        /// Change the music to the ambiance music
+        /// Change the music to the ambiance music.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -475,7 +478,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

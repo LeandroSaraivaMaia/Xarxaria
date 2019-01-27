@@ -1,9 +1,9 @@
 ﻿/**
 * \file      Item.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      January 16. 2019
-* \brief     Item class
+* \brief     Item class.
 *
 * \details   This class represent an item in the database.
 */
@@ -41,13 +41,24 @@ namespace Xarxaria
         #endregion
 
         #region constructor
-        //Empty constructor
+        /// <summary>
+        /// Empty constructor.
+        /// </summary>
         public Item()
         {
 
         }
-
-        //Initialization constructor
+        
+        /// <summary>
+        /// Constructor with caracteristics initialization.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="hp"></param>
+        /// <param name="force"></param>
+        /// <param name="agility"></param>
+        /// <param name="armor"></param>
+        /// <param name="luck"></param>
+        /// <param name="name"></param>
         public Item(int id, int hp, int force, int agility, int armor, int luck, string name)
         {
             this.id = id;

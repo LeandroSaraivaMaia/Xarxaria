@@ -1,16 +1,16 @@
 /**
- * \file      RichTextBoxExtension.cs
- * \author    Leandro Saraiva Maia
- * \version   1.0
- * \date      November 22. 2018
- * \brief     Extension for the RichTextBox of .NET
- *
- * \details   This extension permit to add links in the RichTextBox in .NET.
- * It allow us to personalize links value and link shown text.
- * 
- * The original code is available here :
- * https://www.codeproject.com/Articles/9196/Links-with-arbitrary-text-in-a-RichTextBox
- */
+* \file      RichTextBoxExtension.cs
+* \author    Leandro Saraiva Maia
+* \version   2.0
+* \date      November 22. 2018
+* \brief     Extension for the RichTextBox of .NET.
+*
+* \details   This extension permit to add links in the RichTextBox in .NET.
+* It allow us to personalize links value and link shown text.
+* 
+* The original code is available here :
+* https://www.codeproject.com/Articles/9196/Links-with-arbitrary-text-in-a-RichTextBox
+*/
 
 #region using
 using System;
@@ -135,7 +135,7 @@ namespace Xarxaria
 
         //------------------------Not here by default------------------------
         /// <summary>
-        /// Scroll the scroll bar to the top
+        /// Scroll the scroll bar to the top.
         /// </summary>
         public void ScrollToTop()
         {
@@ -143,7 +143,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Scroll the scroll bar to the top
+        /// Scroll the scroll bar to the top.
         /// </summary>
         public void ScrollToBottom()
         {
@@ -151,7 +151,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Deactivate ctrl + mouse wheel zoom
+        /// Deactivate ctrl + mouse wheel zoom.
         /// </summary>
         /// <param name="m"></param>
         protected override void WndProc(ref Message m)
@@ -174,7 +174,13 @@ namespace Xarxaria
             }
         }
 
-        //This method allow us to add a text with a specific style (color & underline)
+        /// <summary>
+        /// Add a text with a specific style (color & underline)
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="color"></param>
+        /// <param name="isUnderline"></param>
+        /// <param name="isBold"></param>
         public void AppendText(string text, Color color, bool isUnderline = false, bool isBold = false)
         {
             if (isUnderline)

@@ -73,7 +73,7 @@
             this.cmdLoad.Name = "cmdLoad";
             this.cmdLoad.Size = new System.Drawing.Size(162, 52);
             this.cmdLoad.TabIndex = 2;
-            this.cmdLoad.Text = "Charger d\'une partie";
+            this.cmdLoad.Text = "Charger une partie";
             this.cmdLoad.UseVisualStyleBackColor = false;
             this.cmdLoad.Click += new System.EventHandler(this.cmdLoad_Click);
             this.cmdLoad.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmdLoad_MouseDown);
@@ -145,7 +145,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStart";
-            this.Text = "Xarxaria v1.0";
+            this.Text = "Xarxaria v2.0";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

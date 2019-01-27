@@ -148,7 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
-            this.Text = "Xarxaria v1.0 - Menu";
+            this.Text = "Xarxaria v2.0 - Menu";
             this.ResumeLayout(false);
 
         }

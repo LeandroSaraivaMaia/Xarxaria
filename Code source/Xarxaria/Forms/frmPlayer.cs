@@ -1,11 +1,11 @@
 ﻿/**
 * \file      frmPlayer.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      November 22. 2018
-* \brief     Player form
+* \brief     Player form.
 *
-* \details   Display the current player caracteristics and items
+* \details   Display the current player caracteristics and items.
 */
 
 #region using
@@ -30,7 +30,7 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Player form constructo, takes a player as an argument
+        /// Player form constructo, takes a player as an argument.
         /// </summary>
         /// <param name="player"></param>
         public frmPlayer(Player player)
@@ -68,7 +68,7 @@ namespace Xarxaria
         /// <summary>
         /// Continue button :
         /// 
-        /// Close the player form and go back to the main form
+        /// Close the player form and go back to the main form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -79,7 +79,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdPlayerContinue_MouseDown(object sender, MouseEventArgs e)
@@ -101,7 +101,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

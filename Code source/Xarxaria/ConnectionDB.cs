@@ -1,12 +1,12 @@
 /**
- * \file      ConnectionDB.cs
- * \author    Johan Voland
- * \version   1.0
- * \date      November 28. 2018
- * \brief     Set of methods to interact with the database
- *
- * \details   This file contains all the necessary attributes and methods to interact with the database.
- */
+* \file      ConnectionDB.cs
+* \author    Johan Voland
+* \version   2.0
+* \date      November 28. 2018
+* \brief     Set of methods to interact with the database.
+*
+* \details   This file contains all the necessary attributes and methods to interact with the database.
+*/
 
 #region using
 using System;
@@ -29,8 +29,8 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Connection to the DB in the constructor
-        /// Uses the "xarxariaLogin" user in the "XarxariaDB" database
+        /// Connection to the DB in the constructor.
+        /// Uses the "xarxariaLogin" user in the "XarxariaDB" database on the "xarxariadb.database.windows.net" server.
         /// </summary>
         public ConnectionDB()
         {
@@ -41,7 +41,7 @@ namespace Xarxaria
 
         #region Modify query
         /// <summary>
-        /// Add a player in the database
+        /// Add a player in the database.
         /// </summary>
         /// <param name="name">Name of the player</param>
         /// <param name="hp">Number of Health Points</param>
@@ -50,11 +50,12 @@ namespace Xarxaria
         /// <param name="agility">Number of force</param>
         /// <param name="luck">Number of force</param>
         /// <param name="idActualPage">Id of the actual page</param>
+        /// <param name="inactiveLinks">inactive links of the actual page (prevents not clicking two times on the same link)</param>
         public void AddPlayer(string name, int hp, int force, int armor, int agility, int luck, int idActualPage, int inactiveLinks)
         {
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Player (hp, force, armor , agility, luck, name, inactiveLinks, idActualPage) VALUES (" + hp+", "+force+", "+armor+", "+agility+", "+luck+", '"+name+"', "+ inactiveLinks+", "+idActualPage+")";
+            cmd.CommandText = "INSERT INTO Player (hp, force, armor , agility, luck, name, inactiveLinks, idActualPage) VALUES (" + hp + ", " + force + ", " + armor + ", " + agility + ", " + luck + ", '" + name + "', " + inactiveLinks + ", " + idActualPage + ")";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
@@ -66,9 +67,9 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Save the player progression
+        /// Save the player's progression.
         /// </summary>
-        /// <param name="player">player's datas</param>
+        /// <param name="player">player's values</param>
         public void SavePlayer(Player player)
         {
             SqlCommand cmd;
@@ -158,6 +159,11 @@ namespace Xarxaria
         #endregion
 
         #region Select query
+        /// <summary>
+        /// Get an enemy object with his id in database.
+        /// </summary>
+        /// <param name="enemyId"></param>
+        /// <returns>Enemy object</returns>
         public Enemy GetEnemyById(int enemyId)
         {
             Enemy enemy = new Enemy();
@@ -201,6 +207,11 @@ namespace Xarxaria
             }
         }
 
+        /// <summary>
+        /// Get an item object with his id in database.
+        /// </summary>
+        /// <param name="itemId"></param>
+        /// <returns>Item object</returns>
         public Item GetItemById(int itemId)
         {
             Item item = new Item();
@@ -221,7 +232,7 @@ namespace Xarxaria
             while (reader.Read())
             {
                 itemFound = true;
-                
+
                 item = new Item(int.Parse(reader["id"].ToString()),
                     int.Parse(reader["hp"].ToString()),
                     int.Parse(reader["force"].ToString()),
@@ -242,9 +253,9 @@ namespace Xarxaria
                 throw new Exception("Item with id " + itemId + " not found in database");
             }
         }
-        
+
         /// <summary>
-        /// Get all the players in the database
+        /// Get all the players in the database.
         /// </summary>
         /// <returns>A list of all the players</returns>
         public List<Player> GetPlayers()
@@ -252,6 +263,7 @@ namespace Xarxaria
             //List that will contain all the players
             List<Player> players = new List<Player>();
 
+            //Iterate the same number of times that there is player in database
             for (int playerId = 1; playerId < GetNumberOfPlayer() + 1; playerId++)
             {
                 players.Add(GetPlayerById(playerId));
@@ -261,7 +273,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Get the number of different items
+        /// Get the number of different items.
         /// </summary>
         /// <returns>Number of different items</returns>
         public int GetNumberOfItems()
@@ -286,9 +298,9 @@ namespace Xarxaria
 
             return numberOfItems;
         }
-        
+
         /// <summary>
-        /// Get the number of player in the database
+        /// Get the number of player in the database.
         /// </summary>
         /// <returns>Number of player in the database</returns>
         public int GetNumberOfPlayer()
@@ -315,34 +327,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Get the number of player in the database
-        /// </summary>
-        /// <returns>Number of player in the database</returns>
-        public int GetNumberOfInventory()
-        {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
-            int numberOfInventory = 0;
-
-            cmd.CommandText = "SELECT * FROM Inventory";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnection;
-
-            sqlConnection.Open();
-
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                numberOfInventory++;
-            }
-
-            sqlConnection.Close();
-
-            return numberOfInventory;
-        }
-
-        /// <summary>
-        /// Get all the player values from the database
+        /// Get player from the database with id.
         /// </summary>
         /// <param name="playerId"></param>
         /// <returns>Player object with the values in the database</returns>
@@ -382,14 +367,14 @@ namespace Xarxaria
 
             if (!isPlayerFound)
                 throw new Exception("Player with id " + playerId + " not found in database");
-            
+
             sqlConnection.Close();
 
             return selectedPlayer;
         }
 
         /// <summary>
-        /// Get inventory values according to player id
+        /// Get inventory values according to player id.
         /// </summary>
         /// <param name="playerId"></param>
         /// <returns>Inventory object</returns>
@@ -419,11 +404,11 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Get page values according to Id
+        /// Get page values according to Id.
         /// </summary>
         /// <param name="idPage"></param>
         /// <returns>Page object with the value in the database</return
-        public Page GetPage (int idPage)
+        public Page GetPage(int idPage)
         {
             Page readedPage = new Page();
 

@@ -1,9 +1,9 @@
 /**
 * \file      frmIntroduction.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      December 13. 2018
-* \brief     Introduction form of the game
+* \brief     Introduction form of the game.
 *
 * \details   The form create a player with personal caracteristics.
 */
@@ -35,7 +35,7 @@ namespace Xarxaria
         int defaultPointsToDistribute = 7;
         int maxNameSize = 50;
 
-        //get points to distrbute
+        //Get points to distrbute
         int pointsToDistribute => defaultPointsToDistribute - ((int)numHealth.Value - defaultHealth) - ((int)numAgility.Value - defaultAgility) - ((int)numLuck.Value - defaultLuck);
 
         Player player;
@@ -43,7 +43,7 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Introduction form constructor
+        /// Introduction form constructor.
         /// </summary>
         public frmIntroduction()
         {
@@ -72,7 +72,7 @@ namespace Xarxaria
 
         #region private methods
         /// <summary>
-        /// Check if ther is enought points to distribute, if not then show an error and disable the start adventure button
+        /// Check if ther is enought points to distribute, if not then show an error and disable the start adventure button.
         /// </summary>
         /// <param name="points"></param>
         /// <returns>Whether or not there is enought points</returns>
@@ -93,16 +93,16 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Displays an erorr message box
+        /// Displays an erorr message box.
         /// </summary>
         /// <param name="errorMessage"></param>
         private void showError(string errorMessage)
         {
             MessageBox.Show(errorMessage, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
         /// <summary>
-        /// Run the main form (thread)
+        /// Run the main form (thread).
         /// </summary>
         private void ThreadProc_frmMain()
         {
@@ -110,7 +110,7 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// Run the start form (thread)
+        /// Run the start form (thread).
         /// </summary>
         private void ThreadProc_frmStart()
         {
@@ -122,7 +122,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the start adventure button :
         /// 
-        /// Open main form
+        /// Open main form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -145,7 +145,7 @@ namespace Xarxaria
 
             //Creates a new thread for the new form
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc_frmMain));
-            
+
             //Open the new thread (main form)
             t.Start();
 
@@ -156,7 +156,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the go back t ostart screen menu :
         /// 
-        /// Close this form and open the start form
+        /// Close this form and open the start form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -175,7 +175,7 @@ namespace Xarxaria
         /// <summary>
         /// Change text on player name textbox :
         /// 
-        /// Check if not too long
+        /// Check if not too long.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -192,7 +192,7 @@ namespace Xarxaria
         /// <summary>
         /// Change value in numeric health :
         /// 
-        /// Validation verification
+        /// Validation verification.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -215,7 +215,7 @@ namespace Xarxaria
         /// <summary>
         /// Change value in numeric agility :
         /// 
-        /// Validation verification
+        /// Validation verification.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -238,7 +238,7 @@ namespace Xarxaria
         /// <summary>
         /// Change value in numeric luck :
         /// 
-        /// Validation verification
+        /// Validation verification.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -261,7 +261,7 @@ namespace Xarxaria
         /// <summary>
         /// Change in any numeric :
         /// 
-        /// Change label number of points to distribute
+        /// Change label number of points to distribute.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -286,7 +286,7 @@ namespace Xarxaria
         /// Event when there is any contact with the introduction text (Selection or click)
         /// 
         /// The active control is redirected to the titleLabel,
-        /// this avoid the introduction text to be selected not look good
+        /// this avoid the introduction text to be selected not look good.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -297,7 +297,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdStartAventure_MouseDown(object sender, MouseEventArgs e)
@@ -333,7 +333,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

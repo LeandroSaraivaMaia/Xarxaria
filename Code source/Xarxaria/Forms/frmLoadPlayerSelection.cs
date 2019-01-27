@@ -1,4 +1,14 @@
-﻿#region using
+﻿/**
+* \file      frmLoadPlayerSelection.cs
+* \author    Johan Voland & Leandro Saraiva Maia
+* \version   2.0
+* \date      December 13. 2018
+* \brief     Load selection form of the game.
+*
+* \details   This form allows the user to load a save in the database.
+*/
+
+#region using
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +34,7 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Load player selection constructor
+        /// Load player selection constructor.
         /// </summary>
         public frmLoadPlayerSelection()
         {
@@ -34,7 +44,7 @@ namespace Xarxaria
             List<Player> players = Program.connection.GetPlayers();
 
             //Fill the listbox with all the players
-            foreach(Player player in players)
+            foreach (Player player in players)
                 lstSaveFile.Items.Add(player);
 
             //Set the select save button to inactive (it wiil be active when a list is selected)
@@ -51,7 +61,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the choose save button :
         /// 
-        /// Return the selected save to the start form
+        /// Return the selected save to the start form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -71,7 +81,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the "retour" button :
         /// 
-        /// Go back to the start screen
+        /// Go back to the start screen.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -85,7 +95,7 @@ namespace Xarxaria
         /// <summary>
         /// The selected save is changed :
         /// 
-        /// Active the load save button
+        /// Active the load save button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -100,7 +110,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdGoBack_MouseDown(object sender, MouseEventArgs e)
@@ -136,7 +146,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

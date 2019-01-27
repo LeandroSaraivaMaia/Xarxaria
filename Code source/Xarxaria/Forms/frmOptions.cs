@@ -1,11 +1,11 @@
 ﻿/**
 * \file      frmOptions.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      December 13. 2018
-* \brief     Contains all the options of the game
+* \brief     Contains all the options of the game.
 *
-* \details   This form contains all the options of the game, like the font used, the font size
+* \details   This form contains all the options of the game, like the font used, the font size.
 */
 
 #region using
@@ -32,7 +32,7 @@ namespace Xarxaria
 
         #region constructor
         /// <summary>
-        /// Options form constructor
+        /// Options form constructor.
         /// </summary>
         public frmOptions()
         {
@@ -59,19 +59,19 @@ namespace Xarxaria
         /// <summary>
         /// The music volume value is changed :
         /// 
-        /// Apply volume change to all musics
+        /// Apply volume change to all musics.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void barVolumeMusic_Scroll(object sender, EventArgs e)
         {
-            Program.SetMusicsVolume(barVolumeMusic.Value*10);
+            Program.SetMusicsVolume(barVolumeMusic.Value * 10);
         }
 
         /// <summary>
         /// The volume value is changed :
         /// 
-        /// Apply sound volume change to all sounds
+        /// Apply sound volume change to all sounds.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +83,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the continue button :
         /// 
-        /// Close the form and go to the parent form
+        /// Close the form and go to the parent form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -93,10 +93,10 @@ namespace Xarxaria
         }
 
         /// <summary>
-        /// numerical text zoom value changed :
+        /// Numerical text zoom value changed :
         /// 
-        /// Test if value is valid (limitedSize)
-        /// Change the value in the main form
+        /// Test if value is valid (limitedSize).
+        /// Change the value in the main form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -136,12 +136,12 @@ namespace Xarxaria
             txtExample.ZoomFactor = (float)numPoliceZoom.Value;
             txtExample.oldZoomFactor = (float)numPoliceZoom.Value;
         }
-        
+
         /// <summary>
         /// When the user interract with the txtExample control :
         /// 
-        /// Set the active control to the options label
-        /// This avoid the control to be selected
+        /// Set the active control to the options label.
+        /// This avoid the control to be selected.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -153,7 +153,7 @@ namespace Xarxaria
         /// <summary>
         /// When the alignement method is changed :
         /// 
-        /// Change the global alignement value and the example alignement value
+        /// Change the global alignement value and the example alignement value.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -185,7 +185,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
         private void cmdContinue_MouseDown(object sender, MouseEventArgs e)
@@ -207,7 +207,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

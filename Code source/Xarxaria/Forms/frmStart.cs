@@ -1,9 +1,9 @@
 ﻿/**
 * \file      frmStart.cs
 * \author    Johan Voland & Leandro Saraiva Maia
-* \version   1.0
+* \version   2.0
 * \date      December 13. 2018
-* \brief     Start form of the game
+* \brief     Start form of the game.
 *
 * \details   This form is the first thing shown to the player when the application launch.
 */
@@ -26,7 +26,7 @@ namespace Xarxaria
     {
         #region constructor
         /// <summary>
-        /// The start form constructor
+        /// The start form constructor.
         /// </summary>
         public frmStart()
         {
@@ -44,7 +44,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on new game button :
         /// 
-        /// Open introduction form and close start form
+        /// Open introduction form and close start form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,7 +65,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on load button :
         /// 
-        /// Open a form to select game
+        /// Open a form to select game.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,7 +95,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on quit button :
         /// 
-        /// Quit the game
+        /// Quit the game.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -109,7 +109,7 @@ namespace Xarxaria
         /// <summary>
         /// Click on the options button :
         /// 
-        /// Open the form option
+        /// Open the form option.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -121,7 +121,7 @@ namespace Xarxaria
         #endregion
 
         #region graphic events
-        //There is not a doxagen commentary for each events, these are really repetitive
+        //There is not a doxygen commentary for each events, these are really repetitive
         //When there is a left mouse click on a button, put the pressed image
         //When the mouse leave the button and the left mouse click is released, put the normal button image
 
@@ -186,7 +186,7 @@ namespace Xarxaria
         /// <summary>
         /// The mouse enter in a button :
         /// 
-        /// Play hover sound
+        /// Play hover sound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
