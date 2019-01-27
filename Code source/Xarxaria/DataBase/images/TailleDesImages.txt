@@ -1,0 +1,12 @@
+- Taille des images -
+Les images doivent faire cette taille.
+
+538; 234
+
+ - Le Trick -
+
+1. sélectionner la zone à garder
+2. Ctrl + x
+3. image -> redimensionner -> 1; 1 ou 10; 10
+4. Ctrl + v
+5. Agrandir l'image

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Xarxaria.ConnectionDB">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACGAAACAAAAAAAgAAAAACAAAQEAAAAAgAgAAAgAA=</HashCode>
+      <FileName>ConnectionDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Enemy">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAABAEAAAQRAEAAEABAFEAFAADAIQgA=</HashCode>
+      <FileName>Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmCombat">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECCEgEDoQCCYAAgEBAWAICBSQAASIEGHAwC2gAAACko=</HashCode>
+      <FileName>Forms\frmCombat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmIntroduction">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiEAAQAgoDggAAUEACTCAgAGIAECFBQBEzBIAAGEAEA=</HashCode>
+      <FileName>Forms\frmIntroduction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmLoadPlayerSelection">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADCACBAAAAICQCAACABAAAsACAAAIAAAAAEA=</HashCode>
+      <FileName>Forms\frmLoadPlayerSelection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmMain">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAAEQAGAQAAEEAhCAACAGAAAkACBEAwAAABAACFA=</HashCode>
+      <FileName>Forms\frmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmMenu">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAAACAAKQIAQASAACEAAACAABgAABoAAAACABAAFI=</HashCode>
+      <FileName>Forms\frmMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmMessageBox">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAACAAAAAAAACAAAACAQAAAAAgAAAAAAABAEI=</HashCode>
+      <FileName>Forms\frmMessageBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmOptions">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASBAACACASAIABAAAACQAAECAABgIAAQAAAUAQgAAEU=</HashCode>
+      <FileName>Forms\frmOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmPlayer">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAgCgAAAAAAATAAAACAABAAAABBAAIAAAEAEA=</HashCode>
+      <FileName>Forms\frmPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.frmStart">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQCAAAAACUEIBICAICAAAACAAQAAAAIIAAAAABgAEA=</HashCode>
+      <FileName>Forms\frmStart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Inventory">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAADAAAAAgIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Item">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAABAEAAAQRAAAAEAAAAEABAABAIQgA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Page">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAEAAAAAAAAAAEAAAABAIAAAACAAAAgA=</HashCode>
+      <FileName>Page.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Player">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgCICAAAAAABQAFAEAAAURAAAAEAAAHEAFAADAIQgA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Program">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Xarxaria.Program.actionId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Xarxaria.Program.musicId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAIAAAAAAAhgggAHAAAAAAQAAIARAABBAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.RichTextBoxExtension">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Xarxaria.RichTextBoxExtension.CHARFORMAT2_STRUCT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RichTextBoxExtension.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAxCEAhky0QAAQakQi0wAgEEIQQEAABl4FABUrRIIBA=</HashCode>
+      <FileName>RichTextBoxExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Properties.Resources">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAEBgCAAAAABFAEAAQAAUAAgBAgCAIAAgIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xarxaria.Properties.Settings">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
