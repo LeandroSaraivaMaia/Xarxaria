@@ -16,6 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 #endregion
 
 namespace Xarxaria
@@ -24,7 +25,9 @@ namespace Xarxaria
     {
         #region private attributes
         //Object needed for database operation
-        SqlConnection sqlConnection;
+        SQLiteConnection sqlConnection;
+        string sqlResetScript;
+
         #endregion
 
         #region constructor
@@ -34,8 +37,21 @@ namespace Xarxaria
         /// </summary>
         public ConnectionDB()
         {
-            string connectionString = "Data Source=xarxariadb.database.windows.net; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
-            sqlConnection = new SqlConnection(connectionString);
+            //string connectionString = "Data Source=xarxariadb.database.windows.net; Initial Catalog=XarxariaDB; User ID=xarxariaLogin; Password=Pa$$w0rd";
+            string connectionString = "Data Source=./XarxariaDB.db3; Version=3; Initial Catalog=XarxariaDB; New=True;";
+            sqlConnection = new SQLiteConnection(connectionString);
+            sqlResetScript = System.IO.File.ReadAllText(@"./Reset_database.sql");
+
+            //GENERATE DB
+            SQLiteCommand cmd = new SQLiteCommand();
+
+            cmd.CommandText = sqlResetScript;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection;
+
+            sqlConnection.Open();
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
         }
         #endregion
 
@@ -53,7 +69,7 @@ namespace Xarxaria
         /// <param name="inactiveLinks">inactive links of the actual page (prevents not clicking two times on the same link)</param>
         public void AddPlayer(string name, int hp, int force, int armor, int agility, int luck, int idActualPage, int inactiveLinks)
         {
-            SqlCommand cmd = new SqlCommand();
+            SQLiteCommand cmd = new SQLiteCommand();
 
             cmd.CommandText = "INSERT INTO Player (hp, force, armor , agility, luck, name, inactiveLinks, idActualPage) VALUES (" + hp + ", " + force + ", " + armor + ", " + agility + ", " + luck + ", '" + name + "', " + inactiveLinks + ", " + idActualPage + ")";
             cmd.CommandType = CommandType.Text;
@@ -72,10 +88,10 @@ namespace Xarxaria
         /// <param name="player">player's values</param>
         public void SavePlayer(Player player)
         {
-            SqlCommand cmd;
-            SqlDataReader reader;
+            SQLiteCommand cmd;
+            SQLiteDataReader reader;
 
-            cmd = new SqlCommand();
+            cmd = new SQLiteCommand();
 
             //Update player caracteristics
             cmd.CommandText = "UPDATE Player SET " +
@@ -107,7 +123,7 @@ namespace Xarxaria
                 int quantity = playerInventory.Items[i];
 
                 //Test if there is a relation with this item id
-                cmd = new SqlCommand();
+                cmd = new SQLiteCommand();
 
                 cmd.CommandText = "SELECT * FROM Player_Item WHERE idPlayer = " + player.Id + " AND idItem = " + itemId;
                 cmd.CommandType = CommandType.Text;
@@ -168,8 +184,8 @@ namespace Xarxaria
         {
             Enemy enemy = new Enemy();
 
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
 
             cmd.CommandText = "SELECT * FROM Enemy WHERE id = " + enemyId;
             cmd.CommandType = CommandType.Text;
@@ -216,8 +232,8 @@ namespace Xarxaria
         {
             Item item = new Item();
 
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
 
             cmd.CommandText = "SELECT * FROM Item WHERE id = " + itemId;
             cmd.CommandType = CommandType.Text;
@@ -278,8 +294,8 @@ namespace Xarxaria
         /// <returns>Number of different items</returns>
         public int GetNumberOfItems()
         {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
             int numberOfItems = 0;
 
             cmd.CommandText = "SELECT * FROM Item";
@@ -305,8 +321,8 @@ namespace Xarxaria
         /// <returns>Number of player in the database</returns>
         public int GetNumberOfPlayer()
         {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
             int numberOfPlayer = 0;
 
             cmd.CommandText = "SELECT * FROM Player";
@@ -333,8 +349,8 @@ namespace Xarxaria
         /// <returns>Player object with the values in the database</returns>
         public Player GetPlayerById(int playerId)
         {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
             Player selectedPlayer = new Player();
             Inventory playerInventory = GetInventoryByPlayerId(playerId);
 
@@ -382,8 +398,8 @@ namespace Xarxaria
         {
             Inventory selectedInventory = new Inventory(GetNumberOfItems());
 
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
 
             cmd.CommandText = "SELECT * FROM Player_Item WHERE idPlayer = " + playerId;
             cmd.CommandType = CommandType.Text;
@@ -412,8 +428,8 @@ namespace Xarxaria
         {
             Page readedPage = new Page();
 
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
 
             cmd.CommandText = "SELECT * FROM Page WHERE id = " + idPage;
             cmd.CommandType = CommandType.Text;
